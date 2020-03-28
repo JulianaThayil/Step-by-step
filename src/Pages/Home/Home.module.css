@@ -1,0 +1,13 @@
+.Link{
+    position: absolute;
+    top:3%;
+    right:2%;
+}
+.bg{
+    background-color: #F5F5F5;
+    padding:4%;
+    margin: 4%;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 2% 1%;
+}

@@ -1,0 +1,23 @@
+.card{
+    display: flex;
+    margin-top:1%;
+    margin-left:4%;
+    margin-right:4%;
+    border:1px solid rgb(218, 215, 215);
+    
+}
+button{
+    padding:1%;
+    margin: 2%;
+}
+.text{
+    margin-top: 10%;
+    padding:3%;
+}
+.link{
+    color:white;
+}
+.color{
+    background-color: aliceblue;
+    
+}

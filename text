@@ -1,0 +1,358 @@
+firebase.initializeApp({
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: "step-by-step-96e75.firebaseapp.com"
+})
+
+//render
+state = { isSignedIn: false }
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+      console.log("user", user)
+    })
+  }
+
+return
+  {this.state.isSignedIn ? (
+   
+     <MyProfile> </MyProfile>
+      
+      ) : (
+          <StyledFirebaseAuth 
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        
+//login
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
+
+class Login extends Component {
+
+  
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      loading:false,
+      errors: {}
+    };
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState(
+      {
+        loading:true
+      }
+    );
+    const userData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    axios.post('/login',userData)
+    .then(res =>{
+      console.log(res.data);
+      localStorage.setItem('FBIdToken','Bearer ${res.data.token}');
+      this.setState(
+        {
+          loading:false
+        }
+      );
+      this.props.history.push('/home')
+    })
+    .catch(err =>{
+      this.setState({
+        errors: err.response.data,
+        loading:false
+      })
+    })
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  render() {
+    const {errors,loading} = this.state;
+    const classes = useStyles();
+    
+  return (
+
+        <div>
+            <Logo> </Logo>
+            <div class="body" >
+              <img width="46%"   src="./assets/5.jpg"/> 
+              <form noValidate onSubmit={this.handleSubmit}>
+        
+        <div class="segment">
+          <h1>Sign in</h1>
+        </div>
+        {errors.general && (
+          <div className={classes.error}>
+            {errors.general}
+          </div>
+        )}
+        
+        <label>
+          <input name="email" class="ip" type="email" placeholder="Email" 
+          value={this.state.email}
+          onChange={this.handleChange}
+          error={errors.email ? true : false}
+          />
+        </label>
+        <div className={classes.error} 
+        > {errors.email}</div>
+
+        <label>
+          <input name="password" class="ip"  type="password" placeholder="Password"
+                  error={errors.password ? true : false}
+          />
+        </label>
+        <div class="error"
+        > {errors.password}</div>
+
+        <button  
+        disabled={loading}
+        class="red but" type="submit"><i class="icon ion-md-lock"></i> Log in
+        {loading && (
+                <div className={classes.root}>
+                <LinearProgress />
+              </div>
+              )}
+        </button>
+       
+        Forgot passwrod? <a href="#">Click Here </a>
+
+        <br/>
+        <center>- or- </center>
+        <br/>
+        <Link to="/register">  
+        <button class="red but" type="button"><i class="icon ion-md-lock"></i> Register
+        <br/>
+        </button>
+        </Link>   
+ 
+      </form>
+              
+            </div>
+      
+    </div>
+  );
+  }
+}
+
+Login.propTypes = {
+  classes: PropTypes.object.isRequired,
+  
+};
+export default Login
+
+
+//register
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
+
+class Register extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      confirmPassword: '',
+      handle:'',
+      loading:false,
+      errors: {}
+    };
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState(
+      {
+        loading:true
+      }
+    );
+    const newUserData = {
+      email: this.state.email,
+      password: this.state.password,
+      confirmPassword:this.state.confirmPassword,
+      handle:this.state.handle
+    };
+    axios.post('/signup',newUserData)
+    .then(res =>{
+      console.log(res.data);
+      localStorage.setItem('FBIdToken','Bearer ${res.data.token}');
+      this.setState(
+        {
+          loading:false
+        }
+      );
+      this.props.history.push('/home')
+    })
+    .catch(err =>{
+      this.setState({
+        errors: err.response.data,
+        loading:false
+      })
+    })
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
+  render() {
+
+    const {errors,loading} = this.state;
+    const classes = useStyles();
+
+    return(
+      <div  > 
+        <Logo> </Logo>
+      <div class="body" >
+        <img width="46%"  src="./assets/5.jpg"/> 
+        <form noValidate onSubmit={this.handleSubmit}>
+  
+  <div>
+  <div class="segment">
+    <h1>Sign up</h1>
+  </div>
+  <label>
+    <input name="email" class="ip" type="email" placeholder="Email Address"
+    value={this.state.email}
+    onChange={this.handleChange}
+    error={errors.email ? true : false}
+    />
+  </label>
+
+  <label>
+    <input name="password" class="ip"  type="password" placeholder="Create password"
+    value={this.state.password}
+    onChange={this.handleChange}
+    error={errors.password ? true : false}
+    />
+  </label>
+  <label>
+    <input name="confirmPassword" class="ip"  type="password" placeholder="Re-enter password"
+    value={this.state.confirmPassword}
+    onChange={this.handleChange}
+    error={errors.confirmPassword ? true : false}
+    />
+  </label>
+  <label>
+    <input name="handle" class="ip" type="text" placeholder="username"
+    value={this.state.handle}
+    onChange={this.handleChange}
+    error={errors.handle ? true : false}
+    />
+  </label>
+
+
+  <button 
+   disabled={loading}
+  class="red but" type="button">
+    
+    Register<i class="icon ion-md-lock"></i> 
+    {loading && (
+                <div className={classes.root}>
+                <LinearProgress />
+              </div>
+              )}
+    </button>
+  
+ 
+
+  <br/>
+  Already a member ? <Link to="/"> login </Link><br/>
+  </div>
+
+</form>
+
+
+        
+      </div>
+      
+      </div>
+    )
+  }
+}
+
+Register.propTypes = {
+  classes: PropTypes.object.isRequired,
+  
+};
+export default Register
+
+
+//MyProfile
+ <div className={classes.container} > 
+       <Paper className={classes.mainFeaturedPost} >
+        {<img style={{ display: 'none' }}  />}
+          <div className={classes.overlay} />
+          <Grid container>
+            <Grid item md={6}>
+            
+              <div className={classes.mainFeaturedPostContent}>
+              <Avatar className={classes.avatar} alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+              <h3>Name Surname </h3>
+              <p> Bio here</p> 
+              </div>
+            </Grid>
+          </Grid>
+        </Paper>
+
+
+       <div className={classes.root}>
+       <Tabs
+        orientation="vertical"
+        value={value}
+        onChange={handleChange}
+        aria-label="Vertical tabs example"
+        className={classes.tabs}
+      >
+        <Tab label="My Profile" {...a11yProps(0)} />
+        <Tab label="Edit Profile" {...a11yProps(1)} />
+        <Tab label="Settings" {...a11yProps(2)} />
+        <Tab label="Account" {...a11yProps(3)} />
+        
+      </Tabs>
+     
+      <TabPanel value={value} index={0}>
+        
+        <ProfileTabs> </ProfileTabs>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <EditProfile></EditProfile>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Item Four
+      </TabPanel>
+    
+      </div>
+         
+          </div>

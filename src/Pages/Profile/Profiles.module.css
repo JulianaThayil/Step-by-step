@@ -1,0 +1,45 @@
+.avatar {
+  background: lightblue;
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+      
+    }
+   
+    .root {
+      display: flex;
+    }
+    .container{
+      position:absolute;
+      margin-left:8%;
+    }
+
+    .tabs {
+      border-right: 1px solid;
+    }
+
+    .mainFeaturedPost {
+      position: relative;
+      color: white;
+      margin-bottom: 1%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top:1%;
+      width:1100px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0%;
+      bottom: 0%;
+      right: 0%;
+      left: 0%;
+      background-color: rgba(0,0,0,.3);
+    }
+    .mainFeaturedPostContent{
+      position: relative;
+      margin-left:20%;
+      color: white;
+      margin-top: 5%;
+    }

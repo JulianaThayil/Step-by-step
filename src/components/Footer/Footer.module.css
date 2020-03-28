@@ -1,0 +1,28 @@
+.h1{
+    text-align: left;
+    color: blue;
+    font-size: 50px;
+  margin: 20px;
+}
+
+.h3{
+  text-align: center;
+}
+
+.footInfo{
+    margin: 0;
+    padding: 0;
+    height: 30px;
+  text-align:right;
+    
+}
+
+
+.footOverall{
+    background-image: url("/assets/footer.jpg");
+}
+
+
+ul#footInfo {
+  display: inline;
+}
