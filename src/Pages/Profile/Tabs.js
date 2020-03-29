@@ -16,9 +16,8 @@ import {Link} from 'react-router-dom';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import TurnedInNotIcon from '@material-ui/icons/TurnedInNot';
-import NewRecipe from './NewRecipe';
 import Following from '../../components/Following/FollowingCard'
-
+import NewRecipe from './NewRecipe'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -109,7 +108,9 @@ export default function ProfileTabs() {
 
       </TabPanel>
       <TabPanel value={value} index={1}>
-      //add recipe card
+
+      <NewRecipe> </NewRecipe>
+      
       </TabPanel>
 
       <TabPanel value={value} index={2}>

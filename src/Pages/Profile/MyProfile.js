@@ -11,7 +11,6 @@ import ProfileTabs from './Tabs';
 import EditProfile from '../../components/Editprofile/EditProfile';
 import UserDetails from './UserDetails';
 
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 

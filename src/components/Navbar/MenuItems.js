@@ -11,7 +11,6 @@ class MenuItems extends Component {
     
     handleLogout = () => {
         this.props.logoutUser();
-        
       };
     render() {
         

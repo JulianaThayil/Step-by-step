@@ -41,7 +41,7 @@ class Details extends Component{
         <Grid item md={6}>
         
           <div className={classes.mainFeaturedPostContent}>
-         <img className={classes.avatar} src={imageUrl} 
+         <img className={classes.avatar} alt='./assets/blank.png' src={imageUrl} 
           />
            <input
                 type="file"
