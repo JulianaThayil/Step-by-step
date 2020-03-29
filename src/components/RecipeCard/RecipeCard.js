@@ -56,3 +56,4 @@ class RecipeReviewCard extends Component {
   );
 }
 }
+export default RecipeReviewCard
