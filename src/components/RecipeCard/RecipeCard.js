@@ -21,7 +21,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-// Icons
+// Icon
 import ChatIcon from '@material-ui/icons/Chat';
 
 //Redux stuff
