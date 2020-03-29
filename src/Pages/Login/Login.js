@@ -5,20 +5,10 @@ import {Link} from 'react-router-dom';
 //import MyProfile from '../Profile/MyProfile'
 import PropTypes from 'prop-types';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { makeStyles } from '@material-ui/core/styles';
 
 //Redux stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../../redux/actions/userActions';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    '& > * + *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
 
 class Login extends Component {
   constructor() {

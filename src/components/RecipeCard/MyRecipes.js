@@ -1,5 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import classes from './RecipeCard.module.css';
+import PropTypes from 'prop-types';
+
+//Mui stuff
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -10,22 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    maxWidth: 345,
-    
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  
-}));
-
-export default function MyRecipes() {
-  const classes = useStyles();
-
+class MyRecipes extends Component {
+  render(){
  
   return (
     <Card className={classes.root}>
@@ -52,4 +41,5 @@ export default function MyRecipes() {
     </Card>
   );
 }
-
+}
+export default MyRecipes;
