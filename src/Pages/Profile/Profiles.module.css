@@ -43,3 +43,6 @@
       color: white;
       margin-top: 5%;
     }
+    .bg{
+      background-image: url(./assets/marble.jpg);
+    }
