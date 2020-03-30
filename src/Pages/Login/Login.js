@@ -84,7 +84,7 @@ class Login extends Component {
             {errors.general}
           </div>
         )}
-       
+      
         <button  
         disabled={loading}
         class="red but" type="submit"><i class="icon ion-md-lock"></i> Log in
@@ -100,7 +100,7 @@ class Login extends Component {
         <br/>
         <center>- or- </center>
         <br/>
-        <Link to="/register">  
+        <Link to="/signup">  
         <button class="red but" type="button"><i class="icon ion-md-lock"></i> Register
         <br/>
         </button>

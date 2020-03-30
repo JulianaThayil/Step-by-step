@@ -3,8 +3,7 @@
   border-radius: 50%;
   width: 170px;
   height: 170px;
-      
-    }
+  }
    
     .root {
       display: flex;
@@ -43,6 +42,4 @@
       color: white;
       margin-top: 5%;
     }
-    .bg{
-     
-    }
+    

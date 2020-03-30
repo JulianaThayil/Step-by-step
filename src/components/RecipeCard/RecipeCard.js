@@ -6,7 +6,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import MyButton from '../../util/MyButton';
 import LikeButton from '../../util/LikeButton';
 import DeleteRecipe from '../../util/DeleteRecipe';
-
+import {Link} from 'react-router-dom';
 
 //MUI stuff
 import Card from '@material-ui/core/Card';
@@ -17,9 +17,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 // Icon
 import ChatIcon from '@material-ui/icons/Chat';
@@ -52,6 +50,7 @@ class RecipeCard extends Component {
       ) : null;
 
   return (
+    <Link to="">
     <Card className={classes.root}>
       <CardHeader 
         avatar={
@@ -98,6 +97,7 @@ class RecipeCard extends Component {
       </Typography>
       
     </Card>
+    </Link>
   );
 }
 }

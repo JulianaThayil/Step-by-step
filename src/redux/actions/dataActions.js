@@ -32,6 +32,8 @@ import {
         });
       });
   };
+
+  //get a recipe
   export const getRecipe = (recipeId) => (dispatch) => {
     dispatch({ type: LOADING_UI });
     axios
@@ -45,6 +47,7 @@ import {
       })
       .catch((err) => console.log(err));
   };
+  
   // Post a recipe
   export const postRecipe = (newRecipe) => (dispatch) => {
     dispatch({ type: LOADING_UI });

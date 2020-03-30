@@ -1,6 +1,6 @@
   .root{
     max-width: 345;
-    
+    cursor: pointer;
   }
   .media {
     height: 0;

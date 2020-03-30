@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 190,
   },
+  
 }));
 
 function Media(props) {
@@ -54,9 +55,12 @@ Media.propTypes = {
 };
 
 export default function RecipeSkeleton() {
+
   return (
-    <div>
+    <div >
       <Media />
+      
+      
     </div>
   );
 }
