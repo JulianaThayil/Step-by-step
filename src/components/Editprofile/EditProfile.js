@@ -82,10 +82,12 @@ class EditProfile extends Component {
         <br/>
         <TextField id="standard-required" label="Website" name="website" value={this.state.website}
                 onChange={this.handleChange}/>
+        
         <br/>
         <TextField id="standard-required" label="Location" name="location"
         value={this.state.location}
         onChange={this.handleChange}  />
+        <br/>
         <br/>
 
         <Button
