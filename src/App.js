@@ -14,6 +14,8 @@ import Register from './Pages/Register/Register'
 import UserHome from './Pages/Profile/userHome'
 import Notfound from './notfound'
 import Home from './Pages/Home/Home';
+import ViewRecipe from './Pages/Recipe/viewRecipe';
+
 
 //util
 import AuthRoute from './util/AuthRoute';
@@ -47,6 +49,7 @@ class App extends Component {
                 <AuthRoute exact path="/login" component={Login} />
                 <AuthRoute exact path="/signup" component={Register} />
                 <Route exact path="/user" component={UserHome} />
+                <Route exact path="/view/:recipeId" component={ViewRecipe} />
               </Switch>
       </div>
     </Router>

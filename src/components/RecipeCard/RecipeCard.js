@@ -30,6 +30,7 @@ class RecipeCard extends Component {
     dayjs.extend(relativeTime);
     const {
       recipe: {
+        title,
         body,
         createdAt,
         userImage,
@@ -50,23 +51,25 @@ class RecipeCard extends Component {
       ) : null;
 
   return (
-    <Link to="">
-    <Card className={classes.root}>
+ 
+    <Card className={classes.root} component={Link} to={`/view/${recipeId}`} >
       <CardHeader 
         avatar={
-          <Avatar aria-label="recipe" image={userImage} >
-            R
+          <Avatar aria-label="recipe"  >
+            <img src={userImage} 
+            style={{  objectFit:'cover' }}
+            />
           </Avatar>
           
         }
-        title="Shrimp and Chorizo Paella"
+        title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
       
       <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        title={title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -92,12 +95,12 @@ class RecipeCard extends Component {
         </Fragment>
         
       </CardActions>
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="body2" color="textSecondary" style={{left:'7%'}}>
       by {userHandle}
       </Typography>
       
     </Card>
-    </Link>
+  
   );
 }
 }

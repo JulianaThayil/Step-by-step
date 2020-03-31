@@ -67,6 +67,8 @@ import {
         });
       });
   };
+
+
   // Like a recipe
   export const likeRecipe = (recipeId) => (dispatch) => {
     axios
@@ -109,6 +111,7 @@ import {
         });
       });
   };
+  
   export const deleteRecipe = (recipeId) => (dispatch) => {
     axios
       .delete(`/recipe/${recipeId}`)
@@ -118,6 +121,7 @@ import {
       .catch((err) => console.log(err));
   };
   
+  //other user's data
   export const getUserData = (userHandle) => (dispatch) => {
     dispatch({ type: LOADING_DATA });
     axios
