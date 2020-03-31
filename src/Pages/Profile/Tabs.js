@@ -8,9 +8,11 @@ import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import MyRecipes from '../../components/RecipeCard/MyRecipes';
+import FollowingCard from '../../components/Following/FollowingCard';
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
+import FollowersCard from '../../components/Followers/FollowersCard';
 import AddIcon from '@material-ui/icons/Add';
 import {Link} from 'react-router-dom';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -93,7 +95,8 @@ export default function ProfileTabs() {
           <Tab label="My Recipes" icon={<MenuBookIcon />} {...a11yProps(0)} />
           <Tab label="Add Recipe" icon={<AddCircleOutlineIcon />} {...a11yProps(1)} />
           <Tab label="Following " icon={<PersonPinIcon />} {...a11yProps(2)} />
-          <Tab label="Saved " icon={<TurnedInNotIcon/>} {...a11yProps(3)} />
+          <Tab label="Followers " icon={<PersonPinIcon />} {...a11yProps(3)} />
+          <Tab label="Saved " icon={<TurnedInNotIcon/>} {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -114,9 +117,24 @@ export default function ProfileTabs() {
       </TabPanel>
 
       <TabPanel value={value} index={2}>
-      following 
+      <FollowingCard></FollowingCard>
+      <FollowingCard></FollowingCard>
+      <FollowingCard></FollowingCard>
+      <FollowingCard></FollowingCard>
+      <FollowingCard></FollowingCard>
+      <FollowingCard></FollowingCard>
       </TabPanel>
+
       <TabPanel value={value} index={3}>
+      <FollowersCard></FollowersCard>
+      <FollowersCard></FollowersCard>
+      <FollowersCard></FollowersCard>
+      <FollowersCard></FollowersCard>
+      <FollowersCard></FollowersCard>
+      <FollowersCard></FollowersCard>
+      </TabPanel>
+
+      <TabPanel value={value} index={4}>
       <div className={classes.myStyles}>
         <RecipeCard> </RecipeCard>
         <RecipeCard> </RecipeCard>

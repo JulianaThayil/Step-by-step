@@ -4,7 +4,6 @@ import Navibar from '../../components/Navbar/Navbar';
 import Carousel from '../../components/Carousel/Carousel';
 import Recipe from '../../components/RecipeCard/RecipeCard';
 import Footer from '../../components/Footer/Footer';
-import {Link} from 'react-router-dom';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 
