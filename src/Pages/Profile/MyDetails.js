@@ -12,8 +12,6 @@ import MyButton from '../../util/MyButton';
 import { connect } from 'react-redux';
 import { uploadImage } from '../../redux/actions/userActions';
 
-
-
 class Details extends Component{
   handleImageChange = (event) => {
     const image = event.target.files[0];
@@ -25,6 +23,7 @@ class Details extends Component{
     const fileInput = document.getElementById('imageInput');
     fileInput.click();
   };
+
     render(){
       
     const {
@@ -32,6 +31,7 @@ class Details extends Component{
         credentials: { handle, imageUrl, bio, location }
       }
     } = this.props;
+
     
   return(
     <Paper style={{  backgroundImage:'url(./assets/cover.jpg)' }} className={classes.mainFeaturedPost} >
@@ -41,9 +41,10 @@ class Details extends Component{
         <Grid item md={6}>
         
           <div className={classes.mainFeaturedPostContent}>
-         <img className={classes.avatar} alt='./assets/blank.png' src={imageUrl} 
+         <img className={classes.avatar} src={imageUrl} 
           />
-           <input
+
+          <input
                 type="file"
                 id="imageInput"
                 hidden="hidden"
@@ -54,11 +55,9 @@ class Details extends Component{
                 onClick={this.handleEditPicture}
                 btnClassName="button"
               >
-                <EditIcon color="primary" />
+              <EditIcon color="primary" />
               </MyButton>
-        
-
-
+          
           <h3>{handle} </h3>
           {bio && <Typography variant="body2">{bio}</Typography>}
             
@@ -78,7 +77,7 @@ class Details extends Component{
   user: state.user
 });
 
-const mapActionsToProps = { uploadImage };
+const mapActionsToProps = { uploadImage  };
 
 Details.propTypes = {
   uploadImage: PropTypes.func.isRequired,

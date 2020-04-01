@@ -6,6 +6,7 @@ import Recipe from '../../components/RecipeCard/RecipeCard';
 import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
+import ScrollToTop from '../../components/ScrollToTop'
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -26,12 +27,12 @@ class Home extends Component {
     return (
      <div> 
         <Navibar> </Navibar>
-        <Carousel></Carousel>
+        
         <center> <h3> Popular</h3></center>
         <div className={classes.bg}> 
 
         {recentRecipesMarkup}
-
+        <ScrollToTop></ScrollToTop> 
         </div>
         
         <Footer></Footer>

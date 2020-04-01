@@ -32,6 +32,7 @@ class RecipeCard extends Component {
       recipe: {
         title,
         body,
+        pictureUrl,
         createdAt,
         userImage,
         userHandle,
@@ -50,9 +51,10 @@ class RecipeCard extends Component {
         <DeleteRecipe recipeId={recipeId} />
       ) : null;
 
+
   return (
  
-    <Card className={classes.root} component={Link} to={`/view/${recipeId}`} >
+    <Card className={classes.root}  >
       <CardHeader 
         avatar={
           <Avatar aria-label="recipe"  >
@@ -65,10 +67,10 @@ class RecipeCard extends Component {
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
-      
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        component={Link} to={`/users/${userHandle}/${recipeId}`}
+        image={pictureUrl}
         title={title}
       />
       <CardContent>

@@ -10,21 +10,26 @@ import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    maxWidth: 345,
+    minWidth: 345,
     margin: theme.spacing(2),
   },
   media: {
     height: 190,
   },
+  div:{
+    display: 'grid',
+    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
+    gap: '2% 1%',
+  },
   
 }));
 
-function Media(props) {
+export default function Media(props) {
   
   const classes = useStyles();
 
-  return (
-    <Card className={classes.card}>
+  const content = Array.from({ length: 6 }).map((item, index) => (
+    <Card className={classes.card} key={index}>
       <CardHeader
         avatar={
             <Skeleton animation="wave" variant="circle" width={40} height={40} />
@@ -47,20 +52,13 @@ function Media(props) {
       </CardContent>
       
     </Card>
-  );
-}
+    ));
+
+    return <div className={classes.div}>{content}</div>;
+
+};
 
 Media.propTypes = {
   loading: PropTypes.bool,
 };
 
-export default function RecipeSkeleton() {
-
-  return (
-    <div >
-      <Media />
-      
-      
-    </div>
-  );
-}

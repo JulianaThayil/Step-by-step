@@ -11,16 +11,18 @@ import { logoutUser,getUserData } from './redux/actions/userActions';
 //pages
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
-import UserHome from './Pages/Profile/userHome'
+import Profile from './Pages/Profile/Profile'
 import Notfound from './notfound'
 import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
-
+import Test from './Test'
+import Addrecipe from './Pages/Recipe/AddRecipe'
 
 //util
 import AuthRoute from './util/AuthRoute';
 
 import axios from 'axios';
+
 
 axios.defaults.baseURL ='https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api';
 
@@ -38,8 +40,11 @@ if (token) {
   }
 }
 
+
 class App extends Component {
+  
   render() {
+
     return (
       <Provider store={store}>
       <Router>
@@ -48,8 +53,11 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <AuthRoute exact path="/login" component={Login} />
                 <AuthRoute exact path="/signup" component={Register} />
-                <Route exact path="/user" component={UserHome} />
-                <Route exact path="/view/:recipeId" component={ViewRecipe} />
+                <Route exact path= "/users/:handle" component={Profile} />
+                <Route exact path="/users/:handle/:recipeId" component={ViewRecipe} />
+                <Route exact path="/test" component={Test} />
+                <Route exact path="/addrecipe" component={Addrecipe} />
+
               </Switch>
       </div>
     </Router>
@@ -58,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

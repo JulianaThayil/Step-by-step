@@ -3,7 +3,7 @@ import MyButton from './MyButton';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // Icons
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 // REdux
 import { connect } from 'react-redux';
@@ -36,7 +36,7 @@ class LikeButton extends Component {
       </Link>
     ) : this.likedRecipe() ? (
       <MyButton tip="Undo like" onClick={this.unlikeRecipe}>
-        <FavoriteIcon color="primary" />
+        <Favorite  />
       </MyButton>
     ) : (
       <MyButton tip="Like" onClick={this.likeRecipe}>

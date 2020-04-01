@@ -1,45 +1,107 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment} from 'react';
 import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import MyButton from '../../util/MyButton';
+import LikeButton from '../../util/LikeButton';
+import DeleteRecipe from '../../util/DeleteRecipe';
+import {Link} from 'react-router-dom';
 
-//Mui stuff
+//MUI stuff
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 
+// Icon
+import ChatIcon from '@material-ui/icons/Chat';
+
+//Redux stuff
+import { connect } from 'react-redux';
 
 class MyRecipes extends Component {
   render(){
- 
+    dayjs.extend(relativeTime);
+    const {
+      recipe: {
+        title,
+        body,
+        pictureUrl,
+        createdAt,
+        userHandle,
+        recipeId,
+        likeCount,
+        commentCount
+      },
+      user: {
+        authenticated,
+        credentials: { handle }
+      }
+    } = this.props;
+
+    const deleteButton =
+      authenticated && userHandle === handle ? (
+        <DeleteRecipe recipeId={recipeId} />
+      ) : null;
+
+
   return (
-    <Card className={classes.root}>
+ 
+    <Card className={classes.root}  >
+      <CardHeader 
+        
+        title={title}
+        subheader= {dayjs(createdAt).fromNow()}
+      />
       <CardMedia
         className={classes.media}
-        image=""
-        title="Paella dish"
+        component={Link} to={`/users/${userHandle}/${recipeId}`}
+        image={pictureUrl}
+        title={title}
       />
       <CardContent>
-          <h5> Name of dish</h5>
-          <p> Cooking time: </p> 
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {body}
         </Typography>
       </CardContent>
+
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+      <LikeButton recipeId={recipeId} />
+          <span>{likeCount} Likes</span>
+
+          <MyButton tip="comments">
+            <ChatIcon color="primary" />
+          </MyButton>
+          <span>{commentCount} comments</span>
+
+        <IconButton aria-label="share">
+          <ShareIcon />
         </IconButton>
+
+        <Fragment>
+        {deleteButton}
+        </Fragment>
         
       </CardActions>
-      
     </Card>
+  
   );
 }
 }
-export default MyRecipes;
+
+MyRecipes.propTypes = {
+  user: PropTypes.object.isRequired,
+  recipe: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(MyRecipes);

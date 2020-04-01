@@ -11,6 +11,7 @@ import CommentForm from '../../util/CommentForm';
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 //icons
 import ChatIcon from '@material-ui/icons/Chat';
@@ -32,7 +33,13 @@ class viewRecipe extends Component {
             },
             recipe: {
                 recipeId,
+                title,
+                cookingTime,
+                serves,
                 body,
+                ingredients,
+                instructions,
+                pictureUrl,
                 createdAt,
                 likeCount,
                 commentCount,
@@ -51,13 +58,26 @@ class viewRecipe extends Component {
 
           let recipesMarkup = !loading ? (
             <Fragment>
+
+              <Typography variant="h2"> 
+              {title}
+              </Typography>
+
+              <Typography>
+                {cookingTime}
+              </Typography>
+
+              <Typography>
+                {serves}
+              </Typography>
+
             <Typography
             component={Link}
             color="primary"
             variant="h5"
-            to={`/user/${userHandle}`}
+            to={`/users/${userHandle}`}
           >
-            @{userHandle}
+             @{userHandle}
           </Typography>
 
           <br />
@@ -67,17 +87,33 @@ class viewRecipe extends Component {
 
           <LikeButton recipeId={recipeId} />
           <span>{likeCount} likes</span>
+
+         
+
+          <Typography> 
+            {body}
+          </Typography>
+
+          <img src={pictureUrl} /> 
+
+          <Typography>
+            {ingredients}
+          </Typography>
+
+          <Typography>
+            {instructions}
+          </Typography>
+          
           </Fragment>
 
           ) : (
-                     <p> loading...</p>
+                     <CircularProgress style={{left:'50%',top:'50%'}}/> 
           );              
                           
 
         return (
             
             <div>
-
             {NavigationBar}
 
            {recipesMarkup}
@@ -106,7 +142,6 @@ const mapStateToProps = (state) => ({
     getRecipe
     };
   
- 
   export default connect(
     mapStateToProps,
     mapActionsToProps

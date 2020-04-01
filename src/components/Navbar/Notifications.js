@@ -99,6 +99,7 @@ class Notifications extends Component {
           >
             {notificationsIcon}
           </IconButton>
+          
         </Tooltip>
         <Menu
           anchorEl={anchorEl}

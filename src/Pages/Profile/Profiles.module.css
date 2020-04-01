@@ -4,7 +4,9 @@
   width: 170px;
   height: 170px;
   }
-   
+   .ip{
+    display: none;
+   }
     .root {
       display: flex;
     }

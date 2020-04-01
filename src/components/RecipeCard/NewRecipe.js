@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 import classes from '../../components/Editprofile/Editprofile.module.css';
 import PropTypes from 'prop-types';
 
+//firebase
+import {storage} from '../../firebase/index';
+
 //Mui stuff
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
 
+//icons
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 // Redux stuff
 import { connect } from 'react-redux';
@@ -23,10 +29,19 @@ class NewRecipe extends Component {
       body:'',
       ingredients:'',
       intructions:'',
+      image:null,
+      url: '',
+      progress: 0,
       errors: {}
   };
   }
-
+  
+  handlePicture = e => {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      this.setState(() => ({image}));
+    }
+  }
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -35,6 +50,30 @@ class NewRecipe extends Component {
     this.setState({
       loading: true
     });
+    const {image} = this.state;
+
+    const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
+    console.log(image.name);
+      uploadTask.on('state_changed', 
+      (snapshot) => {
+        // progrss function ....
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        this.setState({progress});
+      }, 
+      (error) => {
+           // error function ....
+        console.log(error);
+      }, 
+    () => {
+        // complete function ....
+        storage.ref('recipes').child(image.name).getDownloadURL().then(url => {
+            console.log(url);
+            url=url + '?alt=media';
+            this.setState({url});
+        })
+    });
+
+
     const newRecipe = {
       title: this.state.title,
       cookingTime: this.state.cookingTime,
@@ -42,18 +81,23 @@ class NewRecipe extends Component {
       body: this.state.body,
       ingredients: this.state.ingredients,
       intructions: this.state.intructions,
+      pictureUrl:this.state.url
     };
-    this.props.postRecipe( newRecipe );
-    
+    this.props.postRecipe(newRecipe );
+   
   };
 
   render() {
     const { errors } = this.state;
     const {
+      
       UI: { loading }
     } = this.props;
 
+    
     return (
+    
+
       <div style={{  backgroundImage:'url(./assets/marble.jpg)' }}>
         <form className={classes.root} autoComplete="off" onSubmit={this.handleSubmit}>
          <div className={classes.main}>
@@ -116,6 +160,15 @@ class NewRecipe extends Component {
 
          <br/>
 
+  
+      <input required accept="image/*" className={classes.ip}  id="imageInput" 
+      onChange={this.handlePicture}
+      type="file" 
+      />
+
+      <br/>
+     
+
          <Button
                 type="submit"
                 disabled={loading}
@@ -128,7 +181,9 @@ class NewRecipe extends Component {
                     size={30}
                     className={classes.progressSpinner}
                   />
-                )}
+                 )
+                }
+              
               </Button>
 
 
