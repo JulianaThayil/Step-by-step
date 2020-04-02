@@ -98,7 +98,7 @@ class NewRecipe extends Component {
     return (
     
 
-      <div style={{  backgroundImage:'url(./assets/marble.jpg)' }}>
+      <div style={{  backgroundImage:'url(https://i.pinimg.com/564x/dd/c9/68/ddc96843d58dd6928da23220bb94507f.jpg)' }}>
         <form className={classes.root} autoComplete="off" onSubmit={this.handleSubmit}>
          <div className={classes.main}>
 

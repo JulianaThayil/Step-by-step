@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box';
 
 //My Components
 import MyDetails from './MyDetails';
+import RecipesPosted from './RecipesPosted';
 
 //pages
 import EditProfile from '../../components/Editprofile/EditProfile';
@@ -87,7 +88,7 @@ export default function VerticalTabs() {
         
       </Tabs>
       <TabPanel value={value} index={0}>
-        My Recipes
+   
       </TabPanel>
 
       <TabPanel value={value} index={1}>

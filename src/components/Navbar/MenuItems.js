@@ -16,8 +16,8 @@ class MenuItems extends Component {
         
         return (
             <div>
-            <NavLink to="/" > <MenuItem >Feed</MenuItem> </NavLink>
-            <NavLink ><MenuItem >Profile</MenuItem></NavLink>
+            <MenuItem >Feed</MenuItem>
+            <MenuItem >Profile</MenuItem>
             <MenuItem onClick={this.handleLogout}> <NavLink to="/login"> Logout </NavLink> </MenuItem>
             </div>
         )

@@ -1,73 +1,85 @@
-import React, { Fragment } from 'react';
+import React, {Component,Fragment} from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
-import dayjs from 'dayjs';
-import { Link } from 'react-router-dom';
-// MUI
-import MuiLink from '@material-ui/core/Link';
+import classes from './Profiles.module.css';
+
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-// Icons
 import LocationOn from '@material-ui/icons/LocationOn';
-import LinkIcon from '@material-ui/icons/Link';
-import CalendarToday from '@material-ui/icons/CalendarToday';
+import RecipesPosted from './RecipesPosted';
 
-const styles = (theme) => ({
-  ...theme
-});
+import { connect } from 'react-redux';
+import { getUserData } from '../../redux/actions/dataActions';
 
-const StaticProfile = (props) => {
-  const {
-    classes,
-    profile: { handle, createdAt, imageUrl, bio, website, location }
-  } = props;
-
-  return (
-    <Paper className={classes.paper}>
-      <div className={classes.profile}>
-        <div className="image-wrapper">
-          <img src={imageUrl} alt="profile" className="profile-image" />
-        </div>
-        <hr />
-        <div className="profile-details">
-          <MuiLink
-            component={Link}
-            to={`/users/${handle}`}
-            color="primary"
-            variant="h5"
-          >
-            @{handle}
-          </MuiLink>
-          <hr />
-          {bio && <Typography variant="body2">{bio}</Typography>}
-          <hr />
-          {location && (
-            <Fragment>
-              <LocationOn color="primary" /> <span>{location}</span>
-              <hr />
-            </Fragment>
-          )}
-          {website && (
-            <Fragment>
-              <LinkIcon color="primary" />
-              <a href={website} target="_blank" rel="noopener noreferrer">
-                {' '}
-                {website}
-              </a>
-              <hr />
-            </Fragment>
-          )}
-          <CalendarToday color="primary" />{' '}
-          <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
-        </div>
-      </div>
-    </Paper>
-  );
+class StaticProfile extends Component{
+  constructor() {
+    super();
+    this.state={
+    profile:{}
 };
+}
+  componentDidMount() {
+    const handle = this.props.handle;
+    this.props.getUserData(handle);
+    axios
+      .get(`/user/${handle}`)
+      .then((res) => {
+        this.setState({
+          profile: res.data.user
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+
+    render(){
+      const {profile} = this.state;
+    
+  return(
+    <Fragment> 
+    <Paper style={{  backgroundImage:'url(./assets/cover.jpg)' }} className={classes.mainFeaturedPost} >
+    {<img style={{ display: 'none' }}  />}
+      <div className={classes.overlay} />
+      <Grid container>
+        <Grid item md={6}>
+        
+          <div className={classes.mainFeaturedPostContent}>
+         <img className={classes.avatar} src={profile.imageUrl} 
+          />
+
+          <h3>{profile.handle} </h3>
+          {profile.bio && <Typography variant="body2">{profile.bio}</Typography>}
+            
+              {profile.location && (
+                <Fragment>
+                  <LocationOn color="primary" /> <span>{profile.location}</span>
+                </Fragment>
+              )}
+          </div>
+        </Grid>
+      </Grid>
+    </Paper>
+    <br/> 
+
+    </Fragment>
+  );
+}
+}
 
 StaticProfile.propTypes = {
-  profile: PropTypes.object.isRequired,
-  classes: PropTypes.object.isRequired
+  handle: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired,
+  getUserData: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(StaticProfile);
+const mapStateToProps = (state) => ({
+  user: state.user,
+  data: state.data
+});
+
+export default connect(
+  mapStateToProps,
+  { getUserData }
+)(StaticProfile);

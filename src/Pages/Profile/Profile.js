@@ -2,6 +2,7 @@ import React, { Component,Fragment } from 'react';
 import Navbar from '../../components/Navbar/Navbar'
 import UserNavbar from '../../components/Navbar/userNavbar'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 //Mui stuff
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -42,11 +43,15 @@ class Profile extends Component {
                     <Navbar> </Navbar>);
 
          const profileMarkup =
-         !this.state.isnull && this.state.userHandle === handle ? (
-                <MyProfile> </MyProfile> 
+         !loading ? (
+          !this.state.isnull && this.state.userHandle === handle ? (
+            <MyProfile handle={`${handle}`}> </MyProfile> 
          ): (
-                <StaticProfile> </StaticProfile> 
-         );      
+         <StaticProfile handle={this.props.match.params.handle}> </StaticProfile>
+         )
+         ):(
+            <p> loading.... </p> 
+         );
 
                
 

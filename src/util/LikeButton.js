@@ -31,16 +31,16 @@ class LikeButton extends Component {
     const likeButton = !authenticated ? (
       <Link to="/login">
         <MyButton tip="Like">
-          <FavoriteBorder color="primary" />
+          <FavoriteBorder color="secondary" />
         </MyButton>
       </Link>
     ) : this.likedRecipe() ? (
       <MyButton tip="Undo like" onClick={this.unlikeRecipe}>
-        <Favorite  />
+        <Favorite  color="secondary" />
       </MyButton>
     ) : (
       <MyButton tip="Like" onClick={this.likeRecipe}>
-        <FavoriteBorder color="primary" />
+        <FavoriteBorder color="secondary" />
       </MyButton>
     );
     return likeButton;

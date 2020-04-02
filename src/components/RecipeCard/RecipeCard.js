@@ -55,6 +55,7 @@ class RecipeCard extends Component {
   return (
  
     <Card className={classes.root}  >
+
       <CardHeader 
         avatar={
           <Avatar aria-label="recipe"  >
@@ -67,6 +68,7 @@ class RecipeCard extends Component {
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
+ 
       <CardMedia
         className={classes.media}
         component={Link} to={`/users/${userHandle}/${recipeId}`}
@@ -84,7 +86,7 @@ class RecipeCard extends Component {
           <span>{likeCount} Likes</span>
 
           <MyButton tip="comments">
-            <ChatIcon color="primary" />
+            <ChatIcon color="secondary" />
           </MyButton>
           <span>{commentCount} comments</span>
 
@@ -100,13 +102,12 @@ class RecipeCard extends Component {
       <Typography variant="body2" color="textSecondary" style={{left:'7%'}}>
       by {userHandle}
       </Typography>
-      
+     
     </Card>
   
   );
 }
 }
-
 RecipeCard.propTypes = {
   user: PropTypes.object.isRequired,
   recipe: PropTypes.object.isRequired,
