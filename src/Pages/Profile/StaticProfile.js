@@ -61,6 +61,7 @@ class StaticProfile extends Component{
       </Grid>
     </Paper>
     <br/> 
+    <RecipesPosted> </RecipesPosted>
 
     </Fragment>
   );

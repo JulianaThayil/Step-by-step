@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
-import MyRecipes from '../../components/RecipeCard/NewRecipe';
+import MyRecipes from '../../components/RecipeCard/MyRecipes';
 import classes from '../../Pages/Home/Home.module.css'
 
 import { connect } from 'react-redux';
@@ -14,8 +14,8 @@ class RecipesPosted extends Component {
     recipeIdParam: null
   };
   componentDidMount() {
-    const handle = this.props.match.params.handle;
-    const recipeId = this.props.match.params.recipeId;
+    const handle = this.props.handle;
+    const recipeId = this.props.recipeId;
 
     if (recipeId) this.setState({ recipeIdParam: recipeId });
 
@@ -36,8 +36,8 @@ class RecipesPosted extends Component {
     const recipesMarkup = loading ? (
       <Skeleton />
     ) : recipes === null ? (
-      <p>No recipes from this user</p>
-    ) : !recipeIdParam ? (
+      <p>No recipes yet</p>
+    ) : !recipeIdParam  ?  (
       recipes.map((recipe) => <MyRecipes key={recipe.recipeId} recipe={recipe} />)
     ) : (
       recipes.map((recipe) => {
@@ -55,6 +55,7 @@ class RecipesPosted extends Component {
 }
 
 RecipesPosted.propTypes = {
+  handle: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
   recipeId: PropTypes.string.isRequired

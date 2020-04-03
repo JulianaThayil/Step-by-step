@@ -1,21 +1,22 @@
 import React, { Component,Fragment } from 'react';
+import Navbar from '../../components/Navbar/Navbar'
 import UserNavbar from '../../components/Navbar/userNavbar'
 import NewRecipe from '../../components/RecipeCard/NewRecipe';
 import PropTypes from 'prop-types';
-import { Link , Redirect} from 'react-router-dom';
-import Footer from '../../components/Footer/Footer'
+import { Link, Redirect } from 'react-router-dom';
+
 
 //Mui stuff
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import LinearProgress from '@material-ui/core/LinearProgress';
-
+import Tabs from '../../components/tabs';
 
 //Redux stuff
 import { connect } from 'react-redux';
 
-class AddRecipe extends Component {
+class Settings extends Component {
 
     render() {
         const {
@@ -24,23 +25,18 @@ class AddRecipe extends Component {
               loading
             }
           } = this.props;
-          let profileMarkup = !loading ? (
+          let settingsMarkup = !loading ? (
             authenticated ? (
               <div> 
               <UserNavbar> </UserNavbar>
-              <Typography variant="h4"> 
-                Submit a Recipe
-              </Typography >
-              <NewRecipe> </NewRecipe>
-              <br />
-              <Footer>
-
-            </Footer>
+              <Typography> 
+                Settings
+              </Typography>
+              <Tabs> </Tabs>
+             
               </div>
             ) : (
-              <div> 
-               <Redirect to="/login" />
-              </div>
+              <Redirect to="/login" />
             )
           ) : (
             <LinearProgress variant="query" />
@@ -48,15 +44,14 @@ class AddRecipe extends Component {
       
           return (
             <div> 
-            {profileMarkup}
+            {settingsMarkup}
             
             </div>
           );
         }
       }
       
-
-AddRecipe.propTypes = {
+Settings.propTypes = {
     user: PropTypes.object.isRequired,
   };
   
@@ -67,5 +62,5 @@ const mapStateToProps = (state) => ({
  
   
   export default connect(
-    mapStateToProps )(AddRecipe);
+    mapStateToProps )(Settings);
   

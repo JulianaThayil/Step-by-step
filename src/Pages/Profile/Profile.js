@@ -54,12 +54,12 @@ class Profile extends Component {
          );
 
                
-
         return (
             
             <div>
             {NavigationBar}
             {profileMarkup}
+     
 
             </div>
         )

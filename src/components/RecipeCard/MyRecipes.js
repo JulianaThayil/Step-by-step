@@ -63,7 +63,7 @@ class MyRecipes extends Component {
         className={classes.media}
         component={Link} to={`/users/${userHandle}/${recipeId}`}
         image={pictureUrl}
-        title={title}
+  
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -73,12 +73,12 @@ class MyRecipes extends Component {
 
       <CardActions disableSpacing>
       <LikeButton recipeId={recipeId} />
-          <span>{likeCount} Likes</span>
+          <span>{likeCount} </span>
 
           <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
-          <span>{commentCount} comments</span>
+          <span>{commentCount}</span>
 
         <IconButton aria-label="share">
           <ShareIcon />

@@ -8,13 +8,13 @@ class AddRecipe extends Component {
     render() {
         return (
             <div>
-                
-     <Tooltip placement="top" title="Add Recipe">
-    < Fab color="primary" aria-label="add" size="small"  >
-        <AddIcon />
-      </Fab>
-      </Tooltip>
-                
+            <Link to="/addrecipe" >  
+            <Tooltip placement="top" title="Add Recipe" style={{ outline:'none'}}>
+            < Fab color="secondary" aria-label="add" size="small"  >
+            <AddIcon />
+            </Fab>
+            </Tooltip>
+             </Link>  
             </div>
         )
     }

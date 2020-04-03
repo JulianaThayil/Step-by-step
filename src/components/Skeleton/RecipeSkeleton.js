@@ -10,11 +10,11 @@ import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 345,
+    minWidth: 250,
     margin: theme.spacing(2),
   },
   media: {
-    height: 190,
+    height: 150,
   },
   div:{
     display: 'grid',

@@ -18,10 +18,12 @@ import ViewRecipe from './Pages/Recipe/viewRecipe';
 import Test from './Test'
 import Addrecipe from './Pages/Recipe/AddRecipe'
 
+
 //util
 import AuthRoute from './util/AuthRoute';
 
 import axios from 'axios';
+import Settings from './Pages/Profile/Settings';
 
 
 axios.defaults.baseURL ='https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api';
@@ -46,6 +48,7 @@ class App extends Component {
   render() {
 
     return (
+     
       <Provider store={store}>
       <Router>
       <div>
@@ -55,13 +58,14 @@ class App extends Component {
                 <AuthRoute exact path="/signup" component={Register} />
                 <Route exact path= "/users/:handle" component={Profile} />
                 <Route exact path="/users/:handle/:recipeId" component={ViewRecipe} />
-                <Route exact path="/test" component={Test} />
+                <Route exact path="/user/settings" component={Settings} />
                 <Route exact path="/addrecipe" component={Addrecipe} />
 
               </Switch>
       </div>
     </Router>
     </Provider>
+
     );
   }
 }

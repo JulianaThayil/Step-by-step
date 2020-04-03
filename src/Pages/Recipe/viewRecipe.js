@@ -8,6 +8,8 @@ import LikeButton from '../../util/LikeButton';
 import MyButton from '../../util/MyButton';
 import Comments from '../../util/Comments';
 import CommentForm from '../../util/CommentForm';
+import Footer from '../../components/Footer/Footer'
+
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
@@ -103,6 +105,15 @@ class viewRecipe extends Component {
           <Typography>
             {instructions}
           </Typography>
+
+          <MyButton tip="Reviews">
+            <ChatIcon color="primary" />
+          </MyButton>
+         
+
+
+          <br /> 
+          <Footer> </Footer>
           
           </Fragment>
 
@@ -117,6 +128,7 @@ class viewRecipe extends Component {
             {NavigationBar}
 
            {recipesMarkup}
+           
           
             </div>
         )
@@ -124,6 +136,7 @@ class viewRecipe extends Component {
 }
 
 viewRecipe.propTypes = {
+    comments: PropTypes.array.isRequired,
     user: PropTypes.object.isRequired,
     getRecipe: PropTypes.func.isRequired,
     recipeId: PropTypes.string.isRequired,

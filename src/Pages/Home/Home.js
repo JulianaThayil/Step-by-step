@@ -7,6 +7,8 @@ import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import ScrollToTop from '../../components/ScrollToTop'
+import UserNavbar from '../../components/Navbar/userNavbar';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -17,7 +19,23 @@ class Home extends Component {
     this.props.getRecipes();
   }
   render(){
-    const { recipes, loading } = this.props.data;
+    const {
+      user: {
+        authenticated,
+        loading
+      }
+    } = this.props;
+
+    let NavigationBar = !loading ? (
+            authenticated ? (
+                <UserNavbar> </UserNavbar>
+                ) : (
+                    <Navibar> </Navibar>)
+                    ) : (
+                      <LinearProgress variant="query" />
+                    );
+
+    const { recipes} = this.props.data;
     let recentRecipesMarkup = !loading ? (
       recipes.map((recipe) => <Recipe key={recipe.recipeId} recipe={recipe} />)
     ) : (
@@ -26,9 +44,13 @@ class Home extends Component {
 
     return (
      <div> 
-        <Navibar> </Navibar>
-        
-        <center> <h3> Popular</h3></center>
+       {NavigationBar}
+         
+        <br />
+         <h3 style={{marginLeft:'15%'}}> Explore</h3>
+        <Carousel> </Carousel>
+        <br/> 
+        <center> <h3> Recent Posts</h3></center>
         <div className={classes.bg}> 
 
         {recentRecipesMarkup}
@@ -43,12 +65,14 @@ class Home extends Component {
 }
 
 Home.propTypes = {
+  user: PropTypes.object.isRequired,
   getRecipes: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  data: state.data
+  data: state.data,
+  user: state.user
 });
 
 export default connect(

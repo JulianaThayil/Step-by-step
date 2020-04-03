@@ -93,7 +93,7 @@ class Login extends Component {
               </div>
               )}
         </button>
-       
+       <br />
         Forgot passwrod? <a href="#">Click Here </a>
 
         <br/>

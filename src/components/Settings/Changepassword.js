@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import classes from './Editprofile.module.css';
+import classes from './Editprofile/Editprofile.module.css';
 import PropTypes from 'prop-types';
 
 //MUI stuff

@@ -1,111 +1,38 @@
-import React from 'react';
+import React, {Component,Fragment} from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-
-//My Components
+import classes from './Profiles.module.css';
 import MyDetails from './MyDetails';
 import RecipesPosted from './RecipesPosted';
 
-//pages
-import EditProfile from '../../components/Editprofile/EditProfile';
-import NewRecipe from '../../components/RecipeCard/NewRecipe';
+import { connect } from 'react-redux';
+import { getUserData } from '../../redux/actions/dataActions';
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+class MyProfile extends Component{
+  
+    render(){
+     
+    
+  return(
+    <Fragment> 
+    <MyDetails></MyDetails> 
+    <RecipesPosted handle={this.props.user.credentials.handle}> </RecipesPosted>
 
-  return (
-    <Typography
-      component="div"
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box p={3}>{children}</Box>}
-    </Typography>
+    </Fragment>
   );
 }
+}
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+MyProfile.propTypes = {
+  user: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
-function a11yProps(index) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
+const mapStateToProps = (state) => ({
+  user: state.user,
+  data: state.data
+});
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-    display: 'flex',
-    height: 300,
-    float:'left',
-  },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
-  },
-}));
-
-export default function VerticalTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div>
-   
-    <MyDetails> </MyDetails>
-     <br /> 
-    <div className={classes.root}>
- 
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab label="My Profile" {...a11yProps(0)} />
-        <Tab label="Edit Profile" {...a11yProps(1)} />
-        <Tab label="Add a new Recipe" {...a11yProps(2)} />
-        <Tab label="Account" {...a11yProps(3)} />
-        <Tab label="Settings" {...a11yProps(4)} />
-        
-      </Tabs>
-      <TabPanel value={value} index={0}>
-   
-      </TabPanel>
-
-      <TabPanel value={value} index={1}>
-       <EditProfile> </EditProfile>
-      </TabPanel>
-
-      <TabPanel value={value} index={2}>
-        <NewRecipe> </NewRecipe>
-      </TabPanel>
-      
-      <TabPanel value={value} index={3}>
-        Account
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Settings
-      </TabPanel>
-    </div>
-    </div> 
-  );
-}
+export default connect(
+  mapStateToProps,
+)(MyProfile);

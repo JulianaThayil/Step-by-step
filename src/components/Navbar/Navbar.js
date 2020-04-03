@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import history from '../../history';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -90,8 +91,8 @@ export default function SearchAppBar() {
             />
           </div>
 
-           <Button color="inherit"> <Link to="/login">Login </Link></Button>
-          <Button color="inherit">Register</Button>
+           <Button color="inherit" onClick={() => history.push('/login')}> Login </Button>
+          <Button color="inherit" onClick={() => history.push('/signup')}>Register</Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from '../../components/Editprofile/Editprofile.module.css';
+import classes from '../../components/Settings/Editprofile/Editprofile.module.css';
 import PropTypes from 'prop-types';
 
 //firebase
@@ -30,8 +30,6 @@ class NewRecipe extends Component {
       ingredients:'',
       intructions:'',
       image:null,
-      url: '',
-      progress: 0,
       errors: {}
   };
   }
@@ -53,12 +51,9 @@ class NewRecipe extends Component {
     const {image} = this.state;
 
     const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
-    console.log(image.name);
       uploadTask.on('state_changed', 
       (snapshot) => {
-        // progrss function ....
-        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        this.setState({progress});
+        
       }, 
       (error) => {
            // error function ....
@@ -67,24 +62,25 @@ class NewRecipe extends Component {
     () => {
         // complete function ....
         storage.ref('recipes').child(image.name).getDownloadURL().then(url => {
-            console.log(url);
             url=url + '?alt=media';
-            this.setState({url});
+            console.log(url)
+            const newRecipe = {
+              title: this.state.title,
+              cookingTime: this.state.cookingTime,
+              serves: this.state.serves,
+              body: this.state.body,
+              ingredients: this.state.ingredients,
+              intructions: this.state.intructions,
+              pictureUrl: url,
+            };
+            this.props.postRecipe(newRecipe );
         })
+        
     });
 
+    
 
-    const newRecipe = {
-      title: this.state.title,
-      cookingTime: this.state.cookingTime,
-      serves: this.state.serves,
-      body: this.state.body,
-      ingredients: this.state.ingredients,
-      intructions: this.state.intructions,
-      pictureUrl:this.state.url
-    };
-    this.props.postRecipe(newRecipe );
-   
+
   };
 
   render() {
@@ -167,7 +163,7 @@ class NewRecipe extends Component {
       />
 
       <br/>
-     
+    
 
          <Button
                 type="submit"

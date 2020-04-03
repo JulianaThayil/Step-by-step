@@ -8,16 +8,24 @@ import { logoutUser} from '../../redux/actions/userActions';
 import { connect } from 'react-redux';
 
 class MenuItems extends Component {
+
     
     handleLogout = () => {
         this.props.logoutUser();
       };
     render() {
+      const {
+
+        user: {
+          credentials: { handle }
+        }
+      } = this.props;
         
         return (
-            <div>
-            <MenuItem >Feed</MenuItem>
-            <MenuItem >Profile</MenuItem>
+            <div >
+            <MenuItem ><NavLink to="/"> Feed </NavLink> </MenuItem>
+            <MenuItem > <NavLink to={`/users/${handle}`}>Profile </NavLink> </MenuItem>
+            <MenuItem ><NavLink to="/user/settings"> Settings </NavLink> </MenuItem>
             <MenuItem onClick={this.handleLogout}> <NavLink to="/login"> Logout </NavLink> </MenuItem>
             </div>
         )
