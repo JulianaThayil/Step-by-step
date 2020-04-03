@@ -23,8 +23,9 @@ class NewRecipe extends Component {
   constructor() {
     super();
     this.state = {
-      title:'',
-      cookingTime:'',
+      nameOfDish:'',
+      about:'',
+      preparationTime:'',
       serves:'',
       body:'',
       ingredients:'',
@@ -65,10 +66,10 @@ class NewRecipe extends Component {
             url=url + '?alt=media';
             console.log(url)
             const newRecipe = {
-              title: this.state.title,
-              cookingTime: this.state.cookingTime,
+              nameOfDish: this.state.nameOfDish,
+              about: this.state.about,
+              preparationTime: this.state.preparationTime,
               serves: this.state.serves,
-              body: this.state.body,
               ingredients: this.state.ingredients,
               intructions: this.state.intructions,
               pictureUrl: url,
@@ -98,26 +99,24 @@ class NewRecipe extends Component {
         <form className={classes.root} autoComplete="off" onSubmit={this.handleSubmit}>
          <div className={classes.main}>
 
-         <TextField name="title"  required label="Title" variant="filled" 
+         <TextField name="NameOfDish"  required label="Name of dish" variant="filled" 
          value={this.state.title}
          onChange={this.handleChange}
          />
          <br/>
+         <TextField required name="preparationTime"  label="Preparation time: "  
+        value={this.state.preparationtime}
+        onChange={this.handleChange} variant="filled" /> 
 
-         <TextField required name="cookingTime" size="small" variant="filled" 
-         value={this.state.cookingTime}
-         onChange={this.handleChange} 
-         /> 
-         <br/>
+        <br/>
 
          <TextField
          required
          name="serves"
-          size="small"
           label="Serves"
           type="number"
           InputLabelProps={{
-            shrink: true,
+            
           }}
           variant="filled" 
           value={this.state.serves}
@@ -125,8 +124,8 @@ class NewRecipe extends Component {
         />
         <br/>
 
-        <TextField required name="body" rows="3" 
-        value={this.state.body}
+        <TextField required name="about"  label="About " rows="3" 
+        value={this.state.about}
         onChange={this.handleChange} variant="filled" /> 
 
         <br/>
