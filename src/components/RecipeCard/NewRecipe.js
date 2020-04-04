@@ -23,9 +23,8 @@ class NewRecipe extends Component {
   constructor() {
     super();
     this.state = {
-      nameOfDish:'',
-      about:'',
-      preparationTime:'',
+      title:'',
+      cookingTime:'',
       serves:'',
       body:'',
       ingredients:'',
@@ -66,10 +65,10 @@ class NewRecipe extends Component {
             url=url + '?alt=media';
             console.log(url)
             const newRecipe = {
-              nameOfDish: this.state.nameOfDish,
-              about: this.state.about,
-              preparationTime: this.state.preparationTime,
+              title: this.state.title,
+              cookingTime: this.state.cookingTime,
               serves: this.state.serves,
+              body:this.state.body,
               ingredients: this.state.ingredients,
               intructions: this.state.intructions,
               pictureUrl: url,
@@ -99,13 +98,14 @@ class NewRecipe extends Component {
         <form className={classes.root} autoComplete="off" onSubmit={this.handleSubmit}>
          <div className={classes.main}>
 
-         <TextField name="NameOfDish"  required label="Name of dish" variant="filled" 
+         <TextField name="title"  required label="Name of your dish" variant="filled" 
          value={this.state.title}
          onChange={this.handleChange}
          />
+
          <br/>
-         <TextField required name="preparationTime"  label="Preparation time: "  
-        value={this.state.preparationtime}
+         <TextField required name="cookingTime"  label="Preparation time: "  
+        value={this.state.cookingTime}
         onChange={this.handleChange} variant="filled" /> 
 
         <br/>
@@ -124,8 +124,8 @@ class NewRecipe extends Component {
         />
         <br/>
 
-        <TextField required name="about"  label="About " rows="3" 
-        value={this.state.about}
+        <TextField required name="body"  label="Description " rows="3" 
+        value={this.state.body}
         onChange={this.handleChange} variant="filled" /> 
 
         <br/>
