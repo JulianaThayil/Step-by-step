@@ -10,12 +10,13 @@ import Typography from '@material-ui/core/Typography';
 const styles = () => ({
   commentImage: {
     maxWidth: '100%',
-    height: 100,
+    marginLeft:'15%',
+    height: 30,
     objectFit: 'cover',
     borderRadius: '50%'
   },
   commentData: {
-    marginLeft: 20
+    marginLeft: '0%'
   }
 });
 
@@ -27,17 +28,17 @@ class Comments extends Component {
         {comments.map((comment, index) => {
           const { body, createdAt, userImage, userHandle } = comment;
           return (
-            <Fragment key={createdAt}>
-              <Grid item sm={12}>
+            <Fragment key={createdAt}  >
+              <Grid item sm={10} style={{backgroundColor:'white'}}>
                 <Grid container>
-                  <Grid item sm={2}>
+                  <Grid item sm={1}>
                     <img
                       src={userImage}
                       alt="comment"
                       className={classes.commentImage}
                     />
                   </Grid>
-                  <Grid item sm={9}>
+                  <Grid >
                     <div className={classes.commentData}>
                       <Typography
                         variant="h5"
@@ -50,16 +51,21 @@ class Comments extends Component {
                       <Typography variant="body2" color="textSecondary">
                         {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                       </Typography>
-                      <hr />
+                  
                       <Typography variabnt="body1">{body}</Typography>
                     </div>
+                    <hr /> 
                   </Grid>
                 </Grid>
               </Grid>
+              
               {index !== comments.length - 1 && (
                 <hr  />
+               
               )}
+              
             </Fragment>
+           
           );
         })}
       </Grid>

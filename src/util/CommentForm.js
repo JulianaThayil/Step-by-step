@@ -9,6 +9,11 @@ import TextField from '@material-ui/core/TextField';
 import { connect } from 'react-redux';
 import { submitComment, clearErrors } from '../redux/actions/dataActions';
 
+const styles = () => ({
+  CommentForm:{
+    display:'inline',
+  }
+});
 
 class CommentForm extends Component {
   state = {
@@ -22,16 +27,20 @@ class CommentForm extends Component {
     }
     if (!nextProps.UI.errors && !nextProps.UI.loading) {
       this.setState({ body: '' });
+    
     }
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+    this.state.errors = false
+    
   };
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.submitComment(this.props.recipeId, { body: this.state.body });
     this.props.clearErrors();
+    this.state.errors = false
   };
 
   render() {
@@ -39,25 +48,27 @@ class CommentForm extends Component {
     const errors = this.state.errors;
 
     const commentFormMarkup = authenticated ? (
-      <Grid item sm={12} style={{ textAlign: 'center' }}>
-        <form onSubmit={this.handleSubmit}>
+      <Grid item sm={12} >
+        <form onSubmit={this.handleSubmit} className={classes.CommentForm}>
+         
           <TextField
             name="body"
             type="text"
-            label="Comment"
+            label=" Add a Review"
             error={errors.comment ? true : false}
             helperText={errors.comment}
             value={this.state.body}
             onChange={this.handleChange}
-            fullWidth
+            
           />
-          <Button
+          <Button style={{ marginTop:'1%'}}
             type="submit"
             variant="contained"
-            color="primary"
+            color="secondary"
           >
-            Submit
+            Submit Review
           </Button>
+          
         </form>
         <hr  />
       </Grid>
@@ -86,5 +97,5 @@ const mapActionsToProps = {
 
 export default connect(
   mapStateToProps,
-  mapActionsToProps
-)(CommentForm);
+  mapActionsToProps)
+(withStyles(styles)(CommentForm));

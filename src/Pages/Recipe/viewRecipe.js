@@ -54,6 +54,15 @@ class viewRecipe extends Component {
               UI: { loading }
           } = this.props;
 
+          let loginsignup=
+          authenticated ? (null):
+          (<span > 
+            
+            <Link to="/login"> Sign in </Link> or
+            <Link to="/signup"> Create a step-by-step account </Link>
+            to add your review
+            </span> );
+
           let NavigationBar = 
             authenticated ? (
                 <UserNavbar> </UserNavbar>
@@ -83,19 +92,12 @@ class viewRecipe extends Component {
               <Typography variant="h2"> 
               {title}
               </Typography>
-
-              <Typography>
-                {cookingTime}
-              </Typography>
-
-              <Typography>
-                {serves}
-              </Typography>
-
+             
+              by
             <Typography
             component={Link}
-            color="primary"
-            variant="h5"
+            color="secondary"
+            variant="h6"
             to={`/users/${userHandle}`}
           >
              @{userHandle}
@@ -109,18 +111,24 @@ class viewRecipe extends Component {
           <LikeButton recipeId={recipeId} />
           <span>{likeCount} likes</span>
 
-          <MyButton tip="comments">
-            <ChatIcon color="primary" />
+          <MyButton tip="reviews">
+            <ChatIcon color="secondary"/>
           </MyButton>
-          <span>{commentCount} comments</span>
+          <span>{commentCount} Reviews</span>
 
-         
+              <Typography lable="Cooking Time ">
+                {cookingTime}
+              </Typography>
+
+              <Typography lable="Serves ">
+                {serves}
+              </Typography>
+            
+          <img src={pictureUrl}  width="70%" height="40%"/> 
 
           <Typography> 
             {body}
           </Typography>
-
-          <img src={pictureUrl} /> 
 
           <Typography>
             {ingredients}
@@ -130,11 +138,16 @@ class viewRecipe extends Component {
             {instructions}
           </Typography>
 
-          
-          <MyButton tip="comments">
-            <ChatIcon color="primary" />
+          <Typography variant="h5">
+            Reviews
+            </Typography> 
+
+            {loginsignup}
+           <br />
+          <MyButton tip="reviews">
+            <ChatIcon color="secondary" />
           </MyButton>
-          <span>{commentCount} comments</span>
+          <span>{commentCount} Reviews</span>
           <CommentForm recipeId={recipeId} />
           {comments && <Comments comments={comments} />}
           
