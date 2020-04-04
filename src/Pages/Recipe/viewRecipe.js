@@ -16,7 +16,10 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import ButtonBase from '@material-ui/core/ButtonBase';
 //icons
 import ChatIcon from '@material-ui/icons/Chat';
 
@@ -54,15 +57,6 @@ class viewRecipe extends Component {
               UI: { loading }
           } = this.props;
 
-          let loginsignup=
-          authenticated ? (null):
-          (<span > 
-            
-            <Link to="/login"> Sign in </Link> or
-            <Link to="/signup"> Create a step-by-step account </Link>
-            to add your review
-            </span> );
-
           let NavigationBar = 
             authenticated ? (
                 <UserNavbar> </UserNavbar>
@@ -89,68 +83,82 @@ class viewRecipe extends Component {
     </Breadcrumbs>
    
 
-              <Typography variant="h2"> 
+              <Typography variant="h2" style={{alignSelf:'center' }}> 
               {title}
               </Typography>
-             
-              by
-            <Typography
-            component={Link}
-            color="secondary"
-            variant="h6"
-            to={`/users/${userHandle}`}
+          
+      <Paper >
+        <Grid container spacing={2}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.img} alt="complex" src={pictureUrl} style={{width:'500px' }} />
+            </ButtonBase>
+            <br />
+                
+                <LikeButton recipeId={recipeId} />
+                <span>{likeCount} likes</span>
+      
+                <MyButton tip="comments">
+                  <ChatIcon color="primary" />
+                </MyButton>
+                <span>{commentCount} comments</span>
+                <br/>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={3}>
+              <Grid item xs>
+                <Typography gutterBottom variant="subtitle1"
+                
+                 component={Link}
+                 color="primary"
+                 variant="h5"
+                 to={`/users/${userHandle}`}
           >
              @{userHandle}
-          </Typography>
-
-          <br />
-          <Typography variant="body2" color="textSecondary">
+              
+                </Typography>
+                <br />
+                <br/>
+                <Typography variant="body1" gutterBottom>
+                Serves:{serves}
+                </Typography>
+                <Typography variant="body1" >
+                {cookingTime}
+                </Typography>
+                <br/>
+                <Typography variant="body1" style={{ cursor: 'pointer' }}>
+                {body}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="body2" style={{ cursor: 'pointer' }}>
+              
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2" color="textSecondary">
             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
 
-          <LikeButton recipeId={recipeId} />
-          <span>{likeCount} likes</span>
-
-          <MyButton tip="reviews">
-            <ChatIcon color="secondary"/>
-          </MyButton>
-          <span>{commentCount} Reviews</span>
-
-              <Typography lable="Cooking Time ">
-                {cookingTime}
-              </Typography>
-
-              <Typography lable="Serves ">
-                {serves}
-              </Typography>
-            
-          <img src={pictureUrl}  width="70%" height="40%"/> 
-
-          <Typography> 
-            {body}
-          </Typography>
-
+<br/>
           <Typography>
-            {ingredients}
+            Ingredients:{ingredients}
           </Typography>
-
+<br/>
           <Typography>
-            {instructions}
+            Instructions:{instructions}
           </Typography>
 
-          <Typography variant="h5">
-            Reviews
-            </Typography> 
-
-            {loginsignup}
-           <br />
-          <MyButton tip="reviews">
-            <ChatIcon color="secondary" />
-          </MyButton>
-          <span>{commentCount} Reviews</span>
+          </Paper>
+          <br/>
+          
           <CommentForm recipeId={recipeId} />
           {comments && <Comments comments={comments} />}
-          
+        
           </div>
           <br /> 
           <Footer> </Footer>
@@ -160,13 +168,14 @@ class viewRecipe extends Component {
           ) : (
                      <CircularProgress style={{left:'50%',top:'50%'}}/> 
           );              
-                          
+                    
 
         return (
             
             <div>
             {NavigationBar}
            <div>  
+             
            {recipesMarkup}
            </div> 
            
