@@ -3,7 +3,8 @@ import UserNavbar from '../../components/Navbar/userNavbar'
 import NewRecipe from '../../components/RecipeCard/NewRecipe';
 import PropTypes from 'prop-types';
 import { Link , Redirect} from 'react-router-dom';
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../components/Footer/Footer';
+import classes from './styles.module.css';
 
 //Mui stuff
 import Button from '@material-ui/core/Button';
@@ -28,7 +29,7 @@ class AddRecipe extends Component {
             authenticated ? (
               <div> 
               <UserNavbar> </UserNavbar>
-              <Typography variant="h4"> 
+              <Typography className={classes.root} variant="h4"> 
                 Submit a Recipe
               </Typography >
               <NewRecipe> </NewRecipe>

@@ -1,6 +1,7 @@
   .root{
     min-width: 200;
     cursor: pointer;
+    ruby-align: center;
   }
   .media {
     height: 0;
