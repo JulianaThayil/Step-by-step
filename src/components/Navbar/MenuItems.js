@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
-import { NavLink} from 'react-router-dom';
+import { NavLink, Redirect} from 'react-router-dom';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ArtTrackIcon from '@material-ui/icons/ArtTrack'; //feed
@@ -17,6 +17,7 @@ class MenuItems extends Component {
     
     handleLogout = () => {
         this.props.logoutUser();
+  
       };
     render() {
       const {
@@ -31,7 +32,7 @@ class MenuItems extends Component {
             <MenuItem > <ArtTrackIcon /> <NavLink to="/"> Feed </NavLink> </MenuItem>
             <MenuItem ><PersonIcon /> <NavLink to={`/users/${handle}`}>Profile </NavLink> </MenuItem>
             <MenuItem > <SettingsIcon/> <NavLink to="/user/settings"> Settings </NavLink> </MenuItem>
-            <MenuItem onClick={this.handleLogout}> <PowerSettingsNewIcon /> <NavLink to="/login"> Logout </NavLink> </MenuItem>
+            <MenuItem onClick={this.handleLogout}> <PowerSettingsNewIcon /> <NavLink to="/login" >Logout </NavLink> </MenuItem>
             </div>
         )
     }

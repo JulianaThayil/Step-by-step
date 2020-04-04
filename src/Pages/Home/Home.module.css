@@ -6,8 +6,8 @@
 .bg{
     background-color: #F5F5F5;
     padding:4%;
-    margin-right: 15%;
-    margin-left: 15%;
+    margin-right: 10%;
+    margin-left: 10%;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     gap: 2% 1%;

@@ -2,6 +2,7 @@ import React, { Component,Fragment } from 'react';
 import Navbar from '../../components/Navbar/Navbar'
 import UserNavbar from '../../components/Navbar/userNavbar'
 import PropTypes from 'prop-types';
+import classes from './styles.module.css';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
 import LikeButton from '../../util/LikeButton';
@@ -9,6 +10,7 @@ import MyButton from '../../util/MyButton';
 import Comments from '../../util/Comments';
 import CommentForm from '../../util/CommentForm';
 import Footer from '../../components/Footer/Footer'
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 
 
 //Mui stuff
@@ -59,7 +61,24 @@ class viewRecipe extends Component {
                     <Navbar> </Navbar>);
 
           let recipesMarkup = !loading ? (
-            <Fragment>
+            <div> 
+            <div className={classes.body} >
+ 
+    <Breadcrumbs aria-label="breadcrumb" style={{backgroundColor:'white' }}>
+      <Link color="inherit" to="/">
+        Step-by-step
+      </Link>
+      <Link color="inherit" to={`/users/${userHandle}`}>
+        {userHandle}
+      </Link>
+      <Typography
+        color="textPrimary"
+        aria-current="page"
+      >
+        {title}
+      </Typography>
+    </Breadcrumbs>
+   
 
               <Typography variant="h2"> 
               {title}
@@ -90,6 +109,11 @@ class viewRecipe extends Component {
           <LikeButton recipeId={recipeId} />
           <span>{likeCount} likes</span>
 
+          <MyButton tip="comments">
+            <ChatIcon color="primary" />
+          </MyButton>
+          <span>{commentCount} comments</span>
+
          
 
           <Typography> 
@@ -106,16 +130,19 @@ class viewRecipe extends Component {
             {instructions}
           </Typography>
 
-          <MyButton tip="Reviews">
+          
+          <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
-         
-
-
+          <span>{commentCount} comments</span>
+          <CommentForm recipeId={recipeId} />
+          {comments && <Comments comments={comments} />}
+          
+          </div>
           <br /> 
           <Footer> </Footer>
           
-          </Fragment>
+          </div>
 
           ) : (
                      <CircularProgress style={{left:'50%',top:'50%'}}/> 
@@ -126,8 +153,9 @@ class viewRecipe extends Component {
             
             <div>
             {NavigationBar}
-
+           <div>  
            {recipesMarkup}
+           </div> 
            
           
             </div>
@@ -136,7 +164,6 @@ class viewRecipe extends Component {
 }
 
 viewRecipe.propTypes = {
-    comments: PropTypes.array.isRequired,
     user: PropTypes.object.isRequired,
     getRecipe: PropTypes.func.isRequired,
     recipeId: PropTypes.string.isRequired,

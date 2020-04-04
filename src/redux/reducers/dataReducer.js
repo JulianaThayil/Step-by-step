@@ -36,11 +36,11 @@ import {
       case LIKE_RECIPE:
       case UNLIKE_RECIPE:
         let index = state.recipes.findIndex(
-          (recipe) => recipe.recipeId === action.payload.recipeId
+          recipe => recipe.recipeId === action.payload.recipeId
         );
         state.recipes[index] = action.payload;
         if (state.recipe.recipeId === action.payload.recipeId) {
-          state.recipe = action.payload;
+          state.recipe = { ...state.recipe, ...action.payload };
         }
         return {
           ...state
