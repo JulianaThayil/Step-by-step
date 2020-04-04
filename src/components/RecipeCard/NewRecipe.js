@@ -155,7 +155,7 @@ class NewRecipe extends Component {
 
          <br/>
 
-  
+  <h3>Upload an image</h3>
       <input required accept="image/*" className={classes.ip}  id="imageInput" 
       onChange={this.handlePicture}
       type="file" 
