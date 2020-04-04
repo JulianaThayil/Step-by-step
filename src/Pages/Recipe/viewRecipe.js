@@ -120,14 +120,14 @@ class viewRecipe extends Component {
                 <br />
                 <br/>
                 <Typography variant="body2" gutterBottom>
-                Serves:{serves}
+                Serves: {serves}
                 </Typography>
                 <Typography variant="body2" >
-                {cookingTime}
+                Preparation time: {cookingTime}
                 </Typography>
                 <br/>
                 <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                {body}
+                Description: {body}
                 </Typography>
               </Grid>
               <Grid item>
