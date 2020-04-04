@@ -1,8 +1,8 @@
 .avatar {
   background: lightblue;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   }
    .ip{
     display: none;
@@ -20,8 +20,8 @@
     }
 
     .mainFeaturedPost {
-      margin-left:15%;
-      margin-right:15%;
+      margin-left:10%;
+      margin-right:10%;
       position: relative;
       color: white;
       margin-bottom: 1%;

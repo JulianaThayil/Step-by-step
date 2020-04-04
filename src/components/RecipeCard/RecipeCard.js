@@ -58,9 +58,10 @@ class RecipeCard extends Component {
 
       <CardHeader 
         avatar={
-          <Avatar aria-label="recipe"  >
+          <Avatar aria-label="recipe" style={{ objectFit: 'cover', }} >
             <img src={userImage} 
-            style={{  objectFit:'cover' }}
+            style={{objectFit: 'cover', }}
+            width="100%" height="100%"
             />
           </Avatar>
           
@@ -94,9 +95,9 @@ class RecipeCard extends Component {
           <ShareIcon />
         </IconButton>
 
-        <Fragment>
+        <div style={{marginRignt:'5%'}}>
         {deleteButton}
-        </Fragment>
+        </div>
         
       </CardActions>
       <Typography variant="body2" color="textSecondary" style={{left:'7%'}}>
