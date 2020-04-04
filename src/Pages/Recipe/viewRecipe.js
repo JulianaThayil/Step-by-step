@@ -56,6 +56,17 @@ class viewRecipe extends Component {
               },
               UI: { loading }
           } = this.props;
+          let loginsignup =
+          authenticated ?
+          null:
+          (
+            <span> 
+            <ChatIcon color="secondary" />
+            <Link to="/login" > Sign-in </Link> <p> or </p> 
+            <Link to="signup"> create your step-by-step account</Link> <p> to post a review </p>
+            </span>
+
+          );
 
           let NavigationBar = 
             authenticated ? (
@@ -99,7 +110,7 @@ class viewRecipe extends Component {
                 <span>{likeCount} likes</span>
       
                 <MyButton tip="comments">
-                  <ChatIcon color="primary" />
+                  <ChatIcon color="secondary" />
                 </MyButton>
                 <span>{commentCount} comments</span>
                 <br/>
@@ -155,6 +166,15 @@ class viewRecipe extends Component {
 
           </Paper>
           <br/>
+
+          
+
+          <Typography variant="h5"> 
+            Reviews
+          </Typography>
+
+          {loginsignup}
+          <br />
           
           <CommentForm recipeId={recipeId} />
           {comments && <Comments comments={comments} />}
