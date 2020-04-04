@@ -1,8 +1,10 @@
 .h1{
     text-align: left;
-    color: blue;
-    font-size: 50px;
+    color: #D5AFA7;
+    font-size: 40px;
   margin: 20px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .h3{
@@ -10,8 +12,8 @@
 }
 
 .footInfo{
-    margin: 0;
-    padding: 0;
+    margin-right: 10px;
+    
     height: 30px;
   text-align:right;
     
@@ -19,9 +21,12 @@
 
 
 .footOverall{
-    background-image: url("/assets/footer.jpg");
+    background-color: #bbb;
 }
 
+h3{
+  text-align: center;
+}
 
 ul#footInfo {
   display: inline;
