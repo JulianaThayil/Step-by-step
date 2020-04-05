@@ -36,7 +36,7 @@ class RecipesPosted extends Component {
     const recipesMarkup = loading ? (
       <Skeleton />
     ) : recipes === null ? (
-      <p>No recipes yet</p>
+      <p></p>
     ) : !recipeIdParam  ?  (
       recipes.map((recipe) => <MyRecipes key={recipe.recipeId} recipe={recipe} />)
     ) : (

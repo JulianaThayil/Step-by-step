@@ -1,10 +1,10 @@
-.h1{
-    text-align: left;
+.h2{
+    text-align: bottom;
     color: #D5AFA7;
-    font-size: 40px;
+    font-size: 20px;
   margin: 20px;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: rgb(170, 162, 162);
 }
 
 .h3{
@@ -22,7 +22,10 @@
 
 .footOverall{
     background-color: #bbb;
-}
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/footer.jpg?alt=media");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+  }
 
 h3{
   text-align: center;

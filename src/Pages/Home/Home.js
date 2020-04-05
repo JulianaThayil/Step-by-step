@@ -47,7 +47,7 @@ class Home extends Component {
        {NavigationBar}
          
         <br />
-         <h3 style={{marginLeft:'15%'}}> Explore</h3>
+         <h3 > Explore</h3>
         <Carousel> </Carousel>
         <br/> 
         <center> <h3> Recent Posts</h3></center>

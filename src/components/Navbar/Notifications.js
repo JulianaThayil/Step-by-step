@@ -48,7 +48,7 @@ class Notifications extends Component {
               badgeContent={
                 notifications.filter((not) => not.read === false).length
               }
-              color="secondary"
+              color="primary"
             >
               <NotificationsIcon />
             </Badge>

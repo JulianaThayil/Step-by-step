@@ -13,29 +13,29 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: ' A delicious chicken starter recipe, Kalmi Kebab is a mouth-watering appetizer to pick for your next dinner party. It is a popular dish on many restaurant menus as well, but now you can make this sumptuous snack with this simple and easy recipe. ',
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://c.ndtvimg.com/2018-10/0tqg6vdo_kalmi-kebab_625x300_25_October_18.jpg',
   },
   {
-    label: 'Bird',
+    label: 'This chicken biryani is cooked in coconut oil, which is again a healthier oil as compared to many other oils. Tangy tomato puree and fresh yogurt with a slew of spices and herbs dish out a flavourful and aromatic biryani, just the way you like it.',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://i.ndtvimg.com/i/2018-04/biryani_620x350_71522754686.jpg',
   },
   {
-    label: 'Bali, Indonesia',
+    label: 'A refreshing summer delight! Mango basil colada is a perfect beverage to prepare for a sunny treat at home to relish with friends and family. Packed with the goodness of mangoes and basil, this is a sweet treat you would love to keep repeating.',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+      'https://c.ndtvimg.com/2019-06/frnds548_mango_625x300_27_June_19.jpg',
   },
   {
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
+    label: 'An absolutely flavourful fish recipe for all those who love to dive into succulent spicy pomfret. Here is a quick and super easy pan fried pomfret packed with a host of spices and a tang of lime along with a crispy crust and succulent inside.',
     imgPath:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://c.ndtvimg.com/2019-08/untdopi_pomfret_625x300_29_August_19.jpg',
   },
   {
-    label: 'Goč, Serbia',
+    label: 'A delicious dish to savour on in breakfast! This recipe is a healthy amalgamation of seafood, mornay sauce and assorted herbs. A plate full of taste and health right in your kitchen!',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://c.ndtvimg.com/tc51jlk_seafood-rock-filler_625x300_17_July_18.jpg',
   },
 ];
 
@@ -49,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: 'flex',
     alignItems: 'center',
-    height: 50,
+    height: 80,
     paddingLeft: theme.spacing(4),
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    minWidth: 200,
+    minWidth: 250,
     height: 330,
     display: 'block',
   

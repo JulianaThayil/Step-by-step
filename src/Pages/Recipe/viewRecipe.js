@@ -100,6 +100,9 @@ class viewRecipe extends Component {
               <Typography variant="h2" style={{alignSelf:'center' }}> 
               {title}
               </Typography>
+              <Typography variant="body2" color="textSecondary">
+            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+          </Typography>
           
       <Paper >
         <Grid container spacing={2}>
@@ -113,7 +116,7 @@ class viewRecipe extends Component {
                 <span>{likeCount} likes</span>
       
                 <MyButton tip="comments">
-                  <ChatIcon color="secondary" />
+                  <ChatIcon color="primary" />
                 </MyButton>
                 <span>{commentCount} comments</span>
                 <br/>
@@ -125,7 +128,7 @@ class viewRecipe extends Component {
                 
                  component={Link}
                  color="primary"
-                 variant="h5"
+                 variant="h6"
                  to={`/users/${userHandle}`}
           >
              @{userHandle}
@@ -140,25 +143,19 @@ class viewRecipe extends Component {
                 Preparation time: {cookingTime}
                 </Typography>
                 <br/>
-                <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                Description: {body}
-                </Typography>
+               
               </Grid>
-              <Grid item>
-                <Typography variant="body2" style={{ cursor: 'pointer' }}>
               
-                </Typography>
-              </Grid>
             </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
-          </Typography>
-            </Grid>
+          
           </Grid>
         </Grid>
 
 <br/>
+<Typography variant="body2" style={{ cursor: 'pointer' }}>
+                Description: {body}
+                </Typography>
+                <br />
           <Typography>
             Ingredients:{ingredients}
           </Typography>
@@ -170,11 +167,12 @@ class viewRecipe extends Component {
           </Paper>
           <br/>
 
-
-
           <Typography variant="h5"> 
             Reviews
           </Typography>
+         
+                <span>{commentCount} Reviews </span>
+                <br />
 
           {loginsignup}
           <br />

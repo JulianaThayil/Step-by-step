@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import classes from '../../components/Settings/Editprofile/Editprofile.module.css';
 import PropTypes from 'prop-types';
-
+import { Redirect } from 'react-router-dom';
 //firebase
 import {storage} from '../../firebase/index';
 
@@ -74,6 +74,11 @@ class NewRecipe extends Component {
               pictureUrl: url,
             };
             this.props.postRecipe(newRecipe );
+            const finish=false;
+            finish=true;
+            if(finish){
+              return  <Redirect  to="/users/${userHandle}" />
+          }
         })
         
     });

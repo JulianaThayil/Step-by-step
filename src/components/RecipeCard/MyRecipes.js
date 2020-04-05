@@ -63,7 +63,7 @@ class MyRecipes extends Component {
         className={classes.media}
         component={Link} to={`/users/${userHandle}/${recipeId}`}
         image={pictureUrl}
-  
+        title={title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

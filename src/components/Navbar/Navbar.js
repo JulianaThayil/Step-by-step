@@ -91,8 +91,10 @@ export default function SearchAppBar() {
             />
           </div>
 
-           <Button color="inherit" onClick={() => history.push('/login')}> Login </Button>
-          <Button color="inherit" onClick={() => history.push('/signup')}>Register</Button>
+           <Button color="inherit" component={Link} to={`/login`}
+          > Login </Button>
+          <Button color="inherit" component={Link} to={`/signup`}
+          >Register</Button>
         </Toolbar>
       </AppBar>
     </div>

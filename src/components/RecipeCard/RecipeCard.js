@@ -1,4 +1,4 @@
-import React, { Component,Fragment} from 'react';
+import React, { Component} from 'react';
 import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
@@ -7,6 +7,7 @@ import MyButton from '../../util/MyButton';
 import LikeButton from '../../util/LikeButton';
 import DeleteRecipe from '../../util/DeleteRecipe';
 import {Link} from 'react-router-dom';
+import Truncate from 'react-truncate';
 
 //MUI stuff
 import Card from '@material-ui/core/Card';
@@ -46,6 +47,8 @@ class RecipeCard extends Component {
       }
     } = this.props;
 
+    
+
     const deleteButton =
       authenticated && userHandle === handle ? (
         <DeleteRecipe recipeId={recipeId} />
@@ -76,10 +79,10 @@ class RecipeCard extends Component {
         image={pictureUrl}
         title={title}
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {body}
-        </Typography>
+      <CardContent >
+      <Truncate lines={2} >
+                {body}
+            </Truncate>
       </CardContent>
 
       <CardActions disableSpacing>
@@ -89,7 +92,7 @@ class RecipeCard extends Component {
           <MyButton tip="comments">
             <ChatIcon color="secondary" />
           </MyButton>
-          <span>{commentCount} comments</span>
+          <span>{commentCount} Reviews</span>
 
         <IconButton aria-label="share">
           <ShareIcon />
