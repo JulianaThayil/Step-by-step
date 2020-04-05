@@ -14,7 +14,7 @@ class MyProfile extends Component{
      
     
   return(
-    <Fragment> 
+    <Fragment > 
     <MyDetails></MyDetails> 
     <RecipesPosted handle={this.props.user.credentials.handle}> </RecipesPosted>
 
