@@ -9,7 +9,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
-
+import Paper from '@material-ui/core/Paper';
 //Redux stuff
 import { connect } from 'react-redux';
 import { editUserDetails } from '../../../redux/actions/userActions';
@@ -54,19 +54,13 @@ class EditProfile extends Component {
   render(){
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <Paper className={classes.form}>
+    <form  noValidate autoComplete="off">
       <div className={classes.main}>
       <TextField
         name="name"
-        id="input-with-icon-textfield"
+
         label="Name"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
       />
        <br/>
          <TextField
@@ -92,11 +86,10 @@ class EditProfile extends Component {
 
         <Button
         variant="contained"
-        color="primary"
         size="small"
         startIcon={<SaveIcon />}
         onClick={this.handleSubmit}
-      >
+       className={classes.save}>
         Save
       </Button>
      
@@ -104,6 +97,7 @@ class EditProfile extends Component {
       </div>
      
     </form>
+    </Paper>
   );
 }
 

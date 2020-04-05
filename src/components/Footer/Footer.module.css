@@ -1,29 +1,33 @@
 .h1{
     text-align: left;
-    color: #D5AFA7;
-    font-size: 40px;
+    color: rgb(223, 185, 177);
+    font-size: 30px;
   margin: 20px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
 .h3{
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .footInfo{
-    margin-right: 10px;
-    
-    height: 30px;
-  text-align:right;
+  
+    margin-right: 30px;
+    font-size: medium;
+    height: 100px;
+  text-align:center;
     
 }
 
 
 .footOverall{
-    background-color: #bbb;
-}
+  background-image:url(https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/cooking%20pattern%20footer.png);
 
+
+}
 h3{
   text-align: center;
 }
