@@ -10,7 +10,7 @@ function footer() {
                     <p href="#">About us</p>
                     <p href="#">Contact us</p>
                 </div>
-                <h3>Made with Love in Goa.</h3>
+                <h3>Made with Love in Goa <FavoriteIcon> </FavoriteIcon> </h3>
             </div>
     );
 }
