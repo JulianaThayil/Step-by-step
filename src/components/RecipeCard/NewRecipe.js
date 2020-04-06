@@ -29,7 +29,7 @@ class NewRecipe extends Component {
       serves:'',
       body:'',
       ingredients:'',
-      intructions:'',
+      instructions:'',
       image:null,
       errors: {}
   };
@@ -64,23 +64,16 @@ class NewRecipe extends Component {
         // complete function ....
         storage.ref('recipes').child(image.name).getDownloadURL().then(url => {
             url=url + '?alt=media';
-            console.log(url)
             const newRecipe = {
               title: this.state.title,
               cookingTime: this.state.cookingTime,
               serves: this.state.serves,
               body:this.state.body,
               ingredients: this.state.ingredients,
-              intructions: this.state.intructions,
+              instructions: this.state.instructions,
               pictureUrl: url,
             };
-            this.props.postRecipe(newRecipe );
-            const finish=false;
-            finish=true;
-            if(finish){
-              return  <Redirect  to="/" />
-          }
-            
+            this.props.postRecipe(newRecipe )       
         })
         
     });
@@ -165,13 +158,13 @@ class NewRecipe extends Component {
          <br/>
         <TextField
           required
-          name="intructions"
+          name="instructions"
           label="Instructions"
           placeholder="Add each instruction on a new line"
           rows="4"
           multiline
           fullWidth
-          value={this.state.intructions}
+          value={this.state.instructions}
           onChange={this.handleChange}
           variant="filled" 
         />
@@ -183,8 +176,7 @@ class NewRecipe extends Component {
                 type="submit"
                 disabled={loading}
                 variant="contained"
-                color="secondary"
-                fullWidth
+       
               >
                 Post 
                 {loading && (
