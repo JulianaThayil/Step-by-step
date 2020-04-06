@@ -47,7 +47,6 @@ class RecipeCard extends Component {
       }
     } = this.props;
 
-    
 
     const deleteButton =
       authenticated && userHandle === handle ? (
@@ -60,15 +59,7 @@ class RecipeCard extends Component {
     <Card className={classes.root}  >
 
       <CardHeader 
-        avatar={
-          <Avatar aria-label="recipe" style={{ objectFit: 'cover', }} >
-            <img src={userImage} 
-            style={{objectFit: 'cover', }}
-            width="100%" height="100%"
-            />
-          </Avatar>
-          
-        }
+       
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
@@ -81,7 +72,7 @@ class RecipeCard extends Component {
             width="100%" height="100%"
       />
       <CardContent >
-      <Truncate lines={2} >
+      <Truncate lines={1} >
                 {body}
             </Truncate>
       </CardContent>
@@ -104,9 +95,7 @@ class RecipeCard extends Component {
         </div>
         
       </CardActions>
-      <Typography variant="body2" color="textSecondary" style={{left:'7%'}}>
-      by {userHandle}
-      </Typography>
+     
      
     </Card>
   

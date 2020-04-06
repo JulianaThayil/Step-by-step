@@ -38,7 +38,7 @@ class StaticProfile extends Component{
     
   return(
     <Fragment> 
-    <Paper style={{  backgroundImage:'url(./assets/cover.jpg)' }} className={classes.mainFeaturedPost} >
+    <Paper style={{  backgroundImage:'url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)' }} className={classes.mainFeaturedPost} >
     {<img style={{ display: 'none' }}  />}
       <div className={classes.overlay} />
       <Grid container>
@@ -48,7 +48,7 @@ class StaticProfile extends Component{
          <img className={classes.avatar} src={profile.imageUrl} 
           />
 
-          <h3>{profile.handle} </h3>
+          <Typography>{profile.handle} </Typography>
           {profile.bio && <Typography variant="body2">{profile.bio}</Typography>}
             
               {profile.location && (

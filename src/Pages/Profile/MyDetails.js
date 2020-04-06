@@ -58,7 +58,7 @@ class Details extends Component{
               <EditIcon color="primary" />
               </MyButton>
           
-          <h3>{handle} </h3>
+          <Typography >{handle} </Typography>
           {bio && <Typography variant="body2">{bio}</Typography>}
             
               {location && (
