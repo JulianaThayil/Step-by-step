@@ -115,10 +115,10 @@ class viewRecipe extends Component {
                 <LikeButton recipeId={recipeId} />
                 <span>{likeCount} likes</span>
       
-                <MyButton tip="comments">
+                <MyButton tip="Reviews">
                   <ChatIcon color="primary" />
                 </MyButton>
-                <span>{commentCount} comments</span>
+                <span>{commentCount} Reviews</span>
                 <br/>
           </Grid>
           <Grid item xs={12} sm container>
