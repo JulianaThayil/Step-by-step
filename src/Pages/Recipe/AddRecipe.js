@@ -44,7 +44,7 @@ class AddRecipe extends Component {
               </div>
             )
           ) : (
-            <LinearProgress variant="query" />
+            <LinearProgress color="secondary" />
           );
       
           return (

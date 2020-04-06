@@ -32,7 +32,7 @@ class Home extends Component {
                 ) : (
                     <Navibar> </Navibar>)
                     ) : (
-                      <LinearProgress variant="query" />
+                      <LinearProgress color="secondary" />
                     );
 
     const { recipes} = this.props.data;

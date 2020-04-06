@@ -15,7 +15,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -187,7 +187,7 @@ class viewRecipe extends Component {
           </div>
 
           ) : (
-                     <CircularProgress style={{left:'50%',top:'50%'}}/> 
+            <LinearProgress color="secondary" />
           );              
                     
 
