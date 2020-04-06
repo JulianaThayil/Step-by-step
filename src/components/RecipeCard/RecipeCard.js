@@ -77,7 +77,8 @@ class RecipeCard extends Component {
         className={classes.media}
         component={Link} to={`/users/${userHandle}/${recipeId}`}
         image={pictureUrl}
-        title={title}
+        style={{objectFit: 'cover', }}
+            width="100%" height="100%"
       />
       <CardContent >
       <Truncate lines={2} >

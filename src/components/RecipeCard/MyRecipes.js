@@ -1,4 +1,4 @@
-import React, { Component,Fragment} from 'react';
+import React, { Component} from 'react';
 import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
@@ -7,6 +7,7 @@ import MyButton from '../../util/MyButton';
 import LikeButton from '../../util/LikeButton';
 import DeleteRecipe from '../../util/DeleteRecipe';
 import {Link} from 'react-router-dom';
+import Truncate from 'react-truncate';
 
 //MUI stuff
 import Card from '@material-ui/core/Card';
@@ -25,7 +26,7 @@ import ChatIcon from '@material-ui/icons/Chat';
 //Redux stuff
 import { connect } from 'react-redux';
 
-class MyRecipes extends Component {
+class RecipeCard extends Component {
   render(){
     dayjs.extend(relativeTime);
     const {
@@ -34,6 +35,7 @@ class MyRecipes extends Component {
         body,
         pictureUrl,
         createdAt,
+        userImage,
         userHandle,
         recipeId,
         likeCount,
@@ -45,6 +47,8 @@ class MyRecipes extends Component {
       }
     } = this.props;
 
+    
+
     const deleteButton =
       authenticated && userHandle === handle ? (
         <DeleteRecipe recipeId={recipeId} />
@@ -54,48 +58,62 @@ class MyRecipes extends Component {
   return (
  
     <Card className={classes.root}  >
+
       <CardHeader 
-        
+        avatar={
+          <Avatar aria-label="recipe" style={{ objectFit: 'cover', }} >
+            <img src={userImage} 
+            style={{objectFit: 'cover', }}
+            width="100%" height="100%"
+            />
+          </Avatar>
+          
+        }
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
+ 
       <CardMedia
         className={classes.media}
         component={Link} to={`/users/${userHandle}/${recipeId}`}
         image={pictureUrl}
-        title={title}
+        style={{objectFit: 'cover', }}
+            width="100%" height="100%"
       />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {body}
-        </Typography>
+      <CardContent >
+      <Truncate lines={2} >
+                {body}
+            </Truncate>
       </CardContent>
 
       <CardActions disableSpacing>
       <LikeButton recipeId={recipeId} />
-          <span>{likeCount} </span>
+          <span>{likeCount} Likes</span>
 
           <MyButton tip="comments">
-            <ChatIcon color="primary" />
+            <ChatIcon color="secondary" />
           </MyButton>
-          <span>{commentCount}</span>
+          <span>{commentCount} Reviews</span>
 
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
 
-        <Fragment>
+        <div style={{marginRignt:'5%'}}>
         {deleteButton}
-        </Fragment>
+        </div>
         
       </CardActions>
+      <Typography variant="body2" color="textSecondary" style={{left:'7%'}}>
+      by {userHandle}
+      </Typography>
+     
     </Card>
   
   );
 }
 }
-
-MyRecipes.propTypes = {
+RecipeCard.propTypes = {
   user: PropTypes.object.isRequired,
   recipe: PropTypes.object.isRequired,
 };
@@ -104,4 +122,4 @@ const mapStateToProps = (state) => ({
   user: state.user
 });
 
-export default connect(mapStateToProps)(MyRecipes);
+export default connect(mapStateToProps)(RecipeCard);

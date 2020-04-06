@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from '../../components/Settings/Editprofile/Editprofile.module.css';
+import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 //firebase
@@ -9,6 +9,7 @@ import {storage} from '../../firebase/index';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
+
 
 //icons
 import IconButton from '@material-ui/core/IconButton';
@@ -77,14 +78,13 @@ class NewRecipe extends Component {
             const finish=false;
             finish=true;
             if(finish){
-              return  <Redirect  to="/users/${userHandle}" />
+              return  <Redirect  to="/" />
           }
+            
         })
         
     });
-
     
-
 
   };
 
@@ -100,19 +100,29 @@ class NewRecipe extends Component {
     
 
       <div style={{  backgroundImage:'url(https://i.pinimg.com/564x/dd/c9/68/ddc96843d58dd6928da23220bb94507f.jpg)' }}>
-        <form className={classes.root} autoComplete="off" onSubmit={this.handleSubmit}>
-         <div className={classes.main}>
-
-         <TextField name="title"  required label="Name of your dish" variant="filled" 
+        <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.form}>
+  
+      <div className={classes.image}>       
+          <PhotoCamera />
+          <input required accept="image/*" className={classes.ip}  id="imageInput" 
+      onChange={this.handlePicture}
+      type="file" 
+      />
+      </div> 
+      <br />
+      <TextField name="title"  required label="Name of your dish" variant="filled" 
          value={this.state.title}
+         fullWidth
          onChange={this.handleChange}
          />
 
          <br/>
-         <TextField required name="cookingTime"  label="Preparation time: "  
+         <br/>
+         <TextField required name="cookingTime"  label="Cooking time: "  
         value={this.state.cookingTime}
         onChange={this.handleChange} variant="filled" /> 
 
+        <br/>
         <br/>
 
          <TextField
@@ -128,12 +138,17 @@ class NewRecipe extends Component {
           onChange={this.handleChange}
         />
         <br/>
+         <br/>
+
+        
 
         <TextField required name="body"  label="Description " rows="3" 
         value={this.state.body}
+        fullWidth
         onChange={this.handleChange} variant="filled" /> 
 
-        <br/>
+<br/>
+         <br/>
       <TextField
           required
           name="ingredients"
@@ -141,11 +156,13 @@ class NewRecipe extends Component {
           placeholder="Add each ingredient on a new line"
           rows="4"
           multiline
+          fullWidth
           value={this.state.ingredients}
           onChange={this.handleChange}
           variant="filled" 
         />
         <br/>
+         <br/>
         <TextField
           required
           name="intructions"
@@ -153,27 +170,21 @@ class NewRecipe extends Component {
           placeholder="Add each instruction on a new line"
           rows="4"
           multiline
+          fullWidth
           value={this.state.intructions}
           onChange={this.handleChange}
           variant="filled" 
         />
 
          <br/>
-
-  <h3>Upload an image</h3>
-      <input required accept="image/*" className={classes.ip}  id="imageInput" 
-      onChange={this.handlePicture}
-      type="file" 
-      />
-
-      <br/>
-    
+         <br/>
 
          <Button
                 type="submit"
                 disabled={loading}
                 variant="contained"
-                color="primary"
+                color="secondary"
+                fullWidth
               >
                 Post 
                 {loading && (
@@ -184,10 +195,9 @@ class NewRecipe extends Component {
                  )
                 }
               
-              </Button>
+         </Button>
+    
 
-
-           </div>
            </form>
         
       </div>

@@ -19,15 +19,6 @@ class RecipesPosted extends Component {
 
     if (recipeId) this.setState({ recipeIdParam: recipeId });
 
-    this.props.getUserData(handle);
-    axios
-      .get(`/user/${handle}`)
-      .then((res) => {
-        this.setState({
-          profile: res.data.user
-        });
-      })
-      .catch((err) => console.log(err));
   }
   render() {
     const { recipes, loading } = this.props.data;
