@@ -97,34 +97,36 @@ class viewRecipe extends Component {
     </Breadcrumbs>
    
 
-              <Typography variant="h2" style={{alignSelf:'center' }}> 
+              <Typography variant="h4"  className={classes.text} style={{alignSelf:'center'}}> 
               {title}
               </Typography>
-              <Typography variant="body2" color="textSecondary">
-            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
-          </Typography>
+
           
-      <Paper >
-        <Grid container spacing={2}>
+      <Paper  >
+      <div  className={classes.paper}> 
+        <Grid container spacing={2}  >
           <Grid item>
+            <div className={classes.image1}>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={pictureUrl} style={{width:'500px' }} />
+              <img className={classes.img} alt="image" src={pictureUrl} style={{width:'40vw'}} />
             </ButtonBase>
-            <br />
-                
+            </div>
+            
+            
                 <LikeButton recipeId={recipeId} />
-                <span>{likeCount} likes</span>
-      
+                <span className={classes.text} >{likeCount} likes</span>
+              
                 <MyButton tip="Reviews">
                   <ChatIcon color="primary" />
                 </MyButton>
-                <span>{commentCount} Reviews</span>
+                <span className={classes.text}>{commentCount} Reviews</span>
+                
                 <br/>
           </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={3}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1"
+                <Typography gutterBottom variant="subtitle1" className={classes.text}
                 
                  component={Link}
                  color="primary"
@@ -134,12 +136,17 @@ class viewRecipe extends Component {
              @{userHandle}
               
                 </Typography>
-                <br />
                 <br/>
-                <Typography variant="body2" gutterBottom>
+                <Typography variant="body2" color="textSecondary" className={classes.text}>
+            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+          </Typography>
+                <br />
+               
+                <Typography variant="h7" gutterBottom className={classes.text} >
                 Serves: {serves}
                 </Typography>
-                <Typography variant="body2" >
+                <br/>
+                <Typography variant="h7"  className={classes.text}>
                 Preparation time: {cookingTime}
                 </Typography>
                 <br/>
@@ -152,22 +159,35 @@ class viewRecipe extends Component {
         </Grid>
 
 <br/>
-<Typography variant="body2" style={{ cursor: 'pointer' }}>
-                Description: {body}
+<Typography variant="h7" className={classes.text}>
+                Description:
                 </Typography>
+<Typography variant="body2" style={{ cursor: 'pointer' }}>
+                {body}
+                </Typography>
+
                 <br />
-          <Typography>
-            Ingredients:{ingredients}
+<Typography variant="h7" className={classes.text}>
+               Ingredients:
+                </Typography>
+          <Typography variant="body2" style={{ cursor: 'pointer' }}>
+           {ingredients}
           </Typography>
 <br/>
-          <Typography>
-            Instructions:{instructions}
+<Typography variant="h7" className={classes.text}>
+              Instructions:
+                </Typography>
+          <Typography variant="body2" style={{ cursor: 'pointer' }}>
+            {instructions }
           </Typography>
 
+          </div>
           </Paper>
+         
           <br/>
 
-          <Typography variant="h5"> 
+         
+          <Typography variant="h5" className={classes.text}> 
             Reviews
           </Typography>
          
