@@ -10,6 +10,7 @@ import ScrollToTop from '../../components/ScrollToTop'
 import UserNavbar from '../../components/Navbar/userNavbar';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
+
 //Redux stuff
 import { connect } from 'react-redux';
 import { getRecipes } from '../../redux/actions/dataActions';
@@ -43,22 +44,27 @@ class Home extends Component {
     );
 
     return (
-     <div> 
+     <div  > 
        {NavigationBar}
          
         <br />
          <h3 > Explore</h3>
+         <br />
         <Carousel> </Carousel>
         <br/> 
+        <br/>
         <center> <h3> Recent Posts</h3></center>
         <div className={classes.bg}> 
 
         {recentRecipesMarkup}
-        <ScrollToTop></ScrollToTop> 
         </div>
-        
+        <br/>
+        <ScrollToTop></ScrollToTop> 
+        <br/>
+
+        <div>
         <Footer></Footer>
-        
+        </div>
       </div>
     );
   }

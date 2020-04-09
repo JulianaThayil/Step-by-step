@@ -94,7 +94,7 @@ class Login extends Component {
               )}
         </button>
        <br />
-        Forgot passwrod? <a href="#">Click Here </a>
+        Forgot password? <a href="#">Click Here </a>
 
         <br/>
         <center>- or- </center>
