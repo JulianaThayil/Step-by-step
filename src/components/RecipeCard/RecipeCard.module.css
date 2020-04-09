@@ -1,12 +1,11 @@
 .image{
   display: flex;
+ 
 }
 
 .form{
   box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
-  width:50%;
   background-color:white;
-
 }
 .media {
   height: 0;

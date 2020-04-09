@@ -10,6 +10,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 //Redux stuff
 import { connect } from 'react-redux';
 import { editUserDetails } from '../../../redux/actions/userActions';
@@ -54,12 +55,12 @@ class EditProfile extends Component {
   render(){
 
   return (
-    <Paper className={classes.form}>
+    <Paper className={classes.main}>
     <form  noValidate autoComplete="off">
-      <div className={classes.main}>
+      <div className={classes.form}>
+        <Typography variant='h4' align='center'></Typography>
       <TextField
         name="name"
-
         label="Name"
       />
        <br/>

@@ -5,7 +5,7 @@
     padding:1vw;
     margin-right: 2vw;
     margin-left: 2vw;
-    margin-bottom: 5vh;
+    margin-bottom: 7vh;
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     gap: 2% 2%;

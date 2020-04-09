@@ -13,12 +13,15 @@ $color-white: #FFF;
 .body{
     background-color:#EBECF0;
     display:flex;
+    background-image: src="./assets/5.jpg";
+    background-repeat: no-repeat; /* Do not repeat the image */
+  
 }
 form {
   padding: $ruler;
   width: $ruler*20;
   margin: 0 auto;
-  
+
 }
 
 .but:focus { outline: none !important; box-shadow: none !important; }

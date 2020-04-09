@@ -9,7 +9,7 @@ import {storage} from '../../firebase/index';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
-
+import Typography from '@material-ui/core/Typography';
 
 //icons
 import IconButton from '@material-ui/core/IconButton';
@@ -92,16 +92,23 @@ class NewRecipe extends Component {
     return (
     
 
-      <div style={{  backgroundImage:'url(https://i.pinimg.com/564x/dd/c9/68/ddc96843d58dd6928da23220bb94507f.jpg)' }}>
+      <div >
         <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.form}>
   
+        <Typography  variant="h4" align="center"> 
+             Submit a Recipe
+        </Typography >
+        <br/>
+        
       <div className={classes.image}>       
           <PhotoCamera />
           <input required accept="image/*" className={classes.ip}  id="imageInput" 
       onChange={this.handlePicture}
       type="file" 
       />
+      
       </div> 
+      
       <br />
       <TextField name="title"  required label="Name of your dish" variant="filled" 
          value={this.state.title}

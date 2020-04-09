@@ -29,9 +29,11 @@ class Settings extends Component {
             authenticated ? (
               <div> 
               <UserNavbar> </UserNavbar>
-              <Typography> 
+              <br/>
+              <Typography  variant="h5" align="center"> 
                 Settings
               </Typography>
+              <br/>
               <Tabs> </Tabs>
              
               </div>

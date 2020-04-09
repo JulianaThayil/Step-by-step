@@ -29,9 +29,7 @@ class AddRecipe extends Component {
             authenticated ? (
               <div> 
               <UserNavbar> </UserNavbar>
-              <Typography className={classes.root} variant="h4"> 
-                Submit a Recipe
-              </Typography >
+
               <NewRecipe> </NewRecipe>
               <br />
               <Footer>

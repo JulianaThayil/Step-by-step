@@ -41,11 +41,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    display: 'flex',
-    height: 224,
+    height: '1vh',
+   
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+   
   },
 }));
 
@@ -60,7 +61,7 @@ export default function VerticalTabs() {
   return (
     <div className={classes.root}>
       <Tabs
-        orientation="vertical"
+        orientation="horizontal"
         variant="scrollable"
         value={value}
         onChange={handleChange}
