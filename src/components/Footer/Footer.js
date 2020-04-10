@@ -20,8 +20,8 @@ function footer() {
                     <p>
                         This is an easy recipe sharing website which is made 
                         for those who really love sharing their work and skill
-                        baked right from their kitchens. Make an account and 
-                        start your chopping into the world of STEP-BY-STEP.
+                        baked right from their kitchens. Join us and 
+                        start chopping into the world of STEP-BY-STEP.
                     </p>
                 </div>
 
