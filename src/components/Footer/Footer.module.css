@@ -1,39 +1,80 @@
-.h2{
-    text-align: bottom;
-    color: #D5AFA7;
-    font-size: 20px;
-  margin: 20px;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(170, 162, 162);
+.footer{
+  background: #303036;
+  color: #d3d3d3;
+  height: 400px;
+  position: relative;
 }
 
-.h3{
+.footer .footerBottom{
+  background: #343a40;
+  color: #686868;
+  height: 50px;
+  width: 100%;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 20px;
 }
 
-.footInfo{
-  
-    margin-right: 30px;
-    font-size: medium;
-    height: 100px;
-  text-align:center;
-    
+.footer .footerContent{
+  height: 350px;
+  display: flex;
 }
 
-.footOverall{
+.footer .footerContent .footerSectionAbout{
+  flex: 1;
+  padding: 25px;
+}
 
-    background-color: #bbb;
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/footer.jpg?alt=media");
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-  }
+.footer .footerContent .footerSectionAbout p{
+  font-size: 25px;
+}
 
-h3{
+.footer .footerContent .footerSectionChef{
+  flex: 1;
+  padding: 25px;
+}
+
+.footer .footerContent .footerSectionChef img{
+  max-height: 340px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
+
+.footer .footerContent .footerSectionContact{
+  flex: 1;
+  padding: 25px;
+}
+
+.footer .footerContent .footerSectionContact .socials a{
+  border: 1px solid gray;
+  width: 45px;
+  height: 41px;
+  padding-top: 5px;
+  margin-right: 5px;
   text-align: center;
+  display: inline-block;
+  font-size: 1.3em;
+  border-radius: 5px;
 }
 
-ul#footInfo {
-  display: inline;
+.footer .footerContent .footerSectionContact .socials a:hover{
+  border: 1px solid white;
+  color: white;
+}
+
+.footer .footerContent h1, .footer .footerContent h2{
+  color: white;
+}
+
+.footer .footerContent .footerSectionAbout span{
+  color: #d60943;
+}
+
+.footer .footerContent .footerSectionContact span{
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 8px;
 }
