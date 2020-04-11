@@ -10,6 +10,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import history from '../../history';
+import { red } from '@material-ui/core/colors';
+
+const logoColor = {
+  color: 'blue'
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,6 +30,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
     },
   },
+
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -75,7 +81,7 @@ export default function SearchAppBar() {
         <Toolbar>
          
           <Typography className={classes.title} variant="h6" noWrap>
-            Step-by-Step
+            <span style={logoColor}>Step</span>-by-Step
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
