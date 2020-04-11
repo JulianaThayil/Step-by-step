@@ -27,14 +27,14 @@ class Settings extends Component {
           } = this.props;
           let settingsMarkup = !loading ? (
             authenticated ? (
-              <div> 
+              <div > 
               <UserNavbar> </UserNavbar>
               <br/>
-              <Typography  variant="h5" align="center"> 
+              <Typography  variant="h4" align="center"> 
                 Settings
               </Typography>
-              <br/>
-              <Tabs></Tabs>
+              
+              <Tabs ></Tabs>
              
               </div>
             ) : (
@@ -45,7 +45,7 @@ class Settings extends Component {
           );
       
           return (
-            <div> 
+            <div > 
             {settingsMarkup}
             
             </div>

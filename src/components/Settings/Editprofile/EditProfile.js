@@ -55,7 +55,7 @@ class EditProfile extends Component {
   render(){
 
   return (
-    <div className={classes.main}>
+   
     <form   className={classes.settingform} noValidate autoComplete="off">
       
         <Typography variant='h4' align='center'></Typography>
@@ -98,7 +98,7 @@ class EditProfile extends Component {
       </Button>
      
     </form>
-      </div>
+     
   );
 }
 

@@ -19,7 +19,7 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      {value === index && <Box>{children}</Box>}
     </Typography>
   );
 }
@@ -41,14 +41,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    height: '1vh',
-   
+    
+    
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-   
+
+
   },
 }));
+
 
 export default function VerticalTabs() {
   const classes = useStyles();
@@ -61,6 +63,7 @@ export default function VerticalTabs() {
   return (
     <div className={classes.edittabs}>
       <Tabs
+      
         orientation="horizontal"
         variant="scrollable"
         value={value}
@@ -75,8 +78,9 @@ export default function VerticalTabs() {
         <Tab label="Item Five" {...a11yProps(4)} />
        
       </Tabs>
+      <br/>
       <TabPanel value={value} index={0}>
-      <EditDetails> </EditDetails>
+      <EditDetails></EditDetails>
       </TabPanel>
       <TabPanel value={value} index={1}>
       Change Password
