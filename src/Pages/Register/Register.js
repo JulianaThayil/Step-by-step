@@ -126,7 +126,7 @@ class signup extends Component {
     </button>
   
   <br/>
-  Already a member ? <Link to="/"> login </Link><br/>
+  Already a member ? <Link to="/login"> login </Link><br/>
   </div>
 
 </form>   
