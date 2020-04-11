@@ -150,15 +150,8 @@ class viewRecipe extends Component {
                 Preparation time: {cookingTime}
                 </Typography>
                 <br/>
-               
-              </Grid>
-              
-            </Grid>
-          
-          </Grid>
-        </Grid>
-
-<br/>
+                <br/>
+                
 <Typography variant="h7" className={classes.text}>
                 Description:
                 </Typography>
@@ -166,7 +159,17 @@ class viewRecipe extends Component {
                 {body}
                 </Typography>
 
-                <br />
+                
+                
+               
+              </Grid>
+              
+            </Grid>
+          
+          </Grid>
+        </Grid>
+     
+        <br />
 <Typography variant="h7" className={classes.text}>
                Ingredients:
                 </Typography>

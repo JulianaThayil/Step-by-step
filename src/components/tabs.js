@@ -59,7 +59,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.edittabs}>
       <Tabs
         orientation="horizontal"
         variant="scrollable"

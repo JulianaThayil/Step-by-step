@@ -49,13 +49,13 @@ class Login extends Component {
         <div>
             <Logo> </Logo>
             <div class="body" >
-              <img width="46%"   src="./assets/5.jpg"/> 
+              
               <form noValidate onSubmit={this.handleSubmit}>
         
         <div class="segment">
           <h1>Sign in</h1>
         </div>
-       
+       <br/>
         
         <label>
           <input name="email" class="ip" type="email" placeholder="Email" 
@@ -101,7 +101,6 @@ class Login extends Component {
         <br/>
         <Link to="/signup">  
         <button class="red but" type="button"><i class="icon ion-md-lock"></i> Register
-        <br/>
         </button>
         </Link>   
  

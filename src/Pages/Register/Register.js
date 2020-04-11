@@ -66,7 +66,7 @@ class signup extends Component {
       <div  > 
         <Logo> </Logo>
       <div class="body" >
-        <img width="46%"  src="./assets/5.jpg"/> 
+         
         <form noValidate onSubmit={this.handleSubmit}>
   
   <div>

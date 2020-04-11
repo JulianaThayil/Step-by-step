@@ -11,13 +11,19 @@ $color-white: #FFF;
 }
 
 .body{
-    background-color:#EBECF0;
-    display:flex;
-    background-image: src="./assets/5.jpg";
-    background-repeat: no-repeat; /* Do not repeat the image */
+ 
+background-image: url("https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/13.png");
+background-size: 100vw 100vh ;
+background-repeat: no-repeat; /* Do not repeat the image */
+height:100vh;
+width: 100%;
+
+  }
+
   
-}
+
 form {
+
   padding: $ruler;
   width: $ruler*20;
   margin: 0 auto;
@@ -27,7 +33,7 @@ form {
 .but:focus { outline: none !important; box-shadow: none !important; }
 
 .segment {
-  padding: $ruler*2 0;
+ 
   text-align: center;
   
 }

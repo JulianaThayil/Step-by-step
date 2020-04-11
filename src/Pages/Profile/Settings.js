@@ -34,7 +34,7 @@ class Settings extends Component {
                 Settings
               </Typography>
               <br/>
-              <Tabs> </Tabs>
+              <Tabs></Tabs>
              
               </div>
             ) : (

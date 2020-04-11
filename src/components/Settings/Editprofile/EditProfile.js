@@ -55,31 +55,34 @@ class EditProfile extends Component {
   render(){
 
   return (
-    <Paper className={classes.main}>
-    <form  noValidate autoComplete="off">
-      <div className={classes.form}>
+    <div className={classes.main}>
+    <form   className={classes.settingform} noValidate autoComplete="off">
+      
         <Typography variant='h4' align='center'></Typography>
       <TextField
         name="name"
         label="Name"
+        fullWidth
       />
        <br/>
          <TextField
           id="standard-multiline-static"
           label="Bio"
+          
+          rows="2"
           multiline
-          rows="4"
+          fullWidth
           name="bio"
           placeholder="A short bio about yourself"
           value={this.state.bio}
           onChange={this.handleChange}
         />
         <br/>
-        <TextField id="standard-required" label="Website" name="website" value={this.state.website}
+        <TextField id="standard-required"  fullWidth label="Website" name="website" value={this.state.website}
                 onChange={this.handleChange}/>
         
         <br/>
-        <TextField id="standard-required" label="Location" name="location"
+        <TextField id="standard-required" label="Location" name="location" fullWidth
         value={this.state.location}
         onChange={this.handleChange}  />
         <br/>
@@ -94,11 +97,8 @@ class EditProfile extends Component {
         Save
       </Button>
      
-
-      </div>
-     
     </form>
-    </Paper>
+      </div>
   );
 }
 
