@@ -13,12 +13,19 @@ $color-white: #FFF;
 .body{
  
 background-image: url("https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/13.png");
-background-size: 100vw 100vh ;
+background-size: 100vw 88.5vh ;
 background-repeat: no-repeat; /* Do not repeat the image */
-height:100vh;
-width: 100%;
+height:88.5vh;
+background-position: center;
+
 
   }
+  @media only screen and (max-width: 375px) {
+    .body {
+        background-size:170vw 100vh;
+        
+        }
+      }
 
   
 

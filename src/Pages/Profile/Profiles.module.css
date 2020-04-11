@@ -1,8 +1,8 @@
 .avatar {
   background: lightblue;
   border-radius: 50%;
-  width: 140px;
-  height: 140px;
+  width: 20vh;
+  height: 20vh;
   }
    .ip{
     display: none;
@@ -29,7 +29,9 @@
       background-repeat: no-repeat;
       background-position: center;
       margin-top:1%;
-      width:950px;
+      width:80vw;
+      height:35vh;
+
     }
 
     .overlay {
@@ -42,7 +44,7 @@
     }
     .mainFeaturedPostContent{
       position: relative;
-      margin-left:20%;
+      margin-left:7vw;
       color: white;
       margin-top: 5%;
     }

@@ -34,6 +34,7 @@ class Details extends Component{
 
     
   return(
+   
     <Paper style={{  backgroundImage:'url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)' }} className={classes.mainFeaturedPost} >
     {<img style={{ display: 'none' }}  />}
       <div className={classes.overlay} />
@@ -70,6 +71,7 @@ class Details extends Component{
         </Grid>
       </Grid>
     </Paper>
+   
   );
 }
 }

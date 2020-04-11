@@ -50,8 +50,10 @@ class Home extends Component {
         <br />
         <center><h3 > Explore </h3></center>
          <br />
+        
         <Carousel> </Carousel>
         <br/> 
+        <br/>
         <br/>
         <center> <h3> Recent Posts</h3></center>
         <div className={classes.bg}> 
