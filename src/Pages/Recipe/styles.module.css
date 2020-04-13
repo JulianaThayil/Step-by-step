@@ -1,8 +1,7 @@
 .body{
     background-color: #F5F5F5;
     padding:4%;
-    margin-right: 2vw;
-    margin-left: 2vw;
+   
 }
 
 .root{
@@ -36,7 +35,7 @@ font-size: 2vh;
 @media only screen and (max-width: 425px) {
  
     .img{
-      margin-left:1vw;
+      margin-left:3vw;
      
       width: 80vw;
     }
