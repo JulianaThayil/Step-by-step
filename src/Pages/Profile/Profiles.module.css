@@ -43,16 +43,30 @@
       background-color: rgba(24, 20, 20, 0.3);
     }
     .mainFeaturedPostContent{
+     
       position: relative;
       margin-left:7vw;
       color: white;
-      margin-top: 5%;
+      margin-top: 2%;
+      
     }
     
   .settingspage{
     padding:0px;
   }
+  .details{
+    margin-right: 10px;
+  }
   @media only screen and (max-width: 425px) {
+    .mainFeaturedPostContent{
+     
+      display: inline-flex;
+      position: relative;
+      margin-left:7vw;
+      color: white;
+      margin-top: 4%;
+      
+    }
     .mainFeaturedPost {
       margin-left:0%;
       margin-right:0%;
@@ -62,7 +76,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      margin-top:1%;
+      margin-top:2%;
       width:100vw;
       height:20vh;
 
@@ -73,4 +87,12 @@
       width: 15vh;
       height: 15vh;
       }
-  }
+      .details{
+     padding-top: 3vw;
+        position: relative;
+        margin-left:1vw;
+        color: white;
+    
+        
+      }
+    }

@@ -58,7 +58,7 @@ class Details extends Component{
               >
               <EditIcon color="primary" />
               </MyButton>
-          
+          <div className={classes.details}>
           <Typography >{handle} </Typography>
           {bio && <Typography variant="body2">{bio}</Typography>}
             
@@ -67,6 +67,7 @@ class Details extends Component{
                   <LocationOn color="primary" /> <span>{location}</span>
                 </Fragment>
               )}
+              </div>
           </div>
         </Grid>
       </Grid>
