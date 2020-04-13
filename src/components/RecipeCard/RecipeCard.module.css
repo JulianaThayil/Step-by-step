@@ -1,11 +1,12 @@
 .image{
-  display: flex;
- 
+align-content: center;
+
 }
 
-.form{
+.newform{
   box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
   background-color:white;
+  width: 60vw;
 }
 .media {
   height: 0;
@@ -19,3 +20,24 @@
 .username{
   padding-left:2vw;
 }
+
+@media only screen and (max-width: 425px) {
+  .newform{
+    width: 100vw;
+
+  }
+  
+}
+@media only screen and (width: 768px) {
+  .newform{
+    width: 70vw;
+
+  }
+  
+}
+@media only screen and (max-width: 320px) {
+  .image{
+    display: flex;
+  }
+
+  }

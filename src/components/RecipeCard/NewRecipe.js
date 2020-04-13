@@ -93,14 +93,14 @@ class NewRecipe extends Component {
     
 
       <div >
-        <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.form}>
+        <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
   
         <Typography  variant="h4" align="center"> 
              Submit a Recipe
         </Typography >
         <br/>
         
-      <div className={classes.image}>       
+      <div className={classes.image} align='center'>       
           <PhotoCamera />
           <input required accept="image/*" className={classes.ip}  id="imageInput" 
       onChange={this.handlePicture}
@@ -178,8 +178,8 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
-
-         <Button
+<div align='center'>
+         <Button 
                 type="submit"
                 disabled={loading}
                 variant="contained"
@@ -191,11 +191,12 @@ class NewRecipe extends Component {
                     size={30}
                     className={classes.progressSpinner}
                   />
+                 
                  )
                 }
               
          </Button>
-    
+         </div>
 
            </form>
         

@@ -39,7 +39,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: ,
     backgroundColor: theme.palette.background.paper,
     
     
@@ -61,7 +61,7 @@ export default function VerticalTabs() {
   };
 
   return (
-    <div className={classes.edittabs}>
+    <div >
       <Tabs
       
         orientation="horizontal"
