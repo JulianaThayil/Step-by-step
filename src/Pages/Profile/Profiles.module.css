@@ -20,8 +20,8 @@
     }
 
     .mainFeaturedPost {
-      margin-left:10%;
-      margin-right:10%;
+      margin-left:5%;
+      margin-right:5%;
       position: relative;
       color: white;
       margin-bottom: 1%;
@@ -29,7 +29,7 @@
       background-repeat: no-repeat;
       background-position: center;
       margin-top:1%;
-      width:80vw;
+      width:90vw;
       height:35vh;
 
     }
@@ -51,4 +51,26 @@
     
   .settingspage{
     padding:0px;
+  }
+  @media only screen and (max-width: 425px) {
+    .mainFeaturedPost {
+      margin-left:0%;
+      margin-right:0%;
+      position: relative;
+      color: white;
+      margin-bottom: 1%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top:1%;
+      width:100vw;
+      height:20vh;
+
+    }
+    .avatar {
+      background: lightblue;
+      border-radius: 50%;
+      width: 15vh;
+      height: 15vh;
+      }
   }

@@ -101,6 +101,7 @@ function SwipeableTextMobileStepper() {
         ))}
         
       </AutoPlaySwipeableViews>
+      <br/>
       <Paper square elevation={0} className={classes.paper}>
       <Typography variant="body2">{tutorialSteps[activeStep].label}</Typography>
       </Paper>
