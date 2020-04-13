@@ -145,8 +145,8 @@ flex-wrap: wrap;
 
 
 .footer .footerContent .footerSectionChef img{
-  height:32vh;
-  width:32vh;
+  height:30vh;
+  width:40vw;
   flex: 1;
 
   padding-right: 0vw;
@@ -167,7 +167,7 @@ padding-right: 2vw;
     .footer .footerBottom{
   
       height: 5vh;
-      padding-top: 1vw;
+      padding-top: 1vh;
       font-size: 2vh;
     }
 }
@@ -182,11 +182,11 @@ padding-right: 2vw;
     flex: 1;
     padding-top: 1vw;
     padding-right: 0vw;
-    padding-left:4vw ;
+    padding-left:1vw ;
   }
   .footer .footerContent .footerSectionContact{
     
-   
+   padding-left:1vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
