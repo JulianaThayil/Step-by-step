@@ -99,12 +99,12 @@ class RecipeCard extends Component {
           <ShareIcon />
         </IconButton>
 
-        <div style={{marginRight:'5%'}}>
+        <div style={{marginRight:'2%'}}>
         {deleteButton}
         </div>
         
       </CardActions>
-      <Typography className={classes.username} variant="body2" color="textSecondary" style={{marginleft:'5%'}}>
+      <Typography className={classes.username} variant="body2" color="textSecondary" >
       by {userHandle}
       </Typography>
      
