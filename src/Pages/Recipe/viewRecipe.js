@@ -108,7 +108,7 @@ class viewRecipe extends Component {
           <Grid item>
             <div className={classes.image1}>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="image" src={pictureUrl} style={{width:'40vw'}} />
+              <img className={classes.img} alt="image" src={pictureUrl}  />
             </ButtonBase>
             </div>
             

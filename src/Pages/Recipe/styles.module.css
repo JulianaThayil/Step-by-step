@@ -24,9 +24,20 @@
 .text{
     font-weight:5px;
     color: black;
-    font-variant: small-caps;
+
 }
 
 .likesreviews{
 font-size: 2vh;
+}
+.img{
+   width:35vw;
+}
+@media only screen and (max-width: 425px) {
+ 
+    .img{
+      margin-left:1vw;
+     
+      width: 80vw;
+    }
 }
