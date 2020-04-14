@@ -47,6 +47,7 @@ class StaticProfile extends Component{
           <div className={classes.mainFeaturedPostContent}>
          <img className={classes.avatar} src={profile.imageUrl} 
           />
+          <div className={classes.details}>
 
           <Typography>{profile.handle} </Typography>
           {profile.bio && <Typography variant="body2">{profile.bio}</Typography>}
@@ -54,8 +55,11 @@ class StaticProfile extends Component{
               {profile.location && (
                 <Fragment>
                   <LocationOn color="primary" /> <span>{profile.location}</span>
+                  
                 </Fragment>
+              
               )}
+          </div>
           </div>
         </Grid>
       </Grid>
