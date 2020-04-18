@@ -10,15 +10,15 @@ import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 250,
+    minWidth: 280,
     margin: theme.spacing(2),
   },
   media: {
-    height: 150,
+    height: 200,
   },
   div:{
     display: 'grid',
-    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
+    gridTemplate: 'repeat(4, 1fr) / repeat(4, 1fr)',
     gap: '2% 1%',
   },
   

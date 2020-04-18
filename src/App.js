@@ -16,7 +16,8 @@ import Notfound from './notfound'
 import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
 import Test from './Test'
-import Addrecipe from './Pages/Recipe/AddRecipe'
+import Addrecipe from './Pages/Recipe/AddRecipe';
+import NewRecipe from './components/RecipeCard/NewRecipe';
 
 
 //util
@@ -60,7 +61,6 @@ class App extends Component {
                 <Route exact path="/users/:handle/:recipeId" component={ViewRecipe} />
                 <Route exact path="/user/settings" component={Settings} />
                 <Route exact path="/addrecipe" component={Addrecipe} />
-
               </Switch>
       </div>
     </Router>

@@ -30,7 +30,7 @@ class Settings extends Component {
               <div > 
               <UserNavbar> </UserNavbar>
               <br/>
-              <Typography  variant="h4" align="center"> 
+              <Typography  variant="h5" > 
                 Settings
               </Typography>
               

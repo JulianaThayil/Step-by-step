@@ -10,6 +10,9 @@ import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Tooltip from '@material-ui/core/Tooltip';
 
 //icons
 import IconButton from '@material-ui/core/IconButton';
@@ -28,11 +31,16 @@ class NewRecipe extends Component {
       cookingTime:'',
       serves:'',
       body:'',
-      ingredients:'',
+      ingredients:[{name:"", amount:""}],
       instructions:'',
       image:null,
       errors: {}
   };
+  }
+  addIngredient = (e) => {
+    this.setState((prevState) => ({
+      ingredients: [...prevState.ingredients, {name:"", amount:""}],
+    }));
   }
   
   handlePicture = e => {
@@ -41,11 +49,21 @@ class NewRecipe extends Component {
       this.setState(() => ({image}));
     }
   }
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = (e) => {
+
+    if (["name", "amount"].includes(e.target.className) ) {
+
+      let ingredients = [...this.state.ingredients]   
+      ingredients[e.target.dataset.id][e.target.className] = e.target.value
+      this.setState({ ingredients })
+
+    } else {
+      this.setState({ [e.target.name]: e.target.value })
+    }
   };
+
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //to prevent auto reload
     this.setState({
       loading: true
     });
@@ -82,7 +100,7 @@ class NewRecipe extends Component {
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors,ingredients } = this.state;
     const {
       
       UI: { loading }
@@ -102,13 +120,13 @@ class NewRecipe extends Component {
         
       <div className={classes.image} align='center'>       
           <PhotoCamera />
-          <input required accept="image/*" className={classes.ip}  id="imageInput" 
+          <input accept="image/*" className={classes.ip}  id="imageInput" 
       onChange={this.handlePicture}
       type="file" 
       />
       
       </div> 
-      
+    
       <br />
       <TextField name="title"  required label="Name of your dish" variant="filled" 
          value={this.state.title}
@@ -118,13 +136,12 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
+         <div className={classes.display}> 
          <TextField required name="cookingTime"  label="Cooking time: "  
         value={this.state.cookingTime}
         onChange={this.handleChange} variant="filled" /> 
 
-        <br/>
-        <br/>
-
+        {"   "}
          <TextField
          required
          name="serves"
@@ -137,6 +154,8 @@ class NewRecipe extends Component {
           value={this.state.serves}
           onChange={this.handleChange}
         />
+
+         </div>
         <br/>
          <br/>
 
@@ -147,24 +166,54 @@ class NewRecipe extends Component {
         fullWidth
         onChange={this.handleChange} variant="filled" /> 
 
-<br/>
          <br/>
-      <TextField
-          required
-          name="ingredients"
-          label="Ingredients"
-          placeholder="Add each ingredient on a new line"
-          rows="4"
-          multiline
-          fullWidth
-          value={this.state.ingredients}
-          onChange={this.handleChange}
-          variant="filled" 
-        />
+         <br/>
+         <Typography>Ingredients (click the + button below to add a new ingredient) </Typography>
+
+         {
+          ingredients.map((val, idx)=> {
+            let ingredientId = `ingredient-${idx}`, amountId = `amount-${idx}`
+            return (
+              <div key={idx} className={classes.display} onChange={this.handleChange}>
+              <br/>
+                <input
+                  lable={`Ingredient ${idx + 1} `}
+                  type="text"
+                  name={ingredientId}
+                  data-id={idx}
+                  id={ingredientId}
+                  placeholder={`Ingredient ${idx + 1} `}
+                  className="name"
+                />
+                {"   "}
+                <input
+                  lable="amount"
+                  type="text"
+                  name={amountId}
+                  data-id={idx}
+                  id={amountId}
+                  placeholder="amount"
+                  className="amount"
+
+                />
+                 <br/>
+             </div>
+            
+              
+            )
+          })
+        }
+
+         <br/>
+         <Tooltip onClick={this.addIngredient} title="Add new ingredient" style={{ outline:'none'}}>
+            < Fab color="secondary" aria-label="add" size="small"  >
+            <AddIcon />
+            </Fab>
+         </Tooltip>
+      
         <br/>
          <br/>
         <TextField
-          required
           name="instructions"
           label="Instructions"
           placeholder="Add each instruction on a new line"
@@ -178,7 +227,7 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
-<div align='center'>
+        <div align='center'>
          <Button 
                 type="submit"
                 disabled={loading}

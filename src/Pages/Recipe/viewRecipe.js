@@ -11,13 +11,18 @@ import Comments from '../../util/Comments';
 import CommentForm from '../../util/CommentForm';
 import Footer from '../../components/Footer/Footer'
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-
+import Ingredient from './Ingredient';
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ButtonBase from '@material-ui/core/ButtonBase';
 //icons
@@ -32,6 +37,8 @@ class viewRecipe extends Component {
     const recipeId = this.props.match.params.recipeId;
     this.props.getRecipe(recipeId);
   }
+  
+
 
     render() {
         const {
@@ -56,6 +63,14 @@ class viewRecipe extends Component {
               },
               UI: { loading }
           } = this.props;
+          var ingredientsMarkup=null;
+            {
+              ingredients &&
+              (ingredientsMarkup = 
+            ingredients.map((ingredient) => <Ingredient key={ingredient.name} ingredient={ingredient} />)
+              )
+            }
+        
 
           let loginsignup =
           authenticated ?
@@ -159,9 +174,6 @@ class viewRecipe extends Component {
                 {body}
                 </Typography>
 
-                
-                
-               
               </Grid>
               
             </Grid>
@@ -170,20 +182,32 @@ class viewRecipe extends Component {
         </Grid>
      
         <br />
-<Typography variant="h7" className={classes.text}>
-               Ingredients:
-                </Typography>
-          <Typography variant="body2" style={{ cursor: 'pointer' }}>
-           {ingredients}
-          </Typography>
-<br/>
+        <div className={classes.display}> 
+        <div>
+        <TableContainer component={Paper}>
+      <Table size="small" aria-label="a dense table">
+        <TableHead className={classes.head}>
+          <TableRow >
+            <TableCell style={{color:'white'}}>Ingredient</TableCell>
+            <TableCell style={{color:'white'}} >Quantity</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+        {ingredientsMarkup}
+        </TableBody>
+      </Table>
+    </TableContainer>
+      </div>
+    
+<div> 
 <Typography variant="h7" className={classes.text}>
               Instructions:
                 </Typography>
           <Typography variant="body2" style={{ cursor: 'pointer' }}>
             {instructions }
           </Typography>
-
+</div>
+</div>
           </div>
           </Paper>
          
