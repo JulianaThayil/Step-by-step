@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import AutoComplete from './AutoComplete';
+import '../../../src/index.css';
 //firebase
 import {storage} from '../../firebase/index';
 
@@ -15,13 +17,13 @@ import AddIcon from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
 
 //icons
-import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 // Redux stuff
 import { connect } from 'react-redux';
 import { postRecipe, clearErrors } from '../../redux/actions/dataActions';
 
+import StepZilla from "react-stepzilla";
 
 class NewRecipe extends Component {
   constructor() {
@@ -50,7 +52,7 @@ class NewRecipe extends Component {
     }
   }
   handleChange = (e) => {
-
+    e.preventDefault(); 
     if (["name", "amount"].includes(e.target.className) ) {
 
       let ingredients = [...this.state.ingredients]   
@@ -95,9 +97,9 @@ class NewRecipe extends Component {
         })
         
     });
-    
-
   };
+
+  
 
   render() {
     const { errors,ingredients } = this.state;
@@ -106,18 +108,9 @@ class NewRecipe extends Component {
       UI: { loading }
     } = this.props;
 
-    
-    return (
-    
-
-      <div >
-        <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
-  
-        <Typography  variant="h4" align="center"> 
-             Submit a Recipe
-        </Typography >
-        <br/>
-        
+    const steps =
+    [
+      {name: 'Step 1', component: <Fragment> 
       <div className={classes.image} align='center'>       
           <PhotoCamera />
           <input accept="image/*" className={classes.ip}  id="imageInput" 
@@ -168,44 +161,49 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
-         <Typography>Ingredients (click the + button below to add a new ingredient) </Typography>
 
-         {
-          ingredients.map((val, idx)=> {
-            let ingredientId = `ingredient-${idx}`, amountId = `amount-${idx}`
-            return (
-              <div key={idx} className={classes.display} onChange={this.handleChange}>
-              <br/>
-                <input
-                  lable={`Ingredient ${idx + 1} `}
-                  type="text"
-                  name={ingredientId}
-                  data-id={idx}
-                  id={ingredientId}
-                  placeholder={`Ingredient ${idx + 1} `}
-                  className="name"
-                />
-                {"   "}
-                <input
-                  lable="amount"
-                  type="text"
-                  name={amountId}
-                  data-id={idx}
-                  id={amountId}
-                  placeholder="amount"
-                  className="amount"
+      </Fragment>},
+      {name: 'Step 2', component: <Fragment>
+        <Typography>Ingredients (click the + button below to add a new ingredient) </Typography>
 
-                />
-                 <br/>
-             </div>
-            
-              
-            )
-          })
-        }
+{
+ ingredients.map((val, idx)=> {
+   let ingredientId = `ingredient-${idx}`, amountId = `amount-${idx}`
+   return (
+     <div key={idx} className={classes.display} onChange={this.handleChange}>
+     <br/>
+       <input
+         lable={`Ingredient ${idx + 1} `}
+         type="text"
+         name={ingredientId}
+         data-id={idx}
+         id={ingredientId}
+         placeholder={`Ingredient ${idx + 1} `}
+         className="name"
+         value={this.state.ingredients[`${idx}`].name}
+       />
+       {"   "}
+       <input
+         lable="amount"
+         type="text"
+         name={amountId}
+         data-id={idx}
+         id={amountId}
+         placeholder="amount"
+         className="amount"
+         value={this.state.ingredients[`${idx}`].amount}
+       />
+        <br/>
+    </div>
+   
+     
+   )
+ })
+}
 
-         <br/>
-         <Tooltip onClick={this.addIngredient} title="Add new ingredient" style={{ outline:'none'}}>
+<br/>
+        
+<Tooltip onClick={this.addIngredient} title="Add new ingredient" style={{ outline:'none'}}>
             < Fab color="secondary" aria-label="add" size="small"  >
             <AddIcon />
             </Fab>
@@ -213,6 +211,8 @@ class NewRecipe extends Component {
       
         <br/>
          <br/>
+         </Fragment>},
+      {name: 'Step 3', component: <Fragment>
         <TextField
           name="instructions"
           label="Instructions"
@@ -225,6 +225,11 @@ class NewRecipe extends Component {
           variant="filled" 
         />
 
+         <br/>
+         <br/>
+         <Typography> Add tags to help people find your recipe </Typography>
+         <br/>
+         <AutoComplete> </AutoComplete>
          <br/>
          <br/>
         <div align='center'>
@@ -247,6 +252,28 @@ class NewRecipe extends Component {
          </Button>
          </div>
 
+ </Fragment>}
+    ]
+
+    
+    return (
+    
+
+      <div >
+        <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
+  
+        <Typography  variant="h4" align="center"> 
+             Submit a Recipe
+        </Typography >
+        <br/>
+
+        <div class="step-progress">
+        <StepZilla  showSteps={true} steps={steps}/>
+    </div>
+      
+         
+        
+        
            </form>
         
       </div>
