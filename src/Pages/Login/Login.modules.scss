@@ -13,9 +13,10 @@ $color-white: #FFF;
 .body{
  
 background-image: url("https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/13.png");
-background-size: 100vw 88.5vh ;
+background-size: 50vw 88.5vh ;
 background-repeat: no-repeat; /* Do not repeat the image */
 height:88.5vh;
+float: left;
 }
 
 form {
