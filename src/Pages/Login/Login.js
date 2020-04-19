@@ -49,13 +49,13 @@ class Login extends Component {
         <div>
             <Logo> </Logo>
             <div class="body" >
-              
+              <img src="https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/pexels-photo-256318.jpeg" class="image"/> 
               <form noValidate onSubmit={this.handleSubmit}>
         
         <div class="segment">
           <h1>Sign in</h1>
         </div>
-       <br/>
+       
         
         <label>
           <input name="email" class="ip" type="email" placeholder="Email" 
@@ -83,6 +83,7 @@ class Login extends Component {
             {errors.general}
           </div>
         )}
+        <br/>
       
         <button  
         disabled={loading}
@@ -94,13 +95,14 @@ class Login extends Component {
               )}
         </button>
        <br />
-        Forgot password? <a href="#">Click Here </a>
+        Forgot passwrod? <a href="#">Click Here </a>
 
         <br/>
         <center>- or- </center>
         <br/>
         <Link to="/signup">  
         <button class="red but" type="button"><i class="icon ion-md-lock"></i> Register
+        <br/>
         </button>
         </Link>   
  

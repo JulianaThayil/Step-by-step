@@ -15,33 +15,33 @@ const tutorialSteps = [
   {
     label:'A delicious chicken starter recipe, Kalmi Kebab is a mouth-watering appetizer to pick for your next dinner party. It is a popular dish on many restaurant menus as well, but now you can make this sumptuous snack with this simple and easy recipe. ',
     imgPath:
-      'https://c.ndtvimg.com/2018-10/0tqg6vdo_kalmi-kebab_625x300_25_October_18.jpg',
+      'https://images.pexels.com/photos/1410236/pexels-photo-1410236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   {
     label:'This chicken biryani is cooked in coconut oil, which is again a healthier oil as compared to many other oils. Tangy tomato puree and fresh yogurt with a slew of spices and herbs dish out a flavourful and aromatic biryani, just the way you like it.',
     imgPath:
-      'https://i.ndtvimg.com/i/2018-04/biryani_620x350_71522754686.jpg',
+      'https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   {
     label:'A refreshing summer delight! Mango basil colada is a perfect beverage to prepare for a sunny treat at home to relish with friends and family. Packed with the goodness of mangoes and basil, this is a sweet treat you would love to keep repeating.',
     imgPath:
-      'https://c.ndtvimg.com/2019-06/frnds548_mango_625x300_27_June_19.jpg',
+      'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   {
     label:'An absolutely flavourful fish recipe for all those who love to dive into succulent spicy pomfret. Here is a quick and super easy pan fried pomfret packed with a host of spices and a tang of lime along with a crispy crust and succulent inside.',
     imgPath:
-      'https://c.ndtvimg.com/2019-08/untdopi_pomfret_625x300_29_August_19.jpg',
+      'https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   {
     label:'A delicious dish to savour on in breakfast! This recipe is a healthy amalgamation of seafood, mornay sauce and assorted herbs. A plate full of taste and health right in your kitchen!',
     imgPath:
-      'https://c.ndtvimg.com/tc51jlk_seafood-rock-filler_625x300_17_July_18.jpg',
+      'https://images.pexels.com/photos/3356409/pexels-photo-3356409.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
   },
 ];
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 200,
+    minWidth: 150,
     marginLeft:'10vw',
     marginRight:'10vw',
     flexGrow: 1,
@@ -55,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
    
   },
   img: {
-    minWidth: 250,
+    minWidth: 150,
     display: 'block',
-    height:'50vh',
+    height:'60vh',
     overflow: 'hidden',
     width: '100%',
   },

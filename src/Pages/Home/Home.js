@@ -48,7 +48,7 @@ class Home extends Component {
        {NavigationBar}
          
         <br />
-        <center><h3 > Explore </h3></center>
+        <center><h4 > Featured this week </h4></center>
          <br />
         
         <Carousel> </Carousel>

@@ -4,6 +4,17 @@ $color-bg: #EBECF0;
 $color-shadow: #BABECC;
 $color-white: #FFF;
 
+
+.image{
+  width: 46%;
+  height: 100vh;
+}
+@media only screen and (max-width: 600px) {
+  .image {
+    display: none;
+      width: 0px;
+      }
+  }
 .error{
   color: red;
   z-index: 4;
@@ -11,26 +22,21 @@ $color-white: #FFF;
 }
 
 .body{
- 
-background-image: url("https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/13.png");
-background-size: 50vw 88.5vh ;
-background-repeat: no-repeat; /* Do not repeat the image */
-height:88.5vh;
-float: left;
+    background-color:#EBECF0;
+    display:flex;
 }
-
 form {
-
   padding: $ruler;
   width: $ruler*20;
   margin: 0 auto;
-
+  z-index: 1;
+  
 }
 
 .but:focus { outline: none !important; box-shadow: none !important; }
 
 .segment {
- 
+  padding: $ruler*2 0;
   text-align: center;
   
 }
