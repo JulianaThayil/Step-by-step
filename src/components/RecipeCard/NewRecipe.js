@@ -15,9 +15,17 @@ import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import InputLabel from '@material-ui/core/InputLabel';
 
 //icons
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import {GiChickenOven} from "react-icons/gi";
 
 // Redux stuff
 import { connect } from 'react-redux';
@@ -30,11 +38,14 @@ class NewRecipe extends Component {
     super();
     this.state = {
       title:'',
+      preparationTime:'',
       cookingTime:'',
       serves:'',
+      difficultyLevel:'Medium',
       body:'',
       ingredients:[{name:"", amount:""}],
       instructions:'',
+      type:'nonveg',
       image:null,
       errors: {}
   };
@@ -65,6 +76,7 @@ class NewRecipe extends Component {
   };
 
   handleSubmit = (event) => {
+
     event.preventDefault(); //to prevent auto reload
     this.setState({
       loading: true
@@ -86,11 +98,14 @@ class NewRecipe extends Component {
             url=url + '?alt=media';
             const newRecipe = {
               title: this.state.title,
+              preparationTime:this.state.preparationTime,
               cookingTime: this.state.cookingTime,
               serves: this.state.serves,
+              difficultyLevel:this.state.difficultyLevel,
               body:this.state.body,
               ingredients: this.state.ingredients,
               instructions: this.state.instructions,
+              type:this.state.type,
               pictureUrl: url,
             };
             this.props.postRecipe(newRecipe )       
@@ -98,8 +113,6 @@ class NewRecipe extends Component {
         
     });
   };
-
-  
 
   render() {
     const { errors,ingredients } = this.state;
@@ -117,23 +130,48 @@ class NewRecipe extends Component {
       onChange={this.handlePicture}
       type="file" 
       />
-      
       </div> 
-    
       <br />
+      
       <TextField name="title"  required label="Name of your dish" variant="filled" 
          value={this.state.title}
          fullWidth
          onChange={this.handleChange}
          />
+         <br/>
+         <br/>
+      <div className={classes.display}> 
+      <TextField required name="preparationTime"  label="Preparation time: "  
+        value={this.state.preparationTime}
+        onChange={this.handleChange} variant="filled" /> 
+
+      {"   "}
+      <TextField required name="cookingTime"  label="Cooking time: "  
+        value={this.state.cookingTime}
+        onChange={this.handleChange} variant="filled" /> 
+      </div>
 
          <br/>
          <br/>
          <div className={classes.display}> 
-         <TextField required name="cookingTime"  label="Cooking time: "  
-        value={this.state.cookingTime}
-        onChange={this.handleChange} variant="filled" /> 
-
+         <FormControl >
+         <InputLabel htmlFor="age-native-simple">Difficulty-Level</InputLabel>
+         <Select
+          labelId="difficultyLevel"
+          id="difficultyLevel"
+          name="difficultyLevel"
+          placeholder="Difficulty Level"
+          value={this.state.difficultyLevel}
+          onChange={this.handleChange}
+          variant="filled"
+  
+        >
+          <MenuItem value={`Easy`}>Easy</MenuItem>
+          <MenuItem value={`Medium`}>Medium</MenuItem>
+          <MenuItem value={`Hard`}>Hard</MenuItem>
+        </Select>
+        </FormControl>
+        
         {"   "}
          <TextField
          required
@@ -154,7 +192,7 @@ class NewRecipe extends Component {
 
         
 
-        <TextField required name="body"  label="Description " rows="3" 
+        <TextField required name="body"  label="Description " rows="4" multiline
         value={this.state.body}
         fullWidth
         onChange={this.handleChange} variant="filled" /> 
@@ -172,6 +210,7 @@ class NewRecipe extends Component {
    return (
      <div key={idx} className={classes.display} onChange={this.handleChange}>
      <br/>
+     <span> 
        <input
          lable={`Ingredient ${idx + 1} `}
          type="text"
@@ -189,10 +228,11 @@ class NewRecipe extends Component {
          name={amountId}
          data-id={idx}
          id={amountId}
-         placeholder="amount"
+         placeholder="quantity"
          className="amount"
          value={this.state.ingredients[`${idx}`].amount}
        />
+       </span>
         <br/>
     </div>
    
@@ -217,7 +257,7 @@ class NewRecipe extends Component {
           name="instructions"
           label="Instructions"
           placeholder="Add each instruction on a new line"
-          rows="4"
+          rows="6"
           multiline
           fullWidth
           value={this.state.instructions}
@@ -227,19 +267,32 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
+         <FormControl >
+        <Typography> Type: </Typography>
+        <RadioGroup   name="type" value={this.state.type} onChange={this.handleChange}>
+          <div style={{display:'flex'}}> 
+        <FormControlLabel value="veg" control={<Radio />} label= " Veg" />
+        <FormControlLabel value="nonveg" control={<Radio />} label="Non-Veg" />
+        </div>
+      </RadioGroup>
+        
+        </FormControl>
+         <br/>
+         <br/>
          <Typography> Add tags to help people find your recipe </Typography>
          <br/>
          <AutoComplete> </AutoComplete>
          <br/>
          <br/>
-        <div align='center'>
+        <div align='center' className={classes.but}>
          <Button 
+                
                 type="submit"
                 disabled={loading}
                 variant="contained"
        
               >
-                Post 
+                Post Recipe
                 {loading && (
                   <CircularProgress
                     size={30}
@@ -262,7 +315,7 @@ class NewRecipe extends Component {
       <div >
         <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
   
-        <Typography  variant="h4" align="center"> 
+        <Typography  variant="h6" align="center"> 
              Submit a Recipe
         </Typography >
         <br/>

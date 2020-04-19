@@ -20,6 +20,13 @@
            
             }
         }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width:35vw;
+          }       
 .body{
     padding:4%;
 }
@@ -57,14 +64,12 @@
 .likesreviews{
 font-size: 2vh;
 }
-.img{
-   width:35vw;
-}
+
 @media only screen and (max-width: 425px) {
  
     .img{
       margin-left:3vw;
-     
       width: 80vw;
     }
+   
 }
