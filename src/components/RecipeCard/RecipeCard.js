@@ -71,6 +71,7 @@ class RecipeCard extends Component {
         }
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
+        component={Link} to={`/users/${userHandle}/${recipeId}`}
       />
  
       <CardMedia
@@ -81,19 +82,19 @@ class RecipeCard extends Component {
             width="100%" height="100%"
       />
       <CardContent >
-      <Truncate lines={2} >
+      <Truncate lines={1} >
                 {body}
             </Truncate>
       </CardContent>
 
       <CardActions disableSpacing>
       <LikeButton recipeId={recipeId} />
-          <span>{likeCount} Likes</span>
+          <span>{likeCount} </span>
 
           <MyButton tip="comments">
             <ChatIcon color="secondary" />
           </MyButton>
-          <span>{commentCount} Reviews</span>
+          <span>{commentCount} </span>
 
         <IconButton aria-label="share">
           <ShareIcon />

@@ -5,12 +5,6 @@
   display:inline;
 }
 
-.image{
-align-content: center;
-background-color: #e0e0e0;
-padding:5%;
-
-}
 
 .newform{
   box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -23,11 +17,11 @@ padding:5%;
 }
 .root{
   min-width: 210;
-  cursor: pointer;
   ruby-align: center;
 }
 .username{
   padding-left:2vh;
+  padding-bottom: 2vh;
 }
 
 @media only screen and (max-width: 425px) {
@@ -43,9 +37,11 @@ padding:5%;
   }
   
 }
-@media only screen and (max-width: 320px) {
-  .image{
-    display: flex;
+@media only screen and (max-width: 460px) {
+  .newform{
+    width: 100vw;
+    margin:0%
+
   }
 
   }

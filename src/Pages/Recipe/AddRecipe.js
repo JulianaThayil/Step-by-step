@@ -27,7 +27,7 @@ class AddRecipe extends Component {
               <div> 
               <UserNavbar> </UserNavbar>
               <div className={classes.image}> 
-              <NewRecipe> </NewRecipe>
+              <NewRecipe > </NewRecipe>
               </div>
               <br />
               <Footer>
