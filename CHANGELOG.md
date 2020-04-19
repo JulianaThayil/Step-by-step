@@ -32,3 +32,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Like, comment on a recipe (if authenticated)
 - Notifications on likes and comments received; and mark as read option.
 - Option to delete your own recipes.
+
+## [0.5.0] - 2020-04-21
+### Added
+- Responsive layout
+- Stepper for adding ingredients
+- Stepper for adding a new recipe
+
+### Changed
+- Ingredients are now stored as an array of objects with 'name' and 'amount' fields
+- View Recipe and Add Recipe page design changed
+- Footer design
