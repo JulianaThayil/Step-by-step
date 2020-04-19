@@ -28,7 +28,7 @@ export default function Media(props) {
   
   const classes = useStyles();
 
-  const content = Array.from({ length: 6 }).map((item, index) => (
+  const content = Array.from({ length: 8 }).map((item, index) => (
     <Card className={classes.card} key={index}>
       <CardHeader
         avatar={

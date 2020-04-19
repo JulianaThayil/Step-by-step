@@ -4,12 +4,9 @@ import PropTypes from 'prop-types';
 
 //MUI stuff
 import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 //Redux stuff
 import { connect } from 'react-redux';

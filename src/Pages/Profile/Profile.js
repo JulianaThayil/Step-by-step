@@ -1,11 +1,7 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component} from 'react';
 import Navbar from '../../components/Navbar/Navbar'
 import UserNavbar from '../../components/Navbar/userNavbar'
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
-//Mui stuff
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 //pages
 import MyProfile from './MyProfile';

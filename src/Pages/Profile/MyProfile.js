@@ -1,12 +1,9 @@
 import React, {Component,Fragment} from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
-import classes from './Profiles.module.css';
 import MyDetails from './MyDetails';
 import RecipesPosted from './RecipesPosted';
 
 import { connect } from 'react-redux';
-import { getUserData } from '../../redux/actions/dataActions';
 
 class MyProfile extends Component{
   

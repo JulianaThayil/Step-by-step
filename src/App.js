@@ -17,7 +17,6 @@ import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
 import Test from './Test'
 import Addrecipe from './Pages/Recipe/AddRecipe';
-import NewRecipe from './components/RecipeCard/NewRecipe';
 
 
 //util

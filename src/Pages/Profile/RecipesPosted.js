@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import MyRecipes from '../../components/RecipeCard/MyRecipes';
 import classes from '../../Pages/Home/Home.module.css'
@@ -14,7 +13,6 @@ class RecipesPosted extends Component {
     recipeIdParam: null
   };
   componentDidMount() {
-    const handle = this.props.handle;
     const recipeId = this.props.recipeId;
 
     if (recipeId) this.setState({ recipeIdParam: recipeId });

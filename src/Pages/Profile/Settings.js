@@ -1,15 +1,11 @@
 import React, { Component,Fragment } from 'react';
-import Navbar from '../../components/Navbar/Navbar'
 import UserNavbar from '../../components/Navbar/userNavbar'
-import NewRecipe from '../../components/RecipeCard/NewRecipe';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 //Mui stuff
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Tabs from '../../components/tabs';
 

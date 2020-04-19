@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MenuItem from '@material-ui/core/MenuItem';
 import PropTypes from 'prop-types';
-import { NavLink, Redirect} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ArtTrackIcon from '@material-ui/icons/ArtTrack'; //feed

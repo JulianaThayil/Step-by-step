@@ -1,13 +1,10 @@
 import React from 'react'
 import classes from '../Footer/Footer.module.css'
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import Typography from '@material-ui/core/Typography';
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaPhoneVolume } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
