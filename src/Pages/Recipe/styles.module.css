@@ -1,3 +1,6 @@
+.span{
+    display: flex;
+}
 .head{
     background-color: black;
     color:white;
@@ -20,15 +23,23 @@
            
             }
         }
+        .details{
+            margin-left: 5%;
+        }
 
         .img {
             max-width: 100%;
             box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
             border-radius: 20px;
-            width:35vw;
+            width:50vw;
+            height: 70vh;
+            padding-right: 4%;
+            padding-bottom: 1%;
           }       
 .body{
-    padding:4%;
+    padding-left:4%;
+    padding-right: 4%;
+    padding-top: 2%;
 }
 .image{
     background-image: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -69,7 +80,7 @@ font-size: 2vh;
  
     .img{
       margin-left:3vw;
-      width: 80vw;
+      width: 100vw;
     }
    
 }

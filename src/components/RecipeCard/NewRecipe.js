@@ -41,7 +41,7 @@ class NewRecipe extends Component {
       preparationTime:'',
       cookingTime:'',
       serves:'',
-      difficultyLevel:'Medium',
+      difficultyLevel:'Intermediate',
       body:'',
       ingredients:[{name:"", amount:""}],
       instructions:'',
@@ -167,7 +167,7 @@ class NewRecipe extends Component {
   
         >
           <MenuItem value={`Easy`}>Easy</MenuItem>
-          <MenuItem value={`Medium`}>Medium</MenuItem>
+          <MenuItem value={`Intermediate`}>Intermediate</MenuItem>
           <MenuItem value={`Hard`}>Hard</MenuItem>
         </Select>
         </FormControl>
@@ -321,7 +321,7 @@ class NewRecipe extends Component {
         <br/>
 
         <div class="step-progress">
-        <StepZilla  showSteps={true} steps={steps}/>
+        <StepZilla dontValidate={false} showSteps={true} steps={steps}/>
     </div>
       
          

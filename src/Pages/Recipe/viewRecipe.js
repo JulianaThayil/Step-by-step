@@ -48,11 +48,14 @@ class viewRecipe extends Component {
             recipe: {
                 recipeId,
                 title,
+                preparationTime,
                 cookingTime,
+                difficultyLevel,
                 serves,
                 body,
                 ingredients,
                 instructions,
+                type,
                 pictureUrl,
                 createdAt,
                 likeCount,
@@ -70,6 +73,9 @@ class viewRecipe extends Component {
             ingredients.map((ingredient) => <Ingredient key={ingredient.name} ingredient={ingredient} />)
               )
             }
+          var vegnonveg=type=="veg"?(
+          <span className={classes.span}><img width="4%" height="4%" src="https://pngimage.net/wp-content/uploads/2018/06/veg-icon-png-1.png" alt="veg"/> <p> Veg</p></span>)
+          :(<span className={classes.span}><img width="4%" height="4%" src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png" alt="nonveg"/><p> Non-Veg</p></span>);  
         
 
           let loginsignup =
@@ -115,14 +121,28 @@ class viewRecipe extends Component {
               <Typography variant="h4"  className={classes.text} style={{alignSelf:'center'}}> 
               {title}
               </Typography>
+         
+              <Typography gutterBottom variant="subtitle1" className={classes.text}
+                
+                 component={Link}
+                 color="primary"
+                 to={`/users/${userHandle}`}
+          >
+             by @{userHandle}
+              
+                </Typography>
+  
+                <Typography variant="body2" color="textSecondary" className={classes.text}>
+            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+          </Typography>
 
           
       <Paper  >
       <div  className={classes.paper}> 
         <Grid container spacing={2}  >
           <Grid item>
-            <div className={classes.image1}>
-            <ButtonBase className={classes.image}>
+            <div >
+            <ButtonBase >
               <img className={classes.img} alt="image" src={pictureUrl}  />
             </ButtonBase>
             </div>
@@ -141,38 +161,38 @@ class viewRecipe extends Component {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={3}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1" className={classes.text}
                 
-                 component={Link}
-                 color="primary"
-                 variant="h6"
-                 to={`/users/${userHandle}`}
-          >
-             @{userHandle}
-              
-                </Typography>
-                <br/>
-                <Typography variant="body2" color="textSecondary" className={classes.text}>
-            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
-          </Typography>
-                <br />
-               
+               <div className={classes.details}> 
                 <Typography variant="h7" gutterBottom className={classes.text} >
                 Serves: {serves}
                 </Typography>
                 <br/>
                 <Typography variant="h7"  className={classes.text}>
-                Preparation time: {cookingTime}
+                Preparation time: {preparationTime}
                 </Typography>
                 <br/>
+                <Typography variant="h7"  className={classes.text}>
+                Cook time: {cookingTime}
+                </Typography>
                 <br/>
+                <Typography variant="h7"  className={classes.text}>
+                Difficulty Level : {difficultyLevel}
+                </Typography>
+                <br/>
+                <Typography variant="h7"  className={classes.text}>
+                {vegnonveg}
+                </Typography>
+                <br/>
+
+              
                 
 <Typography variant="h7" className={classes.text}>
                 Description:
                 </Typography>
-<Typography variant="body2" style={{ cursor: 'pointer' }}>
+<Typography variant="body2" >
                 {body}
                 </Typography>
+                </div>
 
               </Grid>
               
