@@ -35,7 +35,7 @@ const tutorialSteps = [
   {
     label:'A delicious dish to savour on in breakfast! This recipe is a healthy amalgamation of seafood, mornay sauce and assorted herbs. A plate full of taste and health right in your kitchen!',
     imgPath:
-      'https://images.pexels.com/photos/3356409/pexels-photo-3356409.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      'https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
 ];
 
