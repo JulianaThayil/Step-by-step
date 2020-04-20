@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import classes from './RecipeCard.module.css';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 import AutoComplete from './AutoComplete';
 import '../../../src/index.css';
+import { Redirect } from 'react-router-dom';
+
 //firebase
 import {storage} from '../../firebase/index';
 
@@ -47,6 +48,7 @@ class NewRecipe extends Component {
       instructions:'',
       type:'nonveg',
       image:null,
+      success:false,
       errors: {}
   };
   }
@@ -78,6 +80,7 @@ class NewRecipe extends Component {
   handleSubmit = (event) => {
 
     event.preventDefault(); //to prevent auto reload
+    
     this.setState({
       loading: true
     });
@@ -108,18 +111,22 @@ class NewRecipe extends Component {
               type:this.state.type,
               pictureUrl: url,
             };
-            this.props.postRecipe(newRecipe )       
+            this.props.postRecipe(newRecipe,this.props.history,)       
         })
-        
+        this.setState({success:true});
     });
   };
 
   render() {
-    const { errors,ingredients } = this.state;
+    const { errors,ingredients,success } = this.state;
     const {
       
       UI: { loading }
     } = this.props;
+    
+    if(success) {
+      return <Redirect to="/"/>
+    }
 
     const steps =
     [

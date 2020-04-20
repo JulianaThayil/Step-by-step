@@ -49,7 +49,7 @@ import {
   };
   
   // Post a recipe
-  export const postRecipe = (newRecipe) => (dispatch) => {
+  export const postRecipe = (newRecipe,history) => (dispatch) => {
     dispatch({ type: LOADING_UI });
     axios
       .post('/recipe', newRecipe)
@@ -58,12 +58,11 @@ import {
           type: POST_RECIPE,
           payload: res.data
         });
-        dispatch(clearErrors());
+        dispatch({ type: CLEAR_ERRORS });
       })
       .catch((err) => {
         dispatch({
-          type: SET_ERRORS,
-          payload: err.response.data
+          type: SET_ERRORS
         });
       });
   };
