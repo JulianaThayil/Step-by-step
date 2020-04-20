@@ -19,6 +19,9 @@ border:5px;
     .tabs {
       border-right: 1px solid;
     }
+    .pad{
+      padding-bottom: 30vh;
+    }
 
     .mainFeaturedPost {
       margin-left:15%;
@@ -52,8 +55,9 @@ border:5px;
       
     }
     
-  .settingspage{
-    padding:0px;
+  .settings{
+    padding-left:6%;
+    padding-right: 6%;
   }
   .details{
     margin-top: 5px;

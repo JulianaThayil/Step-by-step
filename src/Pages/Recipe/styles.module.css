@@ -14,7 +14,7 @@
 
     @media only screen and (max-width: 768px) {
     .display {
-        grid-template: repeat(1, 1fr) / repeat(1, 1fr); 
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr); 
         }
     }
     @media only screen and (max-width: 425px) {
@@ -32,7 +32,6 @@
             box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             width:50vw;
-            height: 70vh;
             padding-right: 4%;
             padding-bottom: 1%;
           }       
@@ -80,8 +79,12 @@ font-size: 2vh;
  
     .image{
       width: 0px;
-      
+    }
+   
+}
+@media only screen and (max-width: 768px) {
+    .img{
+        width: 80vw;
     }
     
-   
 }

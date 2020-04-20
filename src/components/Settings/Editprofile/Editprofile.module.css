@@ -1,6 +1,7 @@
 
 .settingform{
 display:flex;
+width: 40vw;
 flex-direction:column;
  background-color:white;
  box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -10,5 +11,10 @@ flex-direction:column;
 .save{
   width:10vw ;
   position:relative;
-  left:90px;
+  left:10vw;
+}
+@media only screen and (max-width: 756px) {
+  .settingform{
+    width: 50vw;
+  }
 }

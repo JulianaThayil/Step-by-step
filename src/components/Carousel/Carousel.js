@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin:'1vh',
-   padding:'1px',
-   textAlign:'center',
+    padding:'1px',
+    textAlign:'center',
     fontHeight:'2px',
     backgroundColor: theme.palette.background.default,
    
@@ -57,10 +57,11 @@ const useStyles = makeStyles((theme) => ({
   img: {
     minWidth: 150,
     display: 'block',
-    height:'60vh',
+    height:'50vh',
     overflow: 'hidden',
-    width: '100%',
+    width:'100%',
   },
+  
 
 
 }));

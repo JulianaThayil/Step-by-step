@@ -73,7 +73,7 @@ class viewRecipe extends Component {
             ingredients.map((ingredient) => <Ingredient key={ingredient.name} ingredient={ingredient} />)
               )
             }
-          var vegnonveg=type=="veg"?(
+          var vegnonveg=type==="veg"?(
           <span className={classes.span}><img width="4%" height="4%" src="https://pngimage.net/wp-content/uploads/2018/06/veg-icon-png-1.png" alt="veg"/> <p> Veg</p></span>)
           :(<span className={classes.span}><img width="4%" height="4%" src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png" alt="nonveg"/><p> Non-Veg</p></span>);  
         

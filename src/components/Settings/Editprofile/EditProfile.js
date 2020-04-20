@@ -35,18 +35,19 @@ class EditProfile extends Component {
   }
 
   handleChange = (event) => {
+    event.preventDefault(); //to prevent auto reload
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault(); //to prevent auto reload
     const userDetails = {
       bio: this.state.bio,
       website: this.state.website,
       location: this.state.location
     };
     this.props.editUserDetails(userDetails);
-    return(<Alert severity="success">This is a success message!</Alert>);//not rendering
   };
 
   render(){

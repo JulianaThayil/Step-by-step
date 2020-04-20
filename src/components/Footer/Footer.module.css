@@ -171,7 +171,7 @@ padding-right: 2vw;
       font-size: 2vh;
     }
 }
-@media only screen and (width: 768px) {
+@media only screen and (max-width: 768px) {
  
   .footer .footerContent .footerSectionAbout p{
     font-size: 2vw;

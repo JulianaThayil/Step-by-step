@@ -2,7 +2,8 @@ import React, { Component,Fragment } from 'react';
 import UserNavbar from '../../components/Navbar/userNavbar'
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-
+import classes from './Profiles.module.css'
+import Footer from '../../components/Footer/Footer'
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
@@ -23,21 +24,24 @@ class Settings extends Component {
           } = this.props;
           let settingsMarkup = !loading ? (
             authenticated ? (
-              <div > 
+              <div  > 
               <UserNavbar> </UserNavbar>
               <br/>
+              <div className={classes.settings}> 
               <Typography  variant="h5" align="center"> 
                 Settings
               </Typography>
               
               <Tabs ></Tabs>
-             
+             </div>
+             <div className={classes.pad}> </div>
+             <Footer> </Footer>
               </div>
             ) : (
               <Redirect to="/login" />
             )
           ) : (
-            <LinearProgress variant="query" />
+            <LinearProgress color="secondary" variant="query" />
           );
       
           return (
