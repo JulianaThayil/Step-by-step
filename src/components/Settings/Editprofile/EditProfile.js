@@ -39,15 +39,17 @@ class EditProfile extends Component {
     this.setState({
       [event.target.name]: event.target.value
     });
-  };
-  handleSubmit = (event) => {
     event.preventDefault(); //to prevent auto reload
+  };
+  handleSubmit = (e) => {
+    e.preventDefault(); //to prevent auto reload
     const userDetails = {
       bio: this.state.bio,
       website: this.state.website,
       location: this.state.location
     };
     this.props.editUserDetails(userDetails);
+    e.preventDefault(); //to prevent auto reload
   };
 
   render(){
@@ -64,7 +66,7 @@ class EditProfile extends Component {
       />
        <br/>
          <TextField
-          id="standard-multiline-static"
+          id="bio"
           label="Bio"
           
           rows="2"
@@ -76,11 +78,11 @@ class EditProfile extends Component {
           onChange={this.handleChange}
         />
         <br/>
-        <TextField id="standard-required"  fullWidth label="Website" name="website" value={this.state.website}
+        <TextField id="website"  fullWidth label="Website" name="website" value={this.state.website}
                 onChange={this.handleChange}/>
         
         <br/>
-        <TextField id="standard-required" label="Location" name="location" fullWidth
+        <TextField id="location" label="Location" name="location" fullWidth
         value={this.state.location}
         onChange={this.handleChange}  />
         <br/>
@@ -89,6 +91,7 @@ class EditProfile extends Component {
         <Button
         variant="contained"
         size="small"
+  
         startIcon={<SaveIcon />}
         onClick={this.handleSubmit}
        className={classes.save}>

@@ -15,7 +15,6 @@ import Profile from './Pages/Profile/Profile'
 import Notfound from './notfound'
 import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
-import Test from './Test'
 import Addrecipe from './Pages/Recipe/AddRecipe';
 
 
@@ -24,7 +23,6 @@ import AuthRoute from './util/AuthRoute';
 
 import axios from 'axios';
 import Settings from './Pages/Profile/Settings';
-
 
 axios.defaults.baseURL ='https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api';
 
