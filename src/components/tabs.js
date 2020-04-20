@@ -19,7 +19,7 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      {value === index && <Box >{children}</Box>}
     </Typography>
   );
 }
@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 224,
+    height: '4vh',
+    flexDirection:'column',
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -60,7 +61,7 @@ export default function VerticalTabs() {
   return (
     <div className={classes.root}>
       <Tabs
-        orientation="vertical"
+        orientation="horizontal"
         variant="scrollable"
         value={value}
         onChange={handleChange}
