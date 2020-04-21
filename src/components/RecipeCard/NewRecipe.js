@@ -26,7 +26,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 //icons
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import {GiChickenOven} from "react-icons/gi";
 
 // Redux stuff
 import { connect } from 'react-redux';

@@ -10,17 +10,19 @@ import Typography from '@material-ui/core/Typography';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Tabs from '../../components/tabs';
 
+
 //Redux stuff
 import { connect } from 'react-redux';
 
 class Settings extends Component {
-
+ 
     render() {
         const {
             user: {
               authenticated,
-              loading
-            }
+              credentials: { handle }
+            },
+            UI: { loading }
           } = this.props;
           let settingsMarkup = !loading ? (
             authenticated ? (
@@ -31,8 +33,9 @@ class Settings extends Component {
               <Typography  variant="h5" align="center"> 
                 Settings
               </Typography>
+              <Tabs></Tabs> 
               
-              <Tabs ></Tabs>
+              
              </div>
              <div className={classes.pad}> </div>
              <Footer> </Footer>
@@ -46,6 +49,7 @@ class Settings extends Component {
       
           return (
             <div > 
+
             {settingsMarkup}
             
             </div>
@@ -55,11 +59,13 @@ class Settings extends Component {
       
 Settings.propTypes = {
     user: PropTypes.object.isRequired,
+    UI: PropTypes.object.isRequired
   };
   
 
 const mapStateToProps = (state) => ({
-    user: state.user
+    user: state.user,
+    UI: state.UI
   });
  
   

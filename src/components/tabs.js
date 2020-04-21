@@ -27,6 +27,7 @@ export default function ControlledExpansionPanels() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
+    event.preventDefault(); //to prevent auto reload
     setExpanded(isExpanded ? panel : false);
   };
 
