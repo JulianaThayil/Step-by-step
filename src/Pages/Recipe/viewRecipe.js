@@ -117,29 +117,30 @@ class viewRecipe extends Component {
       </Typography>
     </Breadcrumbs>
    
-
-              <Typography variant="h4"  className={classes.text} style={{alignSelf:'center'}}> 
+    <Paper  >
+    <div  className={classes.viewrecipepaper}> 
+              <Typography variant="h4"  align="center" className={classes.text} style={{alignSelf:'center'}}> 
               {title}
               </Typography>
          
-              <Typography gutterBottom variant="subtitle1" className={classes.text}
-                
+              <Typography   variant="body2" className={classes.text}
+                 align="center"
                  component={Link}
                  color="primary"
                  to={`/users/${userHandle}`}
-          >
-             by @{userHandle}
+               >
+                 <center>by @{userHandle}</center>
               
-                </Typography>
+                </Typography  >
   
-                <Typography variant="body2" color="textSecondary" className={classes.text}>
+                <Typography  align="center" variant="body2" color="textSecondary" className={classes.text}>
             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
 
           
-      <Paper  >
-      <div  className={classes.paper}> 
-        <Grid container spacing={2}  >
+     
+     
+        <Grid container   >
           <Grid item>
             <div >
             <ButtonBase >
@@ -159,36 +160,62 @@ class viewRecipe extends Component {
                 <br/>
           </Grid>
           <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={3}>
+            <Grid item xs container direction="column" spacing={0}>
               <Grid item xs>
-                
+                <br/>
                <div className={classes.details}> 
-                <Typography variant="h7" gutterBottom className={classes.text} >
-                Serves: {serves}
+                <Typography variant="h7" className={classes.text} >
+                Serves : 
                 </Typography>
+                <Typography  variant="body2"  >
+                {serves}
+                </Typography>
+                </div>
                 <br/>
+                
+                <div className={classes.details}> 
                 <Typography variant="h7"  className={classes.text}>
-                Preparation time: {preparationTime}
+                Preparation time : 
                 </Typography>
+                <Typography  variant="body2" >
+                {preparationTime}
+                </Typography>
+                
+
+                </div> 
                 <br/>
+                <div className={classes.details}> 
                 <Typography variant="h7"  className={classes.text}>
-                Cook time: {cookingTime}
+                Cook time :
                 </Typography>
+                <Typography  variant="body2" >
+                {cookingTime}
+                </Typography>
+                </div>
                 <br/>
+                <div className={classes.details}> 
                 <Typography variant="h7"  className={classes.text}>
-                Difficulty Level : {difficultyLevel}
+                Difficulty Level : 
                 </Typography>
+                <Typography  variant="body2" >
+                {difficultyLevel}
+                </Typography>
+                </div>
                 <br/>
+                <div className={classes.details}> 
                 <Typography variant="h7"  className={classes.text}>
                 {vegnonveg}
                 </Typography>
+               </div>
                 <br/>
 
               
-                
+                <div className={classes.details}>     
 <Typography variant="h7" className={classes.text}>
                 Description:
                 </Typography>
+                </div>
+                <div className={classes.details}>  
 <Typography variant="body2" >
                 {body}
                 </Typography>
@@ -223,14 +250,14 @@ class viewRecipe extends Component {
 <Typography variant="h7" className={classes.text}>
               Instructions:
                 </Typography>
-          <Typography variant="body2" style={{ cursor: 'pointer' }}>
-            {instructions }
-          </Typography>
+          <Typography variant="body2" >
+                {instructions}
+                </Typography>
 </div>
-</div>
+
           </div>
-          </Paper>
-         
+        
+         <br/>
           <br/>
 
          
@@ -246,7 +273,8 @@ class viewRecipe extends Component {
           
           <CommentForm recipeId={recipeId} />
           {comments && <Comments comments={comments} />}
-        
+          </div>
+          </Paper>
           </div>
           <br /> 
           <Footer> </Footer>

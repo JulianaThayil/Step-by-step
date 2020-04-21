@@ -146,22 +146,42 @@ class NewRecipe extends Component {
          onChange={this.handleChange}
          />
          <br/>
-         <br/>
+      <br/>
+        
       <div className={classes.display}> 
+      <div className={classes.recipedetails}>
       <TextField required name="preparationTime"  label="Preparation time: "  
         value={this.state.preparationTime}
         onChange={this.handleChange} variant="filled" /> 
-
-      {"   "}
-      <TextField required name="cookingTime"  label="Cooking time: "  
+</div>
+     
+   <div  className={classes.recipedetails}>
+        <TextField required name="cookingTime"  label="Cooking time: "  
         value={this.state.cookingTime}
         onChange={this.handleChange} variant="filled" /> 
       </div>
-
+      </div>
          <br/>
-         <br/>
+   
          <div className={classes.display}> 
-         <FormControl >
+         <div  className={classes.recipedetails} >
+         <TextField
+         required
+         name="serves"
+          label="Serves"
+          type="number"
+         
+          InputLabelProps={{
+            
+          }}
+          variant="filled" 
+          value={this.state.serves}
+          onChange={this.handleChange}
+        />
+        </div>
+  
+        <div  className={classes.recipedetails}>
+        <FormControl >
          <InputLabel htmlFor="age-native-simple">Difficulty-Level</InputLabel>
          <Select
           labelId="difficultyLevel"
@@ -178,24 +198,12 @@ class NewRecipe extends Component {
           <MenuItem value={`Hard`}>Hard</MenuItem>
         </Select>
         </FormControl>
-        
-        {"   "}
-         <TextField
-         required
-         name="serves"
-          label="Serves"
-          type="number"
-          InputLabelProps={{
-            
-          }}
-          variant="filled" 
-          value={this.state.serves}
-          onChange={this.handleChange}
-        />
+       
+        </div>
 
          </div>
         <br/>
-         <br/>
+        
 
         
 
@@ -209,16 +217,19 @@ class NewRecipe extends Component {
 
       </Fragment>},
       {name: 'Step 2', component: <Fragment>
-        <Typography>Ingredients (click the + button below to add a new ingredient) </Typography>
-
+        <br/>
+        <div><Typography align="center">Ingredients (click the + button below to add a new ingredient) </Typography>
+        </div>
 {
  ingredients.map((val, idx)=> {
    let ingredientId = `ingredient-${idx}`, amountId = `amount-${idx}`
    return (
-     <div key={idx} className={classes.display} onChange={this.handleChange}>
+     <div align="center"  key={idx} className={classes.display2} onChange={this.handleChange}>
      <br/>
-     <span> 
+     
+     <div className={classes.recipedetails1}>
        <input
+
          lable={`Ingredient ${idx + 1} `}
          type="text"
          name={ingredientId}
@@ -228,8 +239,11 @@ class NewRecipe extends Component {
          className="name"
          value={this.state.ingredients[`${idx}`].name}
        />
-       {"   "}
+    
+    </div>
+    <div className={classes.recipedetails1}>
        <input
+      
          lable="amount"
          type="text"
          name={amountId}
@@ -239,9 +253,11 @@ class NewRecipe extends Component {
          className="amount"
          value={this.state.ingredients[`${idx}`].amount}
        />
-       </span>
+       </div>
+     
         <br/>
-    </div>
+        </div>
+   
    
      
    )
@@ -274,21 +290,21 @@ class NewRecipe extends Component {
 
          <br/>
          <br/>
-         <FormControl >
+         <FormControl  style={{display:'flexinline', flexDirection:'row'}}>
         <Typography> Type: </Typography>
         <RadioGroup   name="type" value={this.state.type} onChange={this.handleChange}>
-          <div style={{display:'flex'}}> 
+          <div  style={{display:'flex'}}> 
         <FormControlLabel value="veg" control={<Radio />} label= " Veg" />
         <FormControlLabel value="nonveg" control={<Radio />} label="Non-Veg" />
         </div>
       </RadioGroup>
         
-        </FormControl>
+        </FormControl  >
          <br/>
          <br/>
-         <Typography> Add tags to help people find your recipe </Typography>
+         <Typography align="center"> Add tags to help people find your recipe </Typography>
          <br/>
-         <AutoComplete> </AutoComplete>
+         <AutoComplete > </AutoComplete>
          <br/>
          <br/>
         <div align='center' className={classes.but}>
@@ -322,7 +338,7 @@ class NewRecipe extends Component {
       <div >
         <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
   
-        <Typography  variant="h6" align="center"> 
+        <Typography  variant="h5" align="center"> 
              Submit a Recipe
         </Typography >
         <br/>
