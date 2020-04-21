@@ -174,7 +174,7 @@ padding-right: 2vw;
 @media only screen and (max-width: 768px) {
  
   .footer .footerContent .footerSectionAbout p{
-    font-size: 2vw;
+    font-size: 3vw;
     flex: 1;
     margin-bottom: 0vh;
   }
