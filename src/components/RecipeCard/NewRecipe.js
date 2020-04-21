@@ -302,7 +302,7 @@ class NewRecipe extends Component {
         </FormControl  >
          <br/>
          <br/>
-         <Typography align="center"> Add tags to help people find your recipe </Typography>
+         <Typography > Add tags to help people find your recipe </Typography>
          <br/>
          <AutoComplete > </AutoComplete>
          <br/>
