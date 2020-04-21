@@ -106,7 +106,7 @@ class viewRecipe extends Component {
       <Link color="inherit" to="/">
         Step-by-step
       </Link>
-      <Link color="inherit" to={`/users/${userHandle}`}>
+      <Link color="inherit" to={`/${userHandle}`}>
         {userHandle}
       </Link>
       <Typography
@@ -127,7 +127,7 @@ class viewRecipe extends Component {
                  align="center"
                  component={Link}
                  color="primary"
-                 to={`/users/${userHandle}`}
+                 to={`/${userHandle}`}
                >
                  <center>by @{userHandle}</center>
               

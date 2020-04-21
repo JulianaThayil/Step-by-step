@@ -77,7 +77,7 @@ class Notifications extends Component {
                 component={Link}
                 color="default"
                 variant="body1"
-                to={`/users/${not.recipient}/${not.recipeId}`}
+                to={`/${not.recipient}/${not.recipeId}`}
               >
                 {not.sender} {verb} your recipe {time}
               </Typography>

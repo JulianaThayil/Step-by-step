@@ -63,7 +63,7 @@ class RecipeCard extends Component {
  
       <CardMedia
         className={classes.media}
-        component={Link} to={`/users/${userHandle}/${recipeId}`}
+        component={Link} to={`/${userHandle}/${recipeId}`}
         image={pictureUrl}
         style={{objectFit: 'cover', }}
             width="100%" height="100%"

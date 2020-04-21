@@ -30,7 +30,7 @@ class MenuItems extends Component {
         return (
             <div >
             <MenuItem > <ArtTrackIcon /> <NavLink to="/"> Feed </NavLink> </MenuItem>
-            <MenuItem ><PersonIcon /> <NavLink to={`/users/${handle}`}>Profile </NavLink> </MenuItem>
+            <MenuItem ><PersonIcon /> <NavLink to={`/${handle}`}>Profile </NavLink> </MenuItem>
             <MenuItem > <SettingsIcon/> <NavLink to="/user/settings"> Settings </NavLink> </MenuItem>
             <MenuItem onClick={this.handleLogout}> <PowerSettingsNewIcon /> <NavLink to="/login" >Logout </NavLink> </MenuItem>
             </div>

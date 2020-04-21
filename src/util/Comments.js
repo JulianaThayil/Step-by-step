@@ -11,7 +11,8 @@ const styles = () => ({
   commentImage: {
     maxWidth: '100%',
     marginLeft:'10%',
-    height: '10vh',
+    height: '8vh',
+    width:'8vh',
     objectFit: 'cover',
     borderRadius: '50%'
   },
@@ -43,7 +44,7 @@ class Comments extends Component {
                       <Typography
                         variant="h5"
                         component={Link}
-                        to={`/users/${userHandle}`}
+                        to={`/${userHandle}`}
                         color="primary"
                       >
                         {userHandle}

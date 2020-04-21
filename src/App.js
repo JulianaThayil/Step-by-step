@@ -54,10 +54,10 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <AuthRoute exact path="/login" component={Login} />
                 <AuthRoute exact path="/signup" component={Register} />
-                <Route exact path= "/users/:handle" component={Profile} />
-                <Route exact path="/users/:handle/:recipeId" component={ViewRecipe} />
                 <Route exact path="/user/settings" component={Settings} />
                 <Route exact path="/addrecipe" component={Addrecipe} />
+                <Route exact path= "/:handle" component={Profile} />
+                <Route exact path="/:handle/:recipeId" component={ViewRecipe} />
               </Switch>
       </div>
     </Router>
