@@ -10,13 +10,13 @@ import Typography from '@material-ui/core/Typography';
 const styles = () => ({
   commentImage: {
     maxWidth: '100%',
-    marginLeft:'15%',
-    height: 30,
+    marginLeft:'10%',
+    height: '10vh',
     objectFit: 'cover',
     borderRadius: '50%'
   },
   commentData: {
-    marginLeft: '0%'
+    marginLeft: '15%'
   }
 });
 
