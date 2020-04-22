@@ -46,6 +46,7 @@ class Home extends Component {
     return (
      <div  > 
        {NavigationBar}
+<<<<<<< HEAD
 
         <div className={classes.wrapper}>
           <br />
@@ -64,6 +65,22 @@ class Home extends Component {
           </div>
         </div>
     
+=======
+         
+        <br />
+        <center><h4 > Featured this week </h4></center>
+         <br />
+        
+        <Carousel> </Carousel>
+        <br/> 
+        <br/>
+        <br/>
+        <center> <h3> Recent Posts</h3></center>
+        <div className={classes.bg}> 
+
+        {recentRecipesMarkup}
+        </div>
+>>>>>>> 45e3b12363df894f68f0d74ff5c7ed7add36e37f
         <br/>
         <ScrollToTop></ScrollToTop> 
         <br/>
