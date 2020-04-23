@@ -30,7 +30,7 @@ form {
   width: $ruler*20;
   margin: 0 auto;
   z-index: 1;
-  
+  height:100vh;
 }
 
 .but:focus { outline: none !important; box-shadow: none !important; }

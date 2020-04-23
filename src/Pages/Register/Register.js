@@ -58,7 +58,7 @@ class signup extends Component {
       <div class="body" >
       <img src="https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/pexels-photo-256318.jpeg" class="image"/> 
 
-        <form noValidate onSubmit={this.handleSubmit}>
+        <form noValidate onSubmit={this.handleSubmit} className={classes.registerform}>
   
   <div>
   <div class="segment">

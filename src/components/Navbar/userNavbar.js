@@ -11,7 +11,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItems from './MenuItems';
 import Notifications from './Notifications'
 import AddRecipe from './AddRecipe'
-
+import Logo from '../../components/Logo/Logo';
 
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(13),
       width: 'auto',
     },
   },
@@ -112,10 +112,12 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" color="secondary">
         <Toolbar>
-         
+          
+        
           <Typography className={classes.title} variant="h6" noWrap>
-            Step-by-Step
-          </Typography>
+          <div>  <Logo className={classes.title} ></Logo></div>
+     
+          </Typography >
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

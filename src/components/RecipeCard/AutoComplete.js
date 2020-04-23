@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    align:'center',
+  
     width: '57vw',
     '& > * + *': {
       marginTop: theme.spacing(3),
