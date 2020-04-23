@@ -165,11 +165,9 @@ class viewRecipe extends Component {
                <div className={classes.span}> 
                <div className={classes.serves}> </div>
                 <Typography variant="h7" className={classes.text} >
-                Serves : 
+                Serves : {serves}
                 </Typography>
-                <Typography  variant="body2"  >
-                {serves}
-                </Typography>
+              
                 </div>
                 </div>
                 <br/>
@@ -197,10 +195,7 @@ class viewRecipe extends Component {
                 <div className={classes.span}> 
                <div className={classes.level}> </div>
                 <Typography variant="h7"  className={classes.text}>
-                Difficulty Level : 
-                </Typography>
-                <Typography  variant="body2" >
-                {difficultyLevel}
+                Difficulty Level : {difficultyLevel}
                 </Typography>
                 </div>
                 </div> 
