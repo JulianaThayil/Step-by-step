@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    display: 'none',
+  
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -34,8 +34,8 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginRight: theme.spacing(1),
+    marginLeft: theme.spacing(9) ,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(13),

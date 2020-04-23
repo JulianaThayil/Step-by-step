@@ -11,7 +11,7 @@
 .container {
   margin: auto;
 left:15px;
-top:-2vh;
+top:-2.5vh;
   position:absolute;
 }
 
@@ -161,7 +161,7 @@ left:31px;
 .name1{
   position:absolute;
   top:38px;
-  left:45px;
+  left:44px;
   z-index:4;
   font-size:10px;
 
@@ -169,7 +169,7 @@ left:31px;
 }
 .name2{
   position:absolute;
-  top:48px;
+  top:47px;
   left:38px;
   z-index:4;
   font-size:10px;
@@ -177,7 +177,7 @@ left:31px;
 }
 .name3{
   position:absolute;
-  top:59px;
+  top:57px;
   left:27px;
   z-index:4;
   font-size:10px;

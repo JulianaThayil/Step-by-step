@@ -42,12 +42,12 @@ const tutorialSteps = [
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 150,
-    marginLeft:'10vw',
-    marginRight:'10vw',
+    marginLeft:'5vw',
+    marginRight:'5vw',
     flexGrow: 1,
   },
   paper: {
-    margin:'1vh',
+    margin:'1vw',
     padding:'1px',
     textAlign:'center',
     fontHeight:'2px',
