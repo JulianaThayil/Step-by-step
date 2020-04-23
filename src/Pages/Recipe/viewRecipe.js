@@ -85,7 +85,7 @@ class viewRecipe extends Component {
             <ChatIcon color="secondary" />
             <span> 
             <Link to="/login" > Sign-in </Link> or
-            <Link to="signup"> create your step-by-step account</Link> to post a review
+            <Link to="/signup"> create your step-by-step account</Link> to post a review
             </span>
             </div>
 
@@ -195,7 +195,7 @@ class viewRecipe extends Component {
                 <div className={classes.span}> 
                <div className={classes.level}> </div>
                 <Typography variant="h7"  className={classes.text}>
-                Difficulty Level : {difficultyLevel}
+                 Difficulty Level : {difficultyLevel}
                 </Typography>
                 </div>
                 </div> 

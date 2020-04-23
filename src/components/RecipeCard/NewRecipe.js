@@ -83,6 +83,7 @@ class NewRecipe extends Component {
     this.setState({
       loading: true
     });
+    
     const {image} = this.state;
 
     const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
