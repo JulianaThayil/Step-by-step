@@ -107,7 +107,7 @@ font-size: 3vh;
 @media only screen and (max-width: 425px) {
  
 .footer .footerContent .footerSectionAbout p{
-  font-size: 3vw;
+  font-size: 1.5vw;
   flex: 1;
   margin-bottom: 0vh;
 }
@@ -126,7 +126,7 @@ flex-wrap: wrap;
 }
 
 .footer .footerContent .footerSectionAbout h2{
-  font-size: 4vw;
+  font-size: 2vh;
   flex: 1;
   width: 40vw;
 }

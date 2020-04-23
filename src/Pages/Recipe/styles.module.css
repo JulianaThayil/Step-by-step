@@ -1,6 +1,33 @@
 .span{
     display: flex;
 }
+.serves{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/originals/42/93/05/429305229f4b907a56b8a24a448830ed.png);
+    background-size: cover;
+
+}
+.clock{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-image: url(https://i.pinimg.com/originals/9e/61/94/9e6194efb6504088e99058280e76d125.png);
+    background-size: cover;
+
+}
+.level{
+    margin-left: 3px;
+    border-style: solid;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-image: url(https://static.thenounproject.com/png/53631-200.png);
+    background-size: contain;
+
+}
 .head{
     background-color: black;
     color:white;

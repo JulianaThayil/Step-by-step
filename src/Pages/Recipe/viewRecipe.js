@@ -76,7 +76,6 @@ class viewRecipe extends Component {
           var vegnonveg=type==="veg"?(
           <span className={classes.span}><img width="4%" height="4%" src="https://pngimage.net/wp-content/uploads/2018/06/veg-icon-png-1.png" alt="veg"/> <p> Veg</p></span>)
           :(<span className={classes.span}><img width="4%" height="4%" src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png" alt="nonveg"/><p> Non-Veg</p></span>);  
-        
 
           let loginsignup =
           authenticated ?
@@ -163,6 +162,8 @@ class viewRecipe extends Component {
               <Grid item xs>
                 <br/>
                <div className={classes.details}> 
+               <div className={classes.span}> 
+               <div className={classes.serves}> </div>
                 <Typography variant="h7" className={classes.text} >
                 Serves : 
                 </Typography>
@@ -170,20 +171,19 @@ class viewRecipe extends Component {
                 {serves}
                 </Typography>
                 </div>
+                </div>
                 <br/>
                 
                 <div className={classes.details}> 
+                <div className={classes.span}> 
+               <div className={classes.clock}> </div>
                 <Typography variant="h7"  className={classes.text}>
                 Preparation time : 
                 </Typography>
                 <Typography  variant="body2" >
                 {preparationTime}
                 </Typography>
-                
-
-                </div> 
-                <br/>
-                <div className={classes.details}> 
+          <p style={{paddingLeft:'5%'}}> {" "}</p>
                 <Typography variant="h7"  className={classes.text}>
                 Cook time :
                 </Typography>
@@ -191,8 +191,11 @@ class viewRecipe extends Component {
                 {cookingTime}
                 </Typography>
                 </div>
-                <br/>
+                </div> 
+               
                 <div className={classes.details}> 
+                <div className={classes.span}> 
+               <div className={classes.level}> </div>
                 <Typography variant="h7"  className={classes.text}>
                 Difficulty Level : 
                 </Typography>
@@ -200,6 +203,8 @@ class viewRecipe extends Component {
                 {difficultyLevel}
                 </Typography>
                 </div>
+                </div> 
+                <br/>
                 <br/>
                 <div className={classes.details}> 
                 <Typography variant="h7"  className={classes.text}>
@@ -255,10 +260,6 @@ class viewRecipe extends Component {
 </div>
 
           </div>
-        
-         <br/>
-          <br/>
-
          
           <Typography variant="h5" className={classes.text}> 
             Reviews
