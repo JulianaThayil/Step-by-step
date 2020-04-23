@@ -79,7 +79,7 @@ align-items: baseline;
 }
 .image{
     background-image: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    padding:2%;
+
     background-repeat: no-repeat;
     width: 100vw 88vh;
     background-size: cover;
