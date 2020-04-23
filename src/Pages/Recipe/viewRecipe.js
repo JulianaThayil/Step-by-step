@@ -122,7 +122,7 @@ class viewRecipe extends Component {
               {title}
               </p>
          
-              <Typography   variant="body2" className={classes.text}
+              <Typography   variant="body2" 
                  component={Link}
                  color="primary"
                  to={`/${userHandle}`}

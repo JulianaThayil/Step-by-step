@@ -4,6 +4,7 @@ import classes from './Register.modules.css';
 import {Link} from 'react-router-dom';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 
 //Redux
 import { connect } from 'react-redux';
@@ -62,7 +63,7 @@ class signup extends Component {
   
   <div>
   <div class="segment">
-    <h1>Sign up</h1>
+  <Typography variant="h2"> Sign in</Typography>
   </div>
   <label>
     <input name="email" class="ip" type="email" placeholder="Email Address"

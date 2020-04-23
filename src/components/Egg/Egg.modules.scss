@@ -1,0 +1,24 @@
+.eggy {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+.egg {
+	background: #FFFFFF;
+	width: 6rem;
+	height: 8rem;
+	border-radius: 50% / 60% 60% 40% 40%;
+}
+.yolk	{
+	margin-top:40%;
+	background: #ffcc00;
+	width: 3rem;
+	height: 3.25rem;
+	border-radius: 50% / 60%;
+}
+h1{
+    font-size:12rem;
+    width:auto;
+   
+}

@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 //import MyProfile from '../Profile/MyProfile'
 import PropTypes from 'prop-types';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
+
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -53,7 +55,7 @@ class Login extends Component {
               <form noValidate onSubmit={this.handleSubmit}>
         
         <div class="segment">
-          <h1>Sign in</h1>
+         <Typography variant="h2"> Sign in</Typography>
         </div>
        
         
