@@ -7,6 +7,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import Logo from '../../components/Logo/Logo';
 
 const logoColor = {
   color: 'blue'
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(5),
       width: 'auto',
     },
   },
@@ -77,7 +78,7 @@ export default function SearchAppBar() {
         <Toolbar>
          
           <Typography className={classes.title} variant="h6" noWrap>
-            <span style={logoColor}>Step</span>-by-Step
+          <div>  <Logo className={classes.title} ></Logo></div>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

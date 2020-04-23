@@ -42,12 +42,12 @@ const tutorialSteps = [
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 150,
-    marginLeft:'10vw',
-    marginRight:'10vw',
+    marginLeft:'3vw',
+    marginRight:'3vw',
     flexGrow: 1,
   },
   paper: {
-    margin:'1vh',
+    margin:'1vw',
     padding:'1px',
     textAlign:'center',
     fontHeight:'2px',
@@ -106,6 +106,7 @@ function SwipeableTextMobileStepper() {
       <Paper square elevation={0} className={classes.paper}>
       <Typography variant="body2">{tutorialSteps[activeStep].label}</Typography>
       </Paper>
+      <br/>
       <MobileStepper
         steps={maxSteps}
         position="static"
