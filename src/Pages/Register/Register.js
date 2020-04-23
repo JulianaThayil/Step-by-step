@@ -63,7 +63,7 @@ class signup extends Component {
   
   <div>
   <div class="segment">
-  <Typography variant="h2"> Sign in</Typography>
+  <Typography variant="h2"> Sign up</Typography>
   </div>
   <label>
     <input name="email" class="ip" type="email" placeholder="Email Address"
