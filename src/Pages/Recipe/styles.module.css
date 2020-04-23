@@ -34,8 +34,6 @@ align-items: baseline;
 
         .img {
             max-width: 100%;
-            box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
             width:45vw;
          
           }       

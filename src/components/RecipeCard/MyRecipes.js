@@ -17,6 +17,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import ShareIcon from '@material-ui/icons/Share';
+import Avatar from '@material-ui/core/Avatar';
 
 // Icon
 import ChatIcon from '@material-ui/icons/Chat';
@@ -32,6 +33,7 @@ class RecipeCard extends Component {
         title,
         body,
         pictureUrl,
+        userImage,
         createdAt,
         userHandle,
         recipeId,
@@ -54,12 +56,21 @@ class RecipeCard extends Component {
   return (
  
     <Card className={classes.root}  >
-
+    
       <CardHeader 
-       
+       avatar={
+        <Avatar aria-label="recipe" style={{ objectFit: 'cover', }} >
+           <img src={userImage} 
+            style={{objectFit: 'cover', }}
+            width="100%" height="100%"
+            />
+        </Avatar>
+        
+      }
         title={title}
         subheader= {dayjs(createdAt).fromNow()}
       />
+     
  
       <CardMedia
         className={classes.media}

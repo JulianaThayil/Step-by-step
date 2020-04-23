@@ -119,21 +119,20 @@ class viewRecipe extends Component {
    
     <Paper  >
     <div  className={classes.viewrecipepaper}> 
-              <Typography variant="h4"  align="center" className={classes.text} style={{alignSelf:'center'}}> 
+              <Typography variant="h4"  className={classes.text} > 
               {title}
               </Typography>
          
               <Typography   variant="body2" className={classes.text}
-                 align="center"
                  component={Link}
                  color="primary"
                  to={`/${userHandle}`}
                >
-                 <center>by @{userHandle}</center>
+                 by @{userHandle}
               
                 </Typography  >
   
-                <Typography  align="center" variant="body2" color="textSecondary" className={classes.text}>
+                <Typography  variant="body2" color="textSecondary" className={classes.text}>
             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
 
