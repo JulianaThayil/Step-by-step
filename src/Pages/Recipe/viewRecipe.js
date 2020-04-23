@@ -119,9 +119,9 @@ class viewRecipe extends Component {
    
     <Paper  >
     <div  className={classes.viewrecipepaper}> 
-              <Typography variant="h4"  className={classes.text} > 
+              <p className={classes.title} > 
               {title}
-              </Typography>
+              </p>
          
               <Typography   variant="body2" className={classes.text}
                  component={Link}
