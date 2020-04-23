@@ -245,17 +245,18 @@ class viewRecipe extends Component {
     </TableContainer>
       </div>
     
-<div> 
-<Typography variant="h7" className={classes.text}>
+<div className={classes.instructions}> 
+<Typography variant="h5" className={classes.text} align="center">
               Instructions:
                 </Typography>
-          <Typography variant="body2" >
+          <p className={classes.instructionstext}>
                 {instructions}
-                </Typography>
+                </p>
 </div>
 
           </div>
-         
+         <br/>
+         <br/>
           <Typography variant="h5" className={classes.text}> 
             Reviews
           </Typography>

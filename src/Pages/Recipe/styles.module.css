@@ -1,6 +1,13 @@
 .span{
     display: flex;
 }
+.instructions{
+    border-style: solid;
+}
+.instructionstext{
+    margin: 5%;
+    padding: 5%;
+}
 .serves{
 
     width: 40px;
