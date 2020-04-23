@@ -58,6 +58,7 @@ class App extends Component {
                 <Route exact path="/addrecipe" component={Addrecipe} />
                 <Route exact path= "/:handle" component={Profile} />
                 <Route exact path="/:handle/:recipeId" component={ViewRecipe} />
+                <Route render={()=><h1> Notfound</h1>} />
               </Switch>
       </div>
     </Router>

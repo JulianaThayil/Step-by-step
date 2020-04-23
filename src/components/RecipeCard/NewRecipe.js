@@ -123,8 +123,9 @@ class NewRecipe extends Component {
       UI: { loading }
     } = this.props;
     
-    if(success) {
-      return <Redirect to="/"/>
+    let redirect=null;
+    if(success){
+      redirect=<Redirect to="/"/>
     }
 
     const steps =
@@ -335,6 +336,8 @@ class NewRecipe extends Component {
     
 
       <div >
+        {redirect}
+        
         <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
   
         <Typography  variant="h5" align="center"> 
