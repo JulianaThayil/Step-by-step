@@ -225,7 +225,7 @@ class NewRecipe extends Component {
  ingredients.map((val, idx)=> {
    let ingredientId = `ingredient-${idx}`, amountId = `amount-${idx}`
    return (
-     <div align="center"  key={idx} className={classes.display2} onChange={this.handleChange}>
+     <div key={idx} className={classes.display2} onChange={this.handleChange}>
      <br/>
      
      <div className={classes.recipedetails1}>

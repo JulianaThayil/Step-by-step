@@ -101,7 +101,7 @@ class viewRecipe extends Component {
             <div> 
             <div className={classes.body} >
  
-    <Breadcrumbs aria-label="breadcrumb" style={{backgroundColor:'white' }}>
+    <Breadcrumbs aria-label="breadcrumb" >
       <Link color="inherit" to="/">
         Step-by-step
       </Link>
@@ -121,7 +121,6 @@ class viewRecipe extends Component {
               <p className={classes.title} > 
               {title}
               </p>
-         
               <Typography   variant="body2" 
                  component={Link}
                  color="primary"
@@ -131,15 +130,16 @@ class viewRecipe extends Component {
               
                 </Typography  >
   
-                <Typography  variant="body2" color="textSecondary" className={classes.text}>
+                <Typography  variant="body2" >
             {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
+          <br/>
 
           
      
      
         <Grid container   >
-          <Grid item>
+          <Grid item style={{boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)'}}>
             <div >
             <ButtonBase >
               <img className={classes.img} alt="image" src={pictureUrl}  />
@@ -157,7 +157,7 @@ class viewRecipe extends Component {
                 
                 <br/>
           </Grid>
-          <Grid item xs={12} sm container>
+          <Grid item xs={12} sm container style={{boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)'}}>
             <Grid item xs container direction="column" spacing={0}>
               <Grid item xs>
                 <br/>
@@ -211,15 +211,10 @@ class viewRecipe extends Component {
               
                 <div className={classes.details}>     
 <Typography variant="h7" className={classes.text}>
-                Description:
+                Description:  {body}
                 </Typography>
                 </div>
-                <div className={classes.details}>  
-<Typography variant="body2" >
-                {body}
-                </Typography>
-                </div>
-
+               
               </Grid>
               
             </Grid>
