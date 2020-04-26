@@ -4,10 +4,9 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import Grid from '@material-ui/core/Grid';
 
 
 
@@ -46,11 +45,12 @@ class Carousel extends Component {
     <div className={classes.carouselroot}>
  
        <div className={classes.carouselroot}>
-      <GridList className={classes.gridList} cols={3} >
+      <GridList className={classes.gridList} cols={3}>
         {tileData.map((tile) => (
-          <GridListTile key={tile.imgPath}className={classes.GridListTile} style={{ height:'75vh' , paddingRight:'1vw', paddingLeft:'1vw' }}>
+          <GridListTile className={classes.GridListTile}  style={{ height:'100%'}}>
             <img src={tile.imgPath} alt={tile.title} className={classes.image} />
             <GridListTileBar 
+            className={classes.titlebar} 
             style={{ backgroundColor:'white'}}
               title={tile.title}
               subtitle={<span className={classes.subtitle}>@{tile.author}</span>}

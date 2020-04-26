@@ -1,17 +1,23 @@
 
 
 .carouselroot{
-    display: flex;
-    flex-wrap: wrap;
+     flex-wrap: nowrap;
 margin-right: 5vw;
   margin-left: 5vw;
-    height:75vh;
+    height:100vh;
+    width:75vw;
+    flex-direction: column;
 
+  }
+  .titlebar{
+    width: 26vw;
+   
   }
    .gridList{
     flex-wrap: nowrap;
-   display: inline-flex;
-    
+   display: flex;
+    height:80vh;
+    width: 80vw;
    } 
 
    .title {
@@ -20,8 +26,9 @@ margin-right: 5vw;
   
  
   .image{
-  height:70vh;
-width: 25vw;
+  height:80vh;
+width:30vw;
+padding-right: 3vw;
 
 
   }
@@ -31,21 +38,37 @@ color:darkblue;
 @media only screen and (max-width: 425px) {
  
   .carouselroot{
-    display: flex;
-    flex-wrap: nowrap;
-    margin-right: 1vw;
-    margin-left: 1vw;  
-    overflow: hidden;
-  height:40vh;
- 
-   
-  }
-  .image{
-    height:40vh;
-    width:25vh;
-  }
+    flex-wrap: wrap;
+margin-right: 1vw;
+ margin-left: 1vw;
+   height:60vh;
+   width:97vw;
+
+
+ }
+ .titlebar{
+   width: 35vw;
+   padding-right: 1vw;
+ }
   .gridList{
-    flex-wrap: nowrap;
-   } 
-    
-  }
+   flex-wrap: wrap;
+  display: flex;
+   height:60vh;
+   width: 97vw;
+  } 
+
+  .title {
+   color:black;
+ }
+ 
+
+ .image{
+ height:40vh;
+width:35vw;
+padding-right: 1vw;
+
+ }
+.subtitle{
+color:darkblue;
+}
+}
