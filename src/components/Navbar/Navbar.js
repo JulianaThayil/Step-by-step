@@ -76,14 +76,18 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="static" color="secondary">
         <Toolbar>
-         
+
           <Typography className={classes.title} variant="h6" noWrap>
-          <div>  <Logo className={classes.title} ></Logo></div>
+            <div>  <Logo className={classes.title} ></Logo></div>
           </Typography>
+
+          <Button color="inherit" component={Link} to={`/explore`}> Browse </Button>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
+
             <InputBase
               placeholder="Search…"
               classes={{
@@ -94,7 +98,7 @@ export default function SearchAppBar() {
             />
           </div>
 
-           <Button color="inherit" component={Link} to={`/login`}
+          <Button color="inherit" component={Link} to={`/login`}
           > Login </Button>
           <Button color="inherit" component={Link} to={`/signup`}
           >Register</Button>
