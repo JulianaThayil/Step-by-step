@@ -3,6 +3,13 @@
 }
 .instructions{
     border-style: solid;
+ 
+  
+}
+.ingredients{
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+ margin-right: 2vw;
 }
 .instructionstext{
     margin: 2vw;
@@ -39,12 +46,8 @@
     color:white;
     font-size: medium;
 }
-.display{
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr); 
-   grid-template-rows: 1;
-    gap: 3%;
-}
+
+
 .details{
     display: inline-flex;
   flex-direction: row;
