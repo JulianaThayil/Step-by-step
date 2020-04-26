@@ -1,0 +1,48 @@
+
+
+.carouselroot{
+    display: flex;
+    flex-wrap: wrap;
+margin-right: 5vw;
+  margin-left: 5vw;
+    height:70vh;
+
+  }
+   .gridList{
+    flex-wrap: nowrap;
+   display: inline-flex;
+    
+   } 
+
+    
+ 
+  .image{
+  height:70vh;
+width: 20vw;
+
+
+  }
+.subtitle{
+color:darkblue;
+}
+@media only screen and (max-width: 425px) {
+ 
+  .carouselroot{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 1vw;
+    margin-left: 1vw;  
+    overflow: hidden;
+  height:40vh;
+ 
+   
+  }
+  .image{
+    height:70vh;
+    width:20vh;
+  }
+  .gridList{
+    flex-wrap: wrap;
+   } 
+    
+  }
