@@ -6,7 +6,7 @@ import Recipe from '../../components/RecipeCard/RecipeCard';
 import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
-import ScrollToTop from '../../components/ScrollToTop'
+import ScrollToTop from '../../components/ScrollToTop';
 import UserNavbar from '../../components/Navbar/userNavbar';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
