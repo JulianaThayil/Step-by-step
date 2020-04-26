@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 margin-right: 5vw;
   margin-left: 5vw;
-    height:70vh;
+    height:75vh;
 
   }
    .gridList{
@@ -14,11 +14,14 @@ margin-right: 5vw;
     
    } 
 
-    
+   .title {
+    color:black;
+  }
+  
  
   .image{
   height:70vh;
-width: 20vw;
+width: 25vw;
 
 
   }
@@ -38,11 +41,11 @@ color:darkblue;
    
   }
   .image{
-    height:70vh;
-    width:20vh;
+    height:40vh;
+    width:25vh;
   }
   .gridList{
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
    } 
     
   }

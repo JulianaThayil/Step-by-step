@@ -48,9 +48,10 @@ class Carousel extends Component {
        <div className={classes.carouselroot}>
       <GridList className={classes.gridList} cols={3} >
         {tileData.map((tile) => (
-          <GridListTile key={tile.imgPath}className={classes.GridListTile} style={{ height:'70vh' , paddingRight:'1vw', paddingLeft:'1vw' }}>
+          <GridListTile key={tile.imgPath}className={classes.GridListTile} style={{ height:'75vh' , paddingRight:'1vw', paddingLeft:'1vw' }}>
             <img src={tile.imgPath} alt={tile.title} className={classes.image} />
-            <GridListTileBar className={classes.title}
+            <GridListTileBar 
+            style={{ backgroundColor:'white'}}
               title={tile.title}
               subtitle={<span className={classes.subtitle}>@{tile.author}</span>}
               classes={{

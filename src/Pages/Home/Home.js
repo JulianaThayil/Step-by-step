@@ -51,7 +51,7 @@ class Home extends Component {
         <div className={classes.wrapper}>
           <br />
           <center><h4 > Featured this week </h4></center>
-         
+          <br />
           
           <Carousel> </Carousel>
           <br/> 
