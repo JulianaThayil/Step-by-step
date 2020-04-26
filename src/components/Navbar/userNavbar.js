@@ -12,6 +12,8 @@ import MenuItems from './MenuItems';
 import Notifications from './Notifications'
 import AddRecipe from './AddRecipe'
 import Logo from '../../components/Logo/Logo';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme => ({
@@ -116,7 +118,8 @@ export default function PrimarySearchAppBar() {
         
           <Typography className={classes.title} variant="h6" noWrap>
           <div>  <Logo className={classes.title} ></Logo></div>
-     
+
+          
           </Typography >
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -132,6 +135,9 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           <div className={classes.grow} />
+
+          <Button color="inherit" component={Link} to={`/explore`}> Browse </Button>
+          
           <AddRecipe></AddRecipe> 
          
 
