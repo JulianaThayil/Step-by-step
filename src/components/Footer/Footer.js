@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid';
 function footer() {
     return(
 
-<div className={classes.footer}>
+/*<div className={classes.footer}>
         <Grid container spacing={0} className={classes.footerContent}>
             <Grid item xs>
                 <div className={classes.footerSectionAbout}>
@@ -54,9 +54,9 @@ function footer() {
 
         <div className={classes.footerBottom}>&copy; Copyrights 2020 | Made with ❤ in Goa.</div>
         
-  </div>
+  </div>*/
        
-        /*<div className={classes.footer}>
+        <div className={classes.footer}>
 
             <div className={classes.footerContent}>
 
@@ -89,8 +89,8 @@ function footer() {
                 </div>
             </div>
 
-            <div className={classes.footerBottom}>&copy; Copyrights@2020 | Made with Love in Goa.</div>
-        </div>*/
+            <div className={classes.footerBottom}>&copy; Copyrights@2020 | Made with ❤ in Goa.</div>
+        </div>
 
 
         /*<div className={classes.footOverall}> 
