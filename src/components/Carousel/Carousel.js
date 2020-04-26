@@ -4,7 +4,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-
+import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Grid from '@material-ui/core/Grid';
 
@@ -51,7 +51,7 @@ class Carousel extends Component {
             <img src={tile.imgPath} alt={tile.title} className={classes.image} />
             <GridListTileBar 
             className={classes.titlebar} 
-            style={{ backgroundColor:'white'}}
+            style={{ backgroundColor:'white',height:'40px'}}
               title={tile.title}
               subtitle={<span className={classes.subtitle}>@{tile.author}</span>}
               classes={{
@@ -60,10 +60,12 @@ class Carousel extends Component {
               }}
           
               actionIcon={
-                <IconButton aria-label={`star ${tile.title}`}>
-                  <FavoriteBorderIcon className={classes.title} />
+                <IconButton  className={classes.icontitle} aria-label={`star ${tile.title}`}>
+                  <FavoriteBorderIcon className={classes.icontitle} />
+                 < VisibilityOutlinedIcon className={classes.icontitle}/>
                 </IconButton>
               }
+              
             />
           </GridListTile>
         ))}
