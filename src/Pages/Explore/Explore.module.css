@@ -1,0 +1,89 @@
+.height{
+    min-height: 100px;
+}
+
+.heading{
+    font-size: 35px;
+    color: #7e9c86;
+}
+
+.subPopular{
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+.subAll{
+    margin-left: 10px;
+}
+
+.cardOne{
+    margin: 10px;
+}
+
+.grids{
+    margin: 10px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+}
+
+.gridOne{
+    background-color: #edeff2;
+    grid-row: 1/2;
+    padding: 10px;
+}
+
+.gridTwo{
+    background-color: #edeff2;
+    grid-row: 1/3;
+    padding: 10px;
+}
+
+.gridThree{
+    background-color: #edeff2;
+    grid-row: 1/3;
+    padding: 10px;
+}
+
+.gridFour{
+    background-color: #edeff2;
+    grid-row: 1/2;
+    padding: 10px;
+}
+
+.gridFive{
+    background-color: #edeff2;
+    grid-row: 2/3;
+    padding: 10px;
+}
+
+
+.gridEight{
+    background-color: #edeff2;
+    grid-row: 2/3;
+    padding: 10px;
+}
+
+
+
+.grids img{
+    background-color: #edeff2;
+    height: 200px;
+    width: 100%;
+}
+
+.grids h3{
+    background-color: #edeff2;
+    padding: 5px;
+    font-size: 40px;
+    cursor: default;
+}
+
+.grids h6{
+    background-color: #edeff2;
+    padding-left: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
