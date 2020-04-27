@@ -75,6 +75,7 @@ align-items: baseline;
          
           }       
 .body{
+    margin-top: 5%;
     padding-left:4%;
     padding-right: 4%;
     padding-top: 2%;
@@ -82,7 +83,7 @@ align-items: baseline;
 }
 .image{
     background-image: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-
+    margin-top: 5%;
     background-repeat: no-repeat;
     width: 100vw 88vh;
     background-size: cover;
@@ -126,6 +127,10 @@ font-size: 2vh;
  
     .image{
       width: 100vw;
+      margin-top: 10%;
+    }
+    .body{
+        margin-top: 10%;
     }
    
 }
@@ -133,5 +138,22 @@ font-size: 2vh;
     .img{
         width: 100vw;
     }
+    .serves{
+        width: 30px;
+        height: 30px;
+       
     
+    }
+    .clock{
+        width: 30px;
+        height: 30px;
+        
+    }
+    .level{
+        margin-left: 3px;
+        border-style: solid;
+        width: 27px;
+        height: 27px;
+      
+    }
 }

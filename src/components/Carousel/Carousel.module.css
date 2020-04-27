@@ -2,6 +2,7 @@
 
 .carouselroot{
      flex-wrap: nowrap;
+     margin-top: 10%;
 margin-right: 5vw;
   margin-left: 5vw;
     height:80vh;

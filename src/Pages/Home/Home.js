@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Navibar from '../../components/Navbar/Navbar';
 import Carousel from '../../components/Carousel/Carousel';
 import Recipe from '../../components/RecipeCard/RecipeCard';
 import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import ScrollToTop from '../../components/ScrollToTop';
-import UserNavbar from '../../components/Navbar/userNavbar';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PopularRecipeCard from '../../components/ExploreCards/popularRecipeCard';
+import Navbar from '../../components/Navbar/Nav'
+
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -28,10 +28,7 @@ class Home extends Component {
     } = this.props;
 
     let NavigationBar = !loading ? (
-            authenticated ? (
-                <UserNavbar> </UserNavbar>
-                ) : (
-                    <Navibar> </Navibar>)
+            <Navbar> </Navbar>
                     ) : (
                       <LinearProgress color="secondary" />
                     );
@@ -50,11 +47,10 @@ class Home extends Component {
 
         <div className={classes.wrapper}>
           <br />
-          <center><h4 > Featured this week </h4></center>
-          <br />
           
           <Carousel> </Carousel>
           <br/> 
+          <br/>
           <br/>
           <center><h4 >Explore </h4></center>
           <br/>

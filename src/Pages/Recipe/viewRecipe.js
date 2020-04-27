@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
-import Navbar from '../../components/Navbar/Navbar'
-import UserNavbar from '../../components/Navbar/userNavbar'
+import Navbar from '../../components/Navbar/Nav'
 import PropTypes from 'prop-types';
 import classes from './styles.module.css';
 import { Link } from 'react-router-dom';
@@ -15,7 +14,7 @@ import Ingredient from './Ingredient';
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -91,30 +90,13 @@ class viewRecipe extends Component {
 
           );
 
-          let NavigationBar = 
-            authenticated ? (
-                <UserNavbar> </UserNavbar>
-                ) : (
-                    <Navbar> </Navbar>);
-
           let recipesMarkup = !loading ? (
             <div> 
+
+              <br/>
             <div className={classes.body} >
  
-    <Breadcrumbs aria-label="breadcrumb" >
-      <Link color="inherit" to="/">
-        Step-by-step
-      </Link>
-      <Link color="inherit" to={`/${userHandle}`}>
-        {userHandle}
-      </Link>
-      <Typography
-        color="textPrimary"
-        aria-current="page"
-      >
-        {title}
-      </Typography>
-    </Breadcrumbs>
+    
    
     <Paper  >
     <div  className={classes.viewrecipepaper}> 
@@ -279,21 +261,22 @@ class viewRecipe extends Component {
           </div>
 
           ) : (
-            <LinearProgress color="secondary" />
+
+            <div style={{position:'absolute',top:'50%',left:'50%'}}>
+              <CircularProgress color="secondary"> </CircularProgress>
+
+            </div> 
           );              
                     
 
         return (
-            
-            <div>
-            {NavigationBar}
-           <div>  
+            <div> 
+           <Navbar> </Navbar>
              
-           {recipesMarkup}
+           <div> {recipesMarkup}</div>
            </div> 
            
-          
-            </div>
+
         )
     }
 }

@@ -17,7 +17,7 @@ import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
 import Addrecipe from './Pages/Recipe/AddRecipe';
 import Explore from './Pages/Explore/Explore';
-
+import Nav from './components/Navbar/Nav';
 
 //util
 import AuthRoute from './util/AuthRoute';
@@ -54,8 +54,9 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
-              <AuthRoute exact path="/explore" component={Explore} />
+              <Route exact path="/explore" component={Explore} />
               <AuthRoute exact path="/signup" component={Register} />
+              <Route exact path="/test" component={Nav} />
               <Route exact path="/user/settings" component={Settings} />
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/:handle" component={Profile} />

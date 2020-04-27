@@ -5,6 +5,9 @@
   height: 150px;
 border:5px;
   }
+  .profile{
+    margin-top: 6%;
+  }
    .ip{
     display: none;
    }
@@ -56,6 +59,7 @@ border:5px;
     }
     
   .settings{
+    margin-top: 7%;
     padding-left:6%;
     padding-right: 6%;
   }
@@ -98,7 +102,11 @@ border:5px;
         position: relative;
         margin-left:2vw;
         color: white;
-    
-        
+      }
+      .profile{
+        margin-top: 10vh;
+      }
+      .settings{
+          margin-top: 15%;
       }
     }

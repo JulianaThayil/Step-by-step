@@ -1,7 +1,6 @@
 
 .logo{
     display:flex;
-    margin-left: 0.7%
   }
   .h3{
     margin-top:10%;
@@ -9,12 +8,16 @@
   }
 
 .container {
-  margin: auto;
-left:15px;
-top:-14px;
+margin-left:3vw;
+top:-1.5%;
   position:absolute;
 }
-
+@media only screen and (max-width: 600px) {
+  .container{
+    margin-left: 8vw;
+    top:-2.5%;
+  }
+}
 .square1{
    position:absolute;
   background-color:grey;
@@ -31,7 +34,7 @@ border-width: 2px;
 
   top: 18px;
   left: 12px;
-  background:black;
+  background:#2f3640;
   width: 30px;
   height: 30px;
   border-radius: 100% ;
@@ -44,7 +47,7 @@ border-width: 2px;
 position:absolute;
   top: 18px;
   left: -11px;
-  background:black;
+  background:#2f3640;
   width:30px;
   height: 30px;
   border-radius: 100%;
@@ -97,7 +100,7 @@ position:absolute;
 }
 .square2{
   
-  background-color:black;
+  background-color:#2f3640;
   height: 9px;
   transform: rotate(45deg);
   width: 1.5px;
@@ -107,7 +110,7 @@ position:absolute;
 }
 .square3{
   
-  background-color: black;
+  background-color: #2f3640;
   height: 10px;
   transform: rotate(45deg);
   width: 1.5px;

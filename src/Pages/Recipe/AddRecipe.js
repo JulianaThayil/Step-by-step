@@ -1,5 +1,5 @@
 import React, { Component,} from 'react';
-import UserNavbar from '../../components/Navbar/userNavbar'
+import Navbar from '../../components/Navbar/Nav'
 import NewRecipe from '../../components/RecipeCard/NewRecipe';
 import PropTypes from 'prop-types';
 import { Redirect} from 'react-router-dom';
@@ -25,7 +25,8 @@ class AddRecipe extends Component {
           let profileMarkup = !loading ? (
             authenticated ? (
               <div> 
-              <UserNavbar> </UserNavbar>
+              <Navbar> </Navbar>
+              <br/>
               <div className={classes.image}> 
               <NewRecipe > </NewRecipe>
               </div>

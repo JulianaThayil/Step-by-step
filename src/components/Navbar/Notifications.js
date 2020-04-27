@@ -10,6 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
+import Fab from '@material-ui/core/Fab';
+
 // Icons
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -91,14 +93,17 @@ class Notifications extends Component {
       );
     return (
       <Fragment>
+         <div style={{width:'15px' ,paddingLeft:'2%'}}> </div>
         <Tooltip placement="top" title="Notifications">
-          <IconButton
+          <Fab
             aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup="true"
             onClick={this.handleOpen}
+            color="secondary" aria-label="profile" size="small"
+
           >
             {notificationsIcon}
-          </IconButton>
+          </Fab>
           
         </Tooltip>
         <Menu

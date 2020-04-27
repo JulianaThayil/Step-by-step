@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Grid from '@material-ui/core/Grid';
-
+import Typography from '@material-ui/core/Typography';
 
 
 class Carousel extends Component {
@@ -58,8 +58,9 @@ class Carousel extends Component {
   
 
     <div className={classes.carouselroot}>
- 
+  
        <div className={classes.carouselroot}>
+         <Typography variant="h4"> Featured this week </Typography>
       <GridList className={classes.gridList} cols={3}>
         {tileData.map((tile) => (
           <GridListTile className={classes.GridListTile}  style={{ height:'100%'}}>

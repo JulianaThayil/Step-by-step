@@ -1,8 +1,7 @@
 import React, { Component} from 'react';
-import Navbar from '../../components/Navbar/Navbar'
-import UserNavbar from '../../components/Navbar/userNavbar'
+import Navbar from '../../components/Navbar/Nav'
 import PropTypes from 'prop-types';
-
+import classes from './Profiles.module.css';
 //pages
 import MyProfile from './MyProfile';
 import StaticProfile from './StaticProfile';
@@ -32,11 +31,7 @@ class Profile extends Component {
               UI: { loading }
           } = this.props;
 
-          let NavigationBar = 
-            authenticated ? (
-                <UserNavbar> </UserNavbar>
-                ) : (
-                    <Navbar> </Navbar>);
+          
 
          const profileMarkup =
          !loading ? (
@@ -52,10 +47,12 @@ class Profile extends Component {
                
         return (
             
-            <div>
-            {NavigationBar}
+            <div >
+            <Navbar> </Navbar>
+            <br/>
+            <div className={classes.profile}> 
             {profileMarkup}
-     
+            </div>
 
             </div>
         )

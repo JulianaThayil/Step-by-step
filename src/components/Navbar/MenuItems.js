@@ -1,11 +1,20 @@
-import React, { Component } from 'react'
-import MenuItem from '@material-ui/core/MenuItem';
+import React, { Component,Fragment } from 'react'
 import PropTypes from 'prop-types';
 import { NavLink} from 'react-router-dom';
+
+//MUI
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
+
+//icons
 import SettingsIcon from '@material-ui/icons/Settings';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import ArtTrackIcon from '@material-ui/icons/ArtTrack'; //feed
 import PersonIcon from '@material-ui/icons/Person';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 //redux
@@ -13,27 +22,54 @@ import { logoutUser} from '../../redux/actions/userActions';
 import { connect } from 'react-redux';
 
 class MenuItems extends Component {
-
-    
+  state = {
+    anchorEl: null
+  };
+  handleOpen = (event) => {
+    this.setState({ anchorEl: event.target });
+  };
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+ 
     handleLogout = () => {
         this.props.logoutUser();
   
       };
     render() {
+      const anchorEl = this.state.anchorEl;
       const {
-
         user: {
           credentials: { handle }
         }
       } = this.props;
         
         return (
-            <div >
+          <Fragment>
+            <div style={{width:'15px' ,paddingLeft:'2%'}}> </div>
+          <Tooltip placement="top" title="Profile">
+            <Fab
+              aria-owns={anchorEl ? 'simple-menu' : undefined}
+              aria-haspopup="true"
+              onClick={this.handleOpen}
+              color="secondary" aria-label="profile" size="small"
+            >
+              <AccountCircle/>
+            </Fab>
+            
+          </Tooltip>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={this.handleClose}
+            onEntered={this.onMenuOpened}
+          >
             <MenuItem > <ArtTrackIcon /> <NavLink to="/"> Feed </NavLink> </MenuItem>
             <MenuItem ><PersonIcon /> <NavLink to={`/${handle}`}>Profile </NavLink> </MenuItem>
             <MenuItem > <SettingsIcon/> <NavLink to="/user/settings"> Settings </NavLink> </MenuItem>
             <MenuItem onClick={this.handleLogout}> <PowerSettingsNewIcon /> <NavLink to="/login" >Logout </NavLink> </MenuItem>
-            </div>
+          </Menu>
+        </Fragment>
         )
     }
 }

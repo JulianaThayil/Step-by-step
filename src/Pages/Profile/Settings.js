@@ -1,5 +1,5 @@
 import React, { Component,Fragment } from 'react';
-import UserNavbar from '../../components/Navbar/userNavbar'
+import Navbar from '../../components/Navbar/Nav'
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import classes from './Profiles.module.css'
@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/Footer'
 
 //Mui stuff
 import Typography from '@material-ui/core/Typography';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Tabs from '../../components/tabs';
 
 
@@ -27,7 +27,7 @@ class Settings extends Component {
           let settingsMarkup = !loading ? (
             authenticated ? (
               <div  > 
-              <UserNavbar> </UserNavbar>
+              <Navbar> </Navbar>
               <br/>
               <div className={classes.settings}> 
               <Typography  variant="h5" align="center"> 
@@ -44,7 +44,10 @@ class Settings extends Component {
               <Redirect to="/login" />
             )
           ) : (
-            <LinearProgress color="secondary" variant="query" />
+            <div style={{position:'absolute',top:'50%',left:'50%'}}>
+              <CircularProgress color="secondary"> </CircularProgress>
+
+            </div> 
           );
       
           return (
