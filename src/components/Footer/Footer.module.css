@@ -187,8 +187,8 @@
   .footer .footerContent .footerSectionContact .socials a{
     width: 39px;
     height: 35px;
-    padding-top:2px;
-    margin-right: 2px;
+    padding-top:5px;
+  margin-right: 5px;
     font-size: 1.2em;
   }
 
@@ -235,15 +235,33 @@
    .footer .footerContent .footerSectionContact .socials a{
     width: 39px;
     height: 35px;
-    padding-top:2px;
-    margin-right: 2px;
+    padding-top:5px;
+  margin-right: 5px;
     font-size: 1em;
   }
 }
 
+@media only screen and (max-width: 614px){
+  .footer .footerContent .footerSectionAbout{
+    flex: 1;
+    padding:4px;
+  }
+
+  .footer .footerContent .footerSectionChef{
+    flex: 1;
+    padding:4px;
+  }
+
+  .footer .footerContent .footerSectionContact{
+    flex: 1;
+    padding:4px;
+  }
+}
+
+
 @media only screen and (max-width: 538px){
   .footer .footerContent .footerSectionAbout p{
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .footer {
@@ -262,7 +280,7 @@
   }
 
   .footer .footerContent .footerSectionChef img{
-    height: 100%;
+    height: 90%;
     width: 50%;
     margin-left: 20%;
     
@@ -288,13 +306,20 @@
     font-size: 1em;
     padding-top:5px;
     margin-right: 5px;
+    margin-right: 5px;
   }
 
-  .footer .footerContent .footerSectionContact{
-    margin-bottom: 50px;
+  .footer .footerContent .footerSectionAbout{
+    padding:25px;
   }
 
   .footer .footerContent .footerSectionChef{
-   align-content: flex-end;
+    padding:25px;
   }
+
+  .footer .footerContent .footerSectionContact{
+    padding:25px;
+    margin-bottom: 50px;
+  }
+
 }
