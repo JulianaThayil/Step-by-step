@@ -5,15 +5,16 @@
 margin-right: 5vw;
   margin-left: 5vw;
     height:90vh;
-    width:81vw;
+    width:78vw;
     flex-direction: column;
 
   }
   .titlebar{
     width: 25vw;
-    padding-right: 2vw;
-padding-left: 2vw;
-  
+ 
+  display: flex;
+  flex-direction: row;
+ 
   }
   .icontitle{
   font-size: 2px;
@@ -21,21 +22,22 @@ padding-left: 2vw;
    .gridList{
     flex-wrap: nowrap;
    display: flex;
-    height:78vh;
+    height:60vh;
     width: 81vw;
    } 
 
    .title {
     color:black;
    font-family:serif;
+   
   }
   
  
   .image{
-  height:80vh;
+  height:60vh;
 width:25vw;
-padding-right: 2vw;
 padding-left: 2vw;
+padding-right: 2vw;
 
   }
 .subtitle{
@@ -49,32 +51,37 @@ color:darkblue;
     flex-wrap: wrap;
 margin-right: 1vw;
  margin-left: 1vw;
-   height:50vh;
+   height:58vw;
    width:97vw;
 
   }
  .titlebar{
+  
    width: 35vw;
-   padding-right: 1vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
  }
   .gridList{
    flex-wrap: wrap;
   display: flex;
-   height:40vh;
+   height:55vw;
    width: 97vw;
   } 
 
   .title {
    color:black;
+   font-family:'Times New Roman', Times, serif;
+
  }
- .icontitle{
-  padding-right: 1vw;
-  padding-left: 2vw;
-  font-family: sans-serif;
+  .icontitle{
+  padding-right: 0vw;
+  padding-left: 0vw;
+height: 1px;
  }
 
  .image{
- height:40vh;
+ height:35vw;
 width:35vw;
 padding-right: 1vw;
 

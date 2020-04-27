@@ -36,7 +36,22 @@ class Carousel extends Component {
            author: 'Simran',
            
        },
-      
+       {    imgPath:'https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+       title: 'Spicy Pomfret',
+        author: 'Werner',
+      },
+      {
+      imgPath:'https://images.pexels.com/photos/4051597/pexels-photo-4051597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      title: 'Berry muffins',
+       author: 'Sheena',
+
+   },
+   {
+    imgPath:' https://images.pexels.com/photos/2067421/pexels-photo-2067421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    title: 'Brocolli Salad',
+     author: 'Ryna',
+
+ },
       ];
    
   return (
@@ -51,14 +66,14 @@ class Carousel extends Component {
             <img src={tile.imgPath} alt={tile.title} className={classes.image} />
             <GridListTileBar 
             className={classes.titlebar} 
-            style={{ backgroundColor:'white',height:'40px'}}
+            style={{ backgroundColor:'white',height:'45px',marginLeft:'0px'}}
               title={tile.title}
               subtitle={<span className={classes.subtitle}>@{tile.author}</span>}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
               }}
-          
+        
               actionIcon={
                 <IconButton  className={classes.icontitle} aria-label={`star ${tile.title}`}>
                   <FavoriteBorderIcon className={classes.icontitle} />
