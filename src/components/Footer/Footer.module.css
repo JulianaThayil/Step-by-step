@@ -285,11 +285,9 @@
   }
 
   .footer .footerContent .footerSectionContact .socials a{
-    width: 39px;
-    height: 35px;
-    padding-top:0;
-    margin-right: 0;
     font-size: 1em;
+    padding-top:5px;
+    margin-right: 5px;
   }
 
   .footer .footerContent .footerSectionContact{
