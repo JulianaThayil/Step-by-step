@@ -55,7 +55,9 @@ class Home extends Component {
           
           <Carousel> </Carousel>
           <br/> 
+          <br/>
           <center><h4 >Explore </h4></center>
+          <br/>
           <PopularRecipeCard></PopularRecipeCard>
           <br/> 
           
@@ -63,7 +65,7 @@ class Home extends Component {
 
          
         </div>
-        <br/> 
+       
         <br/> 
         <center> <h3> Recent Posts</h3></center>
         <div className={classes.bg}> 
