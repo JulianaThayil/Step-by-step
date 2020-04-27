@@ -9,7 +9,7 @@ import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import ScrollToTop from '../../components/ScrollToTop';
 import UserNavbar from '../../components/Navbar/userNavbar';
 import LinearProgress from '@material-ui/core/LinearProgress';
-
+import PopularRecipeCard from '../../components/ExploreCards/popularRecipeCard';
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -55,13 +55,16 @@ class Home extends Component {
           
           <Carousel> </Carousel>
           <br/> 
+          <center><h4 >Explore </h4></center>
+          <PopularRecipeCard></PopularRecipeCard>
           <br/> 
           
         
 
          
         </div>
-    
+        <br/> 
+        <br/> 
         <center> <h3> Recent Posts</h3></center>
         <div className={classes.bg}> 
 
