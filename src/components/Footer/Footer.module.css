@@ -55,6 +55,11 @@
   font-size: 20px;
 }
 
+.footer .footerContent .footerSectionContact .phone,
+.footer .footerContent .footerSectionContact .email{
+  padding: 10px 0px 10px 0px;
+}
+
 
 .footer .footerContent .footerSectionContact .socials a{
   border: 1px solid gray;
@@ -196,7 +201,7 @@
   }
 
   .footer .footerContent .footerSectionContact h5{
-    font-size: 11px;
+    font-size: 15px;
   }
 
   .footer .footerContent .footerSectionAbout p{
@@ -243,5 +248,55 @@
 
   .footer {
     height: 365px;
+  }
+}
+
+@media only screen and (max-width: 515px){
+  .footer .footerContent{
+    height: auto;
+    flex-direction: column;
+  }
+
+  .footer{
+    height: auto;
+  }
+
+  .footer .footerContent .footerSectionChef img{
+    height: 100%;
+    width: 50%;
+    margin-left: 20%;
+    
+   }
+
+   .footer .footerContent .footerSectionAbout .logoText{
+    font-size: 40px;
+  }
+
+   .footer .footerContent .footerSectionContact h1{
+    font-size: 40px;
+  }
+
+   .footer .footerContent .footerSectionAbout p{
+    font-size: 14px;
+  }
+
+  .footer .footerContent .footerSectionContact h5{
+    font-size: 17px;
+  }
+
+  .footer .footerContent .footerSectionContact .socials a{
+    width: 39px;
+    height: 35px;
+    padding-top:0;
+    margin-right: 0;
+    font-size: 1em;
+  }
+
+  .footer .footerContent .footerSectionContact{
+    margin-bottom: 50px;
+  }
+
+  .footer .footerContent .footerSectionChef{
+   align-content: flex-end;
   }
 }

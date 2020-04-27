@@ -76,8 +76,8 @@ function footer() {
 
                 <div className={classes.footerSectionContact}>
                     <h1 className={classes.contact}>Contact us at:</h1><br/>
-                    <span><h5 className={classes.phone}><FaPhoneVolume />   123-456-789</h5></span><br/>
-                    <span><h5 className={classes.email}><IoMdMail />   xyz@gmail.com</h5></span><br/><br/>
+                    <span><h5 className={classes.phone}><FaPhoneVolume />      123-456-789</h5></span>
+                    <span><h5 className={classes.email}><IoMdMail />      xyz@gmail.com</h5></span><br/><br/>
                     
 
                     <div className={classes.socials}>
