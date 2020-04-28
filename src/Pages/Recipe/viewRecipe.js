@@ -187,16 +187,13 @@ class viewRecipe extends Component {
                 </Typography>
                 </div>
                 </div> 
-               
-                
+
                 <div className={classes.details}> 
                 <Typography variant="h5"  className={classes.text}>
                 <h7 className={classes.textstyle}>{vegnonveg}</h7>
                 </Typography>
                </div>
-              
-
-              
+            
                 <div className={classes.details}>     
 <Typography variant="h5" className={classes.text}>
 <h7 className={classes.textstyle}>Description:   </h7>   
@@ -247,7 +244,7 @@ class viewRecipe extends Component {
           </Grid>
          <br/>
          <br/>
-         <div align="center">
+         <div >
           <Typography variant="h5" className={classes.text}> 
           <h7 className={classes.textstyle}>Reviews</h7>
           </Typography>
