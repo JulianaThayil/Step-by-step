@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 //Mui stuff
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-
+ import classes from './styles.module.css';
 export default class Ingredient extends Component {
     render() {
     
@@ -18,9 +18,9 @@ export default class Ingredient extends Component {
 
             <TableRow>
               <TableCell  component="th" scope="row">
-                {name}
+<h7 className={classes.textstyle}> {name}</h7>
               </TableCell>
-              <TableCell >{amount}</TableCell>
+              <TableCell ><h7 className={classes.textstyle}> {amount}</h7></TableCell>
              
             </TableRow>
 
