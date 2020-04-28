@@ -18,9 +18,9 @@ export default class Ingredient extends Component {
 
             <TableRow>
               <TableCell  component="th" scope="row">
-<h7 className={classes.textstyle}> {name}</h7>
+             {name}
               </TableCell>
-              <TableCell ><h7 className={classes.textstyle}> {amount}</h7></TableCell>
+              <TableCell > {amount}</TableCell>
              
             </TableRow>
 

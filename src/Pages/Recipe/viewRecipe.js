@@ -212,7 +212,7 @@ class viewRecipe extends Component {
         <br />
         <Grid xs={12} sm container direction="row"  >
               
-        <Grid item sm spacing={5} >
+        <Grid item sm >
         <div  className={classes.ingredients}> 
         <TableContainer component={Paper}>
       <Table size="small" aria-label="a dense table">
@@ -229,7 +229,7 @@ class viewRecipe extends Component {
     </TableContainer>
       </div>
       </Grid> 
-      <Grid item  xs >
+      <Grid item  sm >
       <div className={classes.instructions}>
 <Typography variant="h5"  align="center">
 <h7 className={classes.textstyle}> Instructions: </h7>  
