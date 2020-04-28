@@ -161,7 +161,7 @@ flex-direction: column;
         .textstyle{
             font-size: 2vh;
              font-family:sans-serif;
-           
+           font-weight: normal;
            padding: 2px;
            
          } 
