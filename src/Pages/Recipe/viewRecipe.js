@@ -313,4 +313,3 @@ const mapStateToProps = (state) => ({
     mapStateToProps,
     mapActionsToProps
   )(viewRecipe);
-  
