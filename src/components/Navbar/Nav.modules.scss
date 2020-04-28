@@ -2,7 +2,7 @@
   position: fixed;
   display: flex;
   right:1%;
-  top:-1%;
+  top:-3%;
   padding: 2%;
   z-index: 2;
 }
@@ -27,7 +27,7 @@ nav{
     position:fixed;
     background-color:#f50057;
     width:100vw;
-    height:10vh;
+    height:8vh;
     z-index:1;
   }
 .desktop {
@@ -211,5 +211,21 @@ nav{
   @media screen and (max-width: 620px) {
     #menu{
       width: 60vw;
+    }
+    nav{
+      display:flex;
+      position:fixed;
+      background-color:#f50057;
+      width:100vw;
+      height:10vh;
+      z-index:1;
+    }
+    .icons{
+      position: fixed;
+      display: flex;
+      right:1%;
+      top:0.5%;
+      padding: 1%;
+      z-index: 2;
     }
   }

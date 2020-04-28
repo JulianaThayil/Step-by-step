@@ -341,8 +341,8 @@ class NewRecipe extends Component {
         
         <form  autoComplete="off" onSubmit={this.handleSubmit} className={classes.newform}>
   
-        <Typography  variant="h5" align="center"> 
-             Submit a Recipe
+        <Typography className={classes.title} variant="h5" align="center"> 
+            <h5 className={classes.title}> Submit a Recipe</h5>
         </Typography >
         <br/>
 
