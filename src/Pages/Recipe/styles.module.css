@@ -39,12 +39,15 @@ display: flex;
 }
 .instructions{
 border-style: solid;
-padding: 2vh;
+padding-right: 2vh;
+padding-left: 2vh;
+
 }
 .ingredients{
-   padding-right:2vh;
+   padding-right:2vw;
    padding-bottom: 2vh;
-   padding-left: 2vh;
+   padding-left: 2vw;
+   
 
 }
 .instructionstext{
@@ -91,8 +94,7 @@ flex-direction: column;
 
 }
 .textstyle{
-   font-size: 3vh;
-    font-family:sans-serif;
+   font-size: 2vh;
     font-weight: lighter;
   padding: 2px;
   
@@ -128,6 +130,8 @@ flex-direction: column;
 }
 
     @media only screen and (max-width: 425px) {
+       
+         
         .paperimage{
             width: 100vw ;
           height: 35vh;
@@ -159,9 +163,7 @@ flex-direction: column;
             height: 40vh;
         }  
         .textstyle{
-            font-size: 1.5vh;
-             font-family:sans-serif;
-           font-weight: normal;
+            font-size: 3vw;
            padding: 2px;
            
          } 

@@ -154,7 +154,7 @@ class viewRecipe extends Component {
                <div className={classes.details}> 
                <div className={classes.span}> 
                <div className={classes.serves}> </div>
-                <Typography variant="h5" className={classes.text} >
+                <Typography className={classes.text} >
                 <h7 className={classes.textstyle}> Serves :{serves} </h7>
                 </Typography>
               
@@ -165,13 +165,13 @@ class viewRecipe extends Component {
                 <div className={classes.details}> 
                 <div className={classes.span}> 
                <div className={classes.clock}> </div>
-                <Typography variant="h5"  className={classes.text}>
+                <Typography   className={classes.text}>
                 <h7 className={classes.textstyle}>Preparation time :  {preparationTime}</h7>
                 </Typography>
                 <br/>
          
                 <div className={classes.details}>
-                <Typography variant="h5"  className={classes.text}>
+                <Typography  className={classes.text}>
                 <h7 className={classes.textstyle}> Cook time :  {cookingTime}</h7>
                 </Typography>
                </div>
@@ -189,13 +189,13 @@ class viewRecipe extends Component {
                 </div> 
 
                 <div className={classes.details}> 
-                <Typography variant="h5"  className={classes.text}>
+                <Typography  className={classes.text}>
                 <h7 className={classes.textstyle}>{vegnonveg}</h7>
                 </Typography>
                </div>
             
                 <div className={classes.details}>     
-<Typography variant="h5" className={classes.text}>
+<Typography  className={classes.text}>
 <h7 className={classes.textstyle}>Description:   </h7>   
                 </Typography>
                
@@ -212,7 +212,7 @@ class viewRecipe extends Component {
         <br />
         <Grid xs={12} sm container direction="row"  >
               
-        <Grid item xs spacing={3} >
+        <Grid item sm spacing={5} >
         <div  className={classes.ingredients}> 
         <TableContainer component={Paper}>
       <Table size="small" aria-label="a dense table">
