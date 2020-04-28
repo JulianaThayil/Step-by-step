@@ -1,12 +1,14 @@
 .viewrecipepaper{
-    padding:2vw;
+    padding-right:2vw;
+    padding-left: 2vw;
+
     background-color:white;
     border-radius: 10px;
 margin-left: 6vw;
 margin-right: 6vw;
 }
 .mainhead{
-    padding:2vw;
+    padding-left:2vw;
 }
 .maintext{
 font-size: 4vh;
