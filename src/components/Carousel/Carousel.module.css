@@ -2,92 +2,94 @@
 
 .carouselroot{
      flex-wrap: nowrap;
-     margin-top: 10%;
-margin-right: 5vw;
-  margin-left: 5vw;
+     margin-top: 12vh;
+margin-left: 2vw;
+margin-right: 2vw;
     height:80vh;
-    width:78vw;
+    width:75vw;
     flex-direction: column;
-
-  }
-  .titlebar{
-    width: 25vw;
- 
-  display: flex;
-  flex-direction: row;
- 
-  }
-  .icontitle{
-  font-size: 2px;
-  }
-   .gridList{
-    flex-wrap: nowrap;
-   display: flex;
-    height:60vh;
-    width: 81vw;
-   } 
-
-   .title {
-    color:black;
-   font-family:serif;
-   
+  
   }
   
- 
-  .image{
-  height:60vh;
-width:25vw;
-padding-left: 2vw;
-padding-right: 2vw;
-
+  .icontitle{
+    font-size: 2px;
+    }
+     .gridList{
+      flex-wrap: nowrap;
+     display: flex;
+      height:80vh;
+      width: 70vw;
+  
+     } 
+  
+     .title {
+      color:black;
+     font-family:serif;
+     font-size: 2px;
+     
+    }
+    .maintext{
+  font-size: 4vh;
+  font-family:serif;
+  font-weight: normal;
+    }
+    
+   
+    .image{
+    height:40vh;
+  width:5vw;
+  
+  
+    }
+  .subtitle{
+  color:darkblue;
   }
-.subtitle{
-color:darkblue;
-}
-@media only screen and (max-width: 425px) {
- 
-  .carouselroot{
+  @media only screen and (max-width: 425px) {
+   
+    .carouselroot{
+      display: flex;
+      flex-direction:column;
+      flex-wrap:nowrap;
+  margin-right: 1vw;
+   margin-left: 1vw;
+     height:60vh;
+     width:100vw;
+  margin-top:6vh;
+    }
+   .titlebar{
+    
+  
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-margin-right: 1vw;
- margin-left: 1vw;
-   height:58vw;
-   width:97vw;
-
-  }
- .titlebar{
+   }
+    .gridList{
+     flex-wrap: wrap;
+    display: flex;
+     height:60vh;
+     width: 97vw;
+    } 
   
-   width: 35vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
- }
-  .gridList{
-   flex-wrap: wrap;
-  display: flex;
-   height:55vw;
-   width: 97vw;
-  } 
-
-  .title {
-   color:black;
-   font-family:'Times New Roman', Times, serif;
-
- }
-  .icontitle{
-  padding-right: 0vw;
-  padding-left: 0vw;
-height: 1px;
- }
-
- .image{
- height:35vw;
-width:35vw;
-padding-right: 1vw;
-
- }
-.subtitle{
-color:darkblue;
-}
-}
+    .title {
+     color:black;
+     font-family:'Times New Roman', Times, serif;
+  
+   }
+    .icontitle{
+    padding-right: 0vw;
+    padding-left: 0vw;
+  height: 1px;
+   }
+  
+   .image{
+   height:35vw;
+  width:35vw;
+  
+  
+   }
+  .subtitle{
+  color:darkblue;
+  }
+  
+  }
+  

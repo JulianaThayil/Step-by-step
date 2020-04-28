@@ -13,6 +13,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Ingredient from './Ingredient';
 
 //Mui stuff
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
@@ -98,11 +99,12 @@ class viewRecipe extends Component {
  
     
    
-    <Paper  >
-    <div  className={classes.viewrecipepaper}> 
-              <p className={classes.title} > 
+    <Paper   className={classes.viewrecipepaper} >
+    <div >
+    <div className={classes.mainhead} > 
+              <h4 className={classes.maintext} > 
               {title}
-              </p>
+              </h4>
               <Typography   variant="body2" 
                  component={Link}
                  color="primary"
@@ -118,16 +120,19 @@ class viewRecipe extends Component {
           <br/>
 
           
+     </div>
      
-     
-        <Grid container   >
-          <Grid item style={{boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)'}}>
+        <Grid container  xs={12}  sm container direction="row"  >
+        <Grid item xs={12} sm container direction="row"  >
+            <Grid item  xs={12}container direction="row" spacing={0}>
+              <Grid item xs={12}>
             <div >
-            <ButtonBase >
-              <img className={classes.img} alt="image" src={pictureUrl}  />
-            </ButtonBase>
+            <Container  className={classes.paperimage} >
+              <img  className={classes.imageg} alt="image" src={pictureUrl}  />
+              </Container>
             </div>
-            
+           
+           <center> <div className={classes.likereview}>
             
                 <LikeButton recipeId={recipeId} />
                 <span className={classes.text} >{likeCount} likes</span>
@@ -136,10 +141,13 @@ class viewRecipe extends Component {
                   <ChatIcon color="primary" />
                 </MyButton>
                 <span className={classes.text}>{commentCount} Reviews</span>
-                
-                <br/>
+                </div></center>
+               
+                </Grid>
+                </Grid>
+              
           </Grid>
-          <Grid item xs={12} sm container style={{boxShadow: '0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15)'}}>
+          <Grid item xs={12} sm container direction="row"  >
             <Grid item xs container direction="column" spacing={0}>
               <Grid item xs>
                 <br/>
@@ -153,30 +161,28 @@ class viewRecipe extends Component {
                 </div>
                 </div>
                 <br/>
-                
+                <div className={classes.cooktime}> 
                 <div className={classes.details}> 
                 <div className={classes.span}> 
                <div className={classes.clock}> </div>
                 <Typography variant="h7"  className={classes.text}>
-                Preparation time : 
+                Preparation time : {preparationTime}
                 </Typography>
-                <Typography  variant="body2" >
-                {preparationTime}
-                </Typography>
-          <p style={{paddingLeft:'5%'}}> {" "}</p>
+                <br/>
+         
+                <div className={classes.details}>
                 <Typography variant="h7"  className={classes.text}>
-                Cook time :
+                Cook time :  {cookingTime}
                 </Typography>
-                <Typography  variant="body2" >
-                {cookingTime}
-                </Typography>
-                </div>
-                </div> 
-               
+               </div>
+               </div>
+                 </div>
+               </div>
                 <div className={classes.details}> 
                 <div className={classes.span}> 
-               <div className={classes.level}> </div>
-                <Typography variant="h7"  className={classes.text}>
+               <div className={classes.level}>
+              </div>
+                <Typography variant="h7"  className={classes.text} className={classes.details}>
                  Difficulty Level : {difficultyLevel}
                 </Typography>
                 </div>
@@ -193,8 +199,10 @@ class viewRecipe extends Component {
               
                 <div className={classes.details}>     
 <Typography variant="h7" className={classes.text}>
-                Description:  {body}
+                Description:  
                 </Typography>
+               
+                <Typography variant="body"> {body} </Typography>
                 </div>
                
               </Grid>
@@ -205,9 +213,9 @@ class viewRecipe extends Component {
         </Grid>
      
         <br />
-        <Grid xs={12} sm container direction="row" >
+        <Grid xs={12} sm container direction="row"  >
               
-        <Grid item xs>
+        <Grid item xs spacing={3} >
         <div  className={classes.ingredients}> 
         <TableContainer component={Paper}>
       <Table size="small" aria-label="a dense table">
@@ -224,15 +232,15 @@ class viewRecipe extends Component {
     </TableContainer>
       </div>
       </Grid> 
-      <Grid item  xs className={classes.instructions}>
-      <div>
- 
+      <Grid item  xs >
+      <div className={classes.instructions}>
 <Typography variant="h5" className={classes.text} align="center">
               Instructions:
                 </Typography>
           <p className={classes.instructionstext}>
                 {instructions}
                 </p>
+               
 </div>
 
       
@@ -240,6 +248,7 @@ class viewRecipe extends Component {
           </Grid>
          <br/>
          <br/>
+         <div align="center">
           <Typography variant="h5" className={classes.text}> 
             Reviews
           </Typography>
@@ -252,6 +261,7 @@ class viewRecipe extends Component {
           
           <CommentForm recipeId={recipeId} />
           {comments && <Comments comments={comments} />}
+          </div>
           </div>
           </Paper>
           </div>

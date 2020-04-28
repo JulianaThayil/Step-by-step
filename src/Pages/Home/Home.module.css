@@ -6,37 +6,49 @@
     margin-right: auto;
 }
 
+.maintext{
+ 
+    font-size: 4vh;
+    font-family:serif;
+    font-weight: normal;
+    padding:2px;
+   
+      }
 .bg{
-    background-color: #F5F5F5;
+   
     padding:1vw;
     margin-right: 2vw;
     margin-left: 2vw;
     margin-bottom: 30vh;
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr;
+    height: min-content;
     gap: 2% 2%;
 }
 @media only screen and (max-width: 1024px) {
 .bg {
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr); 
+    grid-template-columns: 1fr 1fr 1fr;
     }
   }
 @media only screen and (max-width: 768px) {
 .bg {
-    grid-template: repeat(2, 1fr) / repeat(2, 1fr); 
+    grid-template-columns:1fr 1fr;
     }
 }
 @media only screen and (max-width: 425px) {
     .bg {
-        grid-template: repeat(1, 1fr) / repeat(1, 1fr); 
+        grid-template-columns: 1fr;
         margin-right: 5vw;
         margin-left: 5vw;
-        padding:2vw;
+      padding:1vh;
+      gap: 1% 1%;
         }
-    }
+    
     .wrapper{
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     
+}

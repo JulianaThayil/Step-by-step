@@ -52,20 +52,17 @@ class Home extends Component {
           <br/> 
           <br/>
           <br/>
-          <center><h4 >Explore </h4></center>
-          <br/>
+          <center><h4 className={classes.maintext}  >Explore </h4></center>
+          </div>
           <PopularRecipeCard></PopularRecipeCard>
           <br/> 
-          
-        
-
          
-        </div>
+       
        
         <br/> 
-        <center> <h3> Recent Posts</h3></center>
+        <center> <h4  className={classes.maintext} > Recent Posts</h4></center>
         <div className={classes.bg}> 
-
+       
         {recentRecipesMarkup}
         </div>
         <br/>

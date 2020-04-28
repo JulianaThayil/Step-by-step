@@ -55,19 +55,22 @@ class Carousel extends Component {
       ];
    
   return (
+    <div  className={classes.carouselroot}>
+    
   
-
-    <div className={classes.carouselroot}>
+    
   
        <div className={classes.carouselroot}>
-         <Typography variant="h4"> Featured this week </Typography>
+       <center><h4 className={classes.maintext} padding='2px'> Featured this week </h4></center>
+  
+
       <GridList className={classes.gridList} cols={3}>
         {tileData.map((tile) => (
-          <GridListTile className={classes.GridListTile}  style={{ height:'100%'}}>
+          <GridListTile className={classes.GridListTile}  style={{ height:'50%',padding:'1vh'}}>
             <img src={tile.imgPath} alt={tile.title} className={classes.image} />
             <GridListTileBar 
             className={classes.titlebar} 
-            style={{ backgroundColor:'white',height:'45px',marginLeft:'0px'}}
+            style={{ backgroundColor:'white',height:'45px'}}
               title={tile.title}
               subtitle={<span className={classes.subtitle}>@{tile.author}</span>}
               classes={{
