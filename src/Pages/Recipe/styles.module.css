@@ -90,6 +90,13 @@ flex-direction: column;
 
 
 }
+.textstyle{
+   font-size: 3vh;
+    font-family:sans-serif;
+    font-weight: lighter;
+  padding: 2px;
+  
+}
 @media only screen and (max-width: 768px) {
    
     

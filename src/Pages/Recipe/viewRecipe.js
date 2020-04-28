@@ -110,12 +110,12 @@ class viewRecipe extends Component {
                  color="primary"
                  to={`/${userHandle}`}
                >
-                 by @{userHandle}
+                <h7 className={classes.textstyle}> by @{userHandle}</h7>
               
                 </Typography  >
   
                 <Typography  variant="body2" >
-            {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
+                <h7 className={classes.textstyle}>{dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}</h7>
           </Typography>
           <br/>
 
@@ -135,12 +135,12 @@ class viewRecipe extends Component {
            <center> <div className={classes.likereview}>
             
                 <LikeButton recipeId={recipeId} />
-                <span className={classes.text} >{likeCount} likes</span>
+                <span className={classes.textstyle} >{likeCount} likes</span>
               
                 <MyButton tip="Reviews">
                   <ChatIcon color="primary" />
                 </MyButton>
-                <span className={classes.text}>{commentCount} Reviews</span>
+                <span className={classes.textstyle}>{commentCount} Reviews</span>
                 </div></center>
                
                 </Grid>
@@ -154,8 +154,8 @@ class viewRecipe extends Component {
                <div className={classes.details}> 
                <div className={classes.span}> 
                <div className={classes.serves}> </div>
-                <Typography variant="h7" className={classes.text} >
-                Serves : {serves}
+                <Typography variant="h5" className={classes.text} >
+                <h7 className={classes.textstyle}> Serves :{serves} </h7>
                 </Typography>
               
                 </div>
@@ -165,14 +165,14 @@ class viewRecipe extends Component {
                 <div className={classes.details}> 
                 <div className={classes.span}> 
                <div className={classes.clock}> </div>
-                <Typography variant="h7"  className={classes.text}>
-                Preparation time : {preparationTime}
+                <Typography variant="h5"  className={classes.text}>
+                <h7 className={classes.textstyle}>Preparation time :  {preparationTime}</h7>
                 </Typography>
                 <br/>
          
                 <div className={classes.details}>
-                <Typography variant="h7"  className={classes.text}>
-                Cook time :  {cookingTime}
+                <Typography variant="h5"  className={classes.text}>
+                <h7 className={classes.textstyle}> Cook time :  {cookingTime}</h7>
                 </Typography>
                </div>
                </div>
@@ -182,27 +182,27 @@ class viewRecipe extends Component {
                 <div className={classes.span}> 
                <div className={classes.level}>
               </div>
-                <Typography variant="h7"  className={classes.text} className={classes.details}>
-                 Difficulty Level : {difficultyLevel}
+                <Typography variant="h5"  className={classes.text} className={classes.details}>
+                <h7 className={classes.textstyle}>Difficulty Level :  {difficultyLevel}</h7>
                 </Typography>
                 </div>
                 </div> 
                 <br/>
                 <br/>
                 <div className={classes.details}> 
-                <Typography variant="h7"  className={classes.text}>
-                {vegnonveg}
+                <Typography variant="h5"  className={classes.text}>
+                <h7 className={classes.textstyle}>{vegnonveg}</h7>
                 </Typography>
                </div>
                 <br/>
 
               
                 <div className={classes.details}>     
-<Typography variant="h7" className={classes.text}>
-                Description:  
+<Typography variant="h5" className={classes.text}>
+<h7 className={classes.textstyle}>Description:   </h7>   
                 </Typography>
                
-                <Typography variant="body"> {body} </Typography>
+                <Typography   className={classes.textstyle} variant="body"> {body} </Typography>
                 </div>
                
               </Grid>
@@ -221,8 +221,8 @@ class viewRecipe extends Component {
       <Table size="small" aria-label="a dense table">
         <TableHead className={classes.head}>
           <TableRow >
-            <TableCell style={{color:'white'}}>Ingredient</TableCell>
-            <TableCell style={{color:'white'}} >Quantity</TableCell>
+            <TableCell style={{color:'white'}}><h7 className={classes.textstyle}>Ingredient</h7></TableCell>
+            <TableCell style={{color:'white'}} ><h7 className={classes.textstyle}>Quantity</h7></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -234,8 +234,8 @@ class viewRecipe extends Component {
       </Grid> 
       <Grid item  xs >
       <div className={classes.instructions}>
-<Typography variant="h5" className={classes.text} align="center">
-              Instructions:
+<Typography variant="h5"  align="center">
+<h7 className={classes.textstyle}> Instructions: </h7>  
                 </Typography>
           <p className={classes.instructionstext}>
                 {instructions}
@@ -250,10 +250,10 @@ class viewRecipe extends Component {
          <br/>
          <div align="center">
           <Typography variant="h5" className={classes.text}> 
-            Reviews
+          <h7 className={classes.textstyle}>Reviews</h7>
           </Typography>
          
-                <span>{commentCount} Reviews </span>
+          <span  className={classes.textstyle}>{commentCount} Reviews </span>
                 <br />
 
           {loginsignup}

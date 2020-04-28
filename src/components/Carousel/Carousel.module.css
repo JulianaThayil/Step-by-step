@@ -45,7 +45,11 @@ margin-right: 2vw;
   color:darkblue;
   }
   @media only screen and (max-width: 425px) {
-   
+    .maintext{
+      font-size: 3vh;
+      font-family:serif;
+      font-weight: normal;
+        }
     .carouselroot{
       display: flex;
       flex-direction:column;
