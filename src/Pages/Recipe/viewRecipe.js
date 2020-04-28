@@ -115,7 +115,7 @@ class viewRecipe extends Component {
                 </Typography  >
   
                 <Typography  variant="body2" >
-                <h7 className={classes.textstyle}>{dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}</h7>
+                {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
           </Typography>
           <br/>
 
