@@ -13,7 +13,7 @@ function footer() {
     return(
 
 <div className={classes.footer}>
-        <Grid container xs={12} spacing={1} className={classes.footerContent}>
+        <Grid container xs={12} spacing={0} className={classes.footerContent}>
             <Grid item sm>
                 <div className={classes.footerSectionAbout}>
                     <h2 className={classes.logoText}><span>STEP</span>-BY-STEP</h2>

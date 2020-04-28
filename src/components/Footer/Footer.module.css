@@ -27,6 +27,7 @@
   height: 40vh;
   padding-right: 1vw;
   padding-left: 1vw;
+  padding-bottom: 0vh;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
