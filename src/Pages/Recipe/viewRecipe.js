@@ -187,14 +187,14 @@ class viewRecipe extends Component {
                 </Typography>
                 </div>
                 </div> 
-                <br/>
-                <br/>
+               
+                
                 <div className={classes.details}> 
                 <Typography variant="h5"  className={classes.text}>
                 <h7 className={classes.textstyle}>{vegnonveg}</h7>
                 </Typography>
                </div>
-                <br/>
+              
 
               
                 <div className={classes.details}>     
