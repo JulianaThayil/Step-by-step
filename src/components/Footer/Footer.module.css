@@ -25,7 +25,8 @@
 
 .footer .footerContent{
   height: 40vh;
-  padding: 0px;
+  padding-right: 1vw;
+  padding-left: 1vw;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -35,14 +36,14 @@
 .footer .footerContent .footerSectionAbout{
   flex: 1;
   padding-top: 2vw;
-padding-right: 0px;
+padding-right: 4vw;
   width:50vw;
 }
 
 .footer .footerContent .footerSectionAbout p{
   font-size: 3vh;
   flex: 1;
-  padding-right: 0px;
+  padding-right: 2vw;
 }
 
 .footer .footerContent .footerSectionChef{
@@ -62,7 +63,7 @@ padding-right: 0px;
 .footer .footerContent .footerSectionContact{
   flex: 1;
   padding-left: 6vw;
-  padding-top: 1vw;
+  padding-top: 2vh;
   width:35vw;
 }
 
@@ -119,7 +120,7 @@ font-size: 4vh;
   }
  
 .footer .footerContent .footerSectionAbout p{
-  font-size: 35vw;
+  font-size: 1.5vh;
   flex: 1;
   margin-bottom: 0vh;
   width:30vw;
@@ -136,7 +137,7 @@ font-size: 4vh;
   flex: 1;
  
   padding-left: 0vw;
-  padding-top: 1vw;
+  padding-top: 1vh;
   width:30vw;
 display: flex;
 flex-direction: row;
@@ -205,7 +206,7 @@ padding-right: 0vw;
     }
   
   .footer .footerContent .footerSectionAbout p{
-    font-size: 2vw;
+    font-size: 1.8vh;
     flex: 1;
     margin-bottom: 0vh;
     padding:0vw;
@@ -223,6 +224,7 @@ padding-right: 0vw;
   flex-direction: row;
   flex-wrap: wrap;
   font-size: 2px;
+  padding-top: 4vh;
   }
   
   .footer .footerContent .footerSectionAbout h2{
