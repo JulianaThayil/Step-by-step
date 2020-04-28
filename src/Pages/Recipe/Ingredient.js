@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 //Mui stuff
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
- import classes from './styles.module.css';
+import classes from './styles.module.css';
 export default class Ingredient extends Component {
     render() {
     

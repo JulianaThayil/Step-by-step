@@ -1,15 +1,17 @@
 .viewrecipepaper{
-    padding:2vw;
+    padding-right:2vw;
+    padding-left: 2vw;
+
     background-color:white;
     border-radius: 10px;
 margin-left: 6vw;
 margin-right: 6vw;
 }
 .mainhead{
-    padding:2vw;
+    padding-left:2vw;
 }
 .maintext{
-font-size: 4vh;
+font-size: 5vh;
 font-family:serif;
  font-weight: normal;
     
@@ -39,12 +41,15 @@ display: flex;
 }
 .instructions{
 border-style: solid;
-padding: 2vh;
+padding-right: 2vh;
+padding-left: 2vh;
+
 }
 .ingredients{
-   padding-right:2vh;
+   padding-right:3vh;
    padding-bottom: 2vh;
-   padding-left: 2vh;
+   padding-left: 3vh;
+  
 
 }
 .instructionstext{
@@ -91,9 +96,8 @@ flex-direction: column;
 
 }
 .textstyle{
-   font-size: 3vh;
-    font-family:sans-serif;
-    font-weight: lighter;
+   font-size: 2.5vh;
+ 
   padding: 2px;
   
 }
@@ -128,6 +132,8 @@ flex-direction: column;
 }
 
     @media only screen and (max-width: 425px) {
+       
+         
         .paperimage{
             width: 100vw ;
           height: 35vh;
@@ -159,9 +165,7 @@ flex-direction: column;
             height: 40vh;
         }  
         .textstyle{
-            font-size: 1.5vh;
-             font-family:sans-serif;
-           font-weight: normal;
+            font-size: 3vw;
            padding: 2px;
            
          } 
