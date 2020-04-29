@@ -18,9 +18,9 @@ const explore = () => {
            
             <div className={classes.height}>
                 <div className={classes.subPopular}>
-                    <h1 className={classes.heading}>Popular Recipie Categories</h1>
-                    <p>Find and share every cooking inspirations. Find recipies and delicacies
-                        along with how-tos based on the food you love and are attached to. </p>
+                    <h5 className={classes.heading}>Popular Recipe Categories</h5>
+                   <center> <p>Find and share every cooking inspirations. Find recipes and delicacies
+                        along with how-tos based on the food you love and are attached to. </p></center>
                 </div>
 
                 <PopularRecipeCard></PopularRecipeCard>
