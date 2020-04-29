@@ -57,6 +57,13 @@ border:5px;
       margin-top: 2%;
       
     }
+    .title{
+      
+        font-size: 4vh;
+        font-family:serif;
+         font-weight: normal;
+            
+         }
     
   .settings{
     margin-top: 7%;

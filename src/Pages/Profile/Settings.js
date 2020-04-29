@@ -31,7 +31,7 @@ class Settings extends Component {
               <br/>
               <div className={classes.settings}> 
               <Typography  variant="h5" align="center"> 
-                Settings
+               <h7  className={classes.title}> Settings</h7> 
               </Typography>
               <Tabs></Tabs> 
               
