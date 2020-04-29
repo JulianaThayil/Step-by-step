@@ -2,7 +2,7 @@
 
 .carouselroot{
      flex-wrap: nowrap;
-     margin-top: 10vh;
+     margin-top: 52px;
 margin-left: 2vw;
 margin-right: 2vw;
     height:80vh;
@@ -58,7 +58,7 @@ margin-right: 2vw;
    margin-left: 1vw;
      height:60vh;
      width:100vw;
-  margin-top:4vh;
+  margin-top:20px;
     }
    .titlebar{
     
