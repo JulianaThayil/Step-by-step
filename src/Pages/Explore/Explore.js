@@ -3,7 +3,7 @@ import Logo from '../../components/Logo/Logo';
 import classes from './Explore.module.css';
 import PopularRecipeCard from '../../components/ExploreCards/popularRecipeCard';
 import Footer from '../../components/Footer/Footer';
-
+import Navbar from '../../components/Navbar/Nav'
 
 
 const explore = () => {
@@ -11,9 +11,11 @@ const explore = () => {
 
 
     return (
-        <div >
-
-            <Logo />
+        
+ <div >
+            <Navbar> </Navbar>
+            <br/>
+           
             <div className={classes.height}>
                 <div className={classes.subPopular}>
                     <h1 className={classes.heading}>Popular Recipie Categories</h1>
