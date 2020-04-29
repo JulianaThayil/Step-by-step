@@ -15,6 +15,8 @@
   z-index: 2;
 }
 .btn{
+margin-top:-9px;
+
   color:white;
   background-color: #2f3640;
 }
@@ -211,6 +213,11 @@ nav{
   @media screen and (max-width: 620px) {
     #menu{
       width: 60vw;
+    }
+    .btn{
+margin-top: 8px;
+      color:white;
+      background-color: #2f3640;
     }
     nav{
       display:flex;
