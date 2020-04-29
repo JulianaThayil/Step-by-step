@@ -185,15 +185,13 @@ class viewRecipe extends Component {
                 <Typography variant="h5"  className={classes.text} className={classes.details}>
                 <h7 className={classes.textstyle}>Difficulty Level :  {difficultyLevel}</h7>
                 </Typography>
-                </div>
                 </div> 
-
-                <div className={classes.details}> 
-                <Typography  className={classes.text}>
-                <h7 className={classes.textstyle}>{vegnonveg}</h7>
-                </Typography>
-               </div>
-            
+               
+              
+                <h7 classname={classes.text} className={classes.textstyle}>{vegnonveg}</h7>
+                </div>
+               
+               
                 <div className={classes.details}>     
 <Typography  className={classes.text}>
 <h7 className={classes.textstyle}>Description:   </h7>   
