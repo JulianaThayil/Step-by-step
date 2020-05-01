@@ -41,7 +41,6 @@ class Home extends Component {
      <div  > 
        {NavigationBar}
 
-        <br/> 
         <center> <h4  className={classes.maintext} > Recent Posts</h4></center>
         <div className={classes.bg}> 
        
