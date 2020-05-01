@@ -50,7 +50,7 @@ class Profile extends Component {
             <div >
             <Navbar> </Navbar>
             <br/>
-            <div className={classes.profile}> 
+            <div > 
             {profileMarkup}
             </div>
 

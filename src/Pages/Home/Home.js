@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Carousel from '../../components/Carousel/Carousel';
 import Recipe from '../../components/RecipeCard/RecipeCard';
 import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
-import ScrollToTop from '../../components/ScrollToTop';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import PopularRecipeCard from '../../components/ExploreCards/popularRecipeCard';
 import Navbar from '../../components/Navbar/Nav'
 
 
@@ -44,30 +41,12 @@ class Home extends Component {
      <div  > 
        {NavigationBar}
 
-
-        <div className={classes.wrapper}>
-          <br />
-          
-          <Carousel> </Carousel>
-          <br/> 
-          <br/>
-          <br/>
-          <center><h4 className={classes.maintext}  >Explore </h4></center>
-          </div>
-          <PopularRecipeCard></PopularRecipeCard>
-          <br/> 
-         
-       
-       
         <br/> 
         <center> <h4  className={classes.maintext} > Recent Posts</h4></center>
         <div className={classes.bg}> 
        
         {recentRecipesMarkup}
         </div>
-        <br/>
-        <ScrollToTop></ScrollToTop> 
-        <br/>
 
         <div>
         <Footer></Footer>

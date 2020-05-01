@@ -4,9 +4,7 @@ import { NavLink} from 'react-router-dom';
 
 //MUI
 import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import IconButton from '@material-ui/core/IconButton';
-import Fab from '@material-ui/core/Fab';
+import Popover from '@material-ui/core/Popover';
 import Tooltip from '@material-ui/core/Tooltip';
 
 //icons
@@ -21,7 +19,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import { logoutUser} from '../../redux/actions/userActions';
 import { connect } from 'react-redux';
 
-class MenuItems extends Component {
+class ProfileIcon extends Component {
   state = {
     anchorEl: null
   };
@@ -47,28 +45,42 @@ class MenuItems extends Component {
         return (
           <Fragment>
             <div style={{width:'15px' ,paddingLeft:'2%'}}> </div>
-          <Tooltip placement="top" title="Profile">
-            <Fab
-              aria-owns={anchorEl ? 'simple-menu' : undefined}
-              aria-haspopup="true"
-              onClick={this.handleOpen}
-              color="secondary" aria-label="profile" size="small"
-            >
+          <Tooltip placement="top" title="Profile"
+          aria-owns={anchorEl ? 'simple-menu' : undefined}
+          aria-haspopup="true"
+          onClick={this.handleOpen}
+          >
+            
               <AccountCircle/>
-            </Fab>
             
           </Tooltip>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={this.handleClose}
-            onEntered={this.onMenuOpened}
-          >
+
+          <Popover 
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={this.handleClose}
+          onEntered={this.onMenuOpened}
+          style={{marginTop:'1vh'}}
+
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+        >
+          
             <MenuItem > <ArtTrackIcon /> <NavLink to="/"> Feed </NavLink> </MenuItem>
             <MenuItem ><PersonIcon /> <NavLink to={`/${handle}`}>Profile </NavLink> </MenuItem>
             <MenuItem > <SettingsIcon/> <NavLink to="/user/settings"> Settings </NavLink> </MenuItem>
             <MenuItem onClick={this.handleLogout}> <PowerSettingsNewIcon /> <NavLink to="/login" >Logout </NavLink> </MenuItem>
-          </Menu>
+          
+   
+        </Popover>
+           
+         
         </Fragment>
         )
     }
@@ -80,7 +92,7 @@ const mapStateToProps = (state) => ({
   
   const mapActionsToProps = { logoutUser };
   
-  MenuItems.propTypes = {
+  ProfileIcon.propTypes = {
     logoutUser: PropTypes.func.isRequired,
     user: PropTypes.object.isRequired,
   };
@@ -89,4 +101,4 @@ const mapStateToProps = (state) => ({
   export default connect(
     mapStateToProps,
     mapActionsToProps
-  )(MenuItems);
+  )(ProfileIcon);

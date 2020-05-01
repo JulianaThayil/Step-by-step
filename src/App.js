@@ -17,7 +17,6 @@ import Home from './Pages/Home/Home';
 import ViewRecipe from './Pages/Recipe/viewRecipe';
 import Addrecipe from './Pages/Recipe/AddRecipe';
 import Explore from './Pages/Explore/Explore';
-import Nav from './components/Navbar/Nav';
 
 //util
 import AuthRoute from './util/AuthRoute';
@@ -48,7 +47,7 @@ class App extends Component {
 
     return (
 
-      <Provider store={store}>
+       <Provider store={store}>
         <Router>
           <div>
             <Switch>
@@ -56,7 +55,6 @@ class App extends Component {
               <AuthRoute exact path="/login" component={Login} />
               <Route exact path="/explore" component={Explore} />
               <AuthRoute exact path="/signup" component={Register} />
-              <Route exact path="/test" component={Nav} />
               <Route exact path="/user/settings" component={Settings} />
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/:handle" component={Profile} />

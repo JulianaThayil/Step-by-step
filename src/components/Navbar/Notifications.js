@@ -10,7 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
-import Fab from '@material-ui/core/Fab';
+import Popover from '@material-ui/core/Popover';
+
 
 // Icons
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -94,26 +95,41 @@ class Notifications extends Component {
     return (
       <Fragment>
          <div style={{width:'15px' ,paddingLeft:'2%'}}> </div>
-        <Tooltip placement="top" title="Notifications">
-          <Fab
-            aria-owns={anchorEl ? 'simple-menu' : undefined}
-            aria-haspopup="true"
-            onClick={this.handleOpen}
-            color="secondary" aria-label="profile" size="small"
+        <Tooltip placement="top" title="Notifications"
+        aria-owns={anchorEl ? 'simple-menu' : undefined}
+        aria-haspopup="true"
+        onClick={this.handleOpen}
+        >
 
-          >
             {notificationsIcon}
-          </Fab>
+
           
         </Tooltip>
-        <Menu
+        <Popover 
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
           onEntered={this.onMenuOpened}
+          style={{marginTop:'1vh'}}
+
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+        
+          PaperProps={{
+            style: {
+              maxHeight: '40vh',
+              width: '30%',
+            },
+          }}
         >
           {notificationsMarkup}
-        </Menu>
+        </Popover>
       </Fragment>
     );
   }

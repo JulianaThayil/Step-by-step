@@ -3,7 +3,10 @@ body {
   padding: 0%;
   font-family: "Roboto",sans-serif;
 }
-
+.btn{
+  color: white;
+  text-decoration: none;
+}
 ol.progtrckr {
   list-style-type: none;
   padding: 0;

@@ -87,12 +87,12 @@ class RecipeCard extends Component {
 
       <CardActions disableSpacing>
       <LikeButton recipeId={recipeId} />
-          <span>{likeCount} Likes</span>
+          <span>{likeCount} </span>
 
           <MyButton tip="comments">
             <ChatIcon color="secondary" />
           </MyButton>
-          <span>{commentCount} Reviews</span>
+          <span>{commentCount}</span>
 
         <IconButton aria-label="share">
           <ShareIcon />

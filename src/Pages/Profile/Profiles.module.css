@@ -3,11 +3,9 @@
   border-radius: 50%;
   width: 150px;
   height: 150px;
-border:5px;
+  border:5px;
   }
-  .profile{
-    margin-top: 6%;
-  }
+
    .ip{
     display: none;
    }
@@ -27,15 +25,14 @@ border:5px;
     }
 
     .mainFeaturedPost {
-      margin-left:15%;
-      margin-right:15%;
+      margin-left:10%;
+      margin-right:10%;
       position: relative;
       color: white;
       margin-bottom: 2%;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      margin-top:1%;
       width:70vw;
       height:250px;
 
@@ -66,7 +63,6 @@ border:5px;
          }
     
   .settings{
-    margin-top: 7%;
     padding-left:6%;
     padding-right: 6%;
   }
@@ -93,7 +89,6 @@ border:5px;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      margin-top:2%;
       width:100vw;
       height:30vh;
 

@@ -10,7 +10,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 280,
+    minWidth: 230,
     margin: theme.spacing(2),
   },
   media: {

@@ -1,79 +1,167 @@
-import React, { Component, Fragment } from 'react'
-import classes from './Nav.modules.scss'
-import Logo from '../Logo/Logo';
-import Search from './Search'
-import Notifications from './Notifications'
-import Plus from './AddRecipe';
-import Profile from './MenuItems'
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import Popover from '@material-ui/core/Popover';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import MoreIcon from '@material-ui/icons/MoreVert';
 
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import MobileMenu from './MobileMenu';
 
+import Icons from './Iconsbar'
 
-class Nav extends Component {
-    render() {
-        const {
-            user: {
-              authenticated,
-              loading
-            }
-          } = this.props;
-        let Markup = authenticated ? (
-            <div class="icons">
-            <Plus> </Plus>
-            <Notifications> </Notifications>
-            <Profile> </Profile>
-            </div>
-        ):(<div class="markup"> 
-            <Link to="/login" class="btn"> Login </Link>
-            <div style={{width:'5px'}}> </div>
-            <Link to="/signup" class="btn"> Register </Link>
-        </div>);
-        return (
-            <div> 
-            <nav> 
-  <div id="menuToggle">
-   
-    <input class="hamburger" type="checkbox" />
-    
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <ul id="menu">
-    <Link to="/" class="n"> <li> Home</li> </Link>
-    <Link to="/explore" class="n"> <li> Explore</li> </Link>
-    <Link to="/" class="n"> <li> About</li> </Link>
-    <Link to="/" class="n"> <li> Contact</li> </Link>
-    </ul>
-  </div>
+const useStyles = makeStyles((theme) => ({
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+}));
 
-  <div> 
-  <Logo > </Logo> 
-  </div>
-  <div class="desktop">
-  
-  <Link to="/explore" class="a"> EXPLORE </Link>
-  <Link class="a">CATEGORIES</Link >
-  
-  </div>
-  <Search > </Search>
- </nav>
- <div class="markup">
+export default function PrimarySearchAppBar() {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-<div>  {Markup}</div>
-</div>
-</div>
-        )
-    }
-}
-Nav.propTypes = {
-    user: PropTypes.object.isRequired
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
   };
-const mapStateToProps = (state) => ({
-    user: state.user
-  });
-  export default connect(
-    mapStateToProps
-      )(Nav);  
+
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+     <Popover 
+
+     style={{marginTop:'1vh'}}
+
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+  >
+
+       <MobileMenu> </MobileMenu>
+    </Popover>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position="static" color="secondary">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Step-by-step
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <Icons> </Icons>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+ 
+    </div>
+  );
+}

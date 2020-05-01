@@ -93,9 +93,9 @@ class viewRecipe extends Component {
 
           let recipesMarkup = !loading ? (
             <div> 
+              <br/> 
 
-              <br/>
-            <div className={classes.body} >
+            <div  >
  
     
    
