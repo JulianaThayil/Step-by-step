@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Navbar from '../../components/Navbar/Nav'
+import Navbar from '../../components/Navbar/Nav';
 
 
 //Redux stuff
@@ -50,6 +50,9 @@ class Home extends Component {
         <div>
         <Footer></Footer>
         </div>
+
+        
+
       </div>
     );
   }

@@ -7,17 +7,32 @@ const images = [
   {
     url: 'https://iamafoodblog.com/wp-content/uploads/2019/02/full-english-7355w.jpg',
     title: 'Breakfast',
-    width: '40%',
+    width: '33.333333%',
   },
   {
     url: 'https://i.ytimg.com/vi/L6yX6Oxy_J8/maxresdefault.jpg',
     title: 'Burgers',
-    width: '30%',
+    width: '33.333333%',
   },
   {
     url: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2Frecipes%2Fck%2F09%2F11%2Fseafood-arrabbiata-ck-1932641-x.jpg%3Fitok%3DU2Ica4EX',
     title: 'Seafood',
-    width: '30%',
+    width: '33.333333%',
+  },
+  {
+    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSY0ckkmwRsYg-GCKx13JMR4fIl0UYl5WFHM3VbNVImOvsPL1lx&usqp=CAU',
+    title: 'Continental',
+    width: '33.333333%',
+  },
+  {
+    url: 'https://www.onceuponachef.com/images/2012/09/Chicken-Kebabs.jpg',
+    title: 'Arabian',
+    width: '33.333333%',
+  },
+  {
+    url: 'https://www.tastytweets.in/BackEndImage/ProductImages/regular-cakes-regular-crispy-kitkat-tasty-tweets.jpg',
+    title: 'Bakes',
+    width: '33.333333%',
   },
 ];
 

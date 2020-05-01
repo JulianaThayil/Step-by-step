@@ -95,12 +95,12 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  
+
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
-     <Popover 
+    <Popover
 
-     style={{marginTop:'1vh'}}
+      style={{ marginTop: '1vh' }}
 
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -109,9 +109,9 @@ export default function PrimarySearchAppBar() {
       transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-  >
+    >
 
-       <MobileMenu> </MobileMenu>
+      <MobileMenu> </MobileMenu>
     </Popover>
   );
 
@@ -161,7 +161,7 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
- 
+
     </div>
   );
 }

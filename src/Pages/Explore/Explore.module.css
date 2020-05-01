@@ -1,94 +1,146 @@
-.height{
-    min-height: 100px;
+
+
+.heading {
+    font-size: 50px;
+    font-family: serif;
+    font-weight: normal;
+    text-align: center;
 }
 
-.heading{
-
-        font-size: 4vh;
-        font-family:serif;
-         font-weight: normal;
-            text-align:center;
-         }
-  
-
-
-.subPopular{
-    margin-top: 7vh;
-    margin-left: 10px;
-}
-
-.subAll{
-    margin-left: 10px;
-}
-
-.cardOne{
-    margin: 1vh;
-}
-
-.grids{
-    margin: 10px;
+.browseCats{
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
-
-}
-
-.gridOne{
-    background-color: #edeff2;
-    grid-row: 1/2;
+    width: 80%;
+    margin: 0 auto;
     padding: 10px;
+    align-items: center;
 }
 
-.gridTwo{
-    background-color: #edeff2;
-    grid-row: 1/3;
-    padding: 10px;
-}
-
-.gridThree{
-    background-color: #edeff2;
-    grid-row: 1/3;
-    padding: 10px;
-}
-
-.gridFour{
-    background-color: #edeff2;
-    grid-row: 1/2;
-    padding: 10px;
-}
-
-.gridFive{
-    background-color: #edeff2;
-    grid-row: 2/3;
-    padding: 10px;
-}
-
-
-.gridEight{
-    background-color: #edeff2;
-    grid-row: 2/3;
-    padding: 10px;
-}
-
-
-
-.grids img{
-    background-color: #edeff2;
-    height: 200px;
-    width: 100%;
-}
-
-.grids h3{
-    background-color: #edeff2;
-    padding: 5px;
-    font-size: 40px;
-    cursor: default;
-}
-
-.grids h6{
-    background-color: #edeff2;
-    padding-left: 5px;
-    font-size: 30px;
+.browseCats .one,
+.browseCats .two,
+.browseCats .three,
+.browseCats .four,
+.browseCats .five,
+.browseCats .six {
+    background-color: #fafafa;
+    display: grid;
+    grid-template-columns: 30% auto;
+    box-shadow: 3px 3px #ebe8e1;
     cursor: pointer;
+}
+
+.browseCats .one img,
+.browseCats .two img,
+.browseCats .three img,
+.browseCats .four img,
+.browseCats .five img,
+.browseCats .six img{
+    height: 120px;
+    width: auto;
+}
+
+.browseCats .one .tag,
+.browseCats .two .tag,
+.browseCats .three .tag,
+.browseCats .four .tag,
+.browseCats .five .tag,
+.browseCats .six .tag {
+    text-align: center;
+    margin: auto auto;
+    font-family: serif;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 629px){
+    .browseCats .one,
+    .browseCats .two,
+    .browseCats .three,
+    .browseCats .four,
+    .browseCats .five,
+    .browseCats .six {
+        display: block;
+    }
+
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 125px;
+        width: auto;
+        margin-left: 30%;
+    }
+}
+
+@media only screen and (max-width: 489px){
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 120px;
+        width: auto;
+        margin-left: 22%;
+    }
+}
+
+@media only screen and (max-width: 411px){
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 120px;
+        width: auto;
+        margin-left: 18%;
+    }
+}
+
+@media only screen and (max-width: 403px){
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 110px;
+        width: auto;
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 360px){
+
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 110px;
+        width: auto;
+        margin-left: 13%;
+    }
+}
+
+@media only screen and (max-width: 357px){
+
+    .browseCats .one img,
+    .browseCats .two img,
+    .browseCats .three img,
+    .browseCats .four img,
+    .browseCats .five img,
+    .browseCats .six img{
+        height: 110px;
+        width: auto;
+        margin-left: 9%;
+    }
 }
