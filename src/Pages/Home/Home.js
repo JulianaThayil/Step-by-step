@@ -6,7 +6,7 @@ import classes from './Home.module.css';
 import Skeleton from '../../components/Skeleton/RecipeSkeleton';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Navbar from '../../components/Navbar/Nav';
-
+import Featuredposts from '../../components/Featured posts/Featuredposts'
 
 //Redux stuff
 import { connect } from 'react-redux';
@@ -41,10 +41,19 @@ class Home extends Component {
      <div  > 
        {NavigationBar}
 
-        <center> <h4  className={classes.maintext} > Recent Posts</h4></center>
-        <div className={classes.bg}> 
-       
+        <div className={classes.featured}>
+          
+        <h4  className={classes.maintext} >FEATURED POSTS</h4>
+          <Featuredposts></Featuredposts>
+
+</div>
+        
+        <div > 
+        <h4   className={classes.recent} > RECENT POSTS</h4>
+        <div
+        className={classes.bg}>
         {recentRecipesMarkup}
+        </div>
         </div>
 
         <div>

@@ -9,7 +9,7 @@ import Popover from '@material-ui/core/Popover';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import Logo from '../../components/Logo/Logo';
 import MobileMenu from './MobileMenu';
 
 import Icons from './Iconsbar'
@@ -34,11 +34,11 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginRight: theme.spacing(3),
+    marginLeft:0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(8),
       width: 'auto',
     },
   },
@@ -127,9 +127,8 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Step-by-step
-          </Typography>
+          <Logo></Logo>
+      
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

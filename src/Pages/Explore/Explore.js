@@ -26,7 +26,7 @@ const explore = () => {
                 <hr className="rounded"></hr>
 
                 <div className={classes.subPopular}>
-                    <h5 className={classes.heading}>Popular Categories</h5>
+                    <h5 className={classes.heading}>Browse all Categories</h5>
                 </div>
                 
                 <div className={classes.browseCats}>
