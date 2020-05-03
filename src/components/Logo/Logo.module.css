@@ -8,14 +8,14 @@
   }
 
 .container {
-margin-left:-9px;
-margin-top: -40px;
+margin-left:60px;
+margin-top: -14px;
   position:relative;
 
 }
 @media only screen and (max-width: 600px) {
   .container{
-    
+    left: -10px;
     top:-2.5%;
   }
 }

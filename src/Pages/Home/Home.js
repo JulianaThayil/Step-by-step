@@ -43,13 +43,13 @@ class Home extends Component {
 
         <div className={classes.featured}>
           
-        <h4  className={classes.maintext} >FEATURED POSTS</h4>
+        <h4  className={classes.maintext} >Featured Posts</h4>
           <Featuredposts></Featuredposts>
 
 </div>
         
         <div > 
-        <h4   className={classes.recent} > RECENT POSTS</h4>
+        <h4   className={classes.recent} > Recent Posts</h4>
         <div
         className={classes.bg}>
         {recentRecipesMarkup}

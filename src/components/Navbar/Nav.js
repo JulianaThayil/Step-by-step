@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(3),
-    marginLeft:0,
+    marginLeft:'50px',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(8),
@@ -118,6 +118,7 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static" color="secondary">
+      <Logo> </Logo>
         <Toolbar>
           <IconButton
             edge="start"
@@ -127,7 +128,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Logo></Logo>
+       
       
           <div className={classes.search}>
             <div className={classes.searchIcon}>
