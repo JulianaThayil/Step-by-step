@@ -134,6 +134,7 @@ class NewRecipe extends Component {
         name: "Step 1",
         component: (
           <Fragment>
+            <br/>
             <div className={classes.image} align="center">
               <PhotoCamera />
               <input
@@ -243,7 +244,7 @@ class NewRecipe extends Component {
           <Fragment>
             <br />
             <div>
-              <Typography align="center">
+              <Typography>
                 Ingredients (click the + button below to add a new ingredient){" "}
               </Typography>
             </div>
@@ -258,7 +259,7 @@ class NewRecipe extends Component {
                 >
                   <br />
 
-                  <div className={classes.recipedetails1}>
+                  <div>
                     <input
                       lable={`Ingredient ${idx + 1} `}
                       type="text"
@@ -270,7 +271,7 @@ class NewRecipe extends Component {
                       value={this.state.ingredients[`${idx}`].name}
                     />
                   </div>
-                  <div className={classes.recipedetails1}>
+                  <div>
                     <input
                       lable="amount"
                       type="text"
@@ -300,8 +301,7 @@ class NewRecipe extends Component {
               </Fab>
             </Tooltip>
 
-            <br />
-            <br />
+            <div style={{ height: "8vh" }}></div>
           </Fragment>
         ),
       },
@@ -326,7 +326,6 @@ class NewRecipe extends Component {
             <FormControl
               style={{ display: "flexinline", flexDirection: "row" }}
             >
-              <Typography> Type: </Typography>
               <RadioGroup
                 name="type"
                 value={this.state.type}
@@ -376,15 +375,27 @@ class NewRecipe extends Component {
         <form
           autoComplete="off"
           onSubmit={this.handleSubmit}
-          className={classes.newform}
+          className={classes.container}
         >
-          <Typography className={classes.title} variant="h5" align="center">
-            <h5 className={classes.title}> Submit a Recipe</h5>
-          </Typography>
-          <br />
+          <div>
+            <Typography
+              color="secondary"
+              className={classes.title}
+              variant="h3"
+              align="center"
+            >
+              Add a Recipe
+            </Typography>
 
-          <div class="step-progress">
-            <StepZilla dontValidate={false} showSteps={true} steps={steps} />
+            
+              <div class="step-progress">
+                <StepZilla
+                  dontValidate={false}
+                  showSteps={true}
+                  steps={steps}
+                />
+              </div>
+            
           </div>
         </form>
       </div>

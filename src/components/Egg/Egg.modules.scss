@@ -23,3 +23,34 @@ h1 {
   font-size: 12rem;
   width: auto;
 }
+.btn{
+  background-color: #f50057;
+  display: inline-block;
+    padding: 6px 25px;
+	border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    border: none;
+  outline: none;
+}
+.btn:hover {
+  border: none;
+  background-color: #f50057;
+  outline: none;
+  box-shadow: none;
+}
+.btn:active {
+  border: none;
+  background-color: #f50057;
+  outline: none;
+  box-shadow: none;
+}
+.btn:focus {
+  border: none;
+  background-color: #f50057;
+  outline: none;
+  box-shadow: none;
+}
+.btn-prev{
+  margin-left: 40%;
+}

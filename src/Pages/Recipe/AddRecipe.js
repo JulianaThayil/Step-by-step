@@ -24,7 +24,6 @@ class AddRecipe extends Component {
           <div className={classes.image}>
             <NewRecipe> </NewRecipe>
           </div>
-          <br />
           <Footer></Footer>
         </div>
       ) : (

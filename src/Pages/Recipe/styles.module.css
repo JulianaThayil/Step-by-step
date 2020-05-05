@@ -160,10 +160,12 @@
   padding-bottom: 5%;
 }
 .image {
+  padding-top: 3%;
   background-image: url("/assets/addrecipebackgrounddesktop.jpg");
   background-repeat: no-repeat;
   width: 100vw 88vh;
   background-size: cover;
+  padding-bottom: 6%;
 }
 
 .root {
@@ -189,6 +191,7 @@
 
 @media only screen and (max-width: 425px) {
   .image {
-    background-image: url("https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
-  }
+    padding-top: 0px;
+    padding-bottom: 0px;
+    }
 }

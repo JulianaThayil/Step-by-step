@@ -21,7 +21,7 @@ ol.progtrckr {
 ol.progtrckr li {
   display: inline-block;
   text-align: center;
-  line-height: 4.5rem;
+  line-height: 4rem;
   cursor: pointer;
 }
 
@@ -29,18 +29,17 @@ ol.progtrckr li span {
   padding: 0 1.5rem;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 460px) {
   .progtrckr li span {
     display: none;
   }
 }
 .progtrckr em {
   display: none;
-  font-weight: 700;
-  padding-left: 1rem;
+  padding-left: 3rem;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 460px) {
   .progtrckr em {
     display: inline;
   }
@@ -67,42 +66,36 @@ ol.progtrckr li:after {
 
 ol.progtrckr li:before {
   position: relative;
-  bottom: -3.7rem;
+  bottom: -3rem;
   float: left;
   left: 50%;
 }
 
 ol.progtrckr li.progtrckr-todo:before {
-  content: "\039F";
-  color: silver;
-  background-color: white;
-  width: 1.2em;
-  line-height: 1.4em;
-}
-
-ol.progtrckr li.progtrckr-todo:hover:before {
-  color: #ff4500;
-}
-
-ol.progtrckr li.progtrckr-doing:before {
-  content: "\2022";
+  content: "\#";
   color: white;
-  background-color: #cccccc;
-  width: 1.2em;
-  line-height: 1.2em;
+  background-color: silver;
+  width: 2em;
+  line-height: 2em;
   border-radius: 1.2em;
 }
 
-ol.progtrckr li.progtrckr-doing:hover:before {
-  color: #ff4500;
+ol.progtrckr li.progtrckr-doing:before {
+  content: "\step";
+  color: white;
+  background-color: #F10056;
+  width: 2em;
+  line-height: 2em;
+  border-radius: 1.2em;
 }
+
 
 ol.progtrckr li.progtrckr-done:before {
   content: "\2713";
   color: white;
   background-color: #5cb85c;
-  width: 1.2em;
-  line-height: 1.2em;
+  width: 2em;
+  line-height: 2em;
   border-radius: 1.2em;
 }
 
