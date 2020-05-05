@@ -1,25 +1,25 @@
 .eggy {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
 }
 .egg {
-	box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
-	background: #FFFFFF;
-	width: 6rem;
-	height: 8rem;
-	border-radius: 50% / 60% 60% 40% 40%;
+  box-shadow: 0px -6px 10px rgba(255, 255, 255, 1),
+    0px 4px 15px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  width: 6rem;
+  height: 8rem;
+  border-radius: 50% / 60% 60% 40% 40%;
 }
-.yolk	{
-	margin-top:40%;
-	background: #ffcc00;
-	width: 3rem;
-	height: 3.25rem;
-	border-radius: 50% / 60%;
+.yolk {
+  margin-top: 40%;
+  background: #ffcc00;
+  width: 3rem;
+  height: 3.25rem;
+  border-radius: 50% / 60%;
 }
-h1{
-    font-size:12rem;
-    width:auto;
-   
+h1 {
+  font-size: 12rem;
+  width: auto;
 }

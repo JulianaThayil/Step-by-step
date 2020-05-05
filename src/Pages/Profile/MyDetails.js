@@ -1,51 +1,52 @@
-import React, {Component,Fragment} from 'react'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import LocationOn from '@material-ui/icons/LocationOn';
-import PropTypes from 'prop-types';
-import classes from './Profiles.module.css';
-import EditIcon from '@material-ui/icons/Edit';
-import MyButton from '../../util/MyButton';
+import React, { Component, Fragment } from "react";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import LocationOn from "@material-ui/icons/LocationOn";
+import PropTypes from "prop-types";
+import classes from "./Profiles.module.css";
+import EditIcon from "@material-ui/icons/Edit";
+import MyButton from "../../util/MyButton";
 
 //Redux
-import { connect } from 'react-redux';
-import { uploadImage } from '../../redux/actions/userActions';
+import { connect } from "react-redux";
+import { uploadImage } from "../../redux/actions/userActions";
 
-class Details extends Component{
+class Details extends Component {
   handleImageChange = (event) => {
     const image = event.target.files[0];
     const formData = new FormData();
-    formData.append('image', image, image.name);
+    formData.append("image", image, image.name);
     this.props.uploadImage(formData);
   };
   handleEditPicture = () => {
-    const fileInput = document.getElementById('imageInput');
+    const fileInput = document.getElementById("imageInput");
     fileInput.click();
   };
 
-    render(){
-      
+  render() {
     const {
       user: {
-        credentials: { handle, imageUrl, bio, location }
-      }
+        credentials: { handle, imageUrl, bio, location },
+      },
     } = this.props;
 
-    
-  return(
-   
-    <Paper style={{  backgroundImage:'url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)' }} className={classes.mainFeaturedPost} >
-    {<img style={{ display: 'none' }}  />}
-      <div className={classes.overlay} />
-      <Grid container>
-        <Grid item md={6}>
-        
-          <div className={classes.mainFeaturedPostContent}>
-         <img className={classes.avatar} src={imageUrl} 
-          />
+    return (
+      <Paper
+        style={{
+          backgroundImage:
+            "url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)",
+        }}
+        className={classes.mainFeaturedPost}
+      >
+        {<img style={{ display: "none" }} />}
+        <div className={classes.overlay} />
+        <Grid container>
+          <Grid item md={6}>
+            <div className={classes.mainFeaturedPostContent}>
+              <img className={classes.avatar} src={imageUrl} />
 
-          <input
+              <input
                 type="file"
                 id="imageInput"
                 hidden="hidden"
@@ -56,38 +57,34 @@ class Details extends Component{
                 onClick={this.handleEditPicture}
                 btnClassName="button"
               >
-              <EditIcon color="primary" />
+                <EditIcon color="primary" />
               </MyButton>
-          <div className={classes.details}>
-          <Typography >{handle} </Typography>
-          {bio && <Typography variant="body2">{bio}</Typography>}
-            
-              {location && (
-                <Fragment>
-                  <LocationOn color="primary" /> <span>{location}</span>
-                </Fragment>
-              )}
+              <div className={classes.details}>
+                <Typography>{handle} </Typography>
+                {bio && <Typography variant="body2">{bio}</Typography>}
+
+                {location && (
+                  <Fragment>
+                    <LocationOn color="primary" /> <span>{location}</span>
+                  </Fragment>
+                )}
               </div>
-          </div>
+            </div>
+          </Grid>
         </Grid>
-      </Grid>
-    </Paper>
-   
-  );
+      </Paper>
+    );
+  }
 }
-}
- const mapStateToProps = (state) => ({
-  user: state.user
+const mapStateToProps = (state) => ({
+  user: state.user,
 });
 
-const mapActionsToProps = { uploadImage  };
+const mapActionsToProps = { uploadImage };
 
 Details.propTypes = {
   uploadImage: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionsToProps 
-)(Details);
+export default connect(mapStateToProps, mapActionsToProps)(Details);

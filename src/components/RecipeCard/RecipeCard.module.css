@@ -1,106 +1,84 @@
-
-.but{
+.but {
   padding: 2%;
 }
-.display{
-  display:flex;
-flex-direction: row;
-}
-.display2{
-
-  display:flex;
+.display {
+  display: flex;
   flex-direction: row;
-margin-left: 15vw;
-margin-top: 2vh;
-margin-right:15vw;
-  
 }
-.title{
-  
-    font-size: 4vh;
-    font-family:serif;
-     font-weight: normal;
-        
-     
+.display2 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15vw;
+  margin-top: 2vh;
+  margin-right: 15vw;
+}
+.title {
+  font-size: 4vh;
+  font-family: serif;
+  font-weight: normal;
 }
 
-.recipedetails{
-  margin-right:2vw;
+.recipedetails {
+  margin-right: 2vw;
   width: 100vw;
-
 }
-.recipedetails1{
-  
- margin-right: 1vw;
- margin-bottom: 1vh;
+.recipedetails1 {
+  margin-right: 1vw;
+  margin-bottom: 1vh;
 }
 
-
-.image{
+.image {
   padding: 4%;
-  background-color: #DEDEDE;
+  background-color: #dedede;
 }
 
-.newform{
-  box-shadow: 0px -6px 10px rgba(255, 255, 255, 1), 0px 4px 15px rgba(0, 0, 0, 0.15);
-  background-color:white;
+.newform {
+  box-shadow: 0px -6px 10px rgba(255, 255, 255, 1),
+    0px 4px 15px rgba(0, 0, 0, 0.15);
+  background-color: white;
   width: 60vw;
-  height:max-content
+  height: max-content;
 }
 .media {
   height: 0;
   padding-top: 56.25%;
 }
-.root{
+.root {
   min-width: 210;
   ruby-align: center;
 }
-.username{
-  padding-left:2vh;
+.username {
+  padding-left: 2vh;
   padding-bottom: 2vh;
 }
 
 @media only screen and (max-width: 425px) {
-  .newform{
+  .newform {
     width: 100vw;
-    
   }
-  .display2{
-
-    display:flex;
+  .display2 {
+    display: flex;
     flex-direction: column;
     margin-left: 0vw;
     margin-top: 0vh;
-    margin-right:0vw;
-
-    
+    margin-right: 0vw;
   }
-  
 }
 @media only screen and (width: 768px) {
-  .newform{
+  .newform {
     width: 70vw;
-
   }
-    .display2{
-
-      display:flex;
-      flex-direction: row;
-      margin-left: 9vw;
-      margin-top: 1vh;
-      margin-right:6vw;
-
-      
-    }
-  
-  
+  .display2 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 9vw;
+    margin-top: 1vh;
+    margin-right: 6vw;
+  }
 }
 @media only screen and (max-width: 460px) {
-  .newform{
+  .newform {
     width: 100vw;
-    margin:0%
-
+    margin: 0%;
   }
-
-  }
-  
+}

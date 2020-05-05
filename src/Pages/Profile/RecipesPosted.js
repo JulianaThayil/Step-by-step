@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Skeleton from '../../components/Skeleton/RecipeSkeleton';
-import MyRecipes from '../../components/RecipeCard/MyRecipes';
-import classes from '../../Pages/Home/Home.module.css'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Skeleton from "../../components/Skeleton/RecipeSkeleton";
+import MyRecipes from "../../components/RecipeCard/MyRecipes";
+import classes from "../../Pages/Home/Home.module.css";
 
-import { connect } from 'react-redux';
-import { getUserData } from '../../redux/actions/dataActions';
+import { connect } from "react-redux";
+import { getUserData } from "../../redux/actions/dataActions";
 
 class RecipesPosted extends Component {
   state = {
     profile: null,
-    recipeIdParam: null
+    recipeIdParam: null,
   };
   componentDidMount() {
     const recipeId = this.props.recipeId;
 
     if (recipeId) this.setState({ recipeIdParam: recipeId });
-
   }
   render() {
     const { recipes, loading } = this.props.data;
@@ -26,8 +25,10 @@ class RecipesPosted extends Component {
       <Skeleton />
     ) : recipes === null ? (
       <p></p>
-    ) : !recipeIdParam  ?  (
-      recipes.map((recipe) => <MyRecipes key={recipe.recipeId} recipe={recipe} />)
+    ) : !recipeIdParam ? (
+      recipes.map((recipe) => (
+        <MyRecipes key={recipe.recipeId} recipe={recipe} />
+      ))
     ) : (
       recipes.map((recipe) => {
         if (recipe.recipeId !== recipeIdParam)
@@ -35,11 +36,7 @@ class RecipesPosted extends Component {
       })
     );
 
-    return (
-      <div className={classes.bg}> 
-          {recipesMarkup}
-      </div>
-    );
+    return <div className={classes.bg}>{recipesMarkup}</div>;
   }
 }
 
@@ -47,14 +44,11 @@ RecipesPosted.propTypes = {
   handle: PropTypes.string.isRequired,
   getUserData: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
-  recipeId: PropTypes.string.isRequired
+  recipeId: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  data: state.data
+  data: state.data,
 });
 
-export default connect(
-  mapStateToProps,
-  { getUserData }
-)(RecipesPosted);
+export default connect(mapStateToProps, { getUserData })(RecipesPosted);

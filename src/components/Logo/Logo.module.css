@@ -1,197 +1,173 @@
-
-.logo{
-    display:flex;
-  }
-  .h3{
-    margin-top:10%;
-  
-  }
+.logo {
+  display: flex;
+}
+.h3 {
+  margin-top: 10%;
+}
 
 .container {
-margin-left:60px;
-margin-top: -14px;
-  position:relative;
-
+  margin-left: 60px;
+  margin-top: -14px;
+  position: relative;
 }
 @media only screen and (max-width: 600px) {
-  .container{
+  .container {
     left: -10px;
-    top:-2.5%;
+    top: -2.5%;
   }
 }
-.square1{
-   position:absolute;
-  background-color:grey;
+.square1 {
+  position: absolute;
+  background-color: grey;
   height: 30px;
   transform: rotate(-45deg);
   width: 30px;
-  top:29px;
+  top: 29px;
 
-  z-index:3;
+  z-index: 3;
 }
 
-.circle1{
-border-width: 2px;
+.circle1 {
+  border-width: 2px;
 
   top: 18px;
   left: 12px;
-  background:#2f3640;
+  background: #2f3640;
   width: 30px;
   height: 30px;
-  border-radius: 100% ;
-  position:absolute;
-  z-index:3;
-  }
+  border-radius: 100%;
+  position: absolute;
+  z-index: 3;
+}
 
-.circle2{
-  
-position:absolute;
+.circle2 {
+  position: absolute;
   top: 18px;
   left: -11px;
-  background:#2f3640;
-  width:30px;
+  background: #2f3640;
+  width: 30px;
   height: 30px;
   border-radius: 100%;
-  z-index:3;
-
+  z-index: 3;
 }
-.stick{
-  position:absolute;
+.stick {
+  position: absolute;
   background-color: whitesmoke;
   height: 25px;
   transform: rotate(-45deg);
   width: 3px;
- border-radius:30px;
-  top:30px;
-  z-index:3;
-  left:11px;
-  
+  border-radius: 30px;
+  top: 30px;
+  z-index: 3;
+  left: 11px;
 }
-.circle3{
- background-color: whitesmoke;
+.circle3 {
+  background-color: whitesmoke;
   height: 12px;
   transform: rotate(-45deg);
   width: 8px;
-  position:absolute;
-  top:28px;
+  position: absolute;
+  top: 28px;
 
-  border-radius:60%;
-  z-index:3;
+  border-radius: 60%;
+  z-index: 3;
 }
-.stick2{
-  
+.stick2 {
   background-color: whitesmoke;
   height: 25px;
   transform: rotate(45deg);
   width: 3px;
-  top:30px;
-  left:17px;
-  position:absolute;
-  border-radius:30px;
-  z-index:3;
-
+  top: 30px;
+  left: 17px;
+  position: absolute;
+  border-radius: 30px;
+  z-index: 3;
 }
-.circle4{
-  position:absolute;
- background-color: whitesmoke;
+.circle4 {
+  position: absolute;
+  background-color: whitesmoke;
   height: 12px;
   transform: rotate(47deg);
   width: 7px;
-  z-index:3;
-  top:28px;
-  left:22px; 
-  border-radius:25%
+  z-index: 3;
+  top: 28px;
+  left: 22px;
+  border-radius: 25%;
 }
-.square2{
-  
-  background-color:#2f3640;
+.square2 {
+  background-color: #2f3640;
   height: 9px;
   transform: rotate(45deg);
   width: 1.5px;
-position:absolute;
-  top:27px;
-  left:24.5px;
-  z-index:3;
+  position: absolute;
+  top: 27px;
+  left: 24.5px;
+  z-index: 3;
 }
-.square3{
-  
+.square3 {
   background-color: #2f3640;
   height: 10px;
   transform: rotate(45deg);
   width: 1.5px;
-position:absolute;
-  top:29px;
-  left:27px;
-  z-index:3;
+  position: absolute;
+  top: 29px;
+  left: 27px;
+  z-index: 3;
 }
 
-
-.square5{
-  position:absolute;
-  background-color:  rgb(255, 104, 129);
+.square5 {
+  position: absolute;
+  background-color: rgb(255, 104, 129);
   height: 9px;
-border-radius:2px;
+  border-radius: 2px;
   width: 10px;
-left:15px;
-  top:57px;
+  left: 15px;
+  top: 57px;
 
-  z-index:5;
+  z-index: 5;
 }
 
-.square6{
-   position:absolute;
-  background-color:  rgb(255, 104, 129);
+.square6 {
+  position: absolute;
+  background-color: rgb(255, 104, 129);
   height: 10.5px;
-border-radius:2px;
+  border-radius: 2px;
   width: 10px;
-left:23px;
-  top:48px;
+  left: 23px;
+  top: 48px;
 
-  z-index:5;
+  z-index: 5;
 }
-.square7{
-   
-   position:absolute;
+.square7 {
+  position: absolute;
   background-color: rgb(255, 104, 129);
   height: 11px;
-border-radius:2px;
+  border-radius: 2px;
   width: 11px;
-left:31px;
-  top:38px;
+  left: 31px;
+  top: 38px;
 
-  z-index:5;
+  z-index: 5;
 }
 
-
-
-
-.name1{
-  position:absolute;
-  top:38px;
-  left:44px;
-  z-index:4;
-  font-size:10px;
-
-
+.name1 {
+  position: absolute;
+  top: 38px;
+  left: 44px;
+  z-index: 4;
+  font-size: 10px;
 }
-.name2{
-  position:absolute;
-  top:47px;
-  left:38px;
-  z-index:4;
-  font-size:10px;
-
+.name2 {
+  position: absolute;
+  top: 47px;
+  left: 38px;
+  z-index: 4;
+  font-size: 10px;
 }
-.name3{
-  position:absolute;
-  top:57px;
-  left:27px;
-  z-index:4;
-  font-size:10px;
- 
+.name3 {
+  position: absolute;
+  top: 57px;
+  left: 27px;
+  z-index: 4;
+  font-size: 10px;
 }
-
-
-
-
-  

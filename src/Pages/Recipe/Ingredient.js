@@ -1,32 +1,26 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 //Mui stuff
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-import classes from './styles.module.css';
+import TableCell from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
+import classes from "./styles.module.css";
 export default class Ingredient extends Component {
-    render() {
-    
-        const{ ingredient:{
-            name,
-            amount
-        } 
-    }= this.props;
+  render() {
+    const {
+      ingredient: { name, amount },
+    } = this.props;
 
-        return (
-
-            <TableRow>
-              <TableCell  component="th" scope="row">
-                  {name}
-              </TableCell>
-              <TableCell > {amount}</TableCell>
-             
-            </TableRow>
-
-        );
-}
+    return (
+      <TableRow>
+        <TableCell component="th" scope="row">
+          {name}
+        </TableCell>
+        <TableCell> {amount}</TableCell>
+      </TableRow>
+    );
+  }
 }
 Ingredient.propTypes = {
-    ingredient: PropTypes.object.isRequired
-  };
+  ingredient: PropTypes.object.isRequired,
+};

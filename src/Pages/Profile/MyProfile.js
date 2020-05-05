@@ -1,35 +1,31 @@
-import React, {Component,Fragment} from 'react';
-import PropTypes from 'prop-types';
-import MyDetails from './MyDetails';
-import RecipesPosted from './RecipesPosted';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import MyDetails from "./MyDetails";
+import RecipesPosted from "./RecipesPosted";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-class MyProfile extends Component{
-  
-    render(){
-     
-    
-  return(
-    <Fragment > 
-    <MyDetails></MyDetails> 
-    <RecipesPosted handle={this.props.user.credentials.handle}> </RecipesPosted>
-
-    </Fragment>
-  );
-}
+class MyProfile extends Component {
+  render() {
+    return (
+      <Fragment>
+        <MyDetails></MyDetails>
+        <RecipesPosted handle={this.props.user.credentials.handle}>
+          {" "}
+        </RecipesPosted>
+      </Fragment>
+    );
+  }
 }
 
 MyProfile.propTypes = {
   user: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  data: state.data
+  data: state.data,
 });
 
-export default connect(
-  mapStateToProps,
-)(MyProfile);
+export default connect(mapStateToProps)(MyProfile);

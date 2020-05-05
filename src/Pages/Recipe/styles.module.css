@@ -1,227 +1,194 @@
-.viewrecipepaper{
-    padding-right:2vw;
-    padding-left: 2vw;
+.viewrecipepaper {
+  padding-right: 2vw;
+  padding-left: 2vw;
 
-    background-color:white;
-    border-radius: 10px;
-margin-left: 6vw;
-margin-right: 6vw;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 6vw;
+  margin-right: 6vw;
 }
-.mainhead{
-    padding-left:2vw;
+.mainhead {
+  padding-left: 2vw;
 }
-.maintext{
-font-size: 4vh;
-font-family:serif;
- font-weight: normal;
-    
- }
- .textbold{
-
-    font-weight:2vh ;
-    font-size: 2.7vh;
+.maintext {
+  font-size: 4vh;
+  font-family: serif;
+  font-weight: normal;
+}
+.textbold {
+  font-weight: 2vh;
+  font-size: 2.7vh;
   padding: 2px;
- 
- }
+}
 
-.paperimage{
-    width: 100vw ;
+.paperimage {
+  width: 100vw;
   height: 60vh;
+}
+
+.imageg {
+  width: 100vw;
+  height: 60vh;
+  border-radius: 30px;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.paperimg {
+  border-radius: 50px;
+  background-color: transparent;
+  width: 100vw;
+}
+.span {
+  display: flex;
+}
+.instructions {
+  border-style: solid;
+  padding-right: 2vh;
+  padding-left: 2vh;
+}
+.ingredients {
+  padding-right: 3vh;
+  padding-bottom: 2vh;
+  padding-left: 3vh;
+}
+.instructionstext {
+  margin: 2px;
+}
+.serves {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url(https://i.pinimg.com/originals/42/93/05/429305229f4b907a56b8a24a448830ed.png);
+  background-size: cover;
+}
+.clock {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-image: url(https://i.pinimg.com/originals/9e/61/94/9e6194efb6504088e99058280e76d125.png);
+  background-size: cover;
+}
+.level {
+  margin-left: 3px;
+  border-style: solid;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-image: url(https://static.thenounproject.com/png/53631-200.png);
+  background-size: contain;
+}
+.head {
+  background-color: black;
+  color: white;
+  font-size: medium;
+}
+
+.details {
+  display: inline-flex;
+  flex-direction: column;
+}
+.textstyle {
+  font-size: 2.3vh;
+
+  padding: 2px;
+}
+@media only screen and (max-width: 768px) {
+  .serves {
+    width: 30px;
+    height: 30px;
   }
-  
+  .clock {
+    width: 30px;
+    height: 30px;
+  }
+  .level {
+    margin-left: 3px;
+    border-style: solid;
+    width: 27px;
+    height: 27px;
+  }
+  .viewrecipepaper {
+    padding: 2vw;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .paperimage {
+    width: 100vw;
+    height: 35vh;
+  }
+
   .imageg {
-      width:100vw;
-   height:60vh;   
-border-radius: 30px;
+    width: 100vw;
+    height: 35vh;
+    border-radius: 30px;
     margin: auto;
     display: block;
     max-width: 100%;
     max-height: 100%;
   }
-.paperimg{
+
+  .details {
+    margin-left: 2vw;
+  }
+
+  .img {
+    height: 30vh;
+    width: 100%;
+  }
+  .paperimg {
     border-radius: 50px;
     background-color: transparent;
-    width:100vw;
-}
-.span{
-display: flex;
-}
-.instructions{
-border-style: solid;
-padding-right: 2vh;
-padding-left: 2vh;
-
-}
-.ingredients{
-   padding-right:3vh;
-   padding-bottom: 2vh;
-   padding-left: 3vh;
-  
-
-}
-.instructionstext{
-    margin: 2px;
-   
-}
-.serves{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-image: url(https://i.pinimg.com/originals/42/93/05/429305229f4b907a56b8a24a448830ed.png);
-    background-size: cover;
-
-}
-.clock{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-image: url(https://i.pinimg.com/originals/9e/61/94/9e6194efb6504088e99058280e76d125.png);
-    background-size: cover;
-
-}
-.level{
-    margin-left: 3px;
-    border-style: solid;
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
-    background-image: url(https://static.thenounproject.com/png/53631-200.png);
-    background-size: contain;
-
-}
-.head{
-    background-color: black;
-    color:white;
-    font-size: medium;
+    width: 100vw;
+    height: 40vh;
+  }
+  .textstyle {
+    font-size: 2vh;
+    padding: 2px;
+  }
 }
 
-
-.details{
-display: inline-flex;
-flex-direction: column;
-
-
+.body {
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 5%;
 }
-.textstyle{
-   font-size: 2.3vh;
- 
-  padding: 2px;
-  
-}
-@media only screen and (max-width: 768px) {
-   
-    
-    .serves{
-        width: 30px;
-        height: 30px;
-       
-    
-    }
-    .clock{
-        width: 30px;
-        height: 30px;
-        
-    }
-    .level{
-        margin-left: 3px;
-        border-style: solid;
-        width: 27px;
-        height: 27px;
-      
-    }
-    .viewrecipepaper{
-        padding:2vw;
-        background-color:white;
-        border-radius: 10px;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    }
+.image {
+  background-image: url("/assets/addrecipebackgrounddesktop.jpg");
+  background-repeat: no-repeat;
+  width: 100vw 88vh;
+  background-size: cover;
 }
 
-    @media only screen and (max-width: 425px) {
-       
-         
-        .paperimage{
-            width: 100vw ;
-          height: 35vh;
-          }
-          
-          .imageg {
-              width:100vw;
-           height:35vh;   
-        border-radius: 30px;
-            margin: auto;
-            display: block;
-            max-width: 100%;
-            max-height: 100%;
-          }
-      
-        .details{
-            margin-left: 2vw;
-        }
-
-        .img {
-     height:30vh;
-     width:100%;
-         
-          }   
-          .paperimg{
-            border-radius: 50px;
-            background-color: transparent;
-            width: 100vw;
-            height: 40vh;
-        }  
-        .textstyle{
-            font-size: 2vh;
-           padding: 2px;
-           
-           
-         }
-        }
-
-
-.body{
-    padding-left:4%;
-    padding-right: 4%;
-    padding-bottom: 5%;
-}
-.image{
-    background-image: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    background-repeat: no-repeat;
-    width: 100vw 88vh;
-    background-size: cover;
-   
+.root {
+  padding-top: 5vh;
 }
 
-.root{
-    padding-top: 5vh;
+.title {
+  color: black;
 }
 
-.title{
-    color:black;
-    
+.text {
+  padding-top: 5px;
+  font-weight: 10px;
+  color: black;
+}
+.secondarytext {
+  font-size: 10px;
 }
 
-.text{
-    padding-top: 5px;
-    font-weight:10px;
-    color: black;
-
-}
-.secondarytext{
-    font-size:10px;
-    
-}
-
-.likesreviews{
-font-size: 2vh;
+.likesreviews {
+  font-size: 2vh;
 }
 
 @media only screen and (max-width: 425px) {
- 
-    .image{
-      width: 100vw;
-    }
-    
-   
+  .image {
+    background-image: url("https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  }
 }

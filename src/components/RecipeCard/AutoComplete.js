@@ -1,14 +1,13 @@
 /* eslint-disable no-use-before-define */
-import React from 'react';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  
-    width: '57vw',
-    '& > * + *': {
+    width: "57vw",
+    "& > * + *": {
       marginTop: theme.spacing(3),
     },
   },
@@ -19,7 +18,6 @@ export default function Tags() {
 
   return (
     <div className={classes.root}>
-     
       <Autocomplete
         multiple
         id="tags-outlined"
@@ -36,25 +34,23 @@ export default function Tags() {
           />
         )}
       />
-      
     </div>
   );
 }
 
 const recipetags = [
-  { title: 'Appetizers & Snacks' },
-  { title: 'Breakfast & Brunch' },
-  { title: 'BBQ & Grilling' },
-  { title: 'Cakes' },
-  { title: 'Desserts' },
-  { title: 'Dinner' },
-  { title: 'Drinks' },
-  { title: 'Healthy' },
-  { title: 'Low Calorie' },
-  { title: 'Low Fat' },
-  { title: 'Salads' },
-  { title: 'Slow Cooker' },
-  { title: 'Vegan' },
-  { title: 'Quick & Easy' },
- 
+  { title: "Appetizers & Snacks" },
+  { title: "Breakfast & Brunch" },
+  { title: "BBQ & Grilling" },
+  { title: "Cakes" },
+  { title: "Desserts" },
+  { title: "Dinner" },
+  { title: "Drinks" },
+  { title: "Healthy" },
+  { title: "Low Calorie" },
+  { title: "Low Fat" },
+  { title: "Salads" },
+  { title: "Slow Cooker" },
+  { title: "Vegan" },
+  { title: "Quick & Easy" },
 ];
