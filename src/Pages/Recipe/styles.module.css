@@ -1,8 +1,7 @@
 .viewrecipepaper {
   padding-right: 2vw;
   padding-left: 2vw;
-
-  background-color: white;
+ background-color: white;
   border-radius: 10px;
   margin-left: 6vw;
   margin-right: 6vw;
@@ -14,6 +13,7 @@
   font-size: 4vh;
   font-family: serif;
   font-weight: normal;
+
 }
 .textbold {
   font-weight: 2vh;
@@ -29,14 +29,14 @@
 .imageg {
   width: 100vw;
   height: 60vh;
-  border-radius: 30px;
+
   margin: auto;
   display: block;
   max-width: 100%;
   max-height: 100%;
 }
 .paperimg {
-  border-radius: 50px;
+
   background-color: transparent;
   width: 100vw;
 }
@@ -127,7 +127,7 @@
   .imageg {
     width: 100vw;
     height: 35vh;
-    border-radius: 30px;
+ 
     margin: auto;
     display: block;
     max-width: 100%;
@@ -143,7 +143,7 @@
     width: 100%;
   }
   .paperimg {
-    border-radius: 50px;
+   
     background-color: transparent;
     width: 100vw;
     height: 40vh;

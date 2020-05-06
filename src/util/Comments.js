@@ -17,20 +17,26 @@ const styles = () => ({
     borderRadius: '50%'
   },
   commentData: {
-    marginLeft: '15%'
-  }
+    marginLeft: '15%',
+  },
+
+  commentbox:{
+
+width:'60vw',
+   marginLeft:'10px',
+  },
 });
 
 class Comments extends Component {
   render() {
     const { comments, classes } = this.props;
     return (
-      <Grid container>
+      <Grid container    >
         {comments.map((comment, index) => {
           const { body, createdAt, userImage, userHandle } = comment;
           return (
-            <Fragment key={createdAt}  >
-              <Grid item sm={10} style={{backgroundColor:'white'}}>
+            <Fragment key={createdAt} >
+              <Grid item sm={10} style={{backgroundColor:'white'}} >
                 <Grid container>
                   <Grid item sm={1}>
                     <img
@@ -39,8 +45,8 @@ class Comments extends Component {
                       className={classes.commentImage}
                     />
                   </Grid>
-                  <Grid >
-                    <div className={classes.commentData}>
+                  <Grid className={classes.commentbox} >
+                    <div >
                       <Typography
                         variant="h5"
                         component={Link}
@@ -55,7 +61,7 @@ class Comments extends Component {
                   
                       <Typography variabnt="body1">{body}</Typography>
                     </div>
-                    <hr /> 
+                    <hr/> 
                   </Grid>
                 </Grid>
               </Grid>

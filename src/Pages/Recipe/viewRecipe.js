@@ -111,7 +111,9 @@ class viewRecipe extends Component {
           <Paper className={classes.viewrecipepaper}>
             <div>
               <div className={classes.mainhead}>
-                <h4 className={classes.maintext}>{title}</h4>
+              <Typography  variant="h4"className={classes.maintext}  color="secondary">
+                {title}
+                  </Typography>
                 <Typography
                   variant="body2"
                   component={Link}
@@ -121,7 +123,7 @@ class viewRecipe extends Component {
                   <h7 className={classes.textstyle}> by @{userHandle}</h7>
                 </Typography>
 
-                <Typography variant="body2">
+                <Typography variant="body2" color="textSecondary">
                   {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
                 </Typography>
                 <br />
