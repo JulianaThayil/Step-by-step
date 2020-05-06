@@ -33,7 +33,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 70vw;
+ 
   height: 250px;
 }
 
@@ -47,7 +47,7 @@
 }
 .mainFeaturedPostContent {
   position: relative;
-  margin-left: 7vw;
+  margin-left: 4vw;
   color: white;
   margin-top: 2%;
 }
