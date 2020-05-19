@@ -21,10 +21,12 @@ class AddRecipe extends Component {
       authenticated ? (
         <div>
           <Navbar> </Navbar>
-          <div className={classes.image}>
+ 
+         <div className={classes.image}>
             <NewRecipe> </NewRecipe>
           </div>
-          <Footer></Footer>
+    
+        
         </div>
       ) : (
         <div>

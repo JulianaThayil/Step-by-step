@@ -33,24 +33,16 @@ h1 {
     border: none;
   outline: none;
 }
-.btn:hover {
+.btn:hover,.btn:active,.btn:focus  {
   border: none;
   background-color: #f50057;
   outline: none;
   box-shadow: none;
 }
-.btn:active {
-  border: none;
-  background-color: #f50057;
-  outline: none;
-  box-shadow: none;
-}
-.btn:focus {
-  border: none;
-  background-color: #f50057;
-  outline: none;
-  box-shadow: none;
-}
+
 .btn-prev{
-  margin-left: 40%;
+  margin-left: 30%;
+}
+.btn-primary,.btn-primary:focus,.btn-primary:hover{
+  background-color: #f50057;
 }

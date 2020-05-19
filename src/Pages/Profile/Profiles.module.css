@@ -25,6 +25,7 @@
 }
 
 .mainFeaturedPost {
+  margin-top: 50px;
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
@@ -58,6 +59,7 @@
 }
 
 .settings {
+  margin-top: 50px;
   padding-left: 6%;
   padding-right: 6%;
 }
@@ -100,7 +102,5 @@
   .profile {
     margin-top: 10vh;
   }
-  .settings {
-    margin-top: 15%;
-  }
+  
 }

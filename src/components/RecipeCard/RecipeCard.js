@@ -6,7 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import MyButton from "../../util/MyButton";
 import LikeButton from "../../util/LikeButton";
 import DeleteRecipe from "../../util/DeleteRecipe";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import Truncate from "react-truncate";
 
 //MUI stuff
@@ -66,8 +66,10 @@ class RecipeCard extends Component {
             </Avatar>
           }
           title={title}
-          subheader={dayjs(createdAt).fromNow()}
-          component={Link}
+          subheader= {`by ${userHandle}`}
+          component={NavLink}
+          className={classes.head}
+          activeClassName={classes.head}
           to={`/${userHandle}/${recipeId}`}
         />
 
@@ -97,14 +99,14 @@ class RecipeCard extends Component {
             <ShareIcon />
           </IconButton>
 
-          <div style={{ marginRight: "2%" }}>{deleteButton}</div>
+          <div style={{ marginRight: "1%" }}>{deleteButton}</div>
         </CardActions>
         <Typography
           className={classes.username}
           variant="body2"
           color="textSecondary"
         >
-          by {userHandle}
+          posted {dayjs(createdAt).fromNow()}
         </Typography>
       </Card>
     );

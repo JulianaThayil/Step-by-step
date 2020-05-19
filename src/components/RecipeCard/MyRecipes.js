@@ -6,7 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import MyButton from "../../util/MyButton";
 import LikeButton from "../../util/LikeButton";
 import DeleteRecipe from "../../util/DeleteRecipe";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import Truncate from "react-truncate";
 
 //MUI stuff
@@ -66,6 +66,10 @@ class RecipeCard extends Component {
           }
           title={title}
           subheader={dayjs(createdAt).fromNow()}
+          component={NavLink}
+          className={classes.head}
+          activeClassName={classes.head}
+          to={`/${userHandle}/${recipeId}`}
         />
 
         <CardMedia

@@ -16,7 +16,7 @@
   width: fit-content;
 }
 .featured {
-  margin-top: 1vh;
+  margin-top: 50px;
   padding: 1vh;
   margin-left: 10%;
   margin-right: 10%;
@@ -39,9 +39,9 @@
 
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 30vh;
+  margin-bottom: 10vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   grid-template-rows: 1fr;
   height: min-content;
   gap: 2% 2%;
@@ -59,7 +59,6 @@
   }
 
   .featured {
-    margin-top: 1vh;
     padding: 1vh;
     margin-left: 2%;
     margin-right: 2%;

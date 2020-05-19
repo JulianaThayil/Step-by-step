@@ -64,12 +64,12 @@ class Notifications extends Component {
         notifications.map((not) => {
           const verb = not.type === "like" ? "liked" : "commented on";
           const time = dayjs(not.createdAt).fromNow();
-          const iconColor = not.read ? "primary" : "secondary";
+          //const iconColor = not.read ? "primary" : "secondary";
           const icon =
             not.type === "like" ? (
-              <FavoriteIcon color={iconColor} style={{ marginRight: 10 }} />
+              <FavoriteIcon color="secondary" style={{ marginRight: 10 }} />
             ) : (
-              <ChatIcon color={iconColor} style={{ marginRight: 10 }} />
+              <ChatIcon color="secondary" style={{ marginRight: 10 }} />
             );
 
           return (

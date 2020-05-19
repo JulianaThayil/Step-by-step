@@ -6,14 +6,13 @@
 }
 
 .container {
-  margin-left: 60px;
+  margin-left: 66px;
   margin-top: -14px;
   position: relative;
 }
 @media only screen and (max-width: 600px) {
   .container {
-    left: -10px;
-    top: -2.5%;
+    margin-left: 56px;
   }
 }
 .square1 {
@@ -155,19 +154,19 @@
   top: 38px;
   left: 44px;
   z-index: 4;
-  font-size: 10px;
+  font-size: 11px;
 }
 .name2 {
   position: absolute;
   top: 47px;
   left: 38px;
   z-index: 4;
-  font-size: 10px;
+  font-size: 11px;
 }
 .name3 {
   position: absolute;
   top: 57px;
   left: 27px;
   z-index: 4;
-  font-size: 10px;
+  font-size: 11px;
 }

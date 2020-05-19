@@ -1,7 +1,11 @@
 .but {
   padding: 2%;
 }
+.head, .head:hover{
+  text-decoration: none;
+  color: #000000;
 
+}
 .display {
   display: flex;
   flex-direction: row;
@@ -11,7 +15,6 @@
   margin-top:4px ;
 }
 .title {
-  font-size: 4vh;
   font-family: serif;
   font-weight: normal;
 }
