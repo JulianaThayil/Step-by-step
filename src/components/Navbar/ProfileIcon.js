@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-
+import classes from "./Nav.module.css";
 //MUI
 import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
@@ -12,7 +12,8 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import ArtTrackIcon from "@material-ui/icons/ArtTrack"; //feed
 import PersonIcon from "@material-ui/icons/Person";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import MoreIcon from "@material-ui/icons/MoreVert";
+
 
 //redux
 import { logoutUser } from "../../redux/actions/userActions";
@@ -45,12 +46,12 @@ class ProfileIcon extends Component {
         <div style={{ width: "15px", paddingLeft: "2%" }}> </div>
         <Tooltip
           placement="top"
-          title="Profile"
+          title="Menu"
           aria-owns={anchorEl ? "simple-menu" : undefined}
           aria-haspopup="true"
           onClick={this.handleOpen}
         >
-          <AccountCircle />
+          <MoreIcon />
         </Tooltip>
 
         <Popover
@@ -58,34 +59,47 @@ class ProfileIcon extends Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
           onEntered={this.onMenuOpened}
-          style={{ marginTop: "1vh" }}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "left",
+            horizontal: "right",
           }}
           transformOrigin={{
             vertical: "top",
-            horizontal: "left",
+            horizontal: "right",
           }}
         >
+          <NavLink activeClassName={classes.nav} to="/">
           <MenuItem>
-            {" "}
-            <ArtTrackIcon /> <NavLink to="/"> Feed </NavLink>{" "}
+            <div style={{paddingTop:'1vh'}} className={classes.popover}>
+              <ArtTrackIcon /><p style={{paddingLeft:'10px'}}>  Feed </p>
+            </div>
           </MenuItem>
+          </NavLink>
+
+          <NavLink activeClassName={classes.nav} className={classes.nav} to={`/${handle}`}>
           <MenuItem>
-            <PersonIcon /> <NavLink to={`/${handle}`}>Profile </NavLink>{" "}
+            <div className={classes.popover}>
+              <PersonIcon /> <p style={{paddingLeft:'10px'}}>Profile </p>
+            </div>
           </MenuItem>
+          </NavLink>
+
+          <NavLink activeClassName={classes.nav} className={classes.nav} to="/user/settings">
           <MenuItem>
-            {" "}
-            <SettingsIcon /> <NavLink to="/user/settings">
-              {" "}
-              Settings{" "}
-            </NavLink>{" "}
+            <div className={classes.popover}>
+              <SettingsIcon /> <p style={{paddingLeft:'10px'}}> Settings</p>
+            </div>
           </MenuItem>
+          </NavLink>
+
+          <NavLink  activeClassName={classes.nav} className={classes.nav} to="/login">
           <MenuItem onClick={this.handleLogout}>
-            {" "}
-            <PowerSettingsNewIcon /> <NavLink to="/login">Logout </NavLink>{" "}
+            <div className={classes.popover}>
+              <PowerSettingsNewIcon /><p style={{paddingLeft:'10px'}}>Logout </p> 
+            </div>
           </MenuItem>
+          </NavLink>
+
         </Popover>
       </Fragment>
     );

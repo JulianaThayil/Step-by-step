@@ -1,0 +1,16 @@
+.popover{
+    padding-top: 1vh;
+    padding-right:60px;
+    display: flex;
+    text-decoration: none;
+
+}
+.nav, .nav:hover{
+    color: #2F3640;
+    text-decoration: none;
+   
+}
+.notific{
+    display: flex;
+    padding:5px;
+}

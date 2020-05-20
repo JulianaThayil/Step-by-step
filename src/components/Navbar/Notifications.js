@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import PropTypes from "prop-types";
+import classes from './Nav.module.css'
+
 // MUI stuff
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -73,16 +75,19 @@ class Notifications extends Component {
             );
 
           return (
-            <MenuItem key={not.createdAt} onClick={this.handleClose}>
+            <MenuItem key={not.createdAt} onClick={this.handleClose} component={Link}
+            to={`/${not.recipient}/${not.recipeId}`}>
+              <div className={classes.notific}>
               {icon}
               <Typography
-                component={Link}
                 color="default"
                 variant="body1"
-                to={`/${not.recipient}/${not.recipeId}`}
               >
-                {not.sender} {verb} your recipe {time}
+                {not.sender} {verb} your recipe
               </Typography>
+              <div style={{paddingLeft:'10px'}}> </div>
+              <Typography variant="subtitle2">  {time}</Typography>
+                </div> 
             </MenuItem>
           );
         })
@@ -111,16 +116,16 @@ class Notifications extends Component {
           style={{ marginTop: "1vh" }}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "left",
+            horizontal: "right",
           }}
           transformOrigin={{
             vertical: "top",
-            horizontal: "left",
+            horizontal: "right",
           }}
           PaperProps={{
             style: {
               maxHeight: "40vh",
-              width: "30%",
+              width: "420px",
             },
           }}
         >
