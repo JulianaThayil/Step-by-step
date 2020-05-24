@@ -7,7 +7,8 @@ import PropTypes from "prop-types";
 import classes from "./Profiles.module.css";
 import EditIcon from "@material-ui/icons/Edit";
 import MyButton from "../../util/MyButton";
-
+import InfoIcon from '@material-ui/icons/Info';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
 //Redux
 import { connect } from "react-redux";
 import { uploadImage } from "../../redux/actions/userActions";
@@ -27,7 +28,7 @@ class Details extends Component {
   render() {
     const {
       user: {
-        credentials: { handle, imageUrl, bio, location },
+        credentials: { handle, imageUrl, bio, location, name, },
       },
     } = this.props;
 
@@ -41,8 +42,7 @@ class Details extends Component {
       >
         {<img style={{ display: "none" }} />}
         <div className={classes.overlay} />
-        <Grid container>
-          <Grid item md={6}>
+        
             <div className={classes.mainFeaturedPostContent}>
               <img className={classes.avatar} src={imageUrl} />
 
@@ -52,26 +52,35 @@ class Details extends Component {
                 hidden="hidden"
                 onChange={this.handleImageChange}
               />
+                <div className={classes.details}>
               <MyButton
+         
                 tip="Edit profile picture"
                 onClick={this.handleEditPicture}
                 btnClassName="button"
               >
-                <EditIcon color="primary" />
+                <CameraAltIcon color="secondary" fontSize="large" padding="20px" className={classes.editicon}/>
               </MyButton>
-              <div className={classes.details}>
-                <Typography>{handle} </Typography>
-                {bio && <Typography variant="body2">{bio}</Typography>}
-
-                {location && (
-                  <Fragment>
-                    <LocationOn color="primary" /> <span>{location}</span>
-                  </Fragment>
+             
+              
+            
+                <Typography variant="h5" >{handle} </Typography>
+                <br/>
+                {bio && ( 
+                <Typography variant="h7">
+                 <InfoIcon color="secondary"/><span>{bio}</span>
+                 </Typography>
                 )}
-              </div>
+                <br/>
+                <br/>
+                {location && (
+                  <Typography variant="h7" >
+                    <LocationOn color="secondary" /> <span>{location}</span>
+                  </Typography>
+                )}
+            
             </div>
-          </Grid>
-        </Grid>
+     </div>
       </Paper>
     );
   }
