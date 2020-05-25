@@ -71,10 +71,10 @@ class viewRecipe extends Component {
     }
     var vegnonveg =
       type === "veg" ? (
-       <Typography>
+       <Typography  variant="body2">
           <img
-            width="4%"
-            height="4%"
+            width="20px"
+            height="20px"
             src="https://pngimage.net/wp-content/uploads/2018/06/veg-icon-png-1.png"
             alt="veg"
           />{" "}
@@ -82,10 +82,10 @@ class viewRecipe extends Component {
           </Typography>
         
       ) : (
-        <Typography>
+        <Typography   variant="body2">
           <img
-            width="4%"
-            height="4%"
+            width="20px"
+            height="20px"
             src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png"
             alt="nonveg"
           />{" "}
