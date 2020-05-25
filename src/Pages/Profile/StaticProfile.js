@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import LocationOn from "@material-ui/icons/LocationOn";
 import RecipesPosted from "./RecipesPosted";
-
+import InfoIcon from '@material-ui/icons/Info';
 import { connect } from "react-redux";
 import { getUserData } from "../../redux/actions/dataActions";
 
@@ -46,26 +46,31 @@ class StaticProfile extends Component {
         >
           {<img style={{ display: "none" }} />}
           <div className={classes.overlay} />
-          <Grid container>
-            <Grid item md={6}>
+         
               <div className={classes.mainFeaturedPostContent}>
                 <img className={classes.avatar} src={profile.imageUrl} />
                 <div className={classes.details}>
-                  <Typography>{profile.handle} </Typography>
-                  {profile.bio && (
-                    <Typography variant="body2">{profile.bio}</Typography>
-                  )}
-
-                  {profile.location && (
-                    <Fragment>
-                      <LocationOn color="primary" />{" "}
-                      <span>{profile.location}</span>
-                    </Fragment>
-                  )}
-                </div>
+             
+                
+          
+                <Typography variant="h5" >{profile.handle} </Typography>
+                <br/>
+                {profile.bio && (
+                <Typography variant="h7">
+                 <InfoIcon color="secondary"/><span>{profile.bio}</span>
+                 </Typography>
+                )}
+                <br/>
+                <br/>
+                {profile.location &&(
+                  <Typography variant="h7" >
+                    <LocationOn color="secondary" /> <span>{" "} {profile.location}</span>
+                  </Typography>
+                )}
+            
+            </div>
               </div>
-            </Grid>
-          </Grid>
+          
         </Paper>
         <br />
         <RecipesPosted> </RecipesPosted>
