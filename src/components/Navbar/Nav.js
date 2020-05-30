@@ -1,7 +1,8 @@
 import React from "react";
-import clsx from 'clsx';
-import { fade, makeStyles, useTheme  } from "@material-ui/core/styles";
+import clsx from "clsx";
+import { fade, makeStyles, useTheme } from "@material-ui/core/styles";
 import Logo from "../../components/Logo/Logo";
+import { Link } from "react-router-dom";
 
 //Mui stuff
 import AppBar from "@material-ui/core/AppBar";
@@ -14,24 +15,25 @@ import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import MobileMenu from "./MobileMenu";
 
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import ExploreIcon from "@material-ui/icons/Explore";
+import ArtTrackIcon from "@material-ui/icons/ArtTrack";
+import InfoIcon from "@material-ui/icons/Info";
+import AnnouncementIcon from "@material-ui/icons/Announcement";
+import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import CallIcon from "@material-ui/icons/Call";
 
 //icons
 import Icons from "./Iconsbar";
 
-
 const drawerWidth = 240;
-
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -110,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     // necessary for content to be below app bar
-  
   },
   content: {
     flexGrow: 1,
@@ -195,7 +196,7 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
 
-          <Logo></Logo> 
+          <Logo></Logo>
 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -227,49 +228,84 @@ export default function PrimarySearchAppBar() {
           </div>
         </Toolbar>
 
-        
         <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          className={classes.drawer}
+          variant="persistent"
+          anchor="left"
+          open={open}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "ltr" ? (
+                <ChevronLeftIcon />
+              ) : (
+                <ChevronRightIcon />
+              )}
+            </IconButton>
+          </div>
+      
+          <List>
+            <ListItem button component={Link} to="/explore">
+              <ListItemIcon>
+                {" "}
+                <ExploreIcon />
+              </ListItemIcon>
+              <ListItemText primary="Explore" />
             </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <main
-        className={clsx({
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-       
-      </main>
 
+            <ListItem button component={Link} to="/blog">
+              <ListItemIcon>
+                {" "}
+                <ArtTrackIcon />
+              </ListItemIcon>
+              <ListItemText primary="Our Blog" />
+            </ListItem>
+
+            <ListItem button component={Link} to="/about">
+              <ListItemIcon>
+                {" "}
+                <InfoIcon />
+              </ListItemIcon>
+              <ListItemText primary="About Us" />
+            </ListItem>
+          </List>
+          <Divider />
+          <List>
+            <ListItem button component={Link} to="/newsletter">
+              <ListItemIcon>
+                {" "}
+                <AnnouncementIcon />
+              </ListItemIcon>
+              <ListItemText primary="Newsletter" />
+            </ListItem>
+
+            <ListItem button component={Link} to="/help">
+              <ListItemIcon>
+                {" "}
+                <ContactSupportIcon />
+              </ListItemIcon>
+              <ListItemText primary="Help" />
+            </ListItem>
+
+            <ListItem button component={Link} to="/contact">
+              <ListItemIcon>
+                {" "}
+                <CallIcon />
+              </ListItemIcon>
+              <ListItemText primary="Contact Us" />
+            </ListItem>
+          </List>
+        </Drawer>
+        <main
+          className={clsx({
+            [classes.contentShift]: open,
+          })}
+        >
+          <div className={classes.drawerHeader} />
+        </main>
       </AppBar>
       {renderMobileMenu}
     </div>
