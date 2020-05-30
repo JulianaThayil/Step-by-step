@@ -72,7 +72,9 @@ class viewRecipe extends Component {
     }
     var vegnonveg =
       type === "veg" ? (
-        <Typography variant="body2">
+        <Typography variant="body2">   
+               
+
           <img
             width="20px"
             height="20px"
@@ -125,18 +127,22 @@ class viewRecipe extends Component {
               >
                 @{userHandle}
               </Typography>
+        
               <Typography variant="body2" align="center" color="textSecondary">
                 {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
               </Typography>
               <br />
+              <Typography> share</Typography>
               <ShareButtons/>
               <Container>
+              <picture>
                 <img
                   className={classes.recipeimage}
                   alt="image"
                   src={pictureUrl}
                   srcset={pictureUrl}
                 />
+                </picture>
               </Container>
               <Grid container justify="center">
                 <Grid item xs={2}>

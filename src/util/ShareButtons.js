@@ -14,14 +14,17 @@ export default function ShareButtons() {
   return (
     <div style={{ display: "flex" }}>
       <TwitterShareButton
+      title="title"
         url="https://stepbystep.netlify.app/Rose/3cz6fkOfaNeIpGSyWDtJ"
-        hashtag="#recipe"
+        hashtags="#recipe"
+        via="stepbystep"
       >
         <TwitterIcon size={24} round="true" />
       </TwitterShareButton>
       <FacebookShareButton
         url="https://stepbystep.netlify.app/Rose/3cz6fkOfaNeIpGSyWDtJ"
         hashtag="#recipe"
+        quote="description"
       >
         <FacebookIcon size={24} round="true" />
       </FacebookShareButton>
