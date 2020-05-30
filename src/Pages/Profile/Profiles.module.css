@@ -52,16 +52,11 @@
   color: white;
   margin-top: 2%;
 }
-.title {
-  font-size: 4vh;
-  font-family: serif;
-  font-weight: normal;
-}
 
 .settings {
   margin-top: 50px;
   padding-left: 6%;
-  padding-right: 6%;
+  width:80vw;
 }
 .details {
   margin-top: 5px;
@@ -102,5 +97,7 @@
   .profile {
     margin-top: 10vh;
   }
-  
+  .settings{
+    width: 100vw;
+  }
 }

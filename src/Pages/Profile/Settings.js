@@ -28,9 +28,10 @@ class Settings extends Component {
           <Navbar> </Navbar>
           <br />
           <div className={classes.settings}>
-            <Typography variant="h5" align="center">
-              <h7 className={classes.title}> Settings</h7>
+            <Typography variant="h5" >
+              Settings
             </Typography>
+            <br/>
             <Tabs></Tabs>
           </div>
           <div className={classes.pad}> </div>
