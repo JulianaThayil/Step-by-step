@@ -5,6 +5,7 @@ import classes from "./styles.module.css";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import LikeButton from "../../util/LikeButton";
+import ShareButtons from "../../util/ShareButtons";
 import MyButton from "../../util/MyButton";
 import Comments from "../../util/Comments";
 import CommentForm from "../../util/CommentForm";
@@ -71,7 +72,7 @@ class viewRecipe extends Component {
     }
     var vegnonveg =
       type === "veg" ? (
-       <Typography  variant="body2">
+        <Typography variant="body2">
           <img
             width="20px"
             height="20px"
@@ -79,10 +80,9 @@ class viewRecipe extends Component {
             alt="veg"
           />{" "}
           VEG
-          </Typography>
-        
+        </Typography>
       ) : (
-        <Typography   variant="body2">
+        <Typography variant="body2">
           <img
             width="20px"
             height="20px"
@@ -90,7 +90,7 @@ class viewRecipe extends Component {
             alt="nonveg"
           />{" "}
           NON-VEG
-          </Typography>
+        </Typography>
       );
 
     let loginsignup = authenticated ? null : (
@@ -109,76 +109,89 @@ class viewRecipe extends Component {
         <br />
 
         <div>
-<Paper className={classes.viewrecipepaper}>
-  <div align="center">
-  <Typography variant ="h4" align="center" color="secondary"  >{title}</Typography>
-  <Typography    
-  variant="body1"
-  align="center"
-  component={Link}
-  color="primary"
-  to={`/${userHandle}`}>
-     by @{userHandle}</Typography>
-  <Typography variant="body2"   align="center" color="textSecondary">
-                  {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}</Typography>
-                  <Typography >
-                          {body}
-                        </Typography>
-                        <br/>
-                  <Container  >
-                          <img
-                          className={classes.recipeimage}
-                            alt="image"
-                            src={pictureUrl}
-                          />
-                        </Container>
-<br/>
-                        <div className={classes.detail}>
-      <Grid container>
-        <Grid item xs={4}>
-        <Typography  variant="body2"> <LikeButton recipeId={recipeId} />
-                          {likeCount} LIKES</Typography>
-                      
-        </Grid>
-        <Grid item xs={4}>
-        <Typography  variant="body2" >
-                          <MyButton tip="Reviews">
-                            <ChatIcon color="primary" />
-                          </MyButton>
-                            {commentCount} REVIEWS
-                            </Typography>
-        </Grid>
-        <Grid item xs={4}>
-        <Typography  variant="body2">
-                            {vegnonveg}
-                            </Typography>
-        </Grid>
-      </Grid>
-      <Grid container >
-        <Grid item xs> <Typography  variant="body2">
-                              SERVES :{serves}
-                           </Typography>
-        </Grid>
-        <Grid item xs>
-        <Typography  variant="body2">
-                           PREPARATION TIME : {preparationTime}
-                           </Typography>
-        </Grid>
-        <Grid item xs>
-        <Typography  variant="body2">
-                          COOK TIME : {cookingTime}
-                           </Typography>
-        </Grid>
-        <Grid item xs>
-        <Typography  variant="body2">
-        DIFFICULTY LEVEL: {difficultyLevel}
-                           </Typography>
-        </Grid>
-      </Grid>
-    </div>
-                       <br/>
-
-                           <Grid xs={12} sm container direction="row">
+          <Paper className={classes.viewrecipepaper}>
+            <div align="center">
+              <br />
+              <Typography variant="h4" align="center" color="secondary">
+                {title} <LikeButton recipeId={recipeId} />
+              </Typography>
+              by:{` `}
+              <Typography
+                variant="body1"
+                align="center"
+                component={Link}
+                color="initial"
+                to={`/${userHandle}`}
+              >
+                @{userHandle}
+              </Typography>
+              <Typography variant="body2" align="center" color="textSecondary">
+                {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
+              </Typography>
+              <br />
+              <ShareButtons/>
+              <Container>
+                <img
+                  className={classes.recipeimage}
+                  alt="image"
+                  src={pictureUrl}
+                  srcset={pictureUrl}
+                />
+              </Container>
+              <Grid container justify="center">
+                <Grid item xs={2}>
+                  <Typography variant="body2">
+                    {" "}
+                    <LikeButton recipeId={recipeId} />
+                    {likeCount} LIKES
+                  </Typography>
+                </Grid>
+                <Grid item xs={2}>
+                  <Typography variant="body2">
+                    <MyButton tip="Reviews">
+                      <ChatIcon color="Primary" />
+                    </MyButton>
+                    {commentCount} REVIEWS
+                  </Typography>
+                </Grid>
+              </Grid>
+              <br />
+              <div style={{ paddingRight: "20vw" }}>
+                <Typography align="left" color="inherit">
+                  DESCRIPTION{" "}
+                </Typography>
+                <Typography align="left" paragraph="true">
+                  {body}
+                </Typography>
+              </div>
+              <div className={classes.detail}>
+                <Grid container>
+                  <Grid item xs>
+                    {" "}
+                    <Typography variant="body2">SERVES :{serves}</Typography>
+                  </Grid>
+                  <Grid item xs>
+                    <Typography variant="body2">
+                      PREPARATION TIME : {preparationTime}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs>
+                    <Typography variant="body2">
+                      COOK TIME : {cookingTime}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs>
+                    <Typography variant="body2">
+                      DIFFICULTY LEVEL: {difficultyLevel}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Typography variant="body2">{vegnonveg}</Typography>
+                  </Grid>
+                </Grid>
+              </div>
+              <br />
+              <Grid xs={12} sm container direction="row">
                 <Grid item sm>
                   <div className={classes.ingredients}>
                     <TableContainer component={Paper}>
@@ -207,27 +220,21 @@ class viewRecipe extends Component {
                   </div>
                 </Grid>
               </Grid>
-                  </div>
+            </div>
 
+            <br />
+            <br />
+            <div>
+              <Typography color="textSecondary" variant="h6">
+                {commentCount} Reviews{" "}
+              </Typography>
+
+              {loginsignup}
               <br />
-              <br />
-              <div>
-                <Typography variant="h5" className={classes.text}>
-                  <h7 className={classes.textstyle}>Reviews</h7>
-                </Typography>
 
-                <span className={classes.textstyle}>
-                  {commentCount} Reviews{" "}
-                </span>
-                <br />
-
-                {loginsignup}
-                <br />
-
-                <CommentForm recipeId={recipeId} />
-                {comments && <Comments comments={comments} />}
-              </div>
-            
+              <CommentForm recipeId={recipeId} />
+              {comments && <Comments comments={comments} />}
+            </div>
           </Paper>
         </div>
         <br />
