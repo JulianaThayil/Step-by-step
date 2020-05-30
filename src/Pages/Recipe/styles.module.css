@@ -1,10 +1,14 @@
 .viewrecipepaper {
-  padding-right: 2vw;
-  padding-left: 2vw;
+  padding-right: 4vw;
+  padding-left: 4vw;
  background-color: white;
   border-radius: 10px;
-  margin-left: 6vw;
-  margin-right: 6vw;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-top: 7vh;
+}
+.recipeimage{
+max-width: 65vw;
 }
 .image{
   margin-top: 50px;
