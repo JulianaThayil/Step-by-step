@@ -131,9 +131,10 @@ class viewRecipe extends Component {
               <Typography variant="body2" align="center" color="textSecondary">
                 {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
               </Typography>
+              <br/>
+          
+              <ShareButtons quote={body} subject={title} url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`} pictureUrl={pictureUrl}/>
               <br />
-              <Typography> share</Typography>
-              <ShareButtons/>
               <Container>
               <picture>
                 <img
@@ -231,6 +232,7 @@ class viewRecipe extends Component {
             <br />
             <br />
             <div>
+   
               <Typography color="textSecondary" variant="h6">
                 {commentCount} Reviews{" "}
               </Typography>

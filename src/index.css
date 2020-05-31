@@ -4,7 +4,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #fafafa;
 }
-
+.item {
+  padding-right: 5px;
+}
 .bttn {
   color: white;
   text-decoration: none;
