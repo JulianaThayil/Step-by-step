@@ -114,7 +114,7 @@ class viewRecipe extends Component {
           <Paper className={classes.viewrecipepaper}>
             <div align="center">
               <br />
-              <Typography variant="h4" align="center" color="secondary">
+              <Typography variant="h4" align="center" color="primary">
                 {title} <LikeButton recipeId={recipeId} />
               </Typography>
               by:{` `}

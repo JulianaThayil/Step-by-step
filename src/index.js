@@ -3,17 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createMuiTheme } from '@material-ui/core/styles';
-import pink from '@material-ui/core/colors/pink';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#fff',
+      main: '#000',
     },
-    secondary: {
-      main: pink,
-    },
+  
   },
 });
 
