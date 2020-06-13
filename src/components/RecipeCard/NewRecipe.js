@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import classes from "./RecipeCard.module.css";
 import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 import AutoComplete from "./AutoComplete";
 import "../../../src/index.css";
 import { Redirect } from "react-router-dom";
@@ -44,16 +45,23 @@ class NewRecipe extends Component {
       difficultyLevel: "Intermediate",
       body: "",
       ingredients: [{ name: "", amount: "" }],
-      instructions: "",
+      instructions: [{ step: "" }],
       type: "nonveg",
       image: null,
       success: false,
       errors: {},
     };
   }
+  
   addIngredient = (e) => {
     this.setState((prevState) => ({
       ingredients: [...prevState.ingredients, { name: "", amount: "" }],
+    }));
+  };
+
+  addInstruction = (e) => {
+    this.setState((prevState) => ({
+      instructions: [...prevState.instructions, { step: "" }],
     }));
   };
 
@@ -61,6 +69,7 @@ class NewRecipe extends Component {
     if (e.target.files[0]) {
       const image = e.target.files[0];
       this.setState(() => ({ image }));
+     
     }
   };
   handleChange = (e) => {
@@ -69,7 +78,13 @@ class NewRecipe extends Component {
       let ingredients = [...this.state.ingredients];
       ingredients[e.target.dataset.id][e.target.className] = e.target.value;
       this.setState({ ingredients });
-    } else {
+    }
+    else if (["step"].includes(e.target.className)) {
+      let instructions = [...this.state.instructions];
+      instructions[e.target.dataset.id][e.target.className] = e.target.value;
+      this.setState({ instructions });
+    }
+    else {
       this.setState({ [e.target.name]: e.target.value });
     }
   };
@@ -82,8 +97,9 @@ class NewRecipe extends Component {
     });
 
     const { image } = this.state;
+    let imageFileName=new Date().toISOString() + image.name;
 
-    const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
+    const uploadTask = storage.ref(`recipes/${imageFileName}`).put(image);
     uploadTask.on(
       "state_changed",
       (snapshot) => {},
@@ -95,7 +111,7 @@ class NewRecipe extends Component {
         // complete function ....
         storage
           .ref("recipes")
-          .child(image.name)
+          .child(imageFileName)
           .getDownloadURL()
           .then((url) => {
             url = url + "?alt=media";
@@ -119,7 +135,7 @@ class NewRecipe extends Component {
   };
 
   render() {
-    const { errors, ingredients, success } = this.state;
+    const { errors, ingredients,instructions, success } = this.state;
     const {
       UI: { loading },
     } = this.props;
@@ -234,6 +250,35 @@ class NewRecipe extends Component {
             />
 
             <br />
+            <FormControl
+              style={{ display: "flexinline", flexDirection: "row" }}
+            >
+              <RadioGroup
+                name="type"
+                value={this.state.type}
+                onChange={this.handleChange}
+              >
+                <div style={{ display: "flex" }}>
+                  <FormControlLabel
+                    value="veg"
+                    control={<Radio />}
+                    label=" Veg"
+                  />
+                  <FormControlLabel
+                    value="nonveg"
+                    control={<Radio />}
+                    label="Non-Veg"
+                  />
+                </div>
+              </RadioGroup>
+            </FormControl>
+            <br />
+            <br />
+            <Typography> Add tags to help people find your recipe </Typography>
+            <br />
+            <AutoComplete> </AutoComplete>
+            <br />
+
             <br />
           </Fragment>
         ),
@@ -309,48 +354,61 @@ class NewRecipe extends Component {
         name: "Step 3",
         component: (
           <Fragment>
-            <TextField
-              name="instructions"
-              label="Instructions"
-              placeholder="Add each instruction on a new line"
-              rows="6"
-              multiline
-              fullWidth
-              value={this.state.instructions}
-              onChange={this.handleChange}
-              variant="outlined"
-            />
+            <br />
+            <div>
+              <Typography>
+                Instructions (click the + button below to add a new step){" "}
+              </Typography>
+            </div>
+            {instructions.map((val, idx) => {
+
+                let stepId = `step-${idx}`;
+              return (
+                <div
+                  key={idx}
+                  className={classes.display2}
+                  onChange={this.handleChange}
+                >
+                  <br />
+
+                  <div>
+                    <lable htmlFor={stepId}>
+                      {stepId}
+                    </lable>
+                  </div>
+                  <div>
+                    <input
+                      lable="step"
+                      type="text"
+                      name={stepId}
+                      data-id={idx}
+                      id={stepId}
+                      placeholder="do something "
+                      className="step"
+                      value={this.state.instructions[`${idx}`].step}
+                    />
+                  </div>
+
+                  <br />
+                </div>
+              );
+            })}
 
             <br />
-            <br />
-            <FormControl
-              style={{ display: "flexinline", flexDirection: "row" }}
+
+            <Tooltip
+              onClick={this.addInstruction}
+              title="Add new step"
+              style={{ outline: "none" }}
             >
-              <RadioGroup
-                name="type"
-                value={this.state.type}
-                onChange={this.handleChange}
-              >
-                <div style={{ display: "flex" }}>
-                  <FormControlLabel
-                    value="veg"
-                    control={<Radio />}
-                    label=" Veg"
-                  />
-                  <FormControlLabel
-                    value="nonveg"
-                    control={<Radio />}
-                    label="Non-Veg"
-                  />
-                </div>
-              </RadioGroup>
-            </FormControl>
-            <br />
-            <br />
-            <Typography> Add tags to help people find your recipe </Typography>
-            <br />
-            <AutoComplete> </AutoComplete>
-            <br />
+              <Fab color="secondary" aria-label="add" size="small">
+                <AddIcon />
+              </Fab>
+            </Tooltip>
+
+            <div style={{ height: "8vh" }}></div>
+         
+           
             <br />
             <div align="center" className={classes.but}>
               <Button type="submit" disabled={loading} variant="contained">
