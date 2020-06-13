@@ -362,7 +362,7 @@ class NewRecipe extends Component {
             </div>
             {instructions.map((val, idx) => {
 
-                let stepId = `step-${idx}`;
+                let stepId = `step ${idx+1}`;
               return (
                 <div
                   key={idx}
