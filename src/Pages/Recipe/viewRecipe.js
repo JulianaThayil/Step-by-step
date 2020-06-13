@@ -12,6 +12,7 @@ import CommentForm from "../../util/CommentForm";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Ingredient from "./Ingredient";
+import Instruction from "./Instructions";
 
 //Mui stuff
 import Container from "@material-ui/core/Container";
@@ -63,13 +64,24 @@ class viewRecipe extends Component {
       },
       UI: { loading },
     } = this.props;
+
     var ingredientsMarkup = null;
     {
       ingredients &&
         (ingredientsMarkup = ingredients.map((ingredient) => (
+  
           <Ingredient key={ingredient.name} ingredient={ingredient} />
         )));
     }
+
+    var instructionsMarkup = null;
+    {
+      instructions &&
+        (instructionsMarkup = instructions.map((instruction,num) => (
+          <Instruction key={instruction.step} instruction={instruction} step_number={`${num+1}`} />
+        )));
+    }
+
     var vegnonveg =
       type === "veg" ? (
         <Typography variant="body2">   
@@ -99,8 +111,8 @@ class viewRecipe extends Component {
       <div>
         <ChatIcon color="secondary" />
         <span>
-          <Link to="/login"> Sign-in </Link> or
-          <Link to="/signup"> create your step-by-step account</Link> to post a
+          <Link  to="/login"> Sign-in </Link> or
+          <Link  to="/signup"> create your step-by-step account</Link> to post a
           review
         </span>
       </div>
@@ -114,7 +126,7 @@ class viewRecipe extends Component {
           <Paper className={classes.viewrecipepaper}>
             <div align="center">
               <br />
-              <Typography variant="h4" align="center" color="primary">
+              <Typography variant="h4" align="center" color="secondary">
                 {title} <LikeButton recipeId={recipeId} />
               </Typography>
               by:{` `}
@@ -122,7 +134,7 @@ class viewRecipe extends Component {
                 variant="body1"
                 align="center"
                 component={Link}
-                color="initial"
+                color="primary"
                 to={`/${userHandle}`}
               >
                 @{userHandle}
@@ -223,7 +235,7 @@ class viewRecipe extends Component {
                     <Typography variant="h5" align="center">
                       <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
                     </Typography>
-                    <p className={classes.textstyle}> {instructions} </p>
+                    <p className={classes.textstyle}> {instructionsMarkup} </p>
                   </div>
                 </Grid>
               </Grid>
