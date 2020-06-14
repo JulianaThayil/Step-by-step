@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/Nav";
 import NewRecipe from "../../components/RecipeCard/NewRecipe";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/FooterBottom";
 import classes from "./styles.module.css";
 
 //Mui stuff

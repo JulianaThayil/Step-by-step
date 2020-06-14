@@ -8,6 +8,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Navbar from "../../components/Navbar/Nav";
 import Featuredposts from "../../components/Featured posts/Featuredposts";
 
+
 //Redux stuff
 import { connect } from "react-redux";
 import { getRecipes } from "../../redux/actions/dataActions";

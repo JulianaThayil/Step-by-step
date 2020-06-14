@@ -17,6 +17,9 @@ import Home from "./Pages/Home/Home";
 import ViewRecipe from "./Pages/Recipe/viewRecipe";
 import Addrecipe from "./Pages/Recipe/AddRecipe";
 import Explore from "./Pages/Explore/Explore";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
+
 
 //util
 import AuthRoute from "./util/AuthRoute";
@@ -53,6 +56,8 @@ class App extends Component {
               <AuthRoute exact path="/signup" component={Register} />
               <Route exact path="/user/settings" component={Settings} />
               <Route exact path="/addrecipe" component={Addrecipe} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
               <Route exact path="/:handle" component={Profile} />
               <Route exact path="/:handle/:recipeId" component={ViewRecipe} />
               <Route component={Notfound} />
