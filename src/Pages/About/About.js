@@ -1,12 +1,11 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Cover from "../../components/Cover/Cover";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const post = {
-    image:
-      ":​https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-1. 2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80 ",
+    image:"/assets/about.jpg",
     text: "About us",
   };
   return (
@@ -15,7 +14,7 @@ export default function About() {
 
       <Typography align="center">
         {" "}
-        StepbyStep is a food-focused social network created for home cooks and
+        StepChef is a food-focused social network created for home cooks and
         professionals to showcase their work through recipe sharing. Our goal is
         to ​connect cooks of all kinds and interests through recipes. We try to
         make both recipe sharing and understanding easy through our innovative
@@ -23,16 +22,15 @@ export default function About() {
       </Typography>
       <br />
       <Typography align="center">
-        Join us today and start chopping into the world of STEP-BY-STEP.
+        Join us today and start chopping into the world of StepChef.
       </Typography>
       <br />
-      <Typography align="center">
-      Want to learn more about us? 
-      </Typography>
+      <Typography align="center">Want to learn more about us?</Typography>
       <br />
-      <Typography align="center">
-      Get in touch with us ​
-      </Typography><Link to="/contact"> here</Link>
+      
+        <p align="center">Get in touch with us <Link to="/contact"> here</Link> ​</p>
+        
+
     </div>
   );
 }

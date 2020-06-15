@@ -6,7 +6,7 @@ import FooterBottom from "./FooterBottom";
 
 export default function MyFooter() {
   return (
-    <Footer title="StepbyStep" >
+    <Footer title="StepChef" bottomBanner={FooterBottom}>
       <Footer.Column isInline>
         <Footer.Item icon={AccountCircle} href="about">
           About us
