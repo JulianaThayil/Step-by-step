@@ -20,6 +20,9 @@ import Explore from "./Pages/Explore/Explore";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 
+//component
+import Navbar from "./components/Navbar/Nav";
+import Footer from "./components/Footer/Footer";
 
 //util
 import AuthRoute from "./util/AuthRoute";
@@ -47,8 +50,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        
         <Router>
-          <div>
+        <Navbar></Navbar> 
+
             <Switch>
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
@@ -62,7 +67,8 @@ class App extends Component {
               <Route exact path="/:handle/:recipeId" component={ViewRecipe} />
               <Route component={Notfound} />
             </Switch>
-          </div>
+        <Footer> </Footer>    
+ 
         </Router>
       </Provider>
     );

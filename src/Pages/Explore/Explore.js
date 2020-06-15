@@ -2,15 +2,10 @@ import React from "react";
 import Logo from "../../components/Logo/Logo";
 import classes from "./Explore.module.css";
 import PopularRecipeCard from "../../components/ExploreCards/popularRecipeCard";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Nav";
 
 const explore = () => {
   return (
     <div>
-      <Navbar> </Navbar>
-      <br />
-
       <div className={classes.subPopular}>
         <h5 className={classes.heading}>Popular Categories</h5>
       </div>
@@ -66,8 +61,8 @@ const explore = () => {
           <div className={classes.tag}>Ingredients</div>
         </div>
       </div>
+
       <br />
-      <Footer></Footer>
     </div>
   );
 };

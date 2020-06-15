@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import Navbar from "../../components/Navbar/Nav";
 import PropTypes from "prop-types";
-import classes from "./Profiles.module.css";
 //pages
 import MyProfile from "./MyProfile";
 import StaticProfile from "./StaticProfile";
 
 //redux
 import { connect } from "react-redux";
+
+//mui
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class Profile extends Component {
   constructor() {
@@ -25,7 +26,6 @@ class Profile extends Component {
   render() {
     const {
       user: {
-        authenticated,
         credentials: { handle },
       },
       UI: { loading },
@@ -38,13 +38,13 @@ class Profile extends Component {
         <StaticProfile handle={this.props.match.params.handle}> </StaticProfile>
       )
     ) : (
-      <p> loading.... </p>
+      <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+      <CircularProgress color="secondary"> </CircularProgress>
+    </div>
     );
 
     return (
       <div>
-        <Navbar> </Navbar>
-        <br />
         <div>{profileMarkup}</div>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../../components/Navbar/Nav";
 import PropTypes from "prop-types";
 import classes from "./styles.module.css";
 import { Link } from "react-router-dom";
@@ -9,7 +8,6 @@ import ShareButtons from "../../util/ShareButtons";
 import MyButton from "../../util/MyButton";
 import Comments from "../../util/Comments";
 import CommentForm from "../../util/CommentForm";
-import Footer from "../../components/Footer/Footer";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Ingredient from "./Ingredient";
 import Instruction from "./Instructions";
@@ -69,7 +67,6 @@ class viewRecipe extends Component {
     {
       ingredients &&
         (ingredientsMarkup = ingredients.map((ingredient) => (
-  
           <Ingredient key={ingredient.name} ingredient={ingredient} />
         )));
     }
@@ -77,16 +74,18 @@ class viewRecipe extends Component {
     var instructionsMarkup = null;
     {
       instructions &&
-        (instructionsMarkup = instructions.map((instruction,num) => (
-          <Instruction key={instruction.step} instruction={instruction} step_number={`${num+1}`} />
+        (instructionsMarkup = instructions.map((instruction, num) => (
+          <Instruction
+            key={instruction.step}
+            instruction={instruction}
+            step_number={`${num + 1}`}
+          />
         )));
     }
 
     var vegnonveg =
       type === "veg" ? (
-        <Typography variant="body2">   
-               
-
+        <Typography variant="body2">
           <img
             width="20px"
             height="20px"
@@ -111,8 +110,8 @@ class viewRecipe extends Component {
       <div>
         <ChatIcon color="secondary" />
         <span>
-          <Link  to="/login"> Sign-in </Link> or
-          <Link  to="/signup"> create your step-by-step account</Link> to post a
+          <Link to="/login"> Sign-in </Link> or
+          <Link to="/signup"> create your step-by-step account</Link> to post a
           review
         </span>
       </div>
@@ -139,22 +138,25 @@ class viewRecipe extends Component {
               >
                 @{userHandle}
               </Typography>
-        
               <Typography variant="body2" align="center" color="textSecondary">
                 {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
               </Typography>
-              <br/>
-          
-              <ShareButtons quote={body} subject={title} url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`} pictureUrl={pictureUrl}/>
+              <br />
+              <ShareButtons
+                quote={body}
+                subject={title}
+                url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`}
+                pictureUrl={pictureUrl}
+              />
               <br />
               <Container>
-              <picture>
-                <img
-                  className={classes.recipeimage}
-                  alt="image"
-                  src={pictureUrl}
-                  srcset={pictureUrl}
-                />
+                <picture>
+                  <img
+                    className={classes.recipeimage}
+                    alt="image"
+                    src={pictureUrl}
+                    srcset={pictureUrl}
+                  />
                 </picture>
               </Container>
               <Grid container justify="center">
@@ -244,7 +246,6 @@ class viewRecipe extends Component {
             <br />
             <br />
             <div>
-   
               <Typography color="textSecondary" variant="h6">
                 {commentCount} Reviews{" "}
               </Typography>
@@ -258,7 +259,6 @@ class viewRecipe extends Component {
           </Paper>
         </div>
         <br />
-        <Footer> </Footer>
       </div>
     ) : (
       <div style={{ position: "absolute", top: "50%", left: "50%" }}>
@@ -266,13 +266,7 @@ class viewRecipe extends Component {
       </div>
     );
 
-    return (
-      <div>
-        <Navbar> </Navbar>
-
-        <div> {recipesMarkup}</div>
-      </div>
-    );
+    return <div> {recipesMarkup}</div>;
   }
 }
 

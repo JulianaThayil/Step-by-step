@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import Navbar from "../../components/Navbar/Nav";
 import NewRecipe from "../../components/RecipeCard/NewRecipe";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import Footer from "../../components/Footer/FooterBottom";
 import classes from "./styles.module.css";
 
 //Mui stuff
@@ -19,14 +17,9 @@ class AddRecipe extends Component {
     } = this.props;
     let profileMarkup = !loading ? (
       authenticated ? (
-        <div>
-          <Navbar> </Navbar>
  
          <div className={classes.image}>
             <NewRecipe> </NewRecipe>
-          </div>
-    
-        
         </div>
       ) : (
         <div>
