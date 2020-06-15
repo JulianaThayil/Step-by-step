@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Logo from "../../components/Logo/Logo";
 import classes from "./Register.modules.css";
 import { Link } from "react-router-dom";
 import LinearProgress from "@material-ui/core/LinearProgress";

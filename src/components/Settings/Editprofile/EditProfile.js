@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import TextField from "@material-ui/core/TextField";
 import SaveIcon from "@material-ui/icons/Save";
 import Button from "@material-ui/core/Button";
-import Alert from "@material-ui/lab/Alert";
 import Typography from "@material-ui/core/Typography";
 //Redux stuff
 import { connect } from "react-redux";

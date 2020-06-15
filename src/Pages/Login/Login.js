@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Logo from "../../components/Logo/Logo";
 import classes from "./Login.modules.scss";
 import { Link } from "react-router-dom";
 //import MyProfile from '../Profile/MyProfile'

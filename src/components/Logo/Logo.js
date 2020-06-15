@@ -6,7 +6,7 @@ const logo = () => {
     <NavLink to="/" activeClassName="link">
       <div className={classes.logo}>
         <div className={classes.container}>
-         <img width="30px" height="30px" src="../../logo.png"/>
+         <img width="70px" height="70px" src="../../logo.png" alt="StepChef"/>
         </div>
       </div>
     </NavLink>
