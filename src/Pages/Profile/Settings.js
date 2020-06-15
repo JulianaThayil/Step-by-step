@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from "react";
-import Navbar from "../../components/Navbar/Nav";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import classes from "./Profiles.module.css";
-import Footer from "../../components/Footer/Footer";
 
 //Mui stuff
 import Typography from "@material-ui/core/Typography";
@@ -22,11 +20,9 @@ class Settings extends Component {
       },
       UI: { loading },
     } = this.props;
+
     let settingsMarkup = !loading ? (
       authenticated ? (
-        <div>
-          <Navbar> </Navbar>
-          <br />
           <div className={classes.settings}>
             <Typography variant="h5" >
               Settings
@@ -34,9 +30,6 @@ class Settings extends Component {
             <br/>
             <Tabs></Tabs>
           </div>
-          <div className={classes.pad}> </div>
-          <Footer> </Footer>
-        </div>
       ) : (
         <Redirect to="/login" />
       )

@@ -44,9 +44,8 @@ class Profile extends Component {
     );
 
     return (
-      <div>
+
         <div>{profileMarkup}</div>
-      </div>
     );
   }
 }
