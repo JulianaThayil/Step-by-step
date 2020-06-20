@@ -97,4 +97,7 @@
     padding: 1vh;
     gap: 1% 1%;
   }
+  .pad{
+    padding-bottom: 100px;
+  }
 }

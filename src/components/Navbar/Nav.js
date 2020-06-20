@@ -18,7 +18,7 @@ import MobileMenu from "./MobileMenu";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import CloseIcon from '@material-ui/icons/Close';
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -229,7 +229,7 @@ export default function PrimarySearchAppBar() {
 
         <Drawer
           className={classes.drawer}
-          variant="persistent"
+          variant="temporary"
           anchor="left"
           open={open}
           classes={{
@@ -239,9 +239,9 @@ export default function PrimarySearchAppBar() {
           <div className={classes.drawerHeader}>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
+                <CloseIcon />
               ) : (
-                <ChevronRightIcon />
+                <CloseIcon />
               )}
             </IconButton>
           </div>

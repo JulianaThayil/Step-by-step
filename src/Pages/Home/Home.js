@@ -36,6 +36,8 @@ class Home extends Component {
           <h4 className={classes.recent}> Recent Posts</h4>
           <div className={classes.bg}>{recentRecipesMarkup}</div>
         </div>
+
+        <div className={classes.pad}> </div> 
       </div>
     );
   }

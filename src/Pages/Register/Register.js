@@ -51,7 +51,7 @@ class signup extends Component {
     const { errors } = this.state;
 
     return (
-      <div>
+      <div class="main">
         <div class="body">
           <img
             src="https://raw.githubusercontent.com/JulianaThayil/Step-by-step/master/public/assets/pexels-photo-256318.jpeg"

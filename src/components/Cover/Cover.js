@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
+    paddingTop:'5vw',
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
@@ -39,7 +40,7 @@ export default function MainFeaturedPost(props) {
   const { post } = props;
 
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})` }}>
+    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${post.image})`,marginTop:'70px' }}>
     
       <div className={classes.overlay} />
       <Grid container>
