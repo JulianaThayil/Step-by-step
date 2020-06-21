@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Cover from "../../components/Cover/Cover";
 import { Link } from "react-router-dom";
+import Grid from "./Grid";
 
 export default function About() {
   const post = {
@@ -9,10 +10,10 @@ export default function About() {
     text: "About us",
   };
   return (
-    <div> 
+    <div>
       <Cover post={post}> </Cover>
 
-      <div style={{marginLeft:'15vw',marginRight:'15vw'}}>
+      <div style={{ marginLeft: "15vw", marginRight: "15vw" }}>
         <Typography align="center">
           {" "}
           StepChef is a food-focused social network created for home cooks and
@@ -26,12 +27,24 @@ export default function About() {
           Join us today and start chopping into the world of StepChef.
         </Typography>
         <br />
+
+        <Grid> </Grid>
+
+        <br />
+        <br />
+
         <Typography align="center">Want to learn more about us?</Typography>
         <br />
 
         <p align="center">
-          Get in touch with us <Link color="secondary" to="/contact"> here</Link> ​
+          Get in touch with us{" "}
+          <Link color="secondary" to="/contact">
+            {" "}
+            here
+          </Link>{" "}
+          ​
         </p>
+        <br />
       </div>
     </div>
   );

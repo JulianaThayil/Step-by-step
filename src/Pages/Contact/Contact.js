@@ -26,6 +26,8 @@ export default function Contact() {
         <p align="center">
         Tell us more using <Link color="secondary" to="/contact"> this form</Link> ​
         </p>
+        <br/>
+        <img style={{marginLeft:'10vw'}} width="80%" height="80%" src="/assets/contact.svg" alt="vector"/>
       </div>
             
         </div>
