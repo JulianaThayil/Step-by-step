@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from "react";
+import React, { Component} from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as jwtDecode from "jwt-decode";
 

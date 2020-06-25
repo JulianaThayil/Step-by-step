@@ -48,10 +48,7 @@
 }
 
 @media only screen and (max-width: 460px) {
-  .container{
-    width: 100vw;
-  }
-
+  
   .display2 {
     display: flex;
     flex-direction: column;
@@ -60,10 +57,9 @@
     margin-right: 0vw;
   }
 }
+
 @media only screen and (width: 700px) {
-  .container{
-    width: 75vw;
-  }
+  
   .display2 {
     display: flex;
     flex-direction: row;

@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import classes from "./styles.module.css";
 
 //Mui stuff
-import LinearProgress from "@material-ui/core/LinearProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 //Redux stuff
 import { connect } from "react-redux";
@@ -17,9 +17,8 @@ class AddRecipe extends Component {
     } = this.props;
     let profileMarkup = !loading ? (
       authenticated ? (
- 
-         <div className={classes.image}>
-            <NewRecipe> </NewRecipe>
+        <div className={classes.image}>
+          <NewRecipe> </NewRecipe>
         </div>
       ) : (
         <div>
@@ -27,7 +26,11 @@ class AddRecipe extends Component {
         </div>
       )
     ) : (
-      <LinearProgress color="secondary" />
+      <div style={{ height: "100vh" }}>
+        <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+          <CircularProgress color="secondary"> </CircularProgress>
+        </div>
+      </div>
     );
 
     return <div>{profileMarkup}</div>;

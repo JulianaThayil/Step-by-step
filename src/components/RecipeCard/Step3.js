@@ -23,9 +23,11 @@ const Step3 = ({
       {instructionState.map((val, idx) => {
         let instructionId = `instruction-${idx}`;
         return (
-          <div key={`instruction-${idx}`} className={classes.display2}>
+          <div key={`instruction-${idx}`} >
             <label htmlFor={instructionId}>{`Step #${idx + 1}`}</label>
-            <input
+            <textarea 
+            rows="3"
+            cols="30"
               type="text"
               name={instructionId}
               data-idx={idx}

@@ -261,8 +261,10 @@ class viewRecipe extends Component {
         <br />
       </div>
     ) : (
-      <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+      <div style={{ height:"100vh" }}>
+      <div style={{position: "absolute", top: "50%", left: "50%" }}>
         <CircularProgress color="secondary"> </CircularProgress>
+      </div>
       </div>
     );
 

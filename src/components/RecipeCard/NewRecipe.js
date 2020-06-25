@@ -10,6 +10,9 @@ import Details from "./Step1";
 import { connect } from "react-redux";
 import { postRecipe } from "../../redux/actions/dataActions";
 
+//firebase
+import { storage } from "../../firebase/index";
+
 //Mui stepper
 import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
@@ -22,11 +25,20 @@ import Typography from "@material-ui/core/Typography";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
     padding: "3%",
     backgroundColor: "white",
-    width: "50vw",
-    height:"min-content",
+    width: "60vw",
+    height: "min-content",
+    marginLeft:"20%",
+    marginTop:"1%",
+    '@media (max-width: 768px)': {
+      width: "85vw",
+      marginLeft:"7%",
+      marginTop:"7%",
+    }
+    
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -58,7 +70,11 @@ function NewRecipe(props) {
     switch (stepIndex) {
       case 0:
         return (
-          <Details detailsState={detailsState} handlechange={handlechange} />
+          <Details
+            detailsState={detailsState}
+            handleimagechange={handleimagechange}
+            handlechange={handlechange}
+          />
         );
       case 1:
         return (
@@ -102,6 +118,16 @@ function NewRecipe(props) {
     });
   };
 
+  //image upload
+  const handleimagechange = (event) => {
+    if (event.target.files[0]) {
+      setDetailsState({
+        ...detailsState,
+        image: event.target.files[0],
+      });
+    }
+  };
+
   //ingredients
   const ingredients = { name: "", amount: "" };
 
@@ -134,30 +160,51 @@ function NewRecipe(props) {
     updatedinstructions[e.target.dataset.idx][e.target.className] =
       e.target.value;
     setInstructionState(updatedinstructions);
-    console.log(instructionState);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault(); //to prevent auto reload
     setActiveStep(3);
-    const newRecipe = {
-      title: detailsState.title,
-      preparationTime: detailsState.preparationTime,
-      cookingTime: detailsState.cookingTime,
-      serves: detailsState.serves,
-      difficultyLevel: detailsState.difficultyLevel,
-      body: detailsState.body,
-      ingredients: detailsState.ingredients,
-      instructions: detailsState.instructions,
-      type: detailsState.type,
-      pictureUrl: detailsState.image,
-    };
-    console.log(newRecipe)
-    props.postRecipe(newRecipe, props.history);
-  };
 
+    const { image } = detailsState.image;
+
+    const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => {
+        // error function ....
+        console.log(error);
+      },
+      () => {
+        // complete function ....
+        storage
+          .ref("recipes")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            url = url + "?alt=media";
+            const newRecipe = {
+              title: detailsState.title,
+              preparationTime: detailsState.preparationTime,
+              cookingTime: detailsState.cookingTime,
+              serves: detailsState.serves,
+              difficultyLevel: detailsState.difficultyLevel,
+              body: detailsState.body,
+              ingredients: detailsState.ingredients,
+              instructions: detailsState.instructions,
+              type: detailsState.type,
+              pictureUrl: url,
+            };
+            console.log(newRecipe);
+            props.postRecipe(newRecipe, props.history);
+          });
+      }
+    );
+  };
   return (
     <div className={classes.root}>
+
       <Typography color="secondary" variant="h3" align="center">
         Add a Recipe
       </Typography>
@@ -174,7 +221,7 @@ function NewRecipe(props) {
             <CircularProgress> </CircularProgress>
           </div>
         ) : (
-          <form autoComplete="off">
+          <div>
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
@@ -196,7 +243,7 @@ function NewRecipe(props) {
                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
               </Button>
             </div>
-          </form>
+          </div>
         )}
       </div>
     </div>

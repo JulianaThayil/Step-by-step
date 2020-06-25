@@ -17,16 +17,18 @@ import InputLabel from "@material-ui/core/InputLabel";
 //icons
 import PhotoCamera from "@material-ui/icons/PhotoCamera";
 
-const Step1 = ({ detailsState, handlechange }) => {
+const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
   return (
     <Fragment>
-      <div className={classes.image} align="center">
+      <div className={classes.image} >
         <PhotoCamera />
         <input
+          name="image"
           accept="image/*"
           className={classes.ip}
           id="imageInput"
           type="file"
+          onChange={handleimagechange}
         />
       </div>
       <br />
@@ -148,7 +150,9 @@ const Step1 = ({ detailsState, handlechange }) => {
 
 Step1.propTypes = {
   detailsState: PropTypes.object,
+  handleimagechange: PropTypes.func,
   handlechange: PropTypes.func,
+
 };
 
 export default Step1;
