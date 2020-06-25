@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as jwtDecode from "jwt-decode";
 
@@ -30,8 +30,9 @@ import AuthRoute from "./util/AuthRoute";
 import axios from "axios";
 import Settings from "./Pages/Profile/Settings";
 
+
 axios.defaults.baseURL =
-  "https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api";
+  "https://us-central1-step-by-step-96e75.cloudfunctions.net/api";
 
 const token = localStorage.FBIdToken;
 if (token) {
@@ -52,7 +53,7 @@ class App extends Component {
       <Provider store={store}>
         
         <Router>
-        <Navbar></Navbar> 
+        <Navbar> </Navbar>
 
             <Switch>
               <Route exact path="/" component={Home} />
@@ -64,10 +65,13 @@ class App extends Component {
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/:handle" component={Profile} />
-              <Route exact path="/:handle/:recipeId" component={ViewRecipe} />
+
+              <Route exact path="/:handle/:recipeId" component={ViewRecipe}/>
+         
+
               <Route component={Notfound} />
             </Switch>
-        <Footer> </Footer>    
+        <Footer> </Footer>
  
         </Router>
       </Provider>

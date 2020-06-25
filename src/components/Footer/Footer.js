@@ -1,12 +1,23 @@
 import React from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import { Footer } from "components-extra";
 import InfoIcon from '@material-ui/icons/Info';
 import Email from "@material-ui/icons/Email";
 import PolicyIcon from '@material-ui/icons/Policy';
 import FooterBottom from "./FooterBottom";
 
+const useStyles = makeStyles((theme) => ({
+  
+  footer: {
+    marginTop: '100vh',
+  },
+}));
+
 export default function MyFooter() {
+  const classes = useStyles();
+  
   return (
+    <footer className={classes.footer}>
     <Footer title="StepChef" bottomBanner={FooterBottom}>
       <Footer.Column isInline>
         <Footer.Item icon={InfoIcon} href="about">
@@ -21,5 +32,6 @@ export default function MyFooter() {
       </Footer.Column>
 
     </Footer>
+    </footer>
   );
 }

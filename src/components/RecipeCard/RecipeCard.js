@@ -83,7 +83,7 @@ class RecipeCard extends Component {
           height="100%"
         />
         <CardContent>
-          <Truncate lines={2}>{body}</Truncate>
+          <Truncate lines={1}>{body}</Truncate>
         </CardContent>
 
         <CardActions disableSpacing>
