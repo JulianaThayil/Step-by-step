@@ -14,12 +14,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import MobileMenu from "./MobileMenu";
+import Button from "@material-ui/core/Button"
 
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
-import CloseIcon from '@material-ui/icons/Close';
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -33,7 +32,6 @@ import CallIcon from "@material-ui/icons/Call";
 //icons
 import Icons from "./Iconsbar";
 
-const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -97,156 +95,46 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  //Drawer
-  hide: {
-    display: "none",
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    // necessary for content to be below app bar
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-}));
-
-export default function PrimarySearchAppBar() {
-  const classes = useStyles();
   //drawer
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  white:{
+    color:'white',
+  },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+  activebutton:{
+    '&:focus': {
+      outline: 'none',
+  },
+  }
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+}));
+export default function PrimarySearchAppBar() {
+    const classes = useStyles();
+ //drawer
+ const [state, setState] = React.useState({
+  left: false,
+});
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+const toggleDrawer = (anchor, open) => (event) => {
+  if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    return;
+  }
 
-  //Navbar
-  const [anchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  setState({ ...state, [anchor]: open });
+};
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Popover
-      anchorEl={mobileMoreAnchorEl}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-      style={{ marginTop: "1vh", marginRight: "0px" }}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
-      id={mobileMenuId}
-      keepMounted
-    >
-      <MobileMenu> </MobileMenu>
-    </Popover>
-  );
-
-  return (
-    <div className={classes.grow}>
-      <AppBar position="fixed" color="secondary">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-
-          <Logo></Logo>
-
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <Icons> </Icons>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-
-        <Drawer
-          className={classes.drawer}
-          variant="temporary"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === "ltr" ? (
-                <CloseIcon />
-              ) : (
-                <CloseIcon />
-              )}
-            </IconButton>
-          </div>
-      
-          <List>
+const list = (anchor) => (
+  <div
+    className={clsx(classes.list)}
+    role="presentation"
+    onClick={toggleDrawer(anchor, false)}
+    onKeyDown={toggleDrawer(anchor, false)}
+  >
+ <List>
             <ListItem button component={Link} to="/explore">
               <ListItemIcon>
                 {" "}
@@ -297,14 +185,98 @@ export default function PrimarySearchAppBar() {
               <ListItemText primary="Contact Us" />
             </ListItem>
           </List>
-        </Drawer>
-        <main
-          className={clsx({
-            [classes.contentShift]: open,
-          })}
-        >
-          <div className={classes.drawerHeader} />
-        </main>
+    </div>
+     );
+  //Navbar
+  const [anchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const mobileMenuId = "primary-search-account-menu-mobile";
+  const renderMobileMenu = (
+    <Popover
+      anchorEl={mobileMoreAnchorEl}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+      style={{ marginTop: "1vh", marginRight: "0px" }}
+      anchorOrigin={{
+        vertical: "bottom",
+        horizontal: "left",
+      }}
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "left",
+      }}
+      id={mobileMenuId}
+      keepMounted
+    >
+      <MobileMenu> </MobileMenu>
+    </Popover>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position="fixed" color="secondary">
+        <Toolbar>
+          <div>
+            {["left"].map((anchor) => (
+              <React.Fragment key={anchor}>
+                <Button className={classes.activebutton} onClick={toggleDrawer(anchor, true)}>
+                  {" "}
+                  <MenuIcon className={classes.white} />
+                </Button>
+                <Drawer
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                >
+                  {list(anchor)}
+                </Drawer>
+              </React.Fragment>
+            ))}
+          </div>
+          <Logo></Logo>
+
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <Icons> </Icons>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+
+        
       </AppBar>
       {renderMobileMenu}
     </div>

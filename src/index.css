@@ -8,20 +8,3 @@ body {
 .item {
   padding-right: 5px;
 }
-.bttn {
-  color: white;
-  text-decoration: none;
-}
-.bttn:hover{
-  color: white;
-  text-decoration: none;
-}
-.bttn:focus{
-  outline: none;
-}
-.add {
-  color: white;
-}
-.add :hover {
-  color: white;
-}

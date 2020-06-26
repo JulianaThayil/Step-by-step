@@ -20,7 +20,7 @@ export default function Contact() {
         <br />
         <Typography align="center"> Email: hello@stepchef.com</Typography>
         <br />
-        <Typography align="center">Phone: 9552456310 </Typography>
+        <Typography align="center">Phone: +91 9552456310 </Typography>
         <br />
   
         <p align="center">
