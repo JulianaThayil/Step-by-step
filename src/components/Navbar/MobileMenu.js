@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from './Nav.module.css'
 
@@ -17,21 +17,21 @@ import PropTypes from "prop-types";
 import { logoutUser } from "../../redux/actions/userActions";
 import { connect } from "react-redux";
 
-class Iconsbar extends Component {
-  handleLogout = () => {
-    this.props.logoutUser();
+function MobileMenu(props){
+  const handleLogout = () => {
+    props.logoutUser();
   };
-  render() {
+
     const {
       user: {
         authenticated,
         credentials: { handle },
       },
-    } = this.props;
+    } = props;
 
     let markup = authenticated ? (
       <div>
-        <NavLink activeClassName={classes.nav} to="/">
+        <NavLink onClick={props.handleMobileMenuClose} activeClassName={classes.nav} to="/">
           <MenuItem>
             <div style={{paddingTop:'1vh'}} className={classes.popover}>
               <ArtTrackIcon /><p style={{paddingLeft:'10px'}}>  Feed </p>
@@ -39,7 +39,7 @@ class Iconsbar extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink activeClassName={classes.nav} className={classes.nav} to={`/${handle}`}>
+          <NavLink onClick={props.handleMobileMenuClose} activeClassName={classes.nav} className={classes.nav} to={`/${handle}`}>
           <MenuItem>
             <div className={classes.popover}>
             <PostAddIcon /> <p style={{paddingLeft:'10px'}}>Profile </p>
@@ -47,7 +47,7 @@ class Iconsbar extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink activeClassName={classes.nav} className={classes.nav} to="/addrecipe">
+          <NavLink onClick={props.handleMobileMenuClose} activeClassName={classes.nav} className={classes.nav} to="/addrecipe">
           <MenuItem>
             <div className={classes.popover}>
               <PersonIcon /> <p style={{paddingLeft:'10px'}}>Add new Recipe </p>
@@ -55,7 +55,7 @@ class Iconsbar extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink activeClassName={classes.nav} className={classes.nav} to="/user/settings">
+          <NavLink onClick={props.handleMobileMenuClose} activeClassName={classes.nav} className={classes.nav} to="/user/settings">
           <MenuItem>
             <div className={classes.popover}>
               <SettingsIcon /> <p style={{paddingLeft:'10px'}}> Settings</p>
@@ -64,7 +64,7 @@ class Iconsbar extends Component {
           </NavLink>
 
           <NavLink  activeClassName={classes.nav} className={classes.nav} to="/login">
-          <MenuItem onClick={this.handleLogout}>
+          <MenuItem onClick={handleLogout}>
             <div className={classes.popover}>
               <PowerSettingsNewIcon /><p style={{paddingLeft:'10px'}}>Logout </p> 
             </div>
@@ -86,7 +86,6 @@ class Iconsbar extends Component {
     return <div style={{ display: "flex" }}>{markup}</div>;
   }
   
-}
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -94,9 +93,10 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = { logoutUser };
 
-Iconsbar.propTypes = {
+MobileMenu.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
+  handleMobileMenuClose:PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(Iconsbar);
+export default connect(mapStateToProps, mapActionsToProps)(MobileMenu);

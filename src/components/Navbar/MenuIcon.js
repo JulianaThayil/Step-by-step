@@ -68,7 +68,7 @@ class ProfileIcon extends Component {
             horizontal: "right",
           }}
         >
-          <NavLink activeClassName={classes.nav} to="/">
+          <NavLink onClick={this.handleClose} activeClassName={classes.nav} to="/">
           <MenuItem>
             <div style={{paddingTop:'1vh'}} className={classes.popover}>
               <ArtTrackIcon /><p style={{paddingLeft:'10px'}}>  Feed </p>
@@ -76,7 +76,7 @@ class ProfileIcon extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink activeClassName={classes.nav} className={classes.nav} to={`/${handle}`}>
+          <NavLink onClick={this.handleClose} activeClassName={classes.nav} className={classes.nav} to={`/${handle}`}>
           <MenuItem>
             <div className={classes.popover}>
               <PersonIcon /> <p style={{paddingLeft:'10px'}}>Profile </p>
@@ -84,7 +84,7 @@ class ProfileIcon extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink activeClassName={classes.nav} className={classes.nav} to="/user/settings">
+          <NavLink onClick={this.handleClose} activeClassName={classes.nav} className={classes.nav} to="/user/settings">
           <MenuItem>
             <div className={classes.popover}>
               <SettingsIcon /> <p style={{paddingLeft:'10px'}}> Settings</p>
@@ -92,7 +92,7 @@ class ProfileIcon extends Component {
           </MenuItem>
           </NavLink>
 
-          <NavLink  activeClassName={classes.nav} className={classes.nav} to="/login">
+          <NavLink activeClassName={classes.nav} className={classes.nav} to="/login">
           <MenuItem onClick={this.handleLogout}>
             <div className={classes.popover}>
               <PowerSettingsNewIcon /><p style={{paddingLeft:'10px'}}>Logout </p> 

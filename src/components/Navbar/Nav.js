@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { fade, makeStyles, useTheme } from "@material-ui/core/styles";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import Logo from "../../components/Logo/Logo";
 import { Link } from "react-router-dom";
 
@@ -14,14 +14,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import MobileMenu from "./MobileMenu";
-import Button from "@material-ui/core/Button"
+import Button from "@material-ui/core/Button";
 
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+
+//icons
+import Icons from "./Iconsbar";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ExploreIcon from "@material-ui/icons/Explore";
 import ArtTrackIcon from "@material-ui/icons/ArtTrack";
 import InfoIcon from "@material-ui/icons/Info";
@@ -29,11 +32,12 @@ import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import CallIcon from "@material-ui/icons/Call";
 
-//icons
-import Icons from "./Iconsbar";
-
-
 const useStyles = makeStyles((theme) => ({
+  activebutton: {
+    "&:focus": {
+      outline: "none",
+    },
+  },
   grow: {
     flexGrow: 1,
   },
@@ -96,99 +100,100 @@ const useStyles = makeStyles((theme) => ({
   },
 
   //drawer
-  white:{
-    color:'white',
+  white: {
+    color: "white",
   },
   list: {
     width: 250,
   },
   fullList: {
-    width: 'auto',
+    width: "auto",
   },
-  activebutton:{
-    '&:focus': {
-      outline: 'none',
+  activebutton: {
+    "&:focus": {
+      outline: "none",
+    },
   },
-  }
-
 }));
 export default function PrimarySearchAppBar() {
-    const classes = useStyles();
- //drawer
- const [state, setState] = React.useState({
-  left: false,
-});
+  const classes = useStyles();
+  //drawer
+  const [state, setState] = React.useState({
+    left: false,
+  });
 
-const toggleDrawer = (anchor, open) => (event) => {
-  if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    return;
-  }
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
 
-  setState({ ...state, [anchor]: open });
-};
+    setState({ ...state, [anchor]: open });
+  };
 
-const list = (anchor) => (
-  <div
-    className={clsx(classes.list)}
-    role="presentation"
-    onClick={toggleDrawer(anchor, false)}
-    onKeyDown={toggleDrawer(anchor, false)}
-  >
- <List>
-            <ListItem button component={Link} to="/explore">
-              <ListItemIcon>
-                {" "}
-                <ExploreIcon />
-              </ListItemIcon>
-              <ListItemText primary="Explore" />
-            </ListItem>
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list)}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <ListItem button component={Link} to="/explore">
+          <ListItemIcon>
+            {" "}
+            <ExploreIcon />
+          </ListItemIcon>
+          <ListItemText primary="Explore" />
+        </ListItem>
 
-            <ListItem button component={Link} to="/blog">
-              <ListItemIcon>
-                {" "}
-                <ArtTrackIcon />
-              </ListItemIcon>
-              <ListItemText primary="Our Blog" />
-            </ListItem>
+        <ListItem button component={Link} to="/blog">
+          <ListItemIcon>
+            {" "}
+            <ArtTrackIcon />
+          </ListItemIcon>
+          <ListItemText primary="Our Blog" />
+        </ListItem>
 
-            <ListItem button component={Link} to="/about">
-              <ListItemIcon>
-                {" "}
-                <InfoIcon />
-              </ListItemIcon>
-              <ListItemText primary="About Us" />
-            </ListItem>
-          </List>
-          <Divider />
-          <List>
-            <ListItem button component={Link} to="/newsletter">
-              <ListItemIcon>
-                {" "}
-                <AnnouncementIcon />
-              </ListItemIcon>
-              <ListItemText primary="Newsletter" />
-            </ListItem>
+        <ListItem button component={Link} to="/about">
+          <ListItemIcon>
+            {" "}
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About Us" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button component={Link} to="/newsletter">
+          <ListItemIcon>
+            {" "}
+            <AnnouncementIcon />
+          </ListItemIcon>
+          <ListItemText primary="Newsletter" />
+        </ListItem>
 
-            <ListItem button component={Link} to="/help">
-              <ListItemIcon>
-                {" "}
-                <ContactSupportIcon />
-              </ListItemIcon>
-              <ListItemText primary="Help" />
-            </ListItem>
+        <ListItem button component={Link} to="/help">
+          <ListItemIcon>
+            {" "}
+            <ContactSupportIcon />
+          </ListItemIcon>
+          <ListItemText primary="Help" />
+        </ListItem>
 
-            <ListItem button component={Link} to="/contact">
-              <ListItemIcon>
-                {" "}
-                <CallIcon />
-              </ListItemIcon>
-              <ListItemText primary="Contact Us" />
-            </ListItem>
-          </List>
+        <ListItem button component={Link} to="/contact">
+          <ListItemIcon>
+            {" "}
+            <CallIcon />
+          </ListItemIcon>
+          <ListItemText primary="Contact Us" />
+        </ListItem>
+      </List>
     </div>
-     );
+  );
   //Navbar
-  const [anchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -207,19 +212,13 @@ const list = (anchor) => (
       anchorEl={mobileMoreAnchorEl}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
-      style={{ marginTop: "1vh", marginRight: "0px" }}
       anchorOrigin={{
         vertical: "bottom",
         horizontal: "left",
       }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "left",
-      }}
       id={mobileMenuId}
-      keepMounted
     >
-      <MobileMenu> </MobileMenu>
+      <MobileMenu handleMobileMenuClose={handleMobileMenuClose}> </MobileMenu>
     </Popover>
   );
 
@@ -230,7 +229,10 @@ const list = (anchor) => (
           <div>
             {["left"].map((anchor) => (
               <React.Fragment key={anchor}>
-                <Button className={classes.activebutton} onClick={toggleDrawer(anchor, true)}>
+                <Button
+                  className={classes.activebutton}
+                  onClick={toggleDrawer(anchor, true)}
+                >
                   {" "}
                   <MenuIcon className={classes.white} />
                 </Button>
@@ -270,13 +272,12 @@ const list = (anchor) => (
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
+              className={classes.activebutton}
             >
               <MoreIcon />
             </IconButton>
           </div>
         </Toolbar>
-
-        
       </AppBar>
       {renderMobileMenu}
     </div>

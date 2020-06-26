@@ -2,10 +2,9 @@ import React, { Fragment } from "react";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import {NavLink } from "react-router-dom";
-import Profile from "./ProfileIcon";
+import Menu from "./MenuIcon";
 import Notifications from "./Notifications";
 import PostAddIcon from "@material-ui/icons/PostAdd";
-//import classes from "../../index.css";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -51,7 +50,7 @@ function Iconsbar(props){
 
       <Notifications> </Notifications>
 
-      <Profile> </Profile>
+      <Menu> </Menu>
     </Fragment>
   ) : (
     <Fragment>
