@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Recipe from "../../components/RecipeCard/RecipeCard";
+import Recipe from "../../components/Recipe/RecipeCard";
 import classes from "./Home.module.css";
 import Skeleton from "../../components/Skeleton/RecipeSkeleton";
 import Featuredposts from "../../components/Featured posts/Featuredposts";

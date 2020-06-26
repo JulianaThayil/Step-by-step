@@ -1,27 +1,24 @@
 .viewrecipepaper {
   padding-right: 4vw;
   padding-left: 4vw;
- background-color: white;
-  border-radius: 10px;
+  background-color: white;
   margin-left: 8vw;
   margin-right: 8vw;
   margin-top: 7vh;
 }
-.recipeimage{
-max-width: 70vw;
+.recipeimage {
+  max-width: 70vw;
 }
-.image{
+.image {
   margin-top: 50px;
 }
 .mainhead {
-
   padding-left: 2vw;
 }
 .maintext {
   font-size: 4vh;
   font-family: serif;
   font-weight: normal;
-
 }
 .textbold {
   font-weight: 2vh;
@@ -44,7 +41,6 @@ max-width: 70vw;
   max-height: 100%;
 }
 .paperimg {
-
   background-color: transparent;
   width: 100vw;
 }
@@ -64,29 +60,7 @@ max-width: 70vw;
 .instructionstext {
   margin: 2px;
 }
-.serves {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-image: url(https://i.pinimg.com/originals/42/93/05/429305229f4b907a56b8a24a448830ed.png);
-  background-size: cover;
-}
-.clock {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-image: url(https://i.pinimg.com/originals/9e/61/94/9e6194efb6504088e99058280e76d125.png);
-  background-size: cover;
-}
-.level {
-  margin-left: 3px;
-  border-style: solid;
-  width: 37px;
-  height: 37px;
-  border-radius: 50%;
-  background-image: url(https://static.thenounproject.com/png/53631-200.png);
-  background-size: contain;
-}
+
 .head {
   background-color: black;
   color: white;
@@ -103,24 +77,8 @@ max-width: 70vw;
   padding: 2px;
 }
 @media only screen and (max-width: 768px) {
-  .serves {
-    width: 30px;
-    height: 30px;
-  }
-  .clock {
-    width: 30px;
-    height: 30px;
-  }
-  .level {
-    margin-left: 3px;
-    border-style: solid;
-    width: 27px;
-    height: 27px;
-  }
   .viewrecipepaper {
     padding: 2vw;
-    background-color: white;
-    border-radius: 10px;
     margin-left: 1vw;
     margin-right: 1vw;
   }
@@ -135,7 +93,7 @@ max-width: 70vw;
   .imageg {
     width: 100vw;
     height: 35vh;
- 
+
     margin: auto;
     display: block;
     max-width: 100%;
@@ -151,7 +109,6 @@ max-width: 70vw;
     width: 100%;
   }
   .paperimg {
-   
     background-color: transparent;
     width: 100vw;
     height: 40vh;
@@ -201,5 +158,5 @@ max-width: 70vw;
   .image {
     padding-top: 0px;
     padding-bottom: 0px;
-    }
+  }
 }

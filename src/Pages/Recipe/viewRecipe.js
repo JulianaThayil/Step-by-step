@@ -8,7 +8,6 @@ import ShareButtons from "../../util/ShareButtons";
 import MyButton from "../../util/MyButton";
 import Comments from "../../util/Comments";
 import CommentForm from "../../util/CommentForm";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Ingredient from "./Ingredient";
 import Instruction from "./Instructions";
 
@@ -24,10 +23,11 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import ButtonBase from "@material-ui/core/ButtonBase";
 //icons
 import ChatIcon from "@material-ui/icons/Chat";
-
+import RoomServiceIcon from "@material-ui/icons/RoomService";
+import TimerIcon from "@material-ui/icons/Timer";
+import RestaurantIcon from "@material-ui/icons/Restaurant";
 //redux
 import { connect } from "react-redux";
 import { getRecipe } from "../../redux/actions/dataActions";
@@ -141,6 +141,7 @@ class viewRecipe extends Component {
               <Typography variant="body2" align="center" color="textSecondary">
                 {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
               </Typography>
+              <Typography variant="body2">{vegnonveg}</Typography>
               <br />
               <ShareButtons
                 quote={body}
@@ -176,41 +177,40 @@ class viewRecipe extends Component {
                   </Typography>
                 </Grid>
               </Grid>
+
+              
               <br />
-              <div style={{ paddingRight: "20vw" }}>
-                <Typography align="left" color="inherit">
-                  DESCRIPTION{" "}
-                </Typography>
-                <Typography align="left" paragraph="true">
-                  {body}
-                </Typography>
-              </div>
-              <div className={classes.detail}>
-                <Grid container>
-                  <Grid item xs>
-                    {" "}
-                    <Typography variant="body2">SERVES :{serves}</Typography>
-                  </Grid>
-                  <Grid item xs>
-                    <Typography variant="body2">
-                      PREPARATION TIME : {preparationTime}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs>
-                    <Typography variant="body2">
-                      COOK TIME : {cookingTime}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs>
-                    <Typography variant="body2">
-                      DIFFICULTY LEVEL: {difficultyLevel}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography variant="body2">{vegnonveg}</Typography>
-                  </Grid>
+              
+              <Typography align="left" color="inherit">
+                DESCRIPTION{" "}
+              </Typography>
+              <Typography align="left" paragraph="true">
+                {body}
+              </Typography>
+              <Grid container>
+                <Grid item xs>
+                  <RoomServiceIcon />
+                  <Typography variant="body2">SERVES :{serves}</Typography>
                 </Grid>
-              </div>
+                <Grid item xs>
+                  <TimerIcon />
+                  <Typography variant="body2">
+                    PREPARATION TIME : {preparationTime}
+                  </Typography>
+                </Grid>
+                <Grid item xs>
+                  <TimerIcon />
+                  <Typography variant="body2">
+                    COOK TIME : {cookingTime}
+                  </Typography>
+                </Grid>
+                <Grid item xs>
+                  <RestaurantIcon />
+                  <Typography variant="body2">
+                    DIFFICULTY LEVEL: {difficultyLevel}
+                  </Typography>
+                </Grid>
+              </Grid>
               <br />
               <Grid xs={12} sm container direction="row">
                 <Grid item sm>
@@ -261,10 +261,10 @@ class viewRecipe extends Component {
         <br />
       </div>
     ) : (
-      <div style={{ height:"100vh" }}>
-      <div style={{position: "absolute", top: "50%", left: "50%" }}>
-        <CircularProgress color="secondary"> </CircularProgress>
-      </div>
+      <div style={{ height: "100vh" }}>
+        <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+          <CircularProgress color="secondary"> </CircularProgress>
+        </div>
       </div>
     );
 

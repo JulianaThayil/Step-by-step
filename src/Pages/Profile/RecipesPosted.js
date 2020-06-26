@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Skeleton from "../../components/Skeleton/RecipeSkeleton";
-import MyRecipes from "../../components/RecipeCard/MyRecipes";
+import MyRecipes from "../../components/Recipe/MyRecipes";
 import classes from "../../Pages/Home/Home.module.css";
 
 import { connect } from "react-redux";

@@ -14,7 +14,7 @@ import Register from "./Pages/Register/Register";
 import Profile from "./Pages/Profile/Profile";
 import Notfound from "./notfound";
 import Home from "./Pages/Home/Home";
-import ViewRecipe from "./Pages/Recipe/viewRecipe";
+import ViewRecipe from "./Pages/Recipe/ViewRecipe";
 import Addrecipe from "./Pages/Recipe/AddRecipe";
 import Explore from "./Pages/Explore/Explore";
 import About from "./Pages/About/About";

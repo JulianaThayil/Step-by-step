@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NewRecipe from "../../components/RecipeCard/NewRecipe";
+import NewRecipe from "../../components/Recipe/NewRecipe";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 import classes from "./styles.module.css";
