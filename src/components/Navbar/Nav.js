@@ -104,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   list: {
+    marginTop:'40px',
     width: 250,
   },
   fullList: {
@@ -112,6 +113,11 @@ const useStyles = makeStyles((theme) => ({
   activebutton: {
     "&:focus": {
       outline: "none",
+    },
+  },
+  activelink: {
+    "&:hover": {
+      color: "black",
     },
   },
 }));
@@ -141,7 +147,7 @@ export default function PrimarySearchAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button component={Link} to="/explore">
+        <ListItem className={classes.activelink} button component={Link} to="/explore">
           <ListItemIcon>
             {" "}
             <ExploreIcon />
@@ -149,7 +155,7 @@ export default function PrimarySearchAppBar() {
           <ListItemText primary="Explore" />
         </ListItem>
 
-        <ListItem button component={Link} to="/blog">
+        <ListItem className={classes.activelink} button component={Link} to="/blog">
           <ListItemIcon>
             {" "}
             <ArtTrackIcon />
@@ -157,7 +163,7 @@ export default function PrimarySearchAppBar() {
           <ListItemText primary="Our Blog" />
         </ListItem>
 
-        <ListItem button component={Link} to="/about">
+        <ListItem className={classes.activelink} button component={Link} to="/about">
           <ListItemIcon>
             {" "}
             <InfoIcon />
@@ -167,7 +173,7 @@ export default function PrimarySearchAppBar() {
       </List>
       <Divider />
       <List>
-        <ListItem button component={Link} to="/newsletter">
+        <ListItem className={classes.activelink} button component={Link} to="/newsletter">
           <ListItemIcon>
             {" "}
             <AnnouncementIcon />
@@ -175,7 +181,7 @@ export default function PrimarySearchAppBar() {
           <ListItemText primary="Newsletter" />
         </ListItem>
 
-        <ListItem button component={Link} to="/help">
+        <ListItem className={classes.activelink} button component={Link} to="/help">
           <ListItemIcon>
             {" "}
             <ContactSupportIcon />
@@ -183,7 +189,7 @@ export default function PrimarySearchAppBar() {
           <ListItemText primary="Help" />
         </ListItem>
 
-        <ListItem button component={Link} to="/contact">
+        <ListItem className={classes.activelink} button component={Link} to="/contact">
           <ListItemIcon>
             {" "}
             <CallIcon />

@@ -12,6 +12,12 @@ import { submitComment, clearErrors } from '../redux/actions/dataActions';
 const styles = () => ({
   CommentForm:{
     display:'inline',
+  },
+  button:{
+    marginLeft:'20px'
+  },
+  comment:{
+    width:'90%'
   }
 });
 
@@ -48,25 +54,32 @@ class CommentForm extends Component {
     const errors = this.state.errors;
 
     const commentFormMarkup = authenticated ? (
-      <Grid item sm={12} >
+      <Grid item  >
         <form onSubmit={this.handleSubmit} className={classes.CommentForm}>
          
-          <TextField
+        <TextField
+            id="outlined-multiline-flexible"
+            lable="Comment"
+            multiline
+            fullWidth
+            placeholder="Post a review"
+            variant="outlined"
             name="body"
             type="text"
-            label=" Add a Review"
             error={errors.comment ? true : false}
             helperText={errors.comment}
             value={this.state.body}
             onChange={this.handleChange}
-            
+            className={classes.comment}
           />
+          <br/>
           <Button style={{ marginTop:'1%'}}
             type="submit"
             variant="contained"
             color="secondary"
+            className={classes.button}
           >
-            Submit Review
+            Submit
           </Button>
           
         </form>

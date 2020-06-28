@@ -67,6 +67,8 @@ class App extends Component {
               <Route exact path="/:handle" component={Profile} />
 
               <Route exact path="/:handle/:recipeId" component={ViewRecipe}/>
+              <Route exact path="/:handle/contact" component={Contact}/>
+              <Route exact path="/:handle/about" component={About}/>
          
 
               <Route component={Notfound} />

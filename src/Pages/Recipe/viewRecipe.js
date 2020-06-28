@@ -120,9 +120,9 @@ class viewRecipe extends Component {
     let recipesMarkup = !loading ? (
       <div>
         <br />
-          <Paper className={classes.viewrecipepaper}>
-            <br />
-            <div align="center"> 
+        <Paper className={classes.viewrecipepaper}>
+          <br />
+          <div align="center">
             <Typography variant="h4" align="center" color="secondary">
               {title} <LikeButton recipeId={recipeId} />
             </Typography>
@@ -139,7 +139,6 @@ class viewRecipe extends Component {
             <Typography variant="body2" align="center" color="textSecondary">
               {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
             </Typography>
-           
             <br />
             <ShareButtons
               quote={body}
@@ -149,7 +148,6 @@ class viewRecipe extends Component {
             />
             <br />
             <Container>
-              
               <picture>
                 <img
                   align="center"
@@ -161,14 +159,14 @@ class viewRecipe extends Component {
               </picture>
             </Container>
             <Grid container justify="center">
-              <Grid item >
+              <Grid item>
                 <Typography variant="body2">
                   {" "}
                   <LikeButton recipeId={recipeId} />
                   {likeCount} LIKES
                 </Typography>
               </Grid>
-              <Grid item >
+              <Grid item>
                 <Typography variant="body2">
                   <MyButton tip="Reviews">
                     <ChatIcon color="Primary" />
@@ -178,7 +176,10 @@ class viewRecipe extends Component {
               </Grid>
             </Grid>
             <br />
-            <Typography align="left" variant="body2">{vegnonveg}</Typography>
+            <Typography align="left" variant="body2">
+              {vegnonveg}
+            </Typography>
+            <br />
             <Typography align="left" color="inherit">
               DESCRIPTION{" "}
             </Typography>
@@ -209,52 +210,48 @@ class viewRecipe extends Component {
                 </Typography>
               </Grid>
             </Grid>
-            </div>
-            <br />
-            <Grid xs={12} sm container direction="row">
-              <Grid item sm>
-                <div className={classes.ingredients}>
-                  <TableContainer component={Paper}>
-                    <Table size="small" aria-label="a dense table">
-                      <TableHead className={classes.head}>
-                        <TableRow>
-                          <TableCell style={{ color: "white" }}>
-                            <h7 className={classes.textstyle}>INGREDIENT</h7>
-                          </TableCell>
-                          <TableCell style={{ color: "white" }}>
-                            <h7 className={classes.textstyle}>QUANTITY</h7>
-                          </TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>{ingredientsMarkup}</TableBody>
-                    </Table>
-                  </TableContainer>
-                </div>
-              </Grid>
-              <Grid item sm>
-                <div className={classes.instructions}>
-                  <Typography variant="h5" align="center">
-                    <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
-                  </Typography>
-                  <p className={classes.textstyle}> {instructionsMarkup} </p>
-                </div>
-              </Grid>
+          </div>
+          <br />
+          <Grid xs={12} sm container direction="row">
+            <Grid item sm>
+              <div className={classes.ingredients}>
+                <TableContainer component={Paper}>
+                  <Table size="small" aria-label="a dense table">
+                    <TableHead className={classes.head}>
+                      <TableRow>
+                        <TableCell style={{ color: "white" }}>
+                          <h7 className={classes.textstyle}>INGREDIENT</h7>
+                        </TableCell>
+                        <TableCell style={{ color: "white" }}>
+                          <h7 className={classes.textstyle}>QUANTITY</h7>
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>{ingredientsMarkup}</TableBody>
+                  </Table>
+                </TableContainer>
+              </div>
             </Grid>
-           
-            <div>
-              <Typography color="textSecondary" variant="h6">
-                {commentCount} Reviews{" "}
-              </Typography>
+            <Grid item sm>
+              <div className={classes.instructions}>
+                <Typography variant="h5" align="center">
+                  <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
+                </Typography>
+                <p className={classes.textstyle}> {instructionsMarkup} </p>
+              </div>
+            </Grid>
+          </Grid>
+          <br />
+          <br />
 
-              {loginsignup}
-              <br />
+          <Typography variant="h5">Reviews </Typography>
 
-              <CommentForm recipeId={recipeId} />
-              {comments && <Comments comments={comments} />}
-            </div>
-          </Paper>
-  
-   
+          {loginsignup}
+          <br />
+
+          <CommentForm recipeId={recipeId} />
+          {comments && <Comments comments={comments} />}
+        </Paper>
       </div>
     ) : (
       <div style={{ height: "100vh" }}>

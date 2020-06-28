@@ -12,13 +12,14 @@ const styles = () => ({
     maxWidth: '100%',
     marginLeft:'10%',
     height: '8vh',
+    paddingRight:'1vw',
     width:'8vh',
     objectFit: 'cover',
     borderRadius: '50%'
   },
   commentData: {
-    width:'100%',
-    marginLeft: '15%'
+   width:'70vw'
+ 
   }
 });
 
@@ -26,23 +27,24 @@ class Comments extends Component {
   render() {
     const { comments, classes } = this.props;
     return (
-      <Grid container>
+      <Grid container xs={12} direction="column">
         {comments.map((comment, index) => {
           const { body, createdAt, userImage, userHandle } = comment;
           return (
             <Fragment key={createdAt}  >
-              <Grid item sm={10} style={{backgroundColor:'white'}}>
+              <Grid item  style={{backgroundColor:'white'}}>
                 <Grid container>
-                  <Grid item sm={1}>
+                  <Grid item>
                     <img
                       src={userImage}
                       alt="comment"
                       className={classes.commentImage}
                     />
                   </Grid>
-                  <Grid >
+                  <Grid xs={10} item>
                     <div className={classes.commentData}>
                       <Typography
+                      color="secondary"
                         variant="textSecondary"
                         component={Link}
                         to={`/${userHandle}`}                       
@@ -53,7 +55,7 @@ class Comments extends Component {
                         {dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}
                       </Typography>
                   
-                      <Typography variabnt="body1">{body}</Typography>
+                      <Typography paragraph="true" variant="body1">{body}</Typography>
                     </div>
                     <hr /> 
                   </Grid>

@@ -66,11 +66,7 @@ export default function SingleLineGridList() {
                 root: classes.titleBar,
                 title: classes.title,
               }}
-              actionIcon={
-                <IconButton aria-label={`star ${tile.title}`}>
-                  <FavoriteBorderIcon className={classes.title} />
-                </IconButton>
-              }
+              
             />
           </GridListTile>
         ))}
