@@ -120,131 +120,127 @@ class viewRecipe extends Component {
     let recipesMarkup = !loading ? (
       <div>
         <br />
-
-        <div>
           <Paper className={classes.viewrecipepaper}>
-            <div align="center">
-              <br />
-              <Typography variant="h4" align="center" color="secondary">
-                {title} <LikeButton recipeId={recipeId} />
-              </Typography>
-              by:{` `}
-              <Typography
-                variant="body1"
-                align="center"
-                component={Link}
-                color="primary"
-                to={`/${userHandle}`}
-              >
-                @{userHandle}
-              </Typography>
-              <Typography variant="body2" align="center" color="textSecondary">
-                {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
-              </Typography>
-              <Typography variant="body2">{vegnonveg}</Typography>
-              <br />
-              <ShareButtons
-                quote={body}
-                subject={title}
-                url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`}
-                pictureUrl={pictureUrl}
-              />
-              <br />
-              <Container>
-                <picture>
-                  <img
-                    className={classes.recipeimage}
-                    alt="image"
-                    src={pictureUrl}
-                    srcset={pictureUrl}
-                  />
-                </picture>
-              </Container>
-              <Grid container justify="center">
-                <Grid item xs={2}>
-                  <Typography variant="body2">
-                    {" "}
-                    <LikeButton recipeId={recipeId} />
-                    {likeCount} LIKES
-                  </Typography>
-                </Grid>
-                <Grid item xs={2}>
-                  <Typography variant="body2">
-                    <MyButton tip="Reviews">
-                      <ChatIcon color="Primary" />
-                    </MyButton>
-                    {commentCount} REVIEWS
-                  </Typography>
-                </Grid>
-              </Grid>
-
+            <br />
+            <div align="center"> 
+            <Typography variant="h4" align="center" color="secondary">
+              {title} <LikeButton recipeId={recipeId} />
+            </Typography>
+            by:{` `}
+            <Typography
+              variant="body1"
+              align="center"
+              component={Link}
+              color="primary"
+              to={`/${userHandle}`}
+            >
+              @{userHandle}
+            </Typography>
+            <Typography variant="body2" align="center" color="textSecondary">
+              {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
+            </Typography>
+           
+            <br />
+            <ShareButtons
+              quote={body}
+              subject={title}
+              url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`}
+              pictureUrl={pictureUrl}
+            />
+            <br />
+            <Container>
               
-              <br />
-              
-              <Typography align="left" color="inherit">
-                DESCRIPTION{" "}
-              </Typography>
-              <Typography align="left" paragraph="true">
-                {body}
-              </Typography>
-              <Grid container>
-                <Grid item xs>
-                  <RoomServiceIcon />
-                  <Typography variant="body2">SERVES :{serves}</Typography>
-                </Grid>
-                <Grid item xs>
-                  <TimerIcon />
-                  <Typography variant="body2">
-                    PREPARATION TIME : {preparationTime}
-                  </Typography>
-                </Grid>
-                <Grid item xs>
-                  <TimerIcon />
-                  <Typography variant="body2">
-                    COOK TIME : {cookingTime}
-                  </Typography>
-                </Grid>
-                <Grid item xs>
-                  <RestaurantIcon />
-                  <Typography variant="body2">
-                    DIFFICULTY LEVEL: {difficultyLevel}
-                  </Typography>
-                </Grid>
+              <picture>
+                <img
+                  align="center"
+                  className={classes.recipeimage}
+                  alt="image"
+                  src={pictureUrl}
+                  srcset={pictureUrl}
+                />
+              </picture>
+            </Container>
+            <Grid container justify="center">
+              <Grid item >
+                <Typography variant="body2">
+                  {" "}
+                  <LikeButton recipeId={recipeId} />
+                  {likeCount} LIKES
+                </Typography>
               </Grid>
-              <br />
-              <Grid xs={12} sm container direction="row">
-                <Grid item sm>
-                  <div className={classes.ingredients}>
-                    <TableContainer component={Paper}>
-                      <Table size="small" aria-label="a dense table">
-                        <TableHead className={classes.head}>
-                          <TableRow>
-                            <TableCell style={{ color: "white" }}>
-                              <h7 className={classes.textstyle}>INGREDIENT</h7>
-                            </TableCell>
-                            <TableCell style={{ color: "white" }}>
-                              <h7 className={classes.textstyle}>QUANTITY</h7>
-                            </TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>{ingredientsMarkup}</TableBody>
-                      </Table>
-                    </TableContainer>
-                  </div>
-                </Grid>
-                <Grid item sm>
-                  <div className={classes.instructions}>
-                    <Typography variant="h5" align="center">
-                      <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
-                    </Typography>
-                    <p className={classes.textstyle}> {instructionsMarkup} </p>
-                  </div>
-                </Grid>
+              <Grid item >
+                <Typography variant="body2">
+                  <MyButton tip="Reviews">
+                    <ChatIcon color="Primary" />
+                  </MyButton>
+                  {commentCount} REVIEWS
+                </Typography>
               </Grid>
+            </Grid>
+            <br />
+            <Typography align="left" variant="body2">{vegnonveg}</Typography>
+            <Typography align="left" color="inherit">
+              DESCRIPTION{" "}
+            </Typography>
+            <Typography align="left" paragraph="true">
+              {body}
+            </Typography>
+            <Grid container>
+              <Grid item xs>
+                <RoomServiceIcon />
+                <Typography variant="body2">SERVES :{serves}</Typography>
+              </Grid>
+              <Grid item xs>
+                <TimerIcon />
+                <Typography variant="body2">
+                  PREPARATION TIME : {preparationTime}
+                </Typography>
+              </Grid>
+              <Grid item xs>
+                <TimerIcon />
+                <Typography variant="body2">
+                  COOK TIME : {cookingTime}
+                </Typography>
+              </Grid>
+              <Grid item xs>
+                <RestaurantIcon />
+                <Typography variant="body2">
+                  DIFFICULTY LEVEL: {difficultyLevel}
+                </Typography>
+              </Grid>
+            </Grid>
             </div>
-
             <br />
-            <br />
+            <Grid xs={12} sm container direction="row">
+              <Grid item sm>
+                <div className={classes.ingredients}>
+                  <TableContainer component={Paper}>
+                    <Table size="small" aria-label="a dense table">
+                      <TableHead className={classes.head}>
+                        <TableRow>
+                          <TableCell style={{ color: "white" }}>
+                            <h7 className={classes.textstyle}>INGREDIENT</h7>
+                          </TableCell>
+                          <TableCell style={{ color: "white" }}>
+                            <h7 className={classes.textstyle}>QUANTITY</h7>
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>{ingredientsMarkup}</TableBody>
+                    </Table>
+                  </TableContainer>
+                </div>
+              </Grid>
+              <Grid item sm>
+                <div className={classes.instructions}>
+                  <Typography variant="h5" align="center">
+                    <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
+                  </Typography>
+                  <p className={classes.textstyle}> {instructionsMarkup} </p>
+                </div>
+              </Grid>
+            </Grid>
+           
             <div>
               <Typography color="textSecondary" variant="h6">
                 {commentCount} Reviews{" "}
@@ -257,8 +253,8 @@ class viewRecipe extends Component {
               {comments && <Comments comments={comments} />}
             </div>
           </Paper>
-        </div>
-        <br />
+  
+   
       </div>
     ) : (
       <div style={{ height: "100vh" }}>
