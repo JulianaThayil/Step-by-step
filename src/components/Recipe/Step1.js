@@ -23,6 +23,7 @@ const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
       <div className={classes.image} >
         <PhotoCamera />
         <input
+          required
           name="image"
           accept="image/*"
           className={classes.ip}
@@ -32,7 +33,7 @@ const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
         />
       </div>
       <br />
-
+      
       <TextField
         name="title"
         required
@@ -42,6 +43,7 @@ const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
         fullWidth
         onChange={handlechange}
       />
+
       <br />
       <br />
 
@@ -85,7 +87,7 @@ const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
         </div>
 
         <div className={classes.recipedetails}>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="age-native-simple">
               Difficulty-Level
             </InputLabel>

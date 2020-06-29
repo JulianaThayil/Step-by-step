@@ -24,6 +24,8 @@ import Typography from "@material-ui/core/Typography";
 //Mui
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+
+
 const useStyles = makeStyles((theme) => ({
 
   root: {
@@ -57,8 +59,23 @@ function NewRecipe(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
- 
+
+   //details
+   const [detailsState, setDetailsState] = useState({
+    title: "",
+    preparationTime: "",
+    cookingTime: "",
+    serves: "",
+    difficultyLevel: "Intermediate",
+    body: "",
+    type: "nonveg",
+    image: null,
+  });
+
   const handleNext = () => {
+    if(detailsState.image==null){
+      return;
+    }
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     window.scrollTo(0, 0);
   };
@@ -98,19 +115,6 @@ function NewRecipe(props) {
         return "Unknown stepIndex";
     }
   };
-
-  //details
-  const [detailsState, setDetailsState] = useState({
-    title: "",
-    preparationTime: "",
-    cookingTime: "",
-    serves: "",
-    difficultyLevel: "Intermediate",
-    body: "",
-    type: "nonveg",
-    image: null,
-    errors: {},
-  });
 
   const handlechange = (e) => {
     e.preventDefault();
@@ -225,6 +229,7 @@ function NewRecipe(props) {
             <CircularProgress> </CircularProgress>
           </div>
         ) : (
+
           <div>
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}

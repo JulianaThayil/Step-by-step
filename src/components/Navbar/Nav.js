@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import Logo from "../../components/Logo/Logo";
 import { Link } from "react-router-dom";
@@ -14,6 +15,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import MobileMenu from "./MobileMenu";
+import Notification from "./Notifications"
 import Button from "@material-ui/core/Button";
 
 import Drawer from "@material-ui/core/Drawer";
@@ -32,6 +34,8 @@ import InfoIcon from "@material-ui/icons/Info";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import CallIcon from "@material-ui/icons/Call";
+
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   activebutton: {
@@ -122,12 +126,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-export default function PrimarySearchAppBar() {
+function PrimarySearchAppBar(props) {
   const classes = useStyles();
   //drawer
   const [state, setState] = React.useState({
     left: false,
   });
+  const {
+    user: { authenticated, loading },
+  } = props;
+
+  const mobilenotification =authenticated ? (
+    <div style={{marginTop:'10px'}}> 
+    <Notification> </Notification>
+    </div>
+  ):null;
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -281,6 +294,7 @@ export default function PrimarySearchAppBar() {
             <Icons> </Icons>
           </div>
           <div className={classes.sectionMobile}>
+            {mobilenotification}
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -298,3 +312,12 @@ export default function PrimarySearchAppBar() {
     </div>
   );
 }
+PrimarySearchAppBar.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(PrimarySearchAppBar);
