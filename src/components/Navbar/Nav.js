@@ -25,6 +25,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 //icons
 import Icons from "./Iconsbar";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import HomeIcon from '@material-ui/icons/Home';
 import ExploreIcon from "@material-ui/icons/Explore";
 import ArtTrackIcon from "@material-ui/icons/ArtTrack";
 import InfoIcon from "@material-ui/icons/Info";
@@ -147,6 +148,14 @@ export default function PrimarySearchAppBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+      <ListItem className={classes.activelink} button component={Link} to="/">
+          <ListItemIcon>
+            {" "}
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+
         <ListItem className={classes.activelink} button component={Link} to="/explore">
           <ListItemIcon>
             {" "}

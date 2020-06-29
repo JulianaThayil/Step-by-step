@@ -57,13 +57,15 @@ function NewRecipe(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
-
+ 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    window.scrollTo(0, 0);
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    window.scrollTo(0, 0);
   };
 
   const getStepContent = (stepIndex) => {
@@ -165,10 +167,12 @@ function NewRecipe(props) {
   const handleSubmit = (event) => {
     event.preventDefault(); //to prevent auto reload
     setActiveStep(3);
+    window.scrollTo(0, 0);
+   
+  
+    const imagefilename=new Date().toISOString() + detailsState.image.name;
 
-    const { image } = detailsState.image;
-
-    const uploadTask = storage.ref(`recipes/${image.name}`).put(image);
+    const uploadTask = storage.ref(`recipes/${imagefilename}`).put(detailsState.image);
     uploadTask.on(
       "state_changed",
       (snapshot) => {},
@@ -180,7 +184,7 @@ function NewRecipe(props) {
         // complete function ....
         storage
           .ref("recipes")
-          .child(image.name)
+          .child(imagefilename)
           .getDownloadURL()
           .then((url) => {
             url = url + "?alt=media";
@@ -191,8 +195,8 @@ function NewRecipe(props) {
               serves: detailsState.serves,
               difficultyLevel: detailsState.difficultyLevel,
               body: detailsState.body,
-              ingredients: detailsState.ingredients,
-              instructions: detailsState.instructions,
+              ingredients: ingredientState,
+              instructions: instructionState,
               type: detailsState.type,
               pictureUrl: url,
             };

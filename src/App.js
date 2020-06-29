@@ -1,4 +1,5 @@
 import React, { Component} from "react";
+import ScrollToTop from "react-router-scroll-top";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as jwtDecode from "jwt-decode";
 
@@ -54,8 +55,10 @@ class App extends Component {
         
         <Router>
         <Navbar> </Navbar>
+        <ScrollToTop>
 
             <Switch>
+            
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
               <Route exact path="/explore" component={Explore} />
@@ -72,7 +75,9 @@ class App extends Component {
          
 
               <Route component={Notfound} />
+            
             </Switch>
+            </ScrollToTop>
         <Footer> </Footer>
  
         </Router>

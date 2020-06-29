@@ -126,7 +126,7 @@ class viewRecipe extends Component {
             <Typography variant="h4" align="center" color="secondary">
               {title} <LikeButton recipeId={recipeId} />
             </Typography>
-            by:{` `}
+            By:{` `}
             <Typography
               variant="body1"
               align="center"
@@ -235,7 +235,7 @@ class viewRecipe extends Component {
             <Grid item sm>
               <div className={classes.instructions}>
                 <Typography variant="h5" align="center">
-                  <h7 className={classes.textstyle}> INSTRUCTIONS: </h7>
+                  <h7 className={classes.instructionstext}> INSTRUCTIONS: </h7>
                 </Typography>
                 <p className={classes.textstyle}> {instructionsMarkup} </p>
               </div>
