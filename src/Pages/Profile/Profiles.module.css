@@ -1,21 +1,20 @@
 .avatar {
-margin-left: 30px;
+  margin-left: 30px;
   border-radius: 50%;
   width: 150px;
   height: 150px;
   border: 5px solid white;
   margin-top: 15%;
 }
-.editicon{
-margin-top:-9vh;
-margin-left: 7vw;
-background-color: rgb(214, 214, 209);
-border-radius: 100%;
-width: 150px;
-height: 150px;
-border: 3px solid white;
-padding: 3.5px;
-
+.editicon {
+  margin-top: -9vh;
+  margin-left: 7vw;
+  background-color: rgb(214, 214, 209);
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid white;
+  padding: 3.5px;
 }
 .ip {
   display: none;
@@ -41,7 +40,7 @@ padding: 3.5px;
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  margin-bottom:20%;
+  margin-bottom: 20%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -64,16 +63,15 @@ padding: 3.5px;
 .settings {
   margin-top: 50px;
   padding-left: 6%;
-  width:80vw;
+  width: 80vw;
 }
 .details {
   margin-top: 2px;
- text-align: left;
+  text-align: left;
 }
 @media only screen and (max-width: 425px) {
   .mainFeaturedPostContent {
     margin-top: 4%;
-   
   }
   .mainFeaturedPost {
     margin-left: 0%;
@@ -91,27 +89,24 @@ padding: 3.5px;
     border-radius: 50%;
     width: 120px;
     height: 120px;
- margin-left: 30vw;
- margin-top:20vh;
+    margin-left: 30vw;
+    margin-top: 20vh;
   }
   .details {
     text-align: center;
 
     position: relative;
     margin-left: 2vw;
-   margin-right: 2vw;
-    margin-bottom:10vh ;
+    margin-right: 2vw;
+    margin-bottom: 10vh;
   }
   .profile {
     margin-top: 10vh;
-   
   }
-  
 }
 @media only screen and (width: 768px) {
   .mainFeaturedPostContent {
     margin-top: 2%;
-   
   }
   .mainFeaturedPost {
     margin-left: 0%;
@@ -129,22 +124,19 @@ padding: 3.5px;
     border-radius: 50%;
     width: 120px;
     height: 120px;
- margin-left: 2vw;
- margin-top:18vh;
+    margin-left: 2vw;
+    margin-top: 18vh;
   }
   .details {
-   
-
     position: relative;
     margin-left: 2vw;
-   margin-right: 2vw;
-    margin-bottom:10vh ;
+    margin-right: 2vw;
+    margin-bottom: 10vh;
   }
   .profile {
     margin-top: 2vh;
-   
   }
-  .settings{
+  .settings {
     width: 100vw;
   }
 }
