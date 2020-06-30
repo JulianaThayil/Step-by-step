@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 //pages
 import MyProfile from "./MyProfile";
+import StaticProfile from "./StaticProfile";
 
 //redux
 import { connect } from "react-redux";
@@ -32,7 +33,7 @@ function Profile(props) {
     !profileState.isnull && profileState.userHandle === handle ? (
       <MyProfile handle={`${handle}`}> </MyProfile>
     ) : (
-      <MyProfile handle={props.match.params.handle}> </MyProfile>
+      <StaticProfile handle={props.match.params.handle}> </StaticProfile>
     )
   ) : (
     <div style={{ position: "absolute", top: "50%", left: "50%" }}>

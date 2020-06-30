@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import MyDetails from "./MyDetails";
+import MyDetails from "./Details";
 import RecipesPosted from "./RecipesPosted";
 
 import { connect } from "react-redux";
