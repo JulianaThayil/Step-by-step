@@ -59,7 +59,7 @@ class Details extends Component {
                 onClick={this.handleEditPicture}
                 btnClassName="button"
               >
-                <CameraAltIcon color="secondary" fontSize="large" padding="20px" className={classes.editicon}/>
+                <CameraAltIcon color="secondary" className={classes.editicon}/>
               </MyButton>
              
               
