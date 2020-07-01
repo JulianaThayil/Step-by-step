@@ -20,6 +20,8 @@ import Addrecipe from "./Pages/Recipe/AddRecipe";
 import Explore from "./Pages/Explore/Explore";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import Newsletter from "./Pages/Newsletter/Newsletter";
+
 
 //component
 import Navbar from "./components/Navbar/Nav";
@@ -67,6 +69,7 @@ class App extends Component {
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/newsletter" component={Newsletter} />
               <Route exact path="/:handle" component={Profile} />
 
               <Route exact path="/:handle/:recipeId" component={ViewRecipe}/>

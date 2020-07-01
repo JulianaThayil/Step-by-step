@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
-    paddingTop:'5vw',
+    paddingTop:'7vw',
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
