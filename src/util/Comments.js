@@ -45,7 +45,6 @@ class Comments extends Component {
                     <div className={classes.commentData}>
                       <Typography
                       color="secondary"
-                        variant="textSecondary"
                         component={Link}
                         to={`/${userHandle}`}                       
                       >

@@ -14,8 +14,8 @@
   width: 40px;
   height: 40px;
   border: 3px solid white;
-  padding: 3.5px;
 }
+
 .ip {
   display: none;
 }
@@ -69,7 +69,7 @@
   margin-top: 2px;
   text-align: left;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 631px) {
   .mainFeaturedPostContent {
     margin-top: 4%;
   }
@@ -77,7 +77,7 @@
     margin-left: 0%;
     margin-right: 0%;
     position: relative;
-    margin-bottom: 90%;
+    margin-bottom: 60vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -94,11 +94,9 @@
   }
   .details {
     text-align: center;
-
     position: relative;
     margin-left: 2vw;
     margin-right: 2vw;
-    margin-bottom: 10vh;
   }
   .profile {
     margin-top: 10vh;
@@ -131,7 +129,6 @@
     position: relative;
     margin-left: 2vw;
     margin-right: 2vw;
-    margin-bottom: 10vh;
   }
   .profile {
     margin-top: 2vh;

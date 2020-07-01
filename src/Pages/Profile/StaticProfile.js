@@ -1,82 +1,73 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import classes from "./Profiles.module.css";
 
 import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import LocationOn from "@material-ui/icons/LocationOn";
 import RecipesPosted from "./RecipesPosted";
-import InfoIcon from '@material-ui/icons/Info';
+import InfoIcon from "@material-ui/icons/Info";
+
+//Redux
 import { connect } from "react-redux";
 import { getUserData } from "../../redux/actions/dataActions";
 
-class StaticProfile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      profile: {},
-    };
-  }
-  componentDidMount() {
-    const handle = this.props.handle;
-    this.props.getUserData(handle);
+function StaticProfile(props) {
+  const [profileState, setProfileSate] = useState({
+    profile: {},
+  });
+
+  useEffect(() => {
+    const handle = props.handle;
+    props.getUserData(handle);
     axios
       .get(`/user/${handle}`)
       .then((res) => {
-        this.setState({
+        setProfileSate({
           profile: res.data.user,
         });
       })
       .catch((err) => console.log(err));
-  }
+  }, []);
 
-  render() {
-    const { profile } = this.state;
+  return (
+    <Fragment>
+      <Paper
+        style={{
+          backgroundImage:
+            "url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)",
+        }}
+        className={classes.mainFeaturedPost}
+      >
+        {<img style={{ display: "none" }} />}
+        <div className={classes.overlay} />
 
-    return (
-      <Fragment>
-        <Paper
-          style={{
-            backgroundImage:
-              "url(https://firebasestorage.googleapis.com/v0/b/step-by-step-96e75.appspot.com/o/cover.jpg?alt=media)",
-          }}
-          className={classes.mainFeaturedPost}
-        >
-          {<img style={{ display: "none" }} />}
-          <div className={classes.overlay} />
-         
-              <div className={classes.mainFeaturedPostContent}>
-                <img className={classes.avatar} src={profile.imageUrl} />
-                <div className={classes.details}>
-             
-                
-          
-                <Typography variant="h5" >{profile.handle} </Typography>
-                <br/>
-                {profile.bio && (
-                <Typography variant="h7">
-                 <InfoIcon color="secondary"/><span>{profile.bio}</span>
-                 </Typography>
-                )}
-                <br/>
-                <br/>
-                {profile.location &&(
-                  <Typography variant="h7" >
-                    <LocationOn color="secondary" /> <span>{" "} {profile.location}</span>
-                  </Typography>
-                )}
-            
-            </div>
-              </div>
-          
-        </Paper>
-        <br />
-        <RecipesPosted> </RecipesPosted>
-      </Fragment>
-    );
-  }
+        <div className={classes.mainFeaturedPostContent}>
+          <img className={classes.avatar} src={profileState.profile.imageUrl} />
+          <div className={classes.details}>
+            <Typography variant="h5">{profileState.profile.handle} </Typography>
+            <br />
+            {profileState.profile.bio && (
+              <Typography >
+                <InfoIcon color="secondary" />
+                <span>{profileState.profile.bio}</span>
+              </Typography>
+            )}
+            <br />
+            {profileState.profile.location && (
+              <Typography >
+                <LocationOn color="secondary" />{" "}
+                <span> {profileState.profile.location}</span>
+              </Typography>
+            )}
+          </div>
+        </div>
+      </Paper>
+      <br />
+      <RecipesPosted> </RecipesPosted>
+    </Fragment>
+  );
 }
 
 StaticProfile.propTypes = {

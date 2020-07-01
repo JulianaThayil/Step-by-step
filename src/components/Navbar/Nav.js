@@ -133,7 +133,7 @@ function PrimarySearchAppBar(props) {
     left: false,
   });
   const {
-    user: { authenticated, loading },
+    user: { authenticated },
   } = props;
 
   const mobilenotification =authenticated ? (

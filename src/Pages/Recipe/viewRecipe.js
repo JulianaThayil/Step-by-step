@@ -154,7 +154,7 @@ class viewRecipe extends Component {
                   className={classes.recipeimage}
                   alt="image"
                   src={pictureUrl}
-                  srcset={pictureUrl}
+                  srcSet={pictureUrl}
                 />
               </picture>
             </Container>

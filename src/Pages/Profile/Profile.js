@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 //pages
 import MyProfile from "./MyProfile";
@@ -11,6 +12,7 @@ import { connect } from "react-redux";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 function Profile(props) {
+  const location = useLocation();
   const [profileState, setProfileState] = useState({
     userHandle: "",
     isnull: true,
@@ -19,34 +21,35 @@ function Profile(props) {
   useEffect(() => {
     const userHandle = props.match.params.handle;
     setProfileState({ userHandle: userHandle, isnull: false });
-    console.log("Hi");
-  }, []);
+  }, [location]);
 
   const {
     user: {
+      loading,
       credentials: { handle },
     },
-    UI: { loading },
   } = props;
 
-  const profileMarkup = !loading ? (
-    !profileState.isnull && profileState.userHandle === handle ? (
-      <MyProfile handle={`${handle}`}> </MyProfile>
+  const profileMarkup =
+    !loading && !profileState.isnull ? (
+      profileState.userHandle === handle ? (
+        <MyProfile handle={`${handle}`}> </MyProfile>
+      ) : (
+        <StaticProfile handle={props.match.params.handle}> </StaticProfile>
+      )
     ) : (
-      <StaticProfile handle={props.match.params.handle}> </StaticProfile>
-    )
-  ) : (
-    <div style={{ position: "absolute", top: "50%", left: "50%" }}>
-      <CircularProgress color="secondary"> </CircularProgress>
-    </div>
-  );
+      <div style={{ height: "100vh" }}>
+        <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+          <CircularProgress color="secondary"> </CircularProgress>
+        </div>
+      </div>
+    );
 
   return <div>{profileMarkup}</div>;
 }
 
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
-  userHandle: PropTypes.string.isRequired,
   UI: PropTypes.object.isRequired,
 };
 

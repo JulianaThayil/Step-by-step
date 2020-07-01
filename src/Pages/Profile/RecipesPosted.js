@@ -1,54 +1,47 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Skeleton from "../../components/Skeleton/RecipeSkeleton";
 import MyRecipes from "../../components/Recipe/MyRecipes";
 import classes from "../../Pages/Home/Home.module.css";
 
 import { connect } from "react-redux";
-import { getUserData } from "../../redux/actions/dataActions";
 
-class RecipesPosted extends Component {
-  state = {
-    profile: null,
+function RecipesPosted(props) {
+
+  const [recipeState, setRecipeState] = useState({
     recipeIdParam: null,
-  };
-  componentDidMount() {
-    const recipeId = this.props.recipeId;
+  });
 
-    if (recipeId) this.setState({ recipeIdParam: recipeId });
-  }
-  render() {
-    const { recipes, loading } = this.props.data;
-    const { recipeIdParam } = this.state;
+  useEffect(() => {
+    const recipeId = props.recipeId;
+    if (recipeId) setRecipeState({ recipeIdParam: recipeId });
+  }, [recipeState]);
 
-    const recipesMarkup = loading ? (
-      <Skeleton />
-    ) : recipes === null ? (
-      <p></p>
-    ) : !recipeIdParam ? (
-      recipes.map((recipe) => (
-        <MyRecipes key={recipe.recipeId} recipe={recipe} />
-      ))
-    ) : (
-      recipes.map((recipe) => {
-        if (recipe.recipeId !== recipeIdParam)
-          return <MyRecipes key={recipe.recipeId} recipe={recipe} />;
-      })
-    );
+  const { recipes, loading } = props.data;
+  const { recipeIdParam } = recipeState;
 
-    return <div className={classes.bg}>{recipesMarkup}</div>;
-  }
+  const recipesMarkup = loading ? (
+    <Skeleton />
+  ) : recipes === null ? (
+    <p>No recipes posted yet</p>
+  ) : !recipeIdParam ? (
+    recipes.map((recipe) => <MyRecipes key={recipe.recipeId} recipe={recipe} />)
+  ) : (
+    recipes.map((recipe) => {
+      if (recipe.recipeId !== recipeIdParam)
+        return <MyRecipes key={recipe.recipeId} recipe={recipe} />;
+    })
+  );
+
+  return <div className={classes.bg}>{recipesMarkup}</div>;
 }
 
 RecipesPosted.propTypes = {
-  handle: PropTypes.string.isRequired,
-  getUserData: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
-  recipeId: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   data: state.data,
 });
 
-export default connect(mapStateToProps, { getUserData })(RecipesPosted);
+export default connect(mapStateToProps)(RecipesPosted);
