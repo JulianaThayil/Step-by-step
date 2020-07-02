@@ -34,6 +34,7 @@ import InfoIcon from "@material-ui/icons/Info";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import CallIcon from "@material-ui/icons/Call";
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 
 import { connect } from "react-redux";
 
@@ -203,12 +204,20 @@ function PrimarySearchAppBar(props) {
           <ListItemText primary="Newsletter" />
         </ListItem>
 
-        <ListItem className={classes.activelink} button component={Link} to="/help">
+        <ListItem className={classes.activelink} button component={Link} to="/faq">
           <ListItemIcon>
             {" "}
             <ContactSupportIcon />
           </ListItemIcon>
           <ListItemText primary="Help" />
+        </ListItem>
+
+        <ListItem className={classes.activelink} button component={Link} to="/faq">
+          <ListItemIcon>
+            {" "}
+            <QuestionAnswerIcon />
+          </ListItemIcon>
+          <ListItemText primary="FAQs" />
         </ListItem>
 
         <ListItem className={classes.activelink} button component={Link} to="/contact">

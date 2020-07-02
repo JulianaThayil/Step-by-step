@@ -20,6 +20,7 @@ import Addrecipe from "./Pages/Recipe/AddRecipe";
 import Explore from "./Pages/Explore/Explore";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import Faq from "./Pages/Faq/Faq";
 import Newsletter from "./Pages/Newsletter/Newsletter";
 
 
@@ -69,7 +70,9 @@ class App extends Component {
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/faq" component={Faq}/>
               <Route exact path="/newsletter" component={Newsletter} />
+              <Route exact path="/blog" component={Notfound} />
               <Route exact path="/:handle" component={Profile} />
 
               <Route exact path="/:handle/:recipeId" component={ViewRecipe}/>
