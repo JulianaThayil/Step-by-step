@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import classes from "./styles.module.css";
 import { Link } from "react-router-dom";
@@ -261,7 +262,15 @@ class viewRecipe extends Component {
       </div>
     );
 
-    return <div> {recipesMarkup}</div>;
+    return (
+      <div>
+        <Helmet>
+          <meta property="og:image" content={pictureUrl}/>
+          <meta name="twitter:image" content={pictureUrl}></meta>
+        </Helmet>
+        {recipesMarkup}
+      </div>
+    );
   }
 }
 

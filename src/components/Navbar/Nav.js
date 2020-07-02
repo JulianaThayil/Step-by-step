@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
   },
   activelink: {
     "&:hover": {
-      color: "black",
+      color: "#f50057",
     },
   },
 }));
