@@ -6,7 +6,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 
 //icons
-import SettingsIcon from "@material-ui/icons/Settings";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import ArtTrackIcon from "@material-ui/icons/ArtTrack"; //feed
 import PersonIcon from "@material-ui/icons/Person";
@@ -84,19 +83,6 @@ function MobileMenu(props) {
           <div className={classes.popover}>
             <PersonIcon />{" "}
             <p style={{ paddingLeft: "10px" }}>Add new Recipe </p>
-          </div>
-        </MenuItem>
-      </NavLink>
-
-      <NavLink
-        onClick={props.handleMobileMenuClose}
-        activeClassName={classes.nav}
-        className={classes.nav}
-        to="/user/settings"
-      >
-        <MenuItem>
-          <div className={classes.popover}>
-            <SettingsIcon /> <p style={{ paddingLeft: "10px" }}> Settings</p>
           </div>
         </MenuItem>
       </NavLink>

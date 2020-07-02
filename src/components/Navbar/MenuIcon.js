@@ -8,7 +8,6 @@ import Popover from "@material-ui/core/Popover";
 import Tooltip from "@material-ui/core/Tooltip";
 
 //icons
-import SettingsIcon from "@material-ui/icons/Settings";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import ArtTrackIcon from "@material-ui/icons/ArtTrack"; //feed
 import PersonIcon from "@material-ui/icons/Person";
@@ -80,14 +79,6 @@ class ProfileIcon extends Component {
           <MenuItem>
             <div className={classes.popover}>
               <PersonIcon /> <p style={{paddingLeft:'10px'}}>Profile </p>
-            </div>
-          </MenuItem>
-          </NavLink>
-
-          <NavLink onClick={this.handleClose} activeClassName={classes.nav} className={classes.nav} to="/user/settings">
-          <MenuItem>
-            <div className={classes.popover}>
-              <SettingsIcon /> <p style={{paddingLeft:'10px'}}> Settings</p>
             </div>
           </MenuItem>
           </NavLink>

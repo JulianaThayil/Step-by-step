@@ -32,8 +32,6 @@ import Footer from "./components/Footer/Footer";
 import AuthRoute from "./util/AuthRoute";
 
 import axios from "axios";
-import Settings from "./Pages/Profile/Settings";
-
 
 axios.defaults.baseURL =
   "https://us-central1-step-by-step-96e75.cloudfunctions.net/api";
@@ -66,7 +64,6 @@ class App extends Component {
               <AuthRoute exact path="/login" component={Login} />
               <Route exact path="/explore" component={Explore} />
               <AuthRoute exact path="/signup" component={Register} />
-              <Route exact path="/user/settings" component={Settings} />
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
