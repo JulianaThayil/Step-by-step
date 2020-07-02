@@ -3,11 +3,13 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import classes from "./Profiles.module.css";
 
+//Mui
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import LocationOn from "@material-ui/icons/LocationOn";
 import RecipesPosted from "./RecipesPosted";
 import InfoIcon from "@material-ui/icons/Info";
+import LinkIcon from '@material-ui/icons/Link';
 
 //Redux
 import { connect } from "react-redux";
@@ -61,6 +63,16 @@ function StaticProfile(props) {
                 <span> {profileState.profile.location}</span>
               </Typography>
             )}
+            <br/>
+            {profileState.profile.website && (
+                <Fragment>
+                  <LinkIcon color="secondary" />
+                  <a href={profileState.profile.website} target="_blank" rel="noopener noreferrer">
+                    {' '}
+                    {profileState.profile.website}
+                  </a>
+                </Fragment>
+              )}
           </div>
         </div>
       </Paper>

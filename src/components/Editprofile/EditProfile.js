@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import withStyles from '@material-ui/core/styles/withStyles';
 import MyButton from '../../util/MyButton';
 // Redux stuff
 import { connect } from 'react-redux';
@@ -15,12 +14,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 // Icons
 import EditIcon from '@material-ui/icons/Edit';
 
-const styles = (theme) => ({
-  ...theme,
-  button: {
-    float: 'right'
-  }
-});
 
 class EditDetails extends Component {
   state = {
@@ -69,7 +62,6 @@ class EditDetails extends Component {
         <MyButton
           tip="Edit Details"
           onClick={this.handleOpen}
-          btnClassName={classes.button}
         >
           <EditIcon color="primary" />
         </MyButton>
@@ -80,8 +72,7 @@ class EditDetails extends Component {
           maxWidth="sm"
         >
           <DialogTitle>Edit your details</DialogTitle>
-          <DialogContent>
-            <form>
+          <DialogContent style={{paddingBottom:'30px'}}>
               <TextField
                 name="bio"
                 tpye="text"
@@ -89,38 +80,38 @@ class EditDetails extends Component {
                 multiline
                 rows="3"
                 placeholder="A short bio about yourself"
-                className={classes.textField}
                 value={this.state.bio}
                 onChange={this.handleChange}
                 fullWidth
+                style={{paddingBottom:'30px'}}
               />
+
               <TextField
                 name="website"
                 tpye="text"
                 label="Website"
                 placeholder="Your personal/professinal website"
-                className={classes.textField}
                 value={this.state.website}
                 onChange={this.handleChange}
                 fullWidth
+                style={{paddingBottom:'30px'}}
               />
+
               <TextField
                 name="location"
                 tpye="text"
                 label="Location"
                 placeholder="Where you live"
-                className={classes.textField}
                 value={this.state.location}
                 onChange={this.handleChange}
                 fullWidth
               />
-            </form>
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.handleSubmit} color="primary">
+            <Button onClick={this.handleSubmit} color="secondary">
               Save
             </Button>
           </DialogActions>
@@ -142,4 +133,4 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   { editUserDetails }
-)(withStyles(styles)(EditDetails));
+)(EditDetails);

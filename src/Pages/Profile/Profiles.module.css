@@ -40,7 +40,7 @@
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
-  margin-bottom: 20%;
+  margin-bottom: 22%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -60,11 +60,6 @@
   margin-top: 8%;
 }
 
-.settings {
-  margin-top: 50px;
-  padding-left: 6%;
-  width: 80vw;
-}
 .details {
   margin-top: 2px;
   text-align: left;
@@ -77,11 +72,10 @@
     margin-left: 0%;
     margin-right: 0%;
     position: relative;
-    margin-bottom: 60vw;
+    margin-bottom: 65vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw;
     height: 30vh;
   }
   .avatar {
@@ -91,6 +85,9 @@
     height: 120px;
     margin-left: 30vw;
     margin-top: 20vh;
+  }
+  .username{
+    margin-left: 20vw;
   }
   .details {
     text-align: center;
@@ -110,7 +107,7 @@
     margin-left: 0%;
     margin-right: 0%;
     position: relative;
-    margin-bottom: 30%;
+    margin-bottom: 60vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

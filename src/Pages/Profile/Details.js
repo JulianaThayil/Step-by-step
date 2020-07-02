@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component,Fragment } from "react";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Grid from '@material-ui/core/Grid';
 import LocationOn from "@material-ui/icons/LocationOn";
+import LinkIcon from '@material-ui/icons/Link';
 import PropTypes from "prop-types";
 import classes from "./Profiles.module.css";
-import EditIcon from "@material-ui/icons/Edit";
+import EditDetails from "../../components/Editprofile/EditProfile";
 import MyButton from "../../util/MyButton";
 import InfoIcon from "@material-ui/icons/Info";
 import CameraAltIcon from "@material-ui/icons/CameraAlt";
@@ -27,7 +29,7 @@ class Details extends Component {
   render() {
     const {
       user: {
-        credentials: { handle, imageUrl, bio, location },
+        credentials: { handle, imageUrl, bio, location,website },
       },
     } = this.props;
 
@@ -60,7 +62,15 @@ class Details extends Component {
               <CameraAltIcon color="secondary" className={classes.editicon} />
             </MyButton>
 
-            <Typography variant="h5">{handle} </Typography>
+            <Grid className={classes.username} alignItems="center" spacing="1" container>
+              <Grid item>
+                <Typography className={classes.username} variant="h5">{handle} </Typography>
+              </Grid>
+              <Grid item>
+                <EditDetails />
+              </Grid>
+            </Grid>
+
             <br />
             {bio && (
               <Typography>
@@ -75,6 +85,17 @@ class Details extends Component {
                 <LocationOn color="secondary" /> <span>{location}</span>
               </Typography>
             )}
+            <br/>
+            {website && (
+                <Fragment>
+                  <LinkIcon color="secondary" />
+                  <a href={website} target="_blank" rel="noopener noreferrer">
+                    {' '}
+                    {website}
+                  </a>
+                </Fragment>
+              )}
+              <br/>
           </div>
         </div>
       </Paper>
