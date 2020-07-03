@@ -1,70 +1,68 @@
-import React from "react";
-import Logo from "../../components/Logo/Logo";
-import classes from "./Explore.module.css";
-import PopularRecipeCard from "../../components/ExploreCards/popularRecipeCard";
+import React, { Fragment } from 'react'
+import classes from './Explore.module.css';
+import Cover from '../../components/Cover/Cover'
+import ExploreCard from '../../components/ExploreCards/ExploreCard'
+import Typography from "@material-ui/core/Typography";
+import { Link } from "react-router-dom";
 
-const explore = () => {
-  return (
-    <div>
-      <div className={classes.subPopular}>
-        <h5 className={classes.heading}>Popular Categories</h5>
-      </div>
+export default function Explore() {
+    const post={
+        image:"/assets/explore2.jpg",
+        text:"Explore"
+    }
+    const courses = [
+        {
+          url: '/assets/starter.jpg',
+          title: 'Starters',
+        },
+        {
+          url: '/assets/maincourse.jpg',
+          title: 'Main Course',
+        },
+        {
+          url: '/assets/dessert.jpg',
+          title: 'Desserts',
+        },
+      ];
 
-      <PopularRecipeCard></PopularRecipeCard>
-
-      <hr className="rounded"></hr>
-
-      <div className={classes.subPopular}>
-        <h5 className={classes.heading}>Browse all Categories</h5>
-      </div>
-
-      <div className={classes.browseCats}>
-        <div className={classes.one}>
-          <div>
-            <img src="/assets/meal.jpg"></img>
-          </div>
-          <div className={classes.tag}>Meal type</div>
-        </div>
-
-        <div className={classes.two}>
-          <div>
-            <img src="/assets/diet.jpg"></img>
-          </div>
-          <div className={classes.tag}>Diet and Health</div>
-        </div>
-
-        <div className={classes.three}>
-          <div>
-            <img src="/assets/dish.jpg"></img>
-          </div>
-          <div className={classes.tag}>Dish Type</div>
-        </div>
-
-        <div className={classes.four}>
-          <div>
-            <img src="/assets/world.jpg"></img>
-          </div>
-          <div className={classes.tag}>World Crusines</div>
-        </div>
-
-        <div className={classes.five}>
-          <div>
-            <img src="/assets/style.jpg"></img>
-          </div>
-          <div className={classes.tag}>Cooking Style</div>
-        </div>
-
-        <div className={classes.six}>
-          <div>
-            <img src="/assets/ingred.jpg"></img>
-          </div>
-          <div className={classes.tag}>Ingredients</div>
-        </div>
-      </div>
-
-      <br />
-    </div>
-  );
-};
-
-export default explore;
+      const cuisines = [
+        {
+          url: '/assets/chinese.jpg',
+          title: 'Chinese',
+        },
+        {
+          url: '/assets/indian.jpg',
+          title: 'Indian',
+        },
+        {
+          url: '/assets/pizza.jpg',
+          title: 'Italian',
+        },
+        {
+            url: '/assets/thai.jpg',
+            title: 'Thai',
+          },
+          {
+            url: '/assets/goan.jpg',
+            title: 'Goan',
+          },
+          {
+            url: '/assets/southindian.jpg',
+            title: 'South Indian',
+          },
+      ];
+    return (
+        <Fragment>
+            <Cover post={post}> </Cover>
+            <div style={{marginLeft:'10vw',marginRight:'10vw'}}>
+              <Typography  className={classes.recent}> Courses</Typography>
+              <ExploreCard courses={courses}> </ExploreCard>
+              <br/>
+              <Typography  className={classes.recent}> Cuisines</Typography>
+              <ExploreCard courses={cuisines}> </ExploreCard>
+              <br/>
+             </div>
+        
+        </Fragment>
+    )
+}

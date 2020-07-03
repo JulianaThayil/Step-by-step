@@ -24,13 +24,13 @@ const Step3 = ({
         let instructionId = `instruction-${idx}`;
         return (
           <div key={`instruction-${idx}`} >
-            <label htmlFor={instructionId}>{`Step #${idx + 1}`}</label>
             <textarea 
             rows="3"
             cols="30"
               type="text"
               name={instructionId}
               data-idx={idx}
+              placeholder={`Step ${idx + 1}`}
               id={instructionId}
               className="step"
               value={instructionState[idx].step}
