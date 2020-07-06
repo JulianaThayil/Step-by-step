@@ -15,7 +15,7 @@ class Home extends Component {
   }
   render() {
     const {
-      user: { loading },
+      UI: { loading },
     } = this.props;
 
     const { recipes } = this.props.data;
@@ -44,14 +44,14 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  user: PropTypes.object.isRequired,
   getRecipes: PropTypes.func.isRequired,
   data: PropTypes.object.isRequired,
+  UI: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   data: state.data,
-  user: state.user,
+  UI: state.UI,
 });
 
 export default connect(mapStateToProps, { getRecipes })(Home);

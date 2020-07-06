@@ -18,6 +18,7 @@ import Home from "./Pages/Home/Home";
 import ViewRecipe from "./Pages/Recipe/ViewRecipe";
 import Addrecipe from "./Pages/Recipe/AddRecipe";
 import Explore from "./Pages/Explore/Explore";
+import Results from "./Pages/Explore/Results";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Faq from "./Pages/Faq/Faq";
@@ -63,6 +64,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
               <Route exact path="/explore" component={Explore} />
+              <Route exact path="/explore/:category/:target" component={Results}/>
               <AuthRoute exact path="/signup" component={Register} />
               <Route exact path="/addrecipe" component={Addrecipe} />
               <Route exact path="/about" component={About} />
@@ -70,12 +72,10 @@ class App extends Component {
               <Route exact path="/faq" component={Faq}/>
               <Route exact path="/newsletter" component={Newsletter} />
               <Route exact path="/blog" component={Notfound} />
+
               <Route exact path="/:handle" component={Profile} />
 
               <Route exact path="/:handle/:recipeId" component={ViewRecipe}/>
-              <Route exact path="/:handle/contact" component={Contact}/>
-              <Route exact path="/:handle/about" component={About}/>
-         
 
               <Route component={Notfound} />
             

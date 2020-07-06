@@ -7,10 +7,13 @@ import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import Tooltip from "@material-ui/core/Tooltip";
+import TextField from "@material-ui/core/TextField";
 
 const Step3 = ({
+  detailsState,
   instructionState,
   handleinstructionChange,
+  handlechange,
   addinstruction,
 }) => {
   return (
@@ -23,10 +26,10 @@ const Step3 = ({
       {instructionState.map((val, idx) => {
         let instructionId = `instruction-${idx}`;
         return (
-          <div key={`instruction-${idx}`} >
-            <textarea 
-            rows="3"
-            cols="30"
+          <div key={`instruction-${idx}`}>
+            <textarea
+              rows="3"
+              cols="30"
               type="text"
               name={instructionId}
               data-idx={idx}
@@ -50,14 +53,28 @@ const Step3 = ({
           <AddIcon />
         </Fab>
       </Tooltip>
+      <br/>
+      <TextField
+        required
+        name="notes"
+        label="Notes "
+        rows="4"
+        multiline
+        value={detailsState.notes}
+        fullWidth
+        onChange={handlechange}
+        variant="outlined"
+      />
       <div style={{ height: "8vh" }}></div>
     </div>
   );
 };
 
 Step3.propTypes = {
+  detailsState: PropTypes.array,
   instructionState: PropTypes.array,
   handleinstructionChange: PropTypes.func,
+  handlechange: PropTypes.func,
   addinstruction: PropTypes.func,
 };
 

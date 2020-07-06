@@ -1,5 +1,6 @@
 import {
     SET_RECIPES,
+    SET_RESULTS,
     LOADING_DATA,
     LIKE_RECIPE,
     UNLIKE_RECIPE,
@@ -13,17 +14,36 @@ import {
     SUBMIT_COMMENT
   } from '../types';
   import axios from 'axios';
-  
+  import firebase from "../../firebase/index";
+  var db = firebase.firestore();
+
   // Get all recipes
   export const getRecipes = () => (dispatch) => {
     dispatch({ type: LOADING_DATA });
-    axios
-      .get('/recipes')
-      .then((res) => {
-        dispatch({
-          type: SET_RECIPES,
-          payload: res.data
+    
+    db.collection('recipes')
+    .orderBy('createdAt', 'desc')
+    .get()
+    .then((data) => {
+      let recipes = [];
+      data.forEach((doc) => {
+        recipes.push({
+          recipeId: doc.id,
+          title:doc.data().title,
+          body:doc.data().body,
+          pictureUrl:doc.data().pictureUrl,
+          userHandle: doc.data().userHandle,
+          createdAt: doc.data().createdAt,
+          commentCount: doc.data().commentCount,
+          likeCount: doc.data().likeCount,
+          userImage: doc.data().userImage
         });
+      });
+      dispatch({
+        type: SET_RECIPES,
+        payload: recipes
+      });
+        
       })
       .catch((err) => {
         dispatch({
@@ -47,7 +67,38 @@ import {
       })
       .catch((err) => console.log(err));
   };
+
+  //get a catergory
+  export const getCategory = (categor,type) => (dispatch) => {
+    dispatch({ type: LOADING_UI });
+    db.collection("recipes")
+      .where(categor, "==", type)
+      .get()
+      .then((snapshot) => {
+        let results = [];
+        snapshot.docs.forEach((doc) => {
+          results.push({
+            recipeId: doc.id,
+          title:doc.data().title,
+          body:doc.data().body,
+          pictureUrl:doc.data().pictureUrl,
+          userHandle: doc.data().userHandle,
+          createdAt: doc.data().createdAt,
+          commentCount: doc.data().commentCount,
+          likeCount: doc.data().likeCount,
+          userImage: doc.data().userImage
+          });
+        });
+        dispatch({
+          type: SET_RESULTS,
+          payload: results
+        });
+        dispatch({ type: STOP_LOADING_UI });
+      })
+      .catch((err) => console.log(err));
+  };
   
+
   // Post a recipe
   export const postRecipe = (newRecipe,history) => (dispatch) => {
     dispatch({ type: LOADING_UI });
@@ -66,7 +117,6 @@ import {
         });
       });
   };
-
 
   // Like a recipe
   export const likeRecipe = (recipeId) => (dispatch) => {

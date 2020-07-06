@@ -12,6 +12,7 @@ export const LOADING_DATA = 'LOADING_DATA';
 export const STOP_LOADING_UI = 'STOP_LOADING_UI';
 // Data reducer types
 export const SET_RECIPES = 'SET_RECIPES';
+export const SET_RESULTS = 'SET_RESULTS';
 export const SET_RECIPE = 'SET_RECIPE';
 export const LIKE_RECIPE = 'LIKE_RECIPE';
 export const UNLIKE_RECIPE = 'UNLIKE_RECIPE';

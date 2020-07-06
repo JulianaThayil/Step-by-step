@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react'
 import classes from './Explore.module.css';
+
+//My components
 import Cover from '../../components/Cover/Cover'
 import ExploreCard from '../../components/ExploreCards/ExploreCard'
+
+//Mui
 import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
 
 export default function Explore() {
     const post={
@@ -14,14 +17,20 @@ export default function Explore() {
         {
           url: '/assets/starter.jpg',
           title: 'Starters',
+          category:'courses',
+          target:'starters',
         },
         {
           url: '/assets/maincourse.jpg',
           title: 'Main Course',
+          category:'courses',
+          target:'main-course',
         },
         {
           url: '/assets/dessert.jpg',
           title: 'Desserts',
+          category:'courses',
+          target:'desserts'
         },
       ];
 
@@ -29,26 +38,39 @@ export default function Explore() {
         {
           url: '/assets/chinese.jpg',
           title: 'Chinese',
+          category:'cuisines',
+          target:'chinese'
         },
         {
           url: '/assets/indian.jpg',
           title: 'Indian',
+          category:'cuisines',
+          target:'indian'
         },
         {
           url: '/assets/pizza.jpg',
           title: 'Italian',
+          category:'cuisines',
+          target:'italian'
+
         },
         {
             url: '/assets/thai.jpg',
             title: 'Thai',
+            category:'cuisines',
+            target:'thai'
           },
           {
             url: '/assets/goan.jpg',
             title: 'Goan',
+            category:'cuisines',
+            target:'goan'
           },
           {
             url: '/assets/southindian.jpg',
             title: 'South Indian',
+            category:'cuisines',
+            target:'south-indian'
           },
       ];
     return (

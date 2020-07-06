@@ -24,23 +24,19 @@ import Typography from "@material-ui/core/Typography";
 //Mui
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-
-
 const useStyles = makeStyles((theme) => ({
-
   root: {
     padding: "3%",
     backgroundColor: "white",
     width: "60vw",
     height: "min-content",
-    marginLeft:"20%",
-    marginTop:"1%",
-    '@media (max-width: 768px)': {
+    marginLeft: "20%",
+    marginTop: "1%",
+    "@media (max-width: 768px)": {
       width: "85vw",
-      marginLeft:"7%",
-      marginTop:"7%",
-    }
-    
+      marginLeft: "7%",
+      marginTop: "7%",
+    },
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -60,8 +56,8 @@ function NewRecipe(props) {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
-   //details
-   const [detailsState, setDetailsState] = useState({
+  //details
+  const [detailsState, setDetailsState] = useState({
     title: "",
     preparationTime: "",
     cookingTime: "",
@@ -69,11 +65,14 @@ function NewRecipe(props) {
     difficultyLevel: "Intermediate",
     body: "",
     type: "nonveg",
+    courses: "main-course",
+    cuisines: "indian",
+    notes:"",
     image: null,
   });
 
   const handleNext = () => {
-    if(detailsState.image==null){
+    if (detailsState.image == null) {
       return;
     }
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -106,9 +105,11 @@ function NewRecipe(props) {
       case 2:
         return (
           <InstructionInputs
+            detailsState={detailsState}
             addinstruction={addinstruction}
             instructionState={instructionState}
             handleinstructionChange={handleinstructionChange}
+            handlechange={handlechange}
           />
         );
       default:
@@ -172,11 +173,12 @@ function NewRecipe(props) {
     event.preventDefault(); //to prevent auto reload
     setActiveStep(3);
     window.scrollTo(0, 0);
-   
-  
-    const imagefilename=new Date().toISOString() + detailsState.image.name;
 
-    const uploadTask = storage.ref(`recipes/${imagefilename}`).put(detailsState.image);
+    const imagefilename = new Date().toISOString() + detailsState.image.name;
+
+    const uploadTask = storage
+      .ref(`recipes/${imagefilename}`)
+      .put(detailsState.image);
     uploadTask.on(
       "state_changed",
       (snapshot) => {},
@@ -202,6 +204,9 @@ function NewRecipe(props) {
               ingredients: ingredientState,
               instructions: instructionState,
               type: detailsState.type,
+              courses: detailsState.courses,
+              cuisines: detailsState.cuisines,
+              notes:detailsState.notes,
               pictureUrl: url,
             };
             console.log(newRecipe);
@@ -212,7 +217,6 @@ function NewRecipe(props) {
   };
   return (
     <div className={classes.root}>
-
       <Typography color="secondary" variant="h3" align="center">
         Add a Recipe
       </Typography>
@@ -229,7 +233,6 @@ function NewRecipe(props) {
             <CircularProgress> </CircularProgress>
           </div>
         ) : (
-
           <div>
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}

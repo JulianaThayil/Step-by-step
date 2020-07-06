@@ -109,6 +109,55 @@ const Step1 = ({ detailsState,handleimagechange, handlechange }) => {
       </div>
       <br />
 
+      <div className={classes.display}>
+        <div className={classes.recipedetails}>
+        <FormControl required>
+            <InputLabel htmlFor="age-native-simple">
+              Course Type
+            </InputLabel>
+            <Select
+              labelId="courses"
+              id="courses"
+              name="courses"
+              placeholder="Course Type"
+              value={detailsState.courses}
+              onChange={handlechange}
+              variant="outlined"
+            >
+              <MenuItem value={`starters`}>Starters</MenuItem>
+              <MenuItem value={`main-course`}>Main Course</MenuItem>
+              <MenuItem value={`desserts`}>Dessert</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+
+        <div className={classes.recipedetails}>
+          <FormControl required>
+            <InputLabel htmlFor="age-native-simple">
+              Cuisine
+            </InputLabel>
+            <Select
+              labelId="cuisines"
+              id="cuisines"
+              name="cuisines"
+              placeholder="Cuisine"
+              value={detailsState.cuisines}
+              onChange={handlechange}
+              variant="outlined"
+            >
+              <MenuItem value={`chinese`}>Chinese</MenuItem>
+              <MenuItem value={`indian`}>Indian</MenuItem>
+              <MenuItem value={`italian`}>Italian</MenuItem>
+              <MenuItem value={`thai`}>Thai</MenuItem>
+              <MenuItem value={`goan`}>Goan</MenuItem>
+              <MenuItem value={`south-indian`}>South Indian</MenuItem>
+              <MenuItem value={`other`}>Other</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+      </div>
+      <br />
+
       <TextField
         required
         name="body"

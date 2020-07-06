@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+//Mui
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
@@ -94,6 +97,8 @@ function ButtonBases(props) {
           style={{
             width: "32%",
           }}
+          component={Link}
+          to={`/explore/${image.category}/${image.target}`}
         >
           <span
             className={classes.imageSrc}

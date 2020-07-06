@@ -49,6 +49,8 @@ class viewRecipe extends Component {
         cookingTime,
         difficultyLevel,
         serves,
+        courses,
+        cuisines,
         body,
         ingredients,
         instructions,

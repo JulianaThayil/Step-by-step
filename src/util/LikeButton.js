@@ -35,7 +35,7 @@ class LikeButton extends Component {
         </MyButton>
       </Link>
     ) : this.likedRecipe() ? (
-      <MyButton tip="Undo like" onClick={this.unlikeRecipe} style={{ outline:'none'}}>
+      <MyButton tip="Unlike" onClick={this.unlikeRecipe} style={{ outline:'none'}}>
         <Favorite  color="secondary" />
       </MyButton>
     ) : (
