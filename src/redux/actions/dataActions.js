@@ -14,6 +14,7 @@ import {
     SUBMIT_COMMENT
   } from '../types';
   import axios from 'axios';
+
   import firebase from "../../firebase/index";
   var db = firebase.firestore();
 
@@ -109,6 +110,7 @@ import {
           type: POST_RECIPE,
           payload: res.data
         });
+        history.push("/");
         dispatch({ type: CLEAR_ERRORS });
       })
       .catch((err) => {

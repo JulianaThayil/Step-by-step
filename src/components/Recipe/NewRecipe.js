@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 //steps
 import IngredientInputs from "./Step2";
@@ -55,6 +56,7 @@ function NewRecipe(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  let history = useHistory();
 
   //details
   const [detailsState, setDetailsState] = useState({
@@ -209,8 +211,8 @@ function NewRecipe(props) {
               notes:detailsState.notes,
               pictureUrl: url,
             };
-            console.log(newRecipe);
-            props.postRecipe(newRecipe, props.history);
+            
+            props.postRecipe(newRecipe,history);
           });
       }
     );

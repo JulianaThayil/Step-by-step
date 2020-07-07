@@ -53,12 +53,12 @@ const Step3 = ({
           <AddIcon />
         </Fab>
       </Tooltip>
-      <br/>
+      <br/><br/>
       <TextField
-        required
         name="notes"
         label="Notes "
         rows="4"
+        placeholder="Optional"
         multiline
         value={detailsState.notes}
         fullWidth
