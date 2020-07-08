@@ -9,6 +9,7 @@ import Skeleton from "../../components/Skeleton/RecipeSkeleton";
 //Redux stuff
 import { connect } from "react-redux";
 import { getCategory } from "../../redux/actions/dataActions";
+import { Typography } from "@material-ui/core";
 
 function Results(props) {
   useEffect(() => {
@@ -23,7 +24,7 @@ function Results(props) {
 
   const { results } = props.data;
   let markup = !loading ? (
-    results == null ? (
+    Object.keys(results).length === 0 ? (
         <p>No recipes found</p>):
     (results.map((recipe) => <Recipe key={recipe.recipeId} recipe={recipe} />) )
   ) : (
@@ -32,6 +33,7 @@ function Results(props) {
 
   return (
     <div style={{ minHeight: "100vh",marginTop:'80px' }}>
+      <Typography align="center" variant="h4">{props.match.params.target} recipes </Typography>
       <div className={classes.bg}>{markup}</div>
     </div>
   );
