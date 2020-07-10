@@ -1,4 +1,4 @@
-# Step-by-step
+# StepChef
 An easy recipe sharing web app
 
 ## 1: API Base URL
