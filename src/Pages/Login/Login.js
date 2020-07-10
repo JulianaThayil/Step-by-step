@@ -89,7 +89,7 @@ class Login extends Component {
               )}
             </button>
             <br />
-            Forgot password? <a href="#">Click Here </a>
+            Forgot password? <a href="account/password/reset">Click Here </a>
             <br />
             <center>- or- </center>
             <br />

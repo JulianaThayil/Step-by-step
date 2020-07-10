@@ -11,6 +11,7 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 
 //pages
 import Login from "./Pages/Login/Login";
+import Forgot from "./Pages/Login/ForgotPassword";
 import Register from "./Pages/Register/Register";
 import Profile from "./Pages/Profile/Profile";
 import Notfound from "./notfound";
@@ -63,6 +64,7 @@ class App extends Component {
             
               <Route exact path="/" component={Home} />
               <AuthRoute exact path="/login" component={Login} />
+              <Route exact path="/account/password/reset" component={Forgot} />
               <Route exact path="/explore" component={Explore} />
               <Route exact path="/explore/:category/:target" component={Results}/>
               <AuthRoute exact path="/signup" component={Register} />
