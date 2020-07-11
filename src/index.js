@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { SnackbarProvider } from 'notistack';
 import { BackToTop, StyledProvider } from "components-extra";
 
 const theme = createMuiTheme({
@@ -15,7 +16,9 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <StyledProvider theme={theme}>
+    <SnackbarProvider maxSnack={3}>
     <App />
+</SnackbarProvider>
 
     <BackToTop color="secondary" size="small" />
   </StyledProvider>,

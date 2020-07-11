@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import classes from "./Login.modules.scss";
 import Typography from "@material-ui/core/Typography";
+import { withSnackbar } from "notistack";
 
 //firebase
 import firebase from "../../firebase/index";
@@ -21,15 +22,16 @@ class ForgotPassword extends Component {
     var emailAddress = this.state.email;
     auth
       .sendPasswordResetEmail(emailAddress)
-      .then(function () {
-        this.setState({
-            message: "A password reset link has been sent to your email address",
-          });
-      })
-      .catch(function (error) {
-        //do something
-      });
-    
+      .then(() =>
+        this.props.enqueueSnackbar(
+          "A password reset link has been sent to your email address", { 
+            variant: 'success',
+        }
+        )
+      )
+      .catch((error) => this.props.enqueueSnackbar(`${error}`, { 
+        variant: 'error',
+    }));
   };
   handleChange = (event) => {
     this.setState({
@@ -48,7 +50,7 @@ class ForgotPassword extends Component {
             <div class="segment">
               <Typography variant="h5"> Reset Password</Typography>
             </div>
-            <br/>
+            <br />
             <div> {this.state.message}</div>
             <label>
               <input
@@ -73,12 +75,19 @@ class ForgotPassword extends Component {
                 <br />
               </button>
             </Link>
-
-            
+            <br />
+            <center>Create an account </center>
+            <br />
+            <Link to="/signup">
+              <button class="red but" type="button">
+                <i class="icon ion-md-lock"></i> Register
+                <br />
+              </button>
+            </Link>
           </form>
         </div>
       </div>
     );
   }
 }
-export default ForgotPassword;
+export default withSnackbar(ForgotPassword);

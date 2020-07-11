@@ -114,7 +114,7 @@ class viewRecipe extends Component {
         <ChatIcon color="secondary" />
         <span>
           <Link to="/login"> Sign-in </Link> or
-          <Link to="/signup"> create your step-by-step account</Link> to post a
+          <Link to="/signup"> create a stepchef account</Link> to post a
           review
         </span>
       </div>
