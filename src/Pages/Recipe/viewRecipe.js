@@ -62,6 +62,7 @@ class viewRecipe extends Component {
         userImage,
         userHandle,
         comments,
+        notes,
       },
       UI: { loading },
     } = this.props;
@@ -114,8 +115,7 @@ class viewRecipe extends Component {
         <ChatIcon color="secondary" />
         <span>
           <Link to="/login"> Sign-in </Link> or
-          <Link to="/signup"> create a stepchef account</Link> to post a
-          review
+          <Link to="/signup"> create a stepchef account</Link> to post a review
         </span>
       </div>
     );
@@ -245,6 +245,17 @@ class viewRecipe extends Component {
             </Grid>
           </Grid>
           <br />
+          {notes && (
+            <div>
+              <Typography align="left" variant="h5">
+                Notes:{" "}
+              </Typography>
+              <Typography align="left" paragraph="true">
+                {notes}
+              </Typography>
+            </div>
+          )}
+
           <br />
 
           <Typography variant="h5">Reviews </Typography>
@@ -267,7 +278,7 @@ class viewRecipe extends Component {
     return (
       <div>
         <Helmet>
-          <meta property="og:image" content={pictureUrl}/>
+          <meta property="og:image" content={pictureUrl} />
           <meta name="twitter:image" content={pictureUrl}></meta>
         </Helmet>
         {recipesMarkup}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
+import imageCompression from "browser-image-compression";
 
 //steps
 import IngredientInputs from "./Step2";
@@ -69,7 +70,7 @@ function NewRecipe(props) {
     type: "nonveg",
     courses: "main-course",
     cuisines: "indian",
-    notes:"",
+    notes: "",
     image: null,
   });
 
@@ -127,13 +128,30 @@ function NewRecipe(props) {
     });
   };
 
-  //image upload
+  //image change handler
   const handleimagechange = (event) => {
     if (event.target.files[0]) {
-      setDetailsState({
-        ...detailsState,
-        image: event.target.files[0],
-      });
+      //compress the image
+      var imageFile = event.target.files[0];
+      var options = {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 1920,
+        useWebWorker: true,
+      };
+      imageCompression(imageFile, options)
+        .then(function (compressedFile) {
+          setDetailsState({
+            ...detailsState,
+            image: compressedFile,
+          });
+        })
+        .catch(function (error) {
+          console.log(error.message);
+          setDetailsState({
+            ...detailsState,
+            image: event.target.files[0],
+          });
+        });
     }
   };
 
@@ -208,11 +226,11 @@ function NewRecipe(props) {
               type: detailsState.type,
               courses: detailsState.courses,
               cuisines: detailsState.cuisines,
-              notes:detailsState.notes,
+              notes: detailsState.notes,
               pictureUrl: url,
             };
-            
-            props.postRecipe(newRecipe,history);
+
+            props.postRecipe(newRecipe, history);
           });
       }
     );

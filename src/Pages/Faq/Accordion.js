@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -48,7 +49,7 @@ export default function ControlledExpansionPanels() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-           You can change your password here
+           You can change your password <Link to="/account/password/reset"> here</Link>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
