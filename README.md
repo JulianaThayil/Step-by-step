@@ -14,11 +14,9 @@ This project is currently in development. Users can discover and share their own
 
 ## Installation and Setup Instructions
 
-#### Example:  
-
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-Installation:
+### Installation:
 
 ## 1: API Base URL
 Add https://asia-northeast1-step-by-step-96e75.cloudfunctions.net/api as the 'proxy' value in package.json
