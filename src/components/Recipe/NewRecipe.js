@@ -86,7 +86,7 @@ function NewRecipe(props) {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
     window.scrollTo(0, 0);
   };
-
+  
   const getStepContent = (stepIndex) => {
     switch (stepIndex) {
       case 0:

@@ -11,6 +11,7 @@ import Comments from "../../util/Comments";
 import CommentForm from "../../util/CommentForm";
 import Ingredient from "./Ingredient";
 import Instruction from "./Instructions";
+import NutritionInfo from "./NutritionInfo";
 
 //Mui stuff
 import Container from "@material-ui/core/Container";
@@ -126,7 +127,7 @@ class viewRecipe extends Component {
         <Paper className={classes.viewrecipepaper}>
           <br />
           <div align="center">
-            <Typography variant="h4" align="center" color="secondary">
+            <Typography variant="h4" align="center">
               {title} <LikeButton recipeId={recipeId} />
             </Typography>
             By:{` `}
@@ -245,6 +246,7 @@ class viewRecipe extends Component {
             </Grid>
           </Grid>
           <br />
+
           {notes && (
             <div>
               <Typography align="left" variant="h5">
@@ -256,6 +258,7 @@ class viewRecipe extends Component {
             </div>
           )}
 
+          <NutritionInfo ingredients={ingredients}></NutritionInfo>
           <br />
 
           <Typography variant="h5">Reviews </Typography>

@@ -24,7 +24,7 @@ import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Faq from "./Pages/Faq/Faq";
 import Newsletter from "./Pages/Newsletter/Newsletter";
-
+import Blog from "./Pages/Blog/Pav-how";
 
 //component
 import Navbar from "./components/Navbar/Nav";
@@ -73,7 +73,7 @@ class App extends Component {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/faq" component={Faq}/>
               <Route exact path="/newsletter" component={Newsletter} />
-              <Route exact path="/blog" component={Notfound} />
+              <Route exact path="/blog" component={Blog} />
 
               <Route exact path="/:handle" component={Profile} />
 
