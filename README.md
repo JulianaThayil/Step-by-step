@@ -1,8 +1,7 @@
 <p align="center"> 
-<img src="https://github.com/JulianaThayil/Step-by-step/blob/master/public/tablogo.png" width="30px" height="30px"> </img>
+<img src="https://github.com/JulianaThayil/Step-by-step/blob/master/public/tablogo.png" width="50px" height="50px"> </img>
 </p>
-## StepChef <img src="https://github.com/JulianaThayil/Step-by-step/blob/master/public/tablogo.png" width="30px" height="30px"> </img>
-
+## StepChef 
 A social media app for sharing recipes built with React, Redux, Express and Firebase
 
 ## Project Status
