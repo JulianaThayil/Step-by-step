@@ -8,9 +8,7 @@ This project is currently in development. Users can discover and share their own
 
 ## Project Screen Shots
 
-[ PRETEND SCREEN SHOT IS HERE ]
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
 
 ## Installation and Setup Instructions
 
