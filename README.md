@@ -1,5 +1,5 @@
-<img src="https://github.com/JulianaThayil/Step-by-step/blob/master/public/logo.png" width="20px" height="20px"> </img>
-## StepChef 
+
+## StepChef <img src="https://github.com/JulianaThayil/Step-by-step/blob/master/public/logo.png" width="20px" height="20px"> </img>
 
 A social media app for sharing recipes built with React, Redux, Express and Firebase
 
