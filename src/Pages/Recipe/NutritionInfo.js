@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import classes from "./NutritionInfo.modules.scss";
 import PropTypes, { array } from "prop-types";
+import Chip from '@material-ui/core/Chip';
 
+//<Chip color="secondary" label="Basic" />
 export default function NutritionInfo({ ingredients, title, serves }) {
   const APP_ID = "1ffc8942";
   const API_KEY = "5927b1f898a3a49c21cb31ef70753d02";

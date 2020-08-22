@@ -147,7 +147,7 @@ class viewRecipe extends Component {
             <ShareButtons
               quote={body}
               subject={title}
-              url={`https://stepbystep.netlify.app/${userHandle}/${recipeId}`}
+              url={`https://stepchef.netlify.app/${userHandle}/${recipeId}`}
               pictureUrl={pictureUrl}
             />
             <br />
