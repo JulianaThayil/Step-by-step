@@ -1,5 +1,30 @@
 .container{
     margin-left: 15vw;
     margin-right: 15vw;
-    margin-top: 10vw;
+    margin-top: 8vw;
 }
+.image{
+    max-width: 65vw;
+}
+.img{
+    width: 30vw;
+    padding-bottom: 30px;
+}
+@media only screen and (max-width: 500px) {
+  
+    .container{
+        margin-top: 17vw;
+    }
+    .title{
+        font-size: 40px;
+    }
+    .image{
+        max-width: 70vw;
+    }
+    .img{
+        width: 70vw;
+        height: 70vw;
+        
+    }
+  }
+  

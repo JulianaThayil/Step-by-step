@@ -24,7 +24,8 @@ import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import Faq from "./Pages/Faq/Faq";
 import Newsletter from "./Pages/Newsletter/Newsletter";
-import Blog from "./Pages/Blog/Pav-how";
+import Pav from "./Pages/Blog/How-to-make-pav-at-home";
+import IceCream from "./Pages/Blog/Tips-for-perfect-homemade-ice-cream"
 
 //component
 import Navbar from "./components/Navbar/Nav";
@@ -73,7 +74,9 @@ class App extends Component {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/faq" component={Faq}/>
               <Route exact path="/newsletter" component={Newsletter} />
-              <Route exact path="/blog" component={Blog} />
+              <Route exact path="/blog" component={Notfound} />
+              <Route exact path="/blog/how-to-make-pav-at-home" component={Pav} />
+              <Route exact path="/blog/tips-for-perfect-homemade-ice-cream" component={IceCream} />
 
               <Route exact path="/:handle" component={Profile} />
 

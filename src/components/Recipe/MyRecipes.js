@@ -15,8 +15,6 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-import IconButton from "@material-ui/core/IconButton";
-import ShareIcon from "@material-ui/icons/Share";
 import Avatar from "@material-ui/core/Avatar";
 
 // Icon
@@ -93,10 +91,6 @@ class RecipeCard extends Component {
             <ChatIcon color="secondary" />
           </MyButton>
           <span>{commentCount}</span>
-
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
 
           <div style={{ marginRignt: "5%" }}>{deleteButton}</div>
         </CardActions>

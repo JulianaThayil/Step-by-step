@@ -39,7 +39,7 @@ export default function ShareButtons(props) {
       <Grid item>
         <PinterestShareButton
           url={props.url}
-          description="Guys check out this delicious recipe "
+          description={props.quote}
           media={props.pictureUrl}
           className={classes.item}
         >

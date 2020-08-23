@@ -1,35 +1,33 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import React from "react";
+import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import GridList from "@material-ui/core/GridList";
+import GridListTile from "@material-ui/core/GridListTile";
+import GridListTileBar from "@material-ui/core/GridListTileBar";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    overflow: 'hidden',
+    display: "flex",
+    flexWrap: "wrap",
   },
   gridList: {
     width: 900,
   },
 }));
 
-
 const tileData = [
   {
-    imgPath:
-      "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "Homemade Pizza",
-    author: "Rhea",
+    imgPath: "/blog/How-to-make-pav-at-home/main.jpg",
+    title: "How to make pav at home",
+    link:"/blog/how-to-make-pav-at-home",
   },
   {
     imgPath:
-      "https://images.pexels.com/photos/2045362/pexels-photo-2045362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "Strawberry shake",
-    author: "Rohan",
+      "/blog/Tips-for-perfect-homemade-ice-cream/main.jpg",
+    title: "Tips for perfect homemade ice cream",
+    link:"/blog/tips-for-perfect-homemade-ice-cream"
   },
- 
 ];
 
 export default function TitlebarGridList() {
@@ -39,13 +37,9 @@ export default function TitlebarGridList() {
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         {tileData.map((tile) => (
-          <GridListTile style={{height:'250px'}} key={tile.imgPath}>
+          <GridListTile component={Link} to={tile.link} style={{ height: "260px" }} key={tile.imgPath}>
             <img src={tile.imgPath} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              
-            />
+            <GridListTileBar title={tile.title} />
           </GridListTile>
         ))}
       </GridList>
