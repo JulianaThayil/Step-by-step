@@ -11,7 +11,8 @@ import Comments from "../../util/Comments";
 import CommentForm from "../../util/CommentForm";
 import Ingredient from "./Ingredient";
 import Instruction from "./Instructions";
-import NutritionInfo from "./NutritionInfo";
+//import NutritionInfo from "./NutritionInfo";
+import Breadcrumb from "./Breadcrumb";
 
 //Mui stuff
 import Container from "@material-ui/core/Container";
@@ -25,11 +26,14 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Chip from "@material-ui/core/Chip";
+
 //icons
 import ChatIcon from "@material-ui/icons/Chat";
 import RoomServiceIcon from "@material-ui/icons/RoomService";
 import TimerIcon from "@material-ui/icons/Timer";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
+
 //redux
 import { connect } from "react-redux";
 import { getRecipe } from "../../redux/actions/dataActions";
@@ -126,23 +130,41 @@ class viewRecipe extends Component {
         <br />
         <Paper className={classes.viewrecipepaper}>
           <br />
+          <Breadcrumb title={title} category={courses}>
+            {" "}
+          </Breadcrumb>
           <div align="center">
-            <Typography variant="h4" align="center">
-              {title} <LikeButton recipeId={recipeId} />
-            </Typography>
-            By:{` `}
-            <Typography
-              variant="body1"
-              align="center"
-              component={Link}
-              color="primary"
-              to={`/${userHandle}`}
-            >
-              @{userHandle}
-            </Typography>
-            <Typography variant="body2" align="center" color="textSecondary">
-              {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
-            </Typography>
+            <br />
+            <div className={classes.icon}> </div>
+            <h2 className={classes.title} align="center">
+              {title}
+            </h2>
+            {vegnonveg}
+            <Grid container justify="center">
+              <Grid item xs={6} lg={2}>
+                By:{` `}
+                <Typography
+                  variant="body1"
+                  align="center"
+                  component={Link}
+                  color="primary"
+                  to={`/${userHandle}`}
+                >
+                  @{userHandle}
+                </Typography>
+              </Grid>
+              |
+              <Grid item xs={6} lg={2}>
+                <Typography
+                  variant="body2"
+                  align="center"
+                  color="textSecondary"
+                >
+                  {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
+                </Typography>
+              </Grid>
+            </Grid>
+
             <br />
             <ShareButtons
               quote={body}
@@ -179,39 +201,41 @@ class viewRecipe extends Component {
                 </Typography>
               </Grid>
             </Grid>
+
             <br />
-            <Typography align="left" variant="body2">
-              {vegnonveg}
-            </Typography>
-            <br />
-            <Typography align="left" color="inherit">
+            <Typography
+              className={classes.instructionstext}
+              align="left"
+              color="inherit"
+            >
               DESCRIPTION{" "}
             </Typography>
             <Typography align="left" paragraph="true">
               {body}
             </Typography>
-            <Grid container>
-              <Grid item xs>
-                <RoomServiceIcon />
-                <Typography variant="body2">SERVES :{serves}</Typography>
-              </Grid>
-              <Grid item xs>
-                <TimerIcon />
+            <Grid container spacing={2}>
+              <Grid item xs={6} lg={3}>
+                <RestaurantIcon />
                 <Typography variant="body2">
-                  PREPARATION TIME : {preparationTime}
+                  LEVEL: {difficultyLevel}
                 </Typography>
               </Grid>
-              <Grid item xs>
+
+              <Grid item xs={6} lg={3}>
+                <TimerIcon />
+                <Typography variant="body2">
+                  PREP TIME : {preparationTime}
+                </Typography>
+              </Grid>
+              <Grid item xs={6} lg={3}>
                 <TimerIcon />
                 <Typography variant="body2">
                   COOK TIME : {cookingTime}
                 </Typography>
               </Grid>
-              <Grid item xs>
-                <RestaurantIcon />
-                <Typography variant="body2">
-                  DIFFICULTY LEVEL: {difficultyLevel}
-                </Typography>
+              <Grid item xs={6} lg={3}>
+                <RoomServiceIcon />
+                <Typography variant="body2">SERVES :{serves}</Typography>
               </Grid>
             </Grid>
           </div>
@@ -258,7 +282,13 @@ class viewRecipe extends Component {
             </div>
           )}
 
-          <NutritionInfo ingredients={ingredients}></NutritionInfo>
+          <div>
+            <Typography align="left" variant="h5">
+              Tags:{" "}
+            </Typography>
+            <Chip label={courses} /> <Chip label={cuisines} />{" "}
+            <Chip label={type} />
+          </div>
           <br />
 
           <Typography variant="h5">Reviews </Typography>

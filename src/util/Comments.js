@@ -12,8 +12,6 @@ const styles = () => ({
     maxWidth: '100%',
     marginLeft:'10%',
     height: '8vh',
-    paddingRight:'1vw',
-    width:'8vh',
     objectFit: 'cover',
     borderRadius: '50%'
   },
@@ -33,7 +31,7 @@ class Comments extends Component {
           return (
             <Fragment key={createdAt}  >
               <Grid item  style={{backgroundColor:'white'}}>
-                <Grid container>
+                <Grid container spacing={2}>
                   <Grid item>
                     <img
                       src={userImage}
