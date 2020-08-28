@@ -19,12 +19,23 @@
     margin: 0 auto 12px auto;
     display: block;
 }
+.circle{
+  background-color: black;
+  color: white;
+  padding-right: 9%;
+  padding-left: 9%;
+  border-radius: 50%;
+}
 .title{
   font-family: 'Cormorant Garamond', serif;
   font-size: 55px;
   font-weight: 400;
   margin: 10px 0;
 }
+.padding{
+    padding: 2%;
+}
+
 .image {
   margin-top: 50px;
 }
@@ -104,6 +115,7 @@ border: solid;
 }
 
 @media only screen and (max-width: 425px) {
+
   .paperimage {
     width: 100vw;
     height: 35vh;

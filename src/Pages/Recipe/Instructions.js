@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import classes from "./styles.module.css";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -20,8 +21,8 @@ export default class Instructions extends Component {
     return (
         <List >
         <ListItem>
-          <ListItemIcon>
-            {step_number}
+          <ListItemIcon >
+            <div className={classes.circle}> {step_number}</div>
           </ListItemIcon>
           <ListItemText
             primary={step}

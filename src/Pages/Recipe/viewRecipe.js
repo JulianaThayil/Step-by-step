@@ -203,17 +203,15 @@ class viewRecipe extends Component {
             </Grid>
 
             <br />
-            <Typography
-              className={classes.instructionstext}
-              align="left"
-              color="inherit"
-            >
-              DESCRIPTION{" "}
-            </Typography>
-            <Typography align="left" paragraph="true">
-              {body}
-            </Typography>
-            <Grid container spacing={2}>
+
+            <div className={classes.padding}>
+    
+              <Typography align="left" paragraph="true">
+                {body}
+              </Typography>
+            </div>
+
+            <Grid className={classes.padding} container spacing={2}>
               <Grid item xs={6} lg={3}>
                 <RestaurantIcon />
                 <Typography variant="body2">
@@ -272,7 +270,7 @@ class viewRecipe extends Component {
           <br />
 
           {notes && (
-            <div>
+            <div className={classes.padding}>
               <Typography align="left" variant="h5">
                 Notes:{" "}
               </Typography>
@@ -282,22 +280,23 @@ class viewRecipe extends Component {
             </div>
           )}
 
-          <div>
+          <div className={classes.padding}>
             <Typography align="left" variant="h5">
               Tags:{" "}
             </Typography>
             <Chip label={courses} /> <Chip label={cuisines} />{" "}
             <Chip label={type} />
           </div>
-          <br />
+         
+          <div className={classes.padding}>
+            <Typography variant="h5">Reviews </Typography>
 
-          <Typography variant="h5">Reviews </Typography>
+            {loginsignup}
+            <br />
 
-          {loginsignup}
-          <br />
-
-          <CommentForm recipeId={recipeId} />
-          {comments && <Comments comments={comments} />}
+            <CommentForm recipeId={recipeId} />
+            {comments && <Comments comments={comments} />}
+          </div>
         </Paper>
       </div>
     ) : (
