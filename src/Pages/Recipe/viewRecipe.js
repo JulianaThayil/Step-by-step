@@ -27,6 +27,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Chip from "@material-ui/core/Chip";
+import Avatar from "@material-ui/core/Avatar";
 
 //icons
 import ChatIcon from "@material-ui/icons/Chat";
@@ -205,34 +206,40 @@ class viewRecipe extends Component {
             <br />
 
             <div className={classes.padding}>
-    
               <Typography align="left" paragraph="true">
                 {body}
               </Typography>
             </div>
-
             <Grid className={classes.padding} container spacing={2}>
               <Grid item xs={6} lg={3}>
-                <RestaurantIcon />
+                <Avatar>
+                  <RestaurantIcon />
+                </Avatar>
                 <Typography variant="body2">
                   LEVEL: {difficultyLevel}
                 </Typography>
               </Grid>
 
               <Grid item xs={6} lg={3}>
-                <TimerIcon />
+                <Avatar>
+                  <TimerIcon />
+                </Avatar>
                 <Typography variant="body2">
                   PREP TIME : {preparationTime}
                 </Typography>
               </Grid>
               <Grid item xs={6} lg={3}>
-                <TimerIcon />
+                <Avatar>
+                  <TimerIcon />
+                </Avatar>
                 <Typography variant="body2">
                   COOK TIME : {cookingTime}
                 </Typography>
               </Grid>
               <Grid item xs={6} lg={3}>
-                <RoomServiceIcon />
+                <Avatar>
+                  <RoomServiceIcon />
+                </Avatar>
                 <Typography variant="body2">SERVES :{serves}</Typography>
               </Grid>
             </Grid>
@@ -240,6 +247,9 @@ class viewRecipe extends Component {
           <br />
           <Grid xs={12} sm container direction="row">
             <Grid item sm>
+              <Typography variant="h5" align="center">
+                <h7 className={classes.instructionstext}> INGREDIENTS: </h7>
+              </Typography>
               <div className={classes.ingredients}>
                 <TableContainer component={Paper}>
                   <Table size="small" aria-label="a dense table">
@@ -259,12 +269,10 @@ class viewRecipe extends Component {
               </div>
             </Grid>
             <Grid item sm>
-              <div className={classes.instructions}>
-                <Typography variant="h5" align="center">
-                  <h7 className={classes.instructionstext}> INSTRUCTIONS: </h7>
-                </Typography>
-                <p className={classes.textstyle}> {instructionsMarkup} </p>
-              </div>
+              <Typography variant="h5" align="center">
+                <h7 className={classes.instructionstext}> INSTRUCTIONS: </h7>
+              </Typography>
+              <div className={classes.ingredients}>{instructionsMarkup}</div>
             </Grid>
           </Grid>
           <br />
@@ -287,7 +295,7 @@ class viewRecipe extends Component {
             <Chip label={courses} /> <Chip label={cuisines} />{" "}
             <Chip label={type} />
           </div>
-         
+
           <div className={classes.padding}>
             <Typography variant="h5">Reviews </Typography>
 

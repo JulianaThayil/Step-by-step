@@ -9,31 +9,32 @@
 .recipeimage {
   max-width: 70vw;
 }
-.icon{
+.icon {
   content: " ";
   background-image: url(https://static.thenounproject.com/png/1206856-200.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    width:60px;
-    height: 17px;
-    margin: 0 auto 12px auto;
-    display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 17px;
+  margin: 0 auto 12px auto;
+  display: block;
 }
-.circle{
+.circle {
   background-color: black;
   color: white;
   padding-right: 9%;
   padding-left: 9%;
+  font-size: 12px;
   border-radius: 50%;
 }
-.title{
-  font-family: 'Cormorant Garamond', serif;
+.title {
+  font-family: "Cormorant Garamond", serif;
   font-size: 55px;
   font-weight: 400;
   margin: 10px 0;
 }
-.padding{
-    padding: 2%;
+.padding {
+  padding: 2%;
 }
 
 .image {
@@ -74,21 +75,16 @@
 .span {
   display: flex;
 }
-.instructions {
-border: solid;
-  padding-right: 2vh;
-  padding-left: 2vh;
-}
+
 .ingredients {
-  padding-right: 3vh;
-  padding-bottom: 2vh;
-  padding-left: 3vh;
+  padding: 3vh;
 }
 .instructionstext {
   margin: 2px;
   font-size: 2.3vh;
   padding: 2px;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .head {
@@ -115,7 +111,6 @@ border: solid;
 }
 
 @media only screen and (max-width: 425px) {
-
   .paperimage {
     width: 100vw;
     height: 35vh;
@@ -170,8 +165,6 @@ border: solid;
   padding-top: 5vh;
 }
 
-
-
 .text {
   padding-top: 5px;
   font-weight: 10px;
@@ -184,4 +177,3 @@ border: solid;
 .likesreviews {
   font-size: 2vh;
 }
-
