@@ -105,16 +105,16 @@ class viewRecipe extends Component {
           VEG
         </Typography>
       ) : (
-        <Typography variant="body2">
-          <img
-            width="20px"
-            height="20px"
-            src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png"
-            alt="nonveg"
-          />{" "}
+          <Typography variant="body2">
+            <img
+              width="20px"
+              height="20px"
+              src="https://img.icons8.com/color/480/non-vegetarian-food-symbol.png"
+              alt="nonveg"
+            />{" "}
           NON-VEG
-        </Typography>
-      );
+          </Typography>
+        );
 
     let loginsignup = authenticated ? null : (
       <div>
@@ -212,7 +212,7 @@ class viewRecipe extends Component {
             </div>
             <Grid className={classes.padding} container spacing={2}>
               <Grid item xs={6} lg={3}>
-                <Avatar>
+                <Avatar style={{ backgroundColor: '#a31545' }}>
                   <RestaurantIcon />
                 </Avatar>
                 <Typography variant="body2">
@@ -221,7 +221,7 @@ class viewRecipe extends Component {
               </Grid>
 
               <Grid item xs={6} lg={3}>
-                <Avatar>
+                <Avatar style={{ backgroundColor: '#b2102f' }}>
                   <TimerIcon />
                 </Avatar>
                 <Typography variant="body2">
@@ -229,7 +229,7 @@ class viewRecipe extends Component {
                 </Typography>
               </Grid>
               <Grid item xs={6} lg={3}>
-                <Avatar>
+                <Avatar style={{ backgroundColor: '#ff1744' }}>
                   <TimerIcon />
                 </Avatar>
                 <Typography variant="body2">
@@ -237,7 +237,7 @@ class viewRecipe extends Component {
                 </Typography>
               </Grid>
               <Grid item xs={6} lg={3}>
-                <Avatar>
+                <Avatar style={{ backgroundColor: '#ff4569' }}>
                   <RoomServiceIcon />
                 </Avatar>
                 <Typography variant="body2">SERVES :{serves}</Typography>
@@ -308,12 +308,12 @@ class viewRecipe extends Component {
         </Paper>
       </div>
     ) : (
-      <div style={{ height: "100vh" }}>
-        <div style={{ position: "absolute", top: "50%", left: "50%" }}>
-          <CircularProgress color="secondary"> </CircularProgress>
+        <div style={{ height: "100vh" }}>
+          <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+            <CircularProgress color="secondary"> </CircularProgress>
+          </div>
         </div>
-      </div>
-    );
+      );
 
     return (
       <div>

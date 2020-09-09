@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classes from "./styles.module.css";
-import { makeStyles } from "@material-ui/core/styles";
 
 //Mui stuff
 import List from "@material-ui/core/List";
@@ -11,12 +10,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import Card from "@material-ui/core/Card";
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-});
-
 export default class Instructions extends Component {
   render() {
     const {
@@ -25,6 +18,7 @@ export default class Instructions extends Component {
     } = this.props;
 
     return (
+      <Card >
         <List>
           <ListItem>
             <ListItemIcon>
@@ -34,6 +28,7 @@ export default class Instructions extends Component {
           </ListItem>
           <Divider variant="inset" component="li" />
         </List>
+      </Card>
     );
   }
 }
