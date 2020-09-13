@@ -11,6 +11,7 @@ This project is currently in development. Users can discover and share their own
 
 ## Project Screen Shots
 ![image](https://drive.google.com/uc?export=view&id=1bCV-D4m6FfHVDGw_Zg97KntmmMjPZRYo)
+![image](https://drive.google.com/uc?export=view&id=1bCV-D4m6FfHVDGw_Zg97KntmmMjPZRYo)
 
 
 ## Installation and Setup Instructions
