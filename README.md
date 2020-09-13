@@ -22,14 +22,18 @@ This project is currently in development. Users can discover and share their own
 <p align="center"> 
 <img src="https://drive.google.com/uc?export=view&id=1koMLpL72jZoc2sq1vFyt_bnCdP3iOMPa" > </img>
 </p>
+<p align="center"> 
 <img src="https://drive.google.com/uc?export=view&id=1kDateG9r8WuteUHFnLoVey8AoGO9QpZw" > </img>
-
+</p>
+<p align="center"> 
 <img src="https://drive.google.com/uc?export=view&id=17ti9LE5-2eXkRI132KKT-C_wcIWDy5UK" > </img>
-
+</p>
+<p align="center"> 
 <img src="https://drive.google.com/uc?export=view&id=1zx20Jbcmqgo7T0JUJVVN17I3nngn199e" > </img>
-
+</p>
+<p align="center"> 
 <img src="https://drive.google.com/uc?export=view&id=1MiBpgDcS2a8sstKCD0iCiGVCNwKBSkjq" > </img>
-
+</p>
 
 ## Installation and Setup Instructions
 
