@@ -16,8 +16,6 @@ This project is currently in development. Users can discover and share their own
 
 <img src="https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U" > </img>
 
-<img src="https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U" > </img>
-
 <img src="https://drive.google.com/uc?export=view&id=1koMLpL72jZoc2sq1vFyt_bnCdP3iOMPa" > </img>
 
 <img src="https://drive.google.com/uc?export=view&id=1kDateG9r8WuteUHFnLoVey8AoGO9QpZw" > </img>
