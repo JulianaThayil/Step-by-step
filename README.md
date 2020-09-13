@@ -10,7 +10,7 @@ A social media app for sharing recipes built with React, Redux, Express and Fire
 This project is currently in development. Users can discover and share their own recipes. Functionality of customized feed is in progress.
 
 ## Project Screen Shots
-
+![image](https://drive.google.com/uc?export=view&id=1913oZeBZPBNiUuk8gu3ZSbLBA2l_VQtG)
 
 
 ## Installation and Setup Instructions
