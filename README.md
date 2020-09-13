@@ -11,15 +11,22 @@ This project is currently in development. Users can discover and share their own
 
 ## Project Screen Shots
 <img src="https://drive.google.com/uc?export=view&id=1bCV-D4m6FfHVDGw_Zg97KntmmMjPZRYo" > </img>
-![image](https://drive.google.com/uc?export=view&id=1bCV-D4m6FfHVDGw_Zg97KntmmMjPZRYo)
-![image](https://drive.google.com/uc?export=view&id=15fh3as5k_0eIA-1XFfCEsZpmApiynGD4)
-![image](https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U)
-![image](https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U)
-![image](https://drive.google.com/uc?export=view&id=1koMLpL72jZoc2sq1vFyt_bnCdP3iOMPa)
-![image](https://drive.google.com/uc?export=view&id=1kDateG9r8WuteUHFnLoVey8AoGO9QpZw)
-![image](https://drive.google.com/uc?export=view&id=17ti9LE5-2eXkRI132KKT-C_wcIWDy5UK)
-![image](https://drive.google.com/uc?export=view&id=1zx20Jbcmqgo7T0JUJVVN17I3nngn199e)
-![image](https://drive.google.com/uc?export=view&id=1MiBpgDcS2a8sstKCD0iCiGVCNwKBSkjq)
+
+<img src="https://drive.google.com/uc?export=view&id=15fh3as5k_0eIA-1XFfCEsZpmApiynGD4" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1tae4ktEgm0CWIVEzYguOy4EooJPb686U" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1koMLpL72jZoc2sq1vFyt_bnCdP3iOMPa" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1kDateG9r8WuteUHFnLoVey8AoGO9QpZw" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=17ti9LE5-2eXkRI132KKT-C_wcIWDy5UK" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1zx20Jbcmqgo7T0JUJVVN17I3nngn199e" > </img>
+
+<img src="https://drive.google.com/uc?export=view&id=1MiBpgDcS2a8sstKCD0iCiGVCNwKBSkjq" > </img>
 
 
 ## Installation and Setup Instructions
