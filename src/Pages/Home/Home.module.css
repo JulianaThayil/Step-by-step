@@ -45,7 +45,7 @@
   height: min-content;
   gap: 2% 2%;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1300px) {
   .bg {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -88,7 +88,7 @@
     margin-right: auto;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 690px) {
   .bg {
     grid-template-columns: 1fr;
     margin-right: 2%;
